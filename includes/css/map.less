@@ -1,0 +1,113 @@
+// Google Map
+#map_canvas{
+    width: 100%;
+    height: 600px;
+}
+@media (max-width: @screen-tablet) {
+    #map_canvas{
+        width: 100%;
+        height: 300px;
+    }
+}
+// Other map
+.mapmedia{
+    overflow:hidden;
+}
+#map{
+	position:relative;
+}
+.mapimage {
+	display:block;
+	width:100%;
+}
+.hotspotcontainer {
+	width:100%;
+	height:100%;
+	position:absolute;
+	left:0;
+	bottom:0;
+    padding:0;
+    margin: 0;
+}
+.hotspotbutton {
+    display:block;
+	position:absolute;
+	z-index:9;
+	.img-circle;
+    background-color:@black;
+    .opacity(0);
+    margin:0;
+    padding:0;
+}
+.hotspotbutton:hover {
+    cursor:pointer;
+}
+.hotspotcontainer div:hover .hotspotbutton {
+    background-color:@white;
+}
+.hotspotcontainer .info {
+    .panel;
+    position:absolute;
+    z-index:10;
+	left:0;
+	bottom:-320px;
+	width:100%;
+    .opacity(0);
+    margin:0;
+    padding:(@font-size-base / 2) @font-size-base @font-size-base @font-size-base;
+    .box-shadow(0 -1px 2px 1px rgba(0,0,0,.2));
+    h4{
+        margin: 0 0 5px;
+    }
+    p{
+        .media-caption;
+        font-size:@font-size-small;
+    }
+}
+@media screen and (min-width: @screen-tablet) {
+    .hotspotcontainer .info p{
+        .media-caption;
+    }
+}
+#map .hotspotbutton.wnc {
+	left:26%;
+	top:27%;
+	width:5%;
+	height:9%;
+}
+#map .hotspotbutton.rockies {
+	left:20.5%;
+	top:22%;
+	width:5%;
+	height:9%;
+}
+#map .hotspotbutton.china-japan {
+	left:80%;
+	top:20%;
+	width:5%;
+	height:9%;
+}
+#map .hotspotbutton.new-england {
+	left:28.5%;
+	top:20%;
+    width:5%;
+	height:9%;
+}
+#map .hotspotbutton.southern-hemisphere {
+	left:81.5%;
+	top:70.5%;
+	width:11%;
+	height:11%;
+}
+#map .hotspotbutton.northern-europe {
+	left:47%;
+	top:11%;
+	width:8%;
+	height:12%;
+}
+#map .hotspotbutton.chile {
+	left:28.5%;
+	top:63%;
+    width:5%;
+	height:9%;
+}
