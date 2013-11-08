@@ -1,190 +1,569 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<script type="text/javascript" src="http://www.exploreasheville.com/includes/scripts/modernizr-min.js"></script>
-	<script type="text/javascript">
-			document.write("\<script src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js' type='text/javascript'>\<\/script>");
-	</script>
 </head>
 <body>
 
 
-<link rel="stylesheet" href="http://www.exploreasheville.com/includes/css/bootstrap.css" />
-<div class="navbar-wrapper">
-	<div class="container">
 
-		<nav class="navbar navbar-default navbar-fixed-top">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#">Fall</a>
-				</div>
-				<div class="navbar-collapse collapse">
-					<ul class="nav navbar-nav">
-						<li class="active"><a href="#canvas">Canvas</a></li>
-						<li><a href="#myCarousel">Home</a></li>
-						<li><a href="#about">About</a></li>
-						<li><a href="#parallax">Parallax</a></li>
-						<li><a href="#contact">Contact</a></li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Action</a></li>
-								<li><a href="#">Another action</a></li>
-								<li><a href="#">Something else here</a></li>
-								<li class="divider"></li>
-								<li class="dropdown-header">Nav header</li>
-								<li><a href="#">Separated link</a></li>
-								<li><a href="#">One more separated link</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
+
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700|Open+Sans+Condensed:700|Gentium+Book+Basic:700italic' rel='stylesheet' type='text/css'>
+<link href="http://www.exploreasheville.com/includes/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<div id="fb-root"></div>
+<a href="#intro" class="sr-only">Skip to content</a>
+<div class="container">
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="http://www.exploreasheville.com/seasonal-fun/fall/" onMouseDown="_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'Header', 'Logo']);">Explore Asheville</a>
 			</div>
-		</nav>
-
-	</div>
+			<div class="navbar-collapse collapse top-nav">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#intro" onMouseDown="_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'Header', 'Intro']);">Timelapse</a></li>
+					<li class=""><a href="#color-progression-by-elevation" onMouseDown="_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'Header', 'Flyover']);">Flyover</a></li>
+					<li class=""><a href="#theory" onMouseDown="_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'Header', 'Theory']);">Theory</a></li>
+					<li class=""><a href="#scenic-drive" onMouseDown="_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'Header', 'Scenic Drive']);">Scenic Drive</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right hidden-xs hidden-sm hidden-print">
+					<li><a href="#disqus_thread">Comment</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" onMouseDown="_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'Social Dropdown', 'Facebook']);"><img src="http://www.exploreasheville.com/includes/images/fall/social-icon-facebook.jpg" nopin="nopin" /></a>
+						<ul class="dropdown-menu social-sharing">
+							<li><div class="fb-like" data-href="http://www.exploreasheville.com/science-behind-fall-color/" data-width="100" data-layout="button_count" data-show-faces="false" data-send="false"></div></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" onMouseDown="_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'Social Dropdown', 'Twitter']);"><img src="http://www.exploreasheville.com/includes/images/fall/social-icon-twitter.jpg" nopin="nopin" /></a>
+						<ul class="dropdown-menu social-sharing">
+							<li><a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.exploreasheville.com/science-behind-fall-color/" data-text="Weird Science? Fall color like you've never seen it." data-via="VisitAsheville">Tweet</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" onMouseDown="_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'Social Dropdown', 'Google Plus']);"><img src="http://www.exploreasheville.com/includes/images/fall/social-icon-google-plus.jpg" nopin="nopin" /></a>
+						<ul class="dropdown-menu social-sharing">
+							<li><div class="g-plusone" data-size="medium" data-href="http://www.exploreasheville.com/science-behind-fall-color/"></div></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" onMouseDown="_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'Social Dropdown', 'Pinterest']);"><img src="http://www.exploreasheville.com/includes/images/fall/social-icon-pinterest.jpg" nopin="nopin" /></a>
+						<ul class="dropdown-menu social-sharing">
+							<li><a href="//www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.exploreasheville.com%2Fscience-behind-fall-color%2F&media=http%3A%2F%2Fwww.exploreasheville.com%2Fincludes%2Fimages%2Ffall%2Ffall.jpg&description=The%20Science%20Behind%20%23Fall%20%23Color%20%7C%20ExploreAsheville.com" data-pin-do="buttonPin" data-pin-config="beside"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 </div>
 
-
-<!-- Carousel
-================================================== -->
-<section id="myCarousel" class="carousel slide">
-	<!-- Indicators -->
-	<ol class="carousel-indicators">
-		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-		<li data-target="#myCarousel" data-slide-to="1"></li>
-		<li data-target="#myCarousel" data-slide-to="2"></li>
-	</ol>
-	<div class="carousel-inner">
-		<div class="item active">
-			<img class="img-responsive" src="http://placehold.it/1500x500/">
-			<div class="container">
-				<div class="carousel-caption">
-					<h1>Example headline.</h1>
-					<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-					<p><a class="btn btn-large btn-primary" href="#">Sign up today</a></p>
-				</div>
-			</div>
-		</div>
-		<div class="item">
-			<img class="img-responsive" src="http://placehold.it/1500x500/">
-			<div class="container">
-				<div class="carousel-caption">
-					<h1>Another example headline.</h1>
-					<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-					<p><a class="btn btn-large btn-primary" href="#">Learn more</a></p>
-				</div>
-			</div>
-		</div>
-		<div class="item">
-			<img class="img-responsive" src="http://placehold.it/1500x500/">
-			<div class="container">
-				<div class="carousel-caption">
-					<h1>One more for good measure.</h1>
-					<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-					<p><a class="btn btn-large btn-primary" href="#">Browse gallery</a></p>
-				</div>
-			</div>
-		</div>
+<section id="topvideo" class="featurette container hidden-xs hidden-sm hidden-ipad affix hidden-print" data-stellar-offset-parent="true">
+	<div id="header" class="intro row pull-right" data-stellar-ratio=".7">
+		<h1 itemprop="name"><span class="featurette-heading">The Science</span> <span class="featurette-heading-serif">Behind</span> <span class="featurette-heading last">Fall Color</span></h1>
 	</div>
-	<a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-	<a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-</section><!-- /.carousel -->
-
-
-<section id="about" class="container marketing">
-
-	<div class="row">
-		<aside class="col-lg-4">
-			<img class="img-thumbnail" src="http://placehold.it/200x200/" alt="Generic placeholder image">
-			<h2>Heading</h2>
-			<p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-			<p><a class="btn btn-default" href="#">View details &raquo;</a></p>
-		</aside><!-- /.col-lg-4 -->
-		<aside class="col-lg-4">
-			<img class="img-circle" src="http://placehold.it/200x200/" alt="Generic placeholder image">
-			<h2>Heading</h2>
-			<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-			<p><a class="btn btn-default" href="#">View details &raquo;</a></p>
-		</aside><!-- /.col-lg-4 -->
-		<aside class="col-lg-4">
-			<img class="img-circle" src="http://placehold.it/200x200/" alt="Generic placeholder image">
-			<h2>Heading</h2>
-			<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-			<p><a class="btn btn-default" href="#">View details <span class="glyphicon glyphicon-arrow-right"></span></a></p>
-		</aside><!-- /.col-lg-4 -->
-	</div><!-- /.row -->
-
+	<video id="video" poster="http://www.exploreasheville.com/includes/images/fall/timelapse-poster.jpg" autoplay loop preload="auto">
+		<source src="http://www.ashevillecvb.com/wp-content/uploads/2013/09/timelapse.mp4.mp4" type="video/mp4" />
+		<source src="http://www.ashevillecvb.com/wp-content/uploads/2013/09/timelapse.webmhd.webm" type="video/webm" />
+		<source src="http://www.ashevillecvb.com/wp-content/uploads/2013/09/timelapse.oggtheora.ogv" type="video/ogg" />
+	</video>
 </section>
 
-<section id="parallax" data-type="background" data-speed="2"></section>
+<section class="featurette-mobile container visible-xs visible-sm visible-ipad">
+	<div id="header-mobile" class="row">
+		<h1><span class="featurette-heading">The Science</span><span class="featurette-heading-serif">Behind</span><span class="featurette-heading last">Fall Color</span></h1>
+	</div>
+	<img src="http://www.exploreasheville.com/includes/images/assets/1pixel.gif" data-original="http://www.exploreasheville.com/includes/images/fall/timelapse-poster.jpg" class="lazy img-responsive" />
+</section>
+
+<section id="intro" class="container">
+	<article class="row">
+		<div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
+			<blockquote id="subhead">
+				<h2>Trees aren't just artistic &#8212; they're also smarter than you think</h2>
+			</blockquote>
+		</div>
+	</article>
+	<article class="row">
+		<div class="col-xs-12 col-sm-12 col-md-9 col-md-offset-1 col-lg-8 col-lg-offset-2">
+			<p class="first-paragraph">Even scientists see the beauty in autumn leaves. &#8220;I can still remember a hike when I was young," says Howard Neufeld, professor of plant ecophysiology at Appalachian State University. "The leaves were just a golden yellow, the air was clear, the sky was absolutely blue.&#8221;</p>
+			<p>&#8220;When you walk through something like that &#8230; &#8221; he trails off. &#8220;There's nothing better.&#8221;</p>
+		</div>
+	</article>
+	<article class="row">
+		<div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-3 col-lg-offset-2">
+			<p>Which might do for the average person. The leaves change, the forest fills with bright yellows, vivid crimson. If you drive a mountain two-lane, scatterings of vibrant orange blow across the highway. Leaves pile around the base of split-rail fence posts, scatter against the sides of tobacco barns.</p>
+			<p>Again: enough for you and me to just see. Neufeld sees and asks: why? What do the trees get out of it? People get joy from looking, from kicking our feet through the crunching leaves on the ground, from smelling apple butter, pumpkins, smoke. Appalachian towns, adapting to that appreciation, get tens of millions of dollars offering food, drink, lodging &#8212; and history and experience. And people have also adapted to the timing of that sensory bonanza, planning festivals and harvest fairs around the peak of leaf color.</p>
+			<p class="visible-xs visible-sm">"If you had time lapse photography," Neufeld says, "you could watch the trees start to turn at the top of the mountain and then every week move down the side about a thousand feet." Mount Mitchell and other peaks tend to peak around late September, Boone peaks reliably in mid-October, Asheville a week later, and so on until you reach the Piedmont and Raleigh in November. If you could watch from space you could take climate into account and watch the color move south down the spine of the mountains, too. And though you'll see those bright yellows, reds, and oranges, Neufeld reminds you that fall has other colors too. Deciduous magnolia leaves turn a chocolate brown that makes a nice partner to the pale brown of corn sheaves and haybales. And color varies with a lot more than elevation.</p>
+		</div>
+		<div id="timelapse" class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+			<aside class="media">
+				<h3 class="media-heading">Timelapse: A Progression of Color</h3>
+				<iframe src="http://www.youtube.com/embed/MVomC6PMEcg?rel=0&showinfo=0&wmode=opaque&modestbranding=1&vq=hd720" wmode="opaque" width="800" height="450" frameborder="0" class="media-object" allowfullscreen></iframe>
+				<p class="media-caption">From the highest peaks in the east to the Cradle of Forestry&#8212;the land that inspired George W. Vanderbilt's Biltmore Estate in Asheville—watch peak fall color across the Blue Ridge Mountains. <em class="text-primary">Song: &#8220;Childgrove&#8221; performed by Jerry Read Smith</em></p>
+			</aside>
+		</div>
+	</article>
+	<article class="row">
+		<div class="col-xs-12 col-sm-12 col-md-9 col-md-offset-1 col-lg-8 col-lg-offset-2">
+			<p class="visible-md visible-lg">"If you had time lapse photography," Neufeld says, "you could watch the trees start to turn at the top of the mountain and then every week move down the side about a thousand feet." Mount Mitchell and other peaks tend to peak around late September, Boone peaks reliably in mid-October, Asheville a week later, and so on until you reach the Piedmont and Raleigh in November. If you could watch from space you could take climate into account and watch the color move south down the spine of the mountains, too. And though you'll see those bright yellows, reds, and oranges, Neufeld reminds you that fall has other colors too. Deciduous magnolia leaves turn a chocolate brown that makes a nice partner to the pale brown of corn sheaves and haybales. And color varies with a lot more than elevation.</p>
+			<p>For one thing, whereas New England features overwhelmingly beeches, birches, and maples, making for large blotches of single colors, western North Carolina has an enormous variety of trees &#8212; the Smokies, in fact, peppered with microclimates, host some 120 species of tree, the greatest variety in the United States. That variety gives the southern Appalachians a broader spectrum – a patchwork quilt of mountainside color.</p>
+		</div>
+		<div id="color-progression-by-elevation" class="col-xs-12 col-sm-12 col-md-6 col-md-offset-1 col-lg-5 col-lg-offset-2">
+			<h1 class="hidden-xs hidden-sm hidden-print hidden-ipad"><small>Color Progression by Elevation</small></h1>
+			<aside class="media visible-xs visible-sm hidden-print visible-ipad">
+				<h3 class="media-heading">Color Progression by Elevation</h3>
+				<iframe src="http://www.youtube.com/embed/38WP84f9xlM?rel=0&showinfo=0&wmode=opaque&modestbranding=1" wmode="opaque" width="800" height="450" frameborder="0" class="media-object" allowfullscreen></iframe>
+			</aside>
+		</div>
+	</article>
+</section>
+<section id="map-flyover" class="flyover-container hidden-xs hidden-sm hidden-print hidden-ipad">
+	<div id="map-flyover-map">
+		<a href="#" onClick="return false" onmouseenter="_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'Flyover Hover', 'View Map']);"><span class="glyphicon glyphicon-picture"></span><br /><small>View map.</small></a>
+		<img src="http://www.exploreasheville.com/includes/images/assets/1pixel.gif" data-original="http://www.exploreasheville.com/includes/images/fall/map-overlay.jpg" nopin="nopin" class="lazy img-thumbnail" />
+	</div>
+	<video id="flyover" poster="http://www.exploreasheville.com/includes/images/fall/flyover-poster.jpg" loop preload="auto" class="hidden-xs hidden-sm hidden-print">
+		<source src="http://www.ashevillecvb.com/wp-content/uploads/2013/09/flyover.mp4.mp4" type="video/mp4" />
+		<source src="http://www.ashevillecvb.com/wp-content/uploads/2013/09/flyover.webmhd.webm" type="video/webm" />
+		<source src="http://www.ashevillecvb.com/wp-content/uploads/2013/09/flyover.oggtheora.ogv" type="video/ogg" />
+	</video>
+</section>
+
+<section id="theory" class="container">
+	<article class="row">
+		<div class="col-xs-12 col-lg-11 col-lg-offset-1">
+			<div class="page-header">
+				<h2>What's in it for the Trees?</h2>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-9 col-md-offset-1 col-lg-8 col-lg-offset-2">
+			<p>But again: the trees provide all this wonder, free of charge. What's in it for the trees?</p>
+			<p>Start by looking at trees in a new way. Trees are capitalists; trees are in business. Trees do work, from which they try to profit, using a special process called photosynthesis.</p>
+			<p>They acquire raw materials &#8212; sunlight, water, carbon dioxide from the air &#8212; and they create a product: delicious carbohydrates, especially sugars like glucose, which they use for energy. They also bind that glucose up with nutrients from the soil and other molecules to create the raw materials for structural components like leaves and stems, just like a business using some of its income to invest in its factories and processes.</p>
+			<p>Like businesses, if trees make a profit &#8212; if they generate more energy than they use &#8212; they grow. Like businesses, if trees don't make a profit &#8212; if it costs more energy to keep going than they can get &#8212; they fail.</p>
+			<p>Which brings up leaves.</p>
+		</div>
+	</article>
+	<article class="row">
+		<div class="col-xs-12 col-sm-7 col-md-7 col-md-offset-1 col-lg-6 col-lg-offset-2">
+			<p>"I look at the leaf as sort of a photosynthetic machine," says Neufeld, the reigning North Carolina fall color guy, providing information and predictions for various agencies. "A leaf is the capitalist side of ecology. Leaves are the factories generating a product." Carbon, which the leaf gets from CO<sub>2</sub>, is of course the basis of all life. "So think of carbon as the money of the tree. If you invest so many units of carbon to build the leaf, in order to get a profit back, you have to first pay back the cost of the leaf."</p>
+		</div>
+		<div class="col-xs-12 col-sm-5 col-md-4 col-lg-3">
+			<aside class="media">
+				<img class="lazy pull-left media-object" src="http://www.exploreasheville.com/includes/images/assets/1pixel.gif" data-original="http://www.exploreasheville.com/includes/images/fall/Howard-Neufeld-in-Conversation.jpg" nopin="nopin" width="100" alt="Dr. Howard S. Neufeld, Professor of Plant Physiology at Appalachian State University">
+				<div class="media-body">
+					<h4 class="media-heading">Dr. Howard S. Neufeld</h4>
+					<p class="media-caption">Professor of Plant Physiology at Appalachian State University</p>
+				</div>
+			</aside>
+		</div>
+	</article>
+	<article class="row">
+		<div class="col-xs-12 col-sm-12 col-md-4 col-md-offset-1 col-lg-4 col-lg-offset-2">
+			<p>Like a successful business, the tree designs factories to fit their environment. Canopy trees like oaks, maples, hickories, stretch their limbs towards the sun and so create thin, fluttering leaves for next to nothing. "They make back their initial investment in a few weeks," Neufeld says, "and then anything else is pure profit." Far below hunches the rhododendron. Unable to reach open sun, its leaves have to prosper in a shady environment. They'll never photosynthesize enough to earn back their investment in a single season, so the plant invests more resources and makes leaves that are rubbery and thick &#8212; and last several years before the plant finally finishes with them and they drop onto the forest floor.</p>
+			<p class="visible-lg">Neufeld, whose decades in the Southern Appalachians followed a boyhood jumping in autumn leaf piles in Maryland, didn't come up with the theory of trees as profiteers, of leaves as factories or franchises. "There's a whole thing about leaf economics that's out there in the literature. We ecologists tend to borrow from the economists," he laughs. "It may be the dismal science, but we still like their theories."</p>
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-7 col-lg-5">
+			<aside id="leaves" class="media">
+				<h3 class="media-heading">Trees of Southern Appalachia</h3>
+				<div id="myCarousel" class="carousel slide media-object">
+					<ol class="carousel-indicators hidden-xs">
+						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#myCarousel" data-slide-to="1"></li>
+						<li data-target="#myCarousel" data-slide-to="2"></li>
+						<li data-target="#myCarousel" data-slide-to="3"></li>
+						<li data-target="#myCarousel" data-slide-to="4"></li>
+						<li data-target="#myCarousel" data-slide-to="5"></li>
+						<li data-target="#myCarousel" data-slide-to="6"></li>
+						<li data-target="#myCarousel" data-slide-to="7"></li>
+						<li data-target="#myCarousel" data-slide-to="8"></li>
+					</ol>
+					<div class="carousel-inner">
+						<div class="item active">
+							<img src="http://www.exploreasheville.com/includes/images/fall/white-ash-tree.jpg" alt="White Ash" />
+							<div class="carousel-caption">
+								<h1>White Ash</h1>
+							</div>
+						</div>
+						<div class="item">
+							<img src="http://www.exploreasheville.com/includes/images/fall/red-maple-tree.jpg" alt="Red Maple" />
+							<div class="carousel-caption">
+								<h1>Red Maple</h1>
+							</div>
+						</div>
+						<div class="item">
+							<img src="http://www.exploreasheville.com/includes/images/fall/sassafras-tree.jpg" alt="Sassafras" />
+							<div class="carousel-caption">
+								<h1>Sassafras</h1>
+							</div>
+						</div>
+						<div class="item">
+							<img src="http://www.exploreasheville.com/includes/images/fall/chestnut-tree.jpg" alt="American Chestnut" />
+							<div class="carousel-caption">
+								<h1>American Chestnut</h1>
+							</div>
+						</div>
+						<div class="item">
+							<img src="http://www.exploreasheville.com/includes/images/fall/dogwood-tree.jpg" alt="Dogwood" />
+							<div class="carousel-caption">
+								<h1>Dogwood</h1>
+							</div>
+						</div>
+						<div class="item">
+							<img src="http://www.exploreasheville.com/includes/images/fall/sumac-tree.jpg" alt="Sumac" />
+							<div class="carousel-caption">
+								<h1>Sumac</h1>
+							</div>
+						</div>
+						<div class="item">
+							<img src="http://www.exploreasheville.com/includes/images/fall/mountain-ash-tree.jpg" alt="Mountain Ash" />
+							<div class="carousel-caption">
+								<h1>Mountain Ash</h1>
+							</div>
+						</div>
+						<div class="item">
+							<img src="http://www.exploreasheville.com/includes/images/fall/yellow-birch-tree.jpg" alt="Yellow Birch" />
+							<div class="carousel-caption">
+								<h1>Yellow Birch</h1>
+							</div>
+						</div>
+						<div class="item">
+							<img src="http://www.exploreasheville.com/includes/images/fall/maple-tree.jpg" alt="Sugar Maple" />
+							<div class="carousel-caption">
+								<h1>Sugar Maple</h1>
+							</div>
+						</div>
+					</div>
+					<a class="left carousel-control" href="#myCarousel" data-slide="prev" onMouseDown="_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'Leaf Slideshow', 'Previous']);"><span class="glyphicon glyphicon-chevron-left"></span></a>
+					<a class="right carousel-control" href="#myCarousel" data-slide="next" onMouseDown="_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'Leaf Slideshow', 'Next']);"><span class="glyphicon glyphicon-chevron-right"></span></a>
+				</div>
+				<p class="media-caption">Photos courtesy of Grandfather Mountain, Chimney Rock State Park and Howard Neufeld.</p>
+			</aside>
+		</div>
+	</article>
+	<article class="row">
+		<div class="col-xs-12 col-sm-12 col-md-11 col-md-offset-1 col-lg-8 col-lg-offset-2">
+			<p class="hidden-lg hidden-print">Neufeld, whose decades in the Southern Appalachians followed a boyhood jumping in autumn leaf piles in Maryland, didn't come up with the theory of trees as profiteers, of leaves as factories or franchises. "There's a whole thing about leaf economics that's out there in the literature. We ecologists tend to borrow from the economists," he laughs. "It may be the dismal science, but we still like their theories."</p>
+			<p>Those theories raise a question about leaves that was until recent years almost completely misunderstood &#8212; <a href="#" class="playbutton" data-video-id="greeks" onMouseDown="_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'Play Video Text Link', 'Greeks']);"><span class="glyphicon glyphicon-facetime-video"></span> even unasked.</a></p>
+		</div>
+	</article>
+</section>
+<hr />
+<section class="container">
+	<article class="row">
+		<div class="col-xs-12 col-lg-11 col-lg-offset-1">
+			<div class="page-header">
+				<h2>The How: Trees Are Paying Attention Even if You Aren't</h2>
+			</div>
+		</div>
+		
+		<div class="col-xs-12 col-sm-6 col-md-6 col-md-offset-1 col-lg-4 col-lg-offset-2">
+			<p>We understood some things, of course. Neufeld specializes in plant stress, and autumn is a kind of preparation for the stress of winter: the tree preemptively drops the leaves that the frost would kill, getting its use out of them beforehand, and prepares for winter dormancy. Leaves are green because of the miraculous pigment chlorophyll, which absorbs photons from the sun, using that energy to spark the chemical reactions that turn water and carbon dioxide into sugars and complex carbohydrates &#8212; and provide the oxygen for our planet as a byproduct.</p>
+			<p class="visible-lg">As autumn approaches, trees recognize both the shortening days and the cooling temperatures and begin doing the same thing we do: preparing for winter. We position the storm windows, insulate the pipes, and take in the porch furniture; trees disassemble the chlorophyll, reabsorb any useful nutrients into the twigs, and close the pathways to those now useless leaves. And, well, the leaves fall off.</p>
+		</div>
+		
+		<div id="early-fall-color-theories" class="col-xs-12 col-sm-6 col-md-5 col-lg-5">
+			<aside class="media" data-video-id="greeks">
+				<h3 class="media-heading">Early Fall Color Theories</h3>
+				<iframe id="greeks" class="media-object" src="http://www.youtube.com/embed/oMru0cSMnYc?rel=0&showinfo=0&wmode=opaque&modestbranding=1&enablejsapi=1" wmode="opaque" width="575" height="323" frameborder="0" allowfullscreen></iframe>
+			</aside>
+		</div>
+	</article>
+	<article class="row">
+		<div class="col-xs-12 col-sm-12 col-md-11 col-md-offset-1 col-lg-8 col-lg-offset-2">
+			<p class="hidden-lg hidden-print">As autumn approaches, trees recognize both the shortening days and the cooling temperatures and begin doing the same thing we do: preparing for winter. We position the storm windows, insulate the pipes, and take in the porch furniture; trees disassemble the chlorophyll, reabsorb any useful nutrients into the twigs, and close the pathways to those now useless leaves. And, well, the leaves fall off.</p>
+			<p>In summer, the green chlorophyll absorbs energy for photosynthesis, says Neufeld, "but there are also accessory pigments that are yellow and orange. One of them is beta carotene, the same thing that makes carrots orange. And the xanthophylls are what make things yellow." The colors  are present in the leaves all along, just concealed by the chlorophyll. But when the tree begins reprocessing chlorophyll, the green fades and these bright colors remain.</p>
+			<p>Again: just because? Or &#8212; maybe &#8212; is there an answer?</p>
+		</div>
+		
+	</article>
+</section>
+<hr />
+<section class="container">
+	<article class="row">
+		<div class="col-xs-12 col-lg-11 col-lg-offset-1">
+			<div class="page-header">
+				<h2>The Why: Scientists Are Learning What Trees Already Know</h2>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6 col-md-offset-1 col-lg-4 col-lg-offset-2">
+			<p>"The insect theory," says Neufeld, suggests there is. "The bright fall colors may be a warning to insects that this tree, to produce those bright colors, must be healthy. Don't lay your eggs on that tree, because it will also have chemical defenses against those insects." That is, a tree with less-vibrant colors would be more attractive to insects than a bright one. "It's kind of like the <a href="#" class="playbutton" data-video-id="dart-frog" onMouseDown="_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'Play Video Text Link', 'Dart Frog']);"><span class="glyphicon glyphicon-facetime-video"></span> poison dart frogs</a> in the Amazon."</p>
+			<p>But &#8212; red. Red is another story. Birches, tulip poplars, and some maples turn brilliant yellow; but trees like red maples and sourwoods turn that bright crimson that seems to define for people a good color season &#8212; and they do it not by passively revealing an existing pigment but by creating a new one.</p>
+		</div>
+		<div id="poison-dart-frogs" class="col-xs-12 col-sm-6 col-md-5 col-lg-5">
+			<aside class="media" data-video-id="dart-frog">
+				<h3 class="media-heading">The Insect Theory</h3>
+				<iframe id="dart-frog" class="media-object" src="http://www.youtube.com/embed/Wzto3eqM93U?rel=0&showinfo=0&wmode=opaque&modestbranding=1" wmode="opaque" width="575" height="323" frameborder="0" allowfullscreen></iframe>
+			</aside>
+		</div>
+	</article>
+	<article class="row">
+		<div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-2">
+			<h1 class="media-heading"><small>Why Leaves Turn Red</small></h1>
+			<p>As the trees were dismantling chlorophyll and reabsorbing it along with other nutrients like nitrogen, potassium, and phosphorous to store them for the winter, they also suddenly began expending energy to create anthocyanin. Unrepentant capitalists, trees expend energy only for some benefit. Researchers figured out that as the chlorophyll vanished, the energy from the sun could damage the mechanism by which the trees reabsorbed nutrients. Research proved it out: mutant trees that produced no anthocyanin turned out to absorb much less nutrients from leaves than those that turned red.</p>
+			<p>The red-is-a-light-shield theory is much more widely accepted than the yellow-protects-from-bugs theory; regardless, for the first time ever, scientists have begun unraveling not just the how of fall color but the why. The red color might provide pest control as well, of course &#8212; perhaps covering up the yellow so the aphids can't see it.</p>
+			<p>Plenty of questions remain, and Neufeld rejects the notion that the answers might remove the wonder. "Knowing about it tends to increase your appreciation," he says. "You can still go out and go 'Wow, what a great color season,' even if you know the pigment is protecting the leaf."</p>
+		</div>
+		<div id="anthocyanins" class="col-xs-12 col-sm-12 col-md-6 col-lg-5">
+			<aside class="media" data-video-id="leaf-animation">
+				<iframe id="leaf-animation" class="media-object" src="http://www.youtube.com/embed/ntI1RxInDgc?rel=0&showinfo=0&wmode=opaque&modestbranding=1&vq=hd720" wmode="opaque" width="600" height="630" frameborder="0" allowfullscreen></iframe>
+			</aside>
+		</div>
+	</article>
+</section>
+<hr />
+<section id="scenic-drive" class="container">
+	<article class="row">
+		<div class="col-xs-12 col-lg-11 col-lg-offset-1">
+			<div class="page-header">
+				<h2>The Culture of Leaf Color</h2>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-7 col-md-7 col-md-offset-1 col-lg-5 col-lg-offset-2">
+			<p>Going wow about fall in the mountains is something that comes naturally to fifth generation native Becky Anderson, whose family pioneered in the mountains in the late 1700s. "We were the first white family west of Asheville," she says with pride. "We were known as the Ferguson clan, off of Fine's Creek in Haywood County." Throughout the centuries, her people have farmed these mountains. So no less than the trees, Anderson knows how to prepare for autumn &#8212; and like the trees, to waste nothing, from the viewsheds themselves to "the landscape and culture that go with it. People need to taste it, to smell it, to make it."</p>
+		</div>
+		<div class="col-xs-12 col-sm-5 col-md-4 col-lg-4">
+			<aside class="media">
+				<span class="pull-left">
+					<img class="lazy media-object" src="http://www.exploreasheville.com/includes/images/assets/1pixel.gif" data-original="http://www.exploreasheville.com/includes/images/fall/Becky-Anderson-in-Conversation.jpg" nopin="nopin" width="100" alt="Becky Anderson, fifth generation native and cultural heritage consultant">
+				</span>
+				<div class="media-body">
+					<h4 class="media-heading">Becky Anderson</h4>
+					<p class="media-caption">Fifth generation native and cultural heritage consultant</p>
+				</div>
+			</aside>
+		</div>
+	</article>
+	<article class="row">
+		<div class="col-xs-12 col-sm-12 col-md-9 col-md-offset-1 col-lg-9 col-lg-offset-2">			
+			<aside class="media pull-right hidden-xs hidden-print">
+				<img class="lazy media-object" src="http://www.exploreasheville.com/includes/images/assets/1pixel.gif" data-original="http://www.exploreasheville.com/includes/images/fall/corn-decor.jpg" nopin="nopin" />
+			</aside>
+			<p>As an example she cites the humble corn sheaf. Familiar to every suburban family as autumn decoration, Anderson remembers corn sheaves as something simpler: a way to keep harvested corn off the ground, "away from the critters who wanted to take your corn from you," especially before scientific breeding made corn stalks more rigid. The cornshucks that visitors to the mountains might see in farmyards and meadows as decorations also bear a hint of the Cherokee respect for crops. "Corn was very sacred to them," she says. "The preservation of the corn shucks was a continuation of that," just as it probably also continues the English tradition of Harvest Home, in which the last sheaves of corn were stored as a token for the next spring.</p>
+			<p>In any case, Anderson looks at things like corn sheaves the way Neufeld looks at leaves: there's a lot more there than meets the eye. Same, in fact, with something as simple as a haybale, which modern drivers of mountain roads might scarcely notice, scattered around broad bottomland meadows or standing along farm fences. Those too are symbols of fall, and they recall a time when hay wasn't laid in mechanical bales by tractors like a hen lays eggs.</p>
+		</div>
+	</article>
+	<article class="row">
+		<div class="col-xs-12 col-sm-6 col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-2">
+			<p>"Fall was gathering time in two ways," she said. "It was the gathering of crops, but it was the gathering of people." Reaping hay for her grandmother, for example, involved a pitchfork, a wagon and some <a href="#" class="playbutton" data-video-id="competitive" onMouseDown="_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'Play Video Text Link', 'Hay Stacking Competition']);"><span class="glyphicon glyphicon-facetime-video"></span> competition.</a></p>
+			<p>So Anderson sees those circular haystacks and thinks of their history &#8212; and notices the way people now decorate them, covering them and painting them as pumpkins or stacking them. "They're quite beautiful too. They're spaced in different ways. You can see how they figured out how to stack them. People get very artistic with them. It's a great combination of art and earth." Pumpkins and gourds now decorate porches and seem quaint &#8212; but once, they were simply the welcome decoration the land provided. They remind her: "how functional we are, how resourceful with the natural materials we have."</p>
+		</div>
+		<div id="hay-stacking-competition" class="col-xs-12 col-sm-6 col-md-6 col-lg-5">
+			<aside class="media" data-video-id="competitive">
+				<h3 class="media-heading">&#8220;I'll never forget this&#8221;</h3>
+				<iframe id="competitive" class="media-object" src="http://www.youtube.com/embed/WCGctpZH-v4?rel=0&showinfo=0&wmode=opaque&modestbranding=1" wmode="opaque" width="575" height="323" frameborder="0" allowfullscreen></iframe>
+			</aside>
+		</div>
+	</article>
 	
-<section id="contact" class="container">
-
-	<section class="row featurette">
-		<article class="col-md-7">
-			<h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-			<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-		</article>
-		<aside class="col-md-5">
-			<img class="featurette-image img-responsive" src="http://placehold.it/500x500/" alt="Generic placeholder image">
-		</aside>
-	</section>
-
-	<hr class="featurette-divider">
-
-	<section class="row featurette">
-		<aside class="col-md-5">
-			<img class="featurette-image img-responsive" src="http://placehold.it/500x500/" alt="Generic placeholder image">
-		</aside>
-		<article class="col-md-7">
-			<h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-			<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-		</article>
-	</section>
-
-	<hr class="featurette-divider">
-
-	<section class="row featurette">
-		<article class="col-md-7">
-			<h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-			<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-		</article>
-		<aside class="col-md-5">
-			<img class="featurette-image img-responsive" src="http://placehold.it/500x500/" alt="Generic placeholder image">
-		</aside>
-	</section>
-
-	<!-- /END THE FEATURETTES -->
+	<article class="row">
+		<div class="col-xs-12 col-sm-12 col-md-4 col-md-offset-1 col-lg-3 col-lg-offset-2">
+			<p>Fall in the mountains used to mean gathering only for locals; now it means millions of dollars to the mountain economy. Once the Blue Ridge Parkway came open, it wasn't just the trees who were capitalists of necessity, adapting to their ecosystem. "Communities along the parkway learned how to take events," she said, decorating to welcome visitors and share their fall traditions. Those traditions still declare themselves from every roadside, whether as the Appalachian style of church architecture &#8212; "the small white churches, the single steeple, the single door entry" &#8212; or the barns showing quilt patterns, encouraging local families to display a pattern from an heirloom quilt just the way an apple orchard allows people to sample heirloom apples. And whatever they share, locals still have special knowledge, though.</p>
+			<p>"You knew which leaves were going to turn when," she says, picnicking first atop Pisgah and working her way down, weekend after weekend, "all the different elevations, so we got the benefit of all the depth of fall color."</p>
+		</div>
+		<div id="fall-color-tour-map" class="col-xs-12 col-sm-12 col-md-7 col-lg-6">
+			<aside class="media ">
+				<h3 class="media-heading">The lore and allure of scenic byways</h3>
+				<p class="media-caption">A scenic drive through the mountains during the fall is about more than amazing views and vibrant foliage. Follow this route through the back roads of Western North Carolina to discover harvest flavors, wine and outdoor exploration amid autumn leaves. <strong class="text-danger">Travel Time: 1 hour 30 min.</strong><br /><em class="text-primary"> Click markers for more details.</em></p>
+				<div id="map_canvas" class="media-object full-width"></div>
+				<p class="media-caption"><a href="//www.google.com/maps/ms?msid=216187806625704159136.0004e5d1cb640d860b8fc&amp;msa=0&amp;ie=UTF8&amp;t=m&amp;ll=35.483038,-82.424927&amp;spn=0.827504,1.234589&amp;z=10&amp;output=embed" class="hidden-xs btn btn-primary btn-xs pull-right" rel="shadowbox" onMouseDown="_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'Fall Color Road Trip', 'View Fullscreen']);">View Fullscreen</a><a href="//www.google.com/maps/ms?msid=216187806625704159136.0004e5d1cb640d860b8fc&msa=0" class="btn btn-primary btn-xs pull-left" target="_blank" onMouseDown="_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'Fall Color Road Trip', 'Open in Google Maps']);">Open in Google Maps</a></p>
+			</aside>
+		</div>
+	</article>
+</section>
+<hr />
+<section class="container">
+	<article class="row">
+		<div class="col-xs-12 col-lg-11 col-lg-offset-1">
+			<div class="page-header">
+				<h2>A World of Color</h2>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-2">
+			<p>Color varies over larger geography, too. Autumn color is a temperate phenomenon, but oddly you don't find much red color in Europe &#8212; the result, Neufeld says, of the Alps' east-west orientation. When during the ice ages the glaciers came down, over the years trees moved down before them. In North America they never encountered a firm boundary, but in Europe many trees hit the Alps and were extinguished. The theory goes that after the ice age, when tree species recolonized back over the Alps, the pests that might have caused the red color &#8212; if that theory turns out to be correct &#8212; didn't make it back with them. Climate change will be the next big factor in leaf color, and new research indicates it may result in a brighter and longer leaf season.</p>
+			<p class="visible-lg">But it doesn't take climate change or an Ice Age to affect leaf color; ordinary weather affects it too. Yellows and oranges, remember, exist all along, but the trees synthesize red anthocyanin from sugars they make in the fall. So in August and September, bright days &#8212; which encourage sugar production, which in turn spurs anthocyanin &#8212; and cool nights &#8212; which slows sap, keeping it in leaves instead of flowing back into the trees &#8212; mean plenty of bright reds to complement the other colors. A dry month helps &#8212; less water inhibits nitrogen uptake, which in turn spurs anthocyanin production. Poor soil can yield the same result.</p>
+		</div>
+		<div id="a-world-of-color" class="col-xs-12 col-sm-12 col-md-6 col-lg-5">
+			<aside class="media mapmedia">
+				<h3 class="media-heading">Global Kaleidoscope: World Map of Fall Color</h3>
+				<div id="map" class="media-object">
+					<img id="mapimage" class="lazy mapimage" src="http://www.exploreasheville.com/includes/images/assets/1pixel.gif" data-original="http://www.exploreasheville.com/includes/images/fall/map.jpg" nopin="nopin" />
+					<div class="hotspotcontainer">
+						<div>
+							<a class="hotspotbutton wnc" rel="nofollow" aria-haspopup="false" onMouseDown="_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'World Map', 'WNC']);"></a>
+							<div class="info">
+								<button type="button" class="close" aria-hidden="true">&times;</button>
+								<h4>Western North Carolina</h4>
+								<img src="http://www.exploreasheville.com/includes/images/assets/1pixel.gif" data-original="http://www.exploreasheville.com/includes/images/fall/map-wnc.jpg" class="lazy col-xs-12 col-sm-5 pull-right media-object">
+								<p class="col-sm-7 hidden-xs">With the highest peaks east of the Mississippi, reaching over 6,000 feet in elevation, the fall color season in the Blue Ridge Mountains lasts longer than most places, typically spanning from late September to early November. The variety of maples, ash, birch, beech, sassafras and more create a patchwork of color only found in a handful of regions around the world.</p>
+								<p class="col-xs-12 col-sm-7"><strong>Predominant Color: An even mix of red, yellow, orange.</strong></p>
+							</div>
+						</div>
+						<div>
+							<a class="hotspotbutton rockies" rel="nofollow" aria-haspopup="false" onMouseDown="_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'World Map', 'Rockies']);"></a>
+							<div class="info">
+								<button type="button" class="close" aria-hidden="true">&times;</button>
+								<h4>Southern Rocky Mountains</h4>
+								<img src="http://www.exploreasheville.com/includes/images/assets/1pixel.gif" data-original="http://www.exploreasheville.com/includes/images/fall/map-southern-rockies.jpg" class="lazy col-xs-12 col-sm-5 pull-right media-object">
+								<p class="col-sm-7 hidden-xs">The Rocky Mountains are covered in the golden yellow hues of the Aspen, the definitive tree of the Colorado landscape. The fall foliage display only lasts about a week in most places and typically occurs in mid-September. However places with a range of elevation, like Denver, would have an extended color period that lasts through mid-October.</p>
+								<p class="col-xs-12 col-sm-7"><strong>Predominant Color: All yellow.</strong></p>
+							</div>
+						</div>
+						<div>
+							<a class="hotspotbutton china-japan" rel="nofollow" aria-haspopup="false" onMouseDown="_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'World Map', 'China and Japan']);"></a>
+							<div class="info">
+								<button type="button" class="close" aria-hidden="true">&times;</button>
+								<h4>Eastern China &amp; Northern Japan</h4>
+								<img src="http://www.exploreasheville.com/includes/images/assets/1pixel.gif" data-original="http://www.exploreasheville.com/includes/images/fall/map-japan.jpg" class="lazy col-xs-12 col-sm-5 pull-right media-object">
+								<p class="col-sm-7 hidden-xs">The fall color palette in areas such as the Yellow Mountains of China or Hokkaido in northern Japan is very similar to what you would find in the southern Appalachians. A combination of maples, spruce, fir, witch hazel, and more provide a kaleidoscope of fall color. The fall color in this region lasts about one month, from mid-September to mid-October.</p>
+								<p class="col-xs-12 col-sm-7"><strong>Predominant Color: An even mix of red, yellow, orange.</strong></p>
+							</div>
+						</div>
+						<div>
+							<a class="hotspotbutton new-england" rel="nofollow" aria-haspopup="false" onMouseDown="_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'World Map', 'New England']);"></a>
+							<div class="info">
+								<button type="button" class="close" aria-hidden="true">&times;</button>
+								<h4>New England</h4>
+								<img src="http://www.exploreasheville.com/includes/images/assets/1pixel.gif" data-original="http://www.exploreasheville.com/includes/images/fall/map-new-england.jpg" class="lazy col-xs-12 col-sm-5 pull-right media-object">
+								<p class="col-sm-7 hidden-xs">The northeast is covered with rich red and orange hues due to the high number of red and sugar maples. The New England area is well known for its vibrant, but short fall foliage season. Peak color only lasts for ten to twelve days spanning from late September to early October.</p>
+								<p class="col-xs-12 col-sm-7"><strong>Predominant Color: Orange, yellow, some red.</strong></p>
+							</div>
+						</div>
+						<div>
+							<a class="hotspotbutton northern-europe" rel="nofollow" aria-haspopup="false" onMouseDown="_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'World Map', 'Northern Europe']);"></a>
+							<div class="info">
+								<button type="button" class="close" aria-hidden="true">&times;</button>
+								<h4>Northern Europe</h4>
+								<img src="http://www.exploreasheville.com/includes/images/assets/1pixel.gif" data-original="http://www.exploreasheville.com/includes/images/fall/map-norther-europe.jpg" class="lazy col-xs-12 col-sm-5 pull-right media-object">
+								<p class="col-sm-7 hidden-xs">Birch, Aspen and Maples are very common in northern Europe, providing a lot of yellow and orange hues, but there is very little red color. Peak season typically occurs during the month of October.</p>
+								<p class="col-xs-12 col-sm-7"><strong>Predominant Color: Mostly yellow, some orange and a tiny bit of red.</strong></p>
+							</div>
+						</div>
+						<div>
+							<a class="hotspotbutton chile" rel="nofollow" aria-haspopup="false" onMouseDown="_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'World Map', 'Chile']);"></a>
+							<div class="info">
+								<button type="button" class="close" aria-hidden="true">&times;</button>
+								<h4>Southern Hemisphere</h4>
+								<img src="http://www.exploreasheville.com/includes/images/assets/1pixel.gif" data-original="http://www.exploreasheville.com/includes/images/fall/map-tasmania.jpg" class="lazy col-xs-12 col-sm-5 pull-right media-object">
+								<p class="col-sm-7 hidden-xs">Three places stand out in the southern hemisphere as the best (and only places) for fall color &#8212; Southern Chile, Tasmania and New Zealand. Color isn't as brilliant in these regions due to &#8220;lack of land and the climate conditions,&#8221; says Jake Crouch of the National Climactic Data Center. Fall hues tend to dot the landscape in late April and remain for about three weeks.</p>
+								<p class="col-xs-12 col-sm-7"><strong>Predominant Color: Mostly yellow, some orange and a tiny bit of red.</strong></p>
+							</div>
+						</div>
+						<div>
+							<a class="hotspotbutton southern-hemisphere" rel="nofollow" aria-haspopup="false" onMouseDown="_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'World Map', 'Tasmania and New Zealand']);"></a>
+							<div class="info">
+								<button type="button" class="close" aria-hidden="true">&times;</button>
+								<h4>Southern Hemisphere</h4>
+								<img src="http://www.exploreasheville.com/includes/images/assets/1pixel.gif" data-original="http://www.exploreasheville.com/includes/images/fall/map-tasmania.jpg" class="lazy col-xs-12 col-sm-5 pull-right media-object">
+								<p class="col-sm-7 hidden-xs">Three places stand out in the southern hemisphere as the best (and only places) for fall color &#8212; Southern Chile, Tasmania and New Zealand. Color isn't as brilliant in these regions due to &#8220;lack of land and the climate conditions,&#8221; says Jake Crouch of the National Climactic Data Center. Fall hues tend to dot the landscape in late April and remain for about three weeks.</p>
+								<p class="col-xs-12 col-sm-7"><strong>Predominant Color: Mostly yellow, some orange and a tiny bit of red.</strong></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</aside>
+		</div>
+	</article>
+	<article class="row hidden-lg">
+		<div class="col-xs-12 col-sm-12 col-md-11 col-md-offset-1 col-lg-10 col-lg-offset-2">
+			<p>But it doesn't take climate change or an Ice Age to affect leaf color; ordinary weather affects it too. Yellows and oranges, remember, exist all along, but the trees synthesize red anthocyanin from sugars they make in the fall. So in August and September, bright days &#8212; which encourage sugar production, which in turn spurs anthocyanin &#8212; and cool nights &#8212; which slows sap, keeping it in leaves instead of flowing back into the trees &#8212; mean plenty of bright reds to complement the other colors. A dry month helps &#8212; less water inhibits nitrogen uptake, which in turn spurs anthocyanin production. Poor soil can yield the same result.</p>
+		</div>
+	</article>
+	<article class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6 col-md-offset-1 col-lg-5 col-lg-offset-2">
+			<p>So: mystery, in some ways, resolved. Howard Neufeld can with some accuracy predict when the leaves will change. He can tell you how they do it &#8212; and even why. But if the leaves change, one thing doesn't. "The neat thing about predicting fall color for various groups," he says, "is I have to go out and look at the fall colors. There's no better job." He drives the same roads the visitors do, only probably more slowly. Which, according to Anderson, is a good idea.</p>
+			<p>"You don't drive these scenic byways," she says. "You slow dance your way."</p>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
+			<aside id="kruger-brothers" class="media">
+				<h3 class="media-heading">Carolina in the Fall</h3>
+				<iframe class="media-object full-width" width="100%" height="117" scrolling="no" frameborder="no" src="//w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F110228449&show_user=false&color=981e32"></iframe>
+				<p class="media-caption"><a class="btn btn-primary btn-xs pull-right" href="https://soundcloud.com/explore-asheville/kruger-brothers-carolina-in" target="_blank" onMouseDown="_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'Kruger Brothers Song', 'Play']);">Download song</a>Written by Uwe Kruger, Jens Kruger, and Joel Landsberg. Performed by the Kruger Brothers.</p>
+			</aside>
+		</div>
+	</article>
+</section>
+<hr />
+<section class="container">
+	<article class="row">
+		<blockquote class="media col-xs-12 col-xs-offset-1 col-sm-6 col-lg-4 col-lg-offset-1">
+			<img class="lazy media-object pull-right" src="http://www.exploreasheville.com/includes/images/assets/1pixel.gif" data-original="http://www.exploreasheville.com/includes/images/fall/Scott-Huler.jpg" width="100" nopin="nopin" alt="Scott Huler, journalist, producer and author of the book 'On the Grid'">
+			<p><a href="https://plus.google.com/+exploreasheville" rel="publisher" target="_blank"><span class="text-primary">Produced by the Asheville Convention &amp; Visitors Bureau.</span></a> Special thanks: Written by Scott Huler, journalist, producer and author of the book "On the Grid." Animation by Serge Donaldson. Video&nbsp;production by Amplified Media.</p>
+		</blockquote>
+		<div class="col-xs-12 col-xs-offset-1 col-sm-6 col-lg-4 col-lg-offset-2">
+			<a href="http://www.exploreasheville.com/seasonal-fun/fall/" target="_blank" title="ExploreAsheville.com opens in a new window." onMouseDown="_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'Footer', 'Logo']);"><img src="http://www.exploreasheville.com/includes/images/assets/1pixel.gif" data-original="http://www.exploreasheville.com/includes/images/assets/explore-asheville-logo.png" nopin="nopin" alt="Asheville, any way you like it" class="lazy img-responsive" /></a>
+		</div>	
+	</article>
+</section>
+<section class="container">
+	<aside class="row">
+		<p class="visible-xs clearfix"></p>
+		<div class="col-xs-12 col-sm-6 col-md-3">
+			<div class="thumbnail">
+				<a href="http://www.exploreasheville.com/seasonal-fun/fall/activities-and-excursions/" target="_blank"><img src="http://www.exploreasheville.com/includes/images/assets/1pixel.gif" data-original="http://www.exploreasheville.com/includes/images/fall/fall-biltmore.jpg" class="lazy img-responsive" alt="Biltmore in the Fall in Asheville, NC" /></a>
+				<div class="caption">
+					<h3 class="media-heading">Fall Activities &amp; Exursions</h3>
+					<p class="media-caption"><a href="http://www.exploreasheville.com/seasonal-fun/fall/activities-and-excursions/" target="_blank" class="btn btn-primary btn-sm" onMouseDown="_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'Footer', 'Fall Activities']);">Plan a Trip</a></p>
+				</div>
+			</div>
+		</div>
+		<p class="visible-xs clearfix"></p>
+		<div class="col-xs-12 col-sm-6 col-md-3">
+			<div class="thumbnail">
+				<a href="http://www.exploreasheville.com/seasonal-fun/fall/scenic-drives-rides-and-hikes/" target="_blank"><img src="http://www.exploreasheville.com/includes/images/assets/1pixel.gif" data-original="http://www.exploreasheville.com/includes/images/fall/fall-skyline.jpg" class="lazy img-responsive" alt="Skyline of Asheville, NC in the Fall" /></a>
+				<div class="caption">
+					<h3 class="media-heading">Scenic Drives, Rides &amp; Hikes</h3>
+					<p class="media-caption"><a href="http://www.exploreasheville.com/seasonal-fun/fall/scenic-drives-rides-and-hikes/" target="_blank" class="btn btn-primary btn-sm" onMouseDown="_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'Footer', 'Scenic Drives']);">See More</a></p>
+				</div>
+			</div>
+		</div>
+		<p class="visible-xs visible-sm clearfix"></p>
+		<div class="col-xs-12 col-sm-6 col-md-3">
+			<div class="thumbnail">
+				<a href="http://www.exploreasheville.com/seasonal-fun/fall/weekly-fall-forecast-and-color-report/" target="_blank"><img src="http://www.exploreasheville.com/includes/images/assets/1pixel.gif" data-original="http://www.exploreasheville.com/includes/images/fall/fall-mountains.jpg" class="lazy img-responsive" alt="Fall Colors in the Mountains near Asheville, NC" /></a>
+				<div class="caption">
+					<h3 class="media-heading">Weekly Fall Color Report</h3>
+					<p class="media-caption"><a href="http://www.exploreasheville.com/seasonal-fun/fall/weekly-fall-forecast-and-color-report/" target="_blank" class="btn btn-primary btn-sm" onMouseDown="_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'Footer', 'Color Reports']);">Get Updates</a></p>
+				</div>
+			</div>
+		</div>
+		<p class="visible-xs clearfix"></p>
+		<div class="col-xs-12 col-sm-6 col-md-3">
+			<div class="thumbnail">
+				<a href="http://www.exploreasheville.com/seasonal-fun/fall/finding-a-room-during-fall-foliage/" target="_blank"><img src="http://www.exploreasheville.com/includes/images/assets/1pixel.gif" data-original="http://www.exploreasheville.com/includes/images/fall/fall-grove-park.jpg" class="lazy img-responsive" alt="The Omni Grove Park Inn during Fall in Asheville, NC" /></a>
+				<div class="caption">
+					<h3 class="media-heading">Find A Room During Fall</h3>
+					<p class="media-caption"><a href="http://www.exploreasheville.com/seasonal-fun/fall/finding-a-room-during-fall-foliage/" target="_blank" class="btn btn-primary btn-sm" onMouseDown="_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'Footer', 'Find a Room']);">Learn More</a></p>
+				</div>
+			</div>
+		</div>
+		<p class="hidden-xs clearfix"></p>
+	</aside>
+</section>
+<hr />
+<section id="comments" class="container hidden-print">
+	<article class="row">
+		<div class="col-xs-12 col-md-8 col-md-offset-2">
+	    <div id="disqus_thread"></div>
+		</div>
+	</article>
 </section>
 
-
-	<!-- FOOTER -->
-<footer class="container">
-	<aside class="row">
-		<p class="pull-right"><a href="#">Back to top</a></p>
-		<p>&copy; 2013 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-	</aside>
+<footer id="copyright" class="hidden-xs hidden-sm hidden-ipad hidden-print">
+	<small>&copy; 2013 <a href="https://plus.google.com/+exploreasheville" rel="author" target="_blank">Asheville</a> Convention &amp; Visitors Bureau</small>
 </footer>
-
-<script src="http://www.exploreasheville.com/includes/scripts/bootstrap.min.js"></script>
+<div id="back-top" class="hidden-xs hidden-sm hidden-ipad hidden-print">
+	<a href="#top" onMouseDown="_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'Footer', 'Back To Top']);"><span class="glyphicon glyphicon-chevron-up"></span><br /><small>Back to top.</small></a>
+</div>
+<div id="keep-scrolling" class="hidden-xs hidden-sm hidden-ipad hidden-print">
+	<span class="glyphicon glyphicon-chevron-down"></span><br /><small>Keep Scrolling.</small>
+</div>
+<script type="text/javascript">
+	document.write("\<script src='//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js' type='text/javascript'>\<\/script>");
+</script>
+<script src="http://www.exploreasheville.com/includes/scripts/bootstrap.js"></script>
 <script src="http://www.exploreasheville.com/includes/scripts/bootstrap-plugins.js"></script>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-  </body>
+
+
+</body>
 </html>
