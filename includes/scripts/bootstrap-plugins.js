@@ -2,11 +2,12 @@
 var topfeaturette = $('#topvideo');
 var introheading = $('#header');
 var timelapse = $('#video');
-var videoheight;
+var videowidth = $(document).width();
+var videoheight = Math.floor(videowidth * .42);
 var intro = $("#intro");
 var flyovercontainer = $(".flyover-container");
 var flyover = $("#flyover");
-var flyoverheight;
+var flyoverheight = Math.floor(videowidth * .56);
 var elementafterflyover = flyovercontainer.next('section');
 var mapoverlaybutton = $('#map-flyover-map a');
 var mapoverlay = $('#map-flyover-map img');
@@ -23,23 +24,22 @@ var backtotop = $("#back-top");
 var keepscrolling = $("#keep-scrolling");
 var footer = $('#copyright');
 
-// fade in title
-introheading.delay(2000).animate({ opacity: 1 }, 2000);
-
-$(window).load(function(){
-	// start the intro video
-	videoheight = timelapse.height();
-	if (videoheight > '0'){
-		topfeaturette.css({'height': videoheight + 'px'});
-		intro.animate({'marginTop': videoheight + 'px'}, 2000);
-	}
-	else{
-		topfeaturette.css({'position': 'relative'});
-	}
-});
-
 $(document).ready(function(){
 	
+	// start the intro video
+	// videoheight = timelapse.height();
+	if (videoheight > '0'){
+		// fade in title
+		topfeaturette.css({'height': videoheight + 'px'}),
+		intro.delay(1000).transition({'marginTop': videoheight + 'px'}, 5000),
+		introheading.transition({ opacity: 1 }, 2000, 'ease');
+	}
+	else{
+		// fade in title
+		introheading.transition({ opacity: 1 }, 0),
+		topfeaturette.css({'position': 'relative'});
+	}
+
 	// turn on scrollspy, parallax
 	$('body').scrollspy({ target: '.top-nav' }).stellar();
 	$(".media").fitVids();
@@ -50,7 +50,7 @@ $(document).ready(function(){
 	});
 
 	// get flyover ready
-	flyoverheight = flyover.height();
+	// flyoverheight = flyover.height();
 	flyovercontainer.css('height', flyoverheight + 'px');
 	flyover.css({ opacity: 0 }, 0);
 
@@ -68,26 +68,26 @@ $(document).ready(function(){
 	intro.waypoint(function (direction) {
 		if(direction == 'down')
 			_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'Scroll', 'User Scrolled past the Timelapse Loop']),
-			topfeaturette.stop().animate({ opacity: 0 }, 1000),
+			topfeaturette.stop().transition({ opacity: 0 }, 1000),
 			timelapse[0].pause(),
-			$(backtotop).animate({opacity:1});
+			$(backtotop).transition({opacity:1});
 		else {
-			topfeaturette.stop().animate({ opacity: 1 }, 500),
+			topfeaturette.stop().transition({ opacity: 1 }, 500),
 			timelapse[0].play(),
-			$(backtotop).animate({opacity:0});
+			$(backtotop).transition({opacity:0});
 		}
 	}, { offset: '-50px' });
 
 	// fade in and start the flyover when it hits the screen
 	flyovercontainer.waypoint(function (direction) {
 		if(direction == 'down')
-			flyover.stop().animate({ opacity: 1 }, 1000),
+			flyover.stop().transition({ opacity: 1 }, 1000),
 			flyover[0].play();
 		else {
-			flyover.stop().animate({ opacity: 0 }, 1000),
+			flyover.stop().transition({ opacity: 0 }, 1000),
 			flyover[0].pause();
 		}
-	}, { offset: '100px' });
+	}, { offset: '50%' });
 	
 	// make the flyover stick to the top and have the content cover it
 	flyovercontainer.waypoint(function (direction) {
@@ -98,25 +98,25 @@ $(document).ready(function(){
 			flyovercontainer.removeClass('affix'),
 			elementafterflyover.css('marginTop', '0px');
 		}
-	}, { offset: '-340px' });
+	}, { offset: '-100px' });
 	
 	// fade out and stop the flyover when the user scrolls past it
 	flyovercontainer.waypoint(function (direction) {
 		if(direction == 'down')
 			_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'Scroll', 'User Scrolled to the Flyover']),
-			flyover.stop().animate({ opacity: 0 }, 1000),
+			flyover.stop().transition({ opacity: 0 }, 1000),
 			flyover[0].pause();
 		else {
-			flyover.stop().animate({ opacity: 1 }, 1000),
+			flyover.stop().transition({ opacity: 1 }, 1000),
 			flyover[0].play();
 		}
 	}, { offset: '-600px' });
 
 	// flyover overlay
 	mapoverlaybutton.hover(function() {
-		mapoverlay.stop().animate({ opacity: .9 }, 200);
+		mapoverlay.stop().transition({ opacity: .9 }, 200);
 	},function() {
-		mapoverlay.stop().animate({ opacity: 0 }, 500);
+		mapoverlay.stop().transition({ opacity: 0 }, 500);
 	});
 	// youtube
 	$.getScript('http://www.youtube.com/player_api');
@@ -142,15 +142,15 @@ $(document).ready(function(){
 	$("#comments").waypoint(function (direction) {
 		if(direction == 'down')
 			_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'Scroll', 'User Scrolled to the Comments']),
-			footer.stop().animate({ bottom: 0 }, 200);
+			footer.stop().transition({ bottom: 0 }, 200);
 		else {
-			footer.stop().animate({ bottom: '-58px' }, 200);
+			footer.stop().transition({ bottom: '-58px' }, 200);
 		}
 	}, { offset: '90%' });
 
 	// back-to-top
 	$(backtotop).find('a').click(function () {
-		$('body,html').animate({
+		$('body,html').transition({
 			scrollTop: 0
 		}, 800);
 		return false;
@@ -158,48 +158,48 @@ $(document).ready(function(){
 
 	// map
 	hotspotcontainer.hover(function() {
-		hotspots.stop().animate({ opacity: .5 }, 200);
+		hotspots.stop().transition({ opacity: .5 }, 200);
 	},function() {
-		hotspots.stop().animate({ opacity: 0 }, 200);
+		hotspots.stop().transition({ opacity: 0 }, 200);
 	});
 	
 	hotspotsinfo.each( function() {
-		$(this).animate({
+		$(this).transition({
 			opacity:0,
 			bottom:"-" + hotspotsinfoheight
 		}, 0);
 	});
 
 	$(hotspots).bind( "click", function() {
-		$(hotspotsinfo).stop().animate({
+		$(hotspotsinfo).stop().transition({
 			opacity:0,
 			bottom:"-" + hotspotsinfoheight
 		}, 200)
-		$(this).next(hotspotsinfo).stop().animate({
+		$(this).next(hotspotsinfo).stop().transition({
 			opacity: 1,
 			bottom: "-10px"
 		}, 200)
 	});
 	
 	$(closebutton).bind( "click", function() {
-		$(this).parent(hotspotsinfo).stop().animate({
+		$(this).parent(hotspotsinfo).stop().transition({
 			opacity:0,
 			bottom:"-" + hotspotsinfoheight
 		}, 200);
 	});
 
 	$(window).scroll(function() {
-		keepscrolling.stop().animate({opacity:0}, 250);
+		keepscrolling.stop().transition({opacity:0}, 250);
 		clearTimeout($.data(this, 'scrollTimer'));
 		
 		$(document).click(function() {
-			keepscrolling.stop().animate({opacity:0}, 250);
+			keepscrolling.stop().transition({opacity:0}, 250);
 			clearTimeout($.data(this, 'scrollTimer'));
 		});
 		
 		$.data(this, 'scrollTimer', setTimeout(function() {
 			if($(window).scrollTop() + $(window).height() != $(document).height()) {
-				keepscrolling.stop().animate({opacity:1}, 1000);
+				keepscrolling.stop().transition({opacity:1}, 1000);
 			}
 		}, 8000));
 		
