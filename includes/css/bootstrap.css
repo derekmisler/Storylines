@@ -4,7 +4,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
 audio,canvas,video{display:inline-block;max-width:100%;width:100%}
 audio:not([controls]){display:none;height:0}
 [hidden]{display:none}
-html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
+html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;overflow-x:hidden}
 body{margin:0}
 a:focus{outline:thin dotted}
 a:active,a:hover{outline:0}
