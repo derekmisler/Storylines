@@ -24,15 +24,19 @@ var backtotop = $("#back-top");
 var keepscrolling = $("#keep-scrolling");
 var footer = $('#copyright');
 
+$(window).load(function(){
+	intro.transition({'marginTop': videoheight + 'px'}, 1000);
+});
+
 $(document).ready(function(){
 	
 	// start the intro video
 	// videoheight = timelapse.height();
+	timelapse.transition({opacity: 1}, 1000);
 	if (videoheight > '0'){
 		// fade in title
 		topfeaturette.css({'height': videoheight + 'px'}),
-		intro.css({'marginTop': videoheight + 'px'}),
-		introheading.transition({ opacity: 1 }, 2000, 'ease');
+		introheading.transition({ opacity: 1 }, 2000);
 	}
 	else{
 		// fade in title
