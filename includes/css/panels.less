@@ -14,7 +14,7 @@
 
 // Panel contents
 .panel-body {
-  padding: 15px;
+  padding: @default-padding;
   .clearfix();
 }
 
@@ -67,7 +67,7 @@
 
 // Optional heading
 .panel-heading {
-  padding: 10px 15px;
+  padding: 10px @default-padding;
   border-bottom: 1px solid transparent;
   .border-top-radius(@panel-border-radius - 1);
 }
@@ -84,7 +84,7 @@
 
 // Optional footer (stays gray in every modifier class)
 .panel-footer {
-  padding: 10px 15px;
+  padding: 10px @default-padding;
   background-color: @panel-footer-bg;
   border-top: 1px solid @panel-inner-border;
   .border-bottom-radius(@panel-border-radius - 1);

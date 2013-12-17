@@ -74,16 +74,18 @@
 
 // Components
 // -------------------------
-// Based on 14px font-size and 1.428 line-height (~20px to start)
+// Based on 16px font-size and 1.428 line-height (~20px to start)
 
-@padding-base-vertical:          floor(@font-size-base / 2);
-@padding-base-horizontal:        @font-size-base;
+@default-padding:                @font-size-base;
 
-@padding-large-vertical:         @font-size-base;
-@padding-large-horizontal:       floor(@font-size-base * 2);
+@padding-base-vertical:          floor(@default-padding / 2);
+@padding-base-horizontal:        @default-padding;
 
-@padding-small-vertical:         floor(@font-size-base / 3);
-@padding-small-horizontal:       floor(@font-size-base / 2);
+@padding-large-vertical:         @default-padding;
+@padding-large-horizontal:       floor(@default-padding * 2);
+
+@padding-small-vertical:         floor(@default-padding / 3);
+@padding-small-horizontal:       floor(@default-padding / 2);
 
 @line-height-large:              1.4;
 @line-height-small:              1.8333333;
@@ -313,7 +315,7 @@
 // Navs
 // -------------------------
 
-@nav-link-padding:                          0px 15px;
+@nav-link-padding:                          0px @default-padding;
 @nav-link-hover-bg:                         transparent;
 
 @nav-disabled-link-color:                   @gray-light;
@@ -356,19 +358,19 @@
 // Pager
 // -------------------------
 
-@pager-border-radius:                  15px;
+@pager-border-radius:                  @default-padding;
 @pager-disabled-color:                 @gray-light;
 
 
 // Jumbotron
 // -------------------------
 
-@jumbotron-padding:              30px;
-@jumbotron-color:                inherit;
-@jumbotron-bg:                   @gray-lighter;
+@jumbotron-padding:              floor(@default-padding * 2);
+@jumbotron-color:                @gray-dark;
+@jumbotron-bg:                   @default-box-bg;
 @jumbotron-border:               @default-border-color;
 
-@jumbotron-heading-color:        inherit;
+@jumbotron-heading-color:        @brand-primary;
 
 
 // Form states and alerts
@@ -436,7 +438,7 @@
 // -------------------------
 @modal-inner-padding:         20px;
 
-@modal-title-padding:         15px;
+@modal-title-padding:         @default-padding;
 @modal-title-line-height:     @line-height-base;
 
 @modal-content-bg:                             @white;
@@ -450,7 +452,7 @@
 
 // Alerts
 // -------------------------
-@alert-padding:               15px;
+@alert-padding:               @default-padding;
 @alert-border-radius:         @border-radius-base;
 @alert-link-font-weight:      bold;
 

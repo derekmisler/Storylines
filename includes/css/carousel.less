@@ -199,11 +199,11 @@
   // Scale up the controls a smidge
   .carousel-control .icon-prev,
   .carousel-control .icon-next {
-    width: 30px;
-    height: 30px;
-    margin-top: -15px;
-    margin-left: -15px;
-    font-size: 30px;
+    width: floor(@default-padding * 2);
+    height: floor(@default-padding * 2);
+    margin-top: -(@default-padding);
+    margin-left: -(@default-padding);
+    font-size: floor (@font-size-base * 2);
   }
 
   // Show and left align the captions

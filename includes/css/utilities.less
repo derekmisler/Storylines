@@ -52,6 +52,7 @@
     text-decoration: none;
     padding: (@line-height-computed / 2);
     .transition(all .25s ease-in-out);
+    z-index:999999;
 }
 .utilities-text-dark{
     .utilities-text-light();
@@ -75,6 +76,17 @@
             .utilities-text-light;
         }
     }
+}
+#mapdrawer{
+    position:fixed;
+    right:0;
+    top:0;
+    text-align:center;
+    padding:0;
+    background-color: transparent;
+    border-bottom-left-radius: @border-radius-large;
+    .utilities-text-dark;
+    cursor:pointer;
 }
 #copyright{
     position:fixed;

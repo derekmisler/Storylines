@@ -1,51 +1,70 @@
-/*
- * Style tweaks
- * --------------------------------------------------
- */
-html,
-body {
-  overflow-x: hidden; /* Prevent scroll on narrow devices */
-}
-body {
-  padding-top: 70px;
-}
-footer {
-  padding: 30px 0;
-}
+@off-canvas-width: 62.5%;
 
-/*
- * Off Canvas
- * --------------------------------------------------
- */
-@media screen and (max-width: 767px) {
-  .row-offcanvas {
+.row-offcanvas {
     position: relative;
-    -webkit-transition: all 0.25s ease-out;
-    -moz-transition: all 0.25s ease-out;
-    transition: all 0.25s ease-out;
-  }
+    .transition(all 0.25s ease-out);
+}
 
-  .row-offcanvas-right
-  .sidebar-offcanvas {
-    right: -50%; /* 6 columns */
-  }
+.row-offcanvas-right
+.sidebar-offcanvas {
+    right: -@off-canvas-width;
+}
 
-  .row-offcanvas-left
-  .sidebar-offcanvas {
-    left: -50%; /* 6 columns */
-  }
+.row-offcanvas-left
+.sidebar-offcanvas {
+    left: -@off-canvas-width;
+}
 
-  .row-offcanvas-right.active {
-    right: 50%; /* 6 columns */
-  }
+.row-offcanvas-right.active {
+    right: @off-canvas-width;
+}
 
-  .row-offcanvas-left.active {
-    left: 50%; /* 6 columns */
-  }
+.row-offcanvas-left.active {
+    left: @off-canvas-width;
+}
 
-  .sidebar-offcanvas {
+.sidebar-offcanvas {
     position: absolute;
     top: 0;
-    width: 50%; /* 6 columns */
-  }
+    width: @off-canvas-width;
+    height:100%;
+    padding: floor(@default-padding * 2);
+    margin-right:-@default-padding;
+    .box-shadow(inset 5px 0px 10px -5px rgba(0,0,0,1));
+    background-color:@avl-dark-gray;
+    h1, h2, h3, h4, h5, h6,
+    .h1, .h2, .h3, .h4, .h5, .h6{
+      color: @gray-lighter;
+      text-shadow: -1px -1px 1px @black;
+      small {
+        color: @gray-light;
+      }
+    }
+    p, li{
+      color: @gray-lighter;
+    }
+}
+
+@media (max-width: @screen-tablet) {
+    .row-offcanvas-right
+    .sidebar-offcanvas {
+        right: -100%;
+    }
+    
+    .row-offcanvas-left
+    .sidebar-offcanvas {
+        left: -100%;
+    }
+    
+    .row-offcanvas-right.active {
+        right: 100%;
+    }
+    
+    .row-offcanvas-left.active {
+        left: 100%;
+    }
+    
+    .sidebar-offcanvas {
+        width: 100%;
+    }
 }
