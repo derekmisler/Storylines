@@ -40,9 +40,7 @@ $(document).ready(function(){
 	
 	// back-to-top
 	$(backtotop).find('a').click(function () {
-		$('body,html').transition({
-			scrollTop: 0
-		}, 800);
+		$('body,html').transition({scrollTop: 0}, 800);
 		return false;
 	});
   
