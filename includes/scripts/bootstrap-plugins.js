@@ -47,6 +47,22 @@ $(document).ready(function(){
 	// turn on scrollspy, parallax
 	$('body').scrollspy({ target: '.top-nav' }).stellar();
 	$(".media").fitVids();
+	
+	
+	// youtube
+	$.getScript('http://www.youtube.com/player_api');
+	
+	loadYouTubePlayer = function(playerID) { the_player = new YT.Player(playerID, { events: { 'onReady': playYouTubeVideo } }); };
+	
+	function playYouTubeVideo(event) { event.target.playVideo(); }
+	
+	$('.playbutton').click(function() {
+		var idType = 'data-video-id';
+		var id = $(this).attr(idType);
+		loadYouTubePlayer(id);
+		return false;
+	});
+	
 });
 $(window).load(function(){
 	intro.transition({'marginTop': videoheight + 'px'}, 1000);
@@ -59,6 +75,7 @@ $(window).load(function(){
 	// flyoverheight = flyover.height();
 	flyovercontainer.css('height', flyoverheight + 'px');
 	flyover.css({ opacity: 0 }, 0);
+
 	// W
 	// A
 	// Y
@@ -123,26 +140,10 @@ $(window).load(function(){
 	},function() {
 		mapoverlay.stop().transition({ opacity: 0 }, 500);
 	});
-	// youtube
-	$.getScript('http://www.youtube.com/player_api');
-	
-	loadYouTubePlayer = function(playerID) {
-		the_player = new YT.Player(playerID, {
-			events: { 'onReady': playYouTubeVideo }
-		});
-	};  
-	
-	function playYouTubeVideo(event) {
-		event.target.playVideo();
-	}
-	
-	$('.playbutton').click(function() {
-		var idType = 'data-video-id';
-		var id = $(this).attr(idType);
-		loadYouTubePlayer(id);
-		return false;
-	});	
-	
+
+	// load external iframes
+	$('#soundcloud').html('<iframe width="100%" height="117" scrolling="no" frameborder="no" src="//w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F110228449&show_user=false&color=981e32"></iframe>');
+
 	// footer
 	$("#comments").waypoint(function (direction) {
 		if(direction == 'down')
