@@ -24,10 +24,6 @@ var backtotop = $("#back-top");
 var keepscrolling = $("#keep-scrolling");
 var footer = $('#copyright');
 
-$(window).load(function(){
-	intro.transition({'marginTop': videoheight + 'px'}, 1000);
-});
-
 $(document).ready(function(){
 
 	$('h2,h3,p').each(function() {
@@ -51,7 +47,9 @@ $(document).ready(function(){
 	// turn on scrollspy, parallax
 	$('body').scrollspy({ target: '.top-nav' }).stellar();
 	$(".media").fitVids();
-	Shadowbox.init();
+});
+$(window).load(function(){
+	intro.transition({'marginTop': videoheight + 'px'}, 1000);
 	$("img.lazy").lazyload({
 		threshold : 340,
 		effect : "fadeIn"
@@ -61,7 +59,6 @@ $(document).ready(function(){
 	// flyoverheight = flyover.height();
 	flyovercontainer.css('height', flyoverheight + 'px');
 	flyover.css({ opacity: 0 }, 0);
-
 	// W
 	// A
 	// Y
