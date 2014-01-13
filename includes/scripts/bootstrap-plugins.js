@@ -19,7 +19,7 @@ var hotspotcontainer = $(".hotspotcontainer");
 var hotspots = $(".hotspotbutton");
 var hotspotsinfo = $(".hotspotcontainer div .info");
 var hotspotsinfoheight = '320px';
-var closebutton = $(".info button.close");
+var closebutton = $("button.close");
 var backtotop = $("#back-top");
 var keepscrolling = $("#keep-scrolling");
 var footer = $('#copyright');
@@ -29,7 +29,11 @@ $(window).load(function(){
 });
 
 $(document).ready(function(){
-	
+
+	$('h2,h3,p').each(function() {
+		$(this).html($(this).html().replace(/\s([^\s<]{0,10})\s*$/,'&nbsp;$1'));
+	});
+
 	// start the intro video
 	// videoheight = timelapse.height();
 	timelapse.transition({opacity: 1}, 1000);
@@ -74,11 +78,11 @@ $(document).ready(function(){
 			_gaq.push(['pageTracker._trackEvent', 'Science of Fall Color', 'Scroll', 'User Scrolled past the Timelapse Loop']),
 			topfeaturette.stop().transition({ opacity: 0 }, 1000),
 			timelapse[0].pause(),
-			$(backtotop).transition({opacity:1});
+			$(backtotop).transition({opacity:1}, 1000);
 		else {
 			topfeaturette.stop().transition({ opacity: 1 }, 500),
 			timelapse[0].play(),
-			$(backtotop).transition({opacity:0});
+			$(backtotop).transition({opacity:0}, 500);
 		}
 	}, { offset: '-50px' });
 
@@ -153,12 +157,10 @@ $(document).ready(function(){
 	}, { offset: '90%' });
 
 	// back-to-top
-	$(backtotop).find('a').click(function () {
-		$('body,html').transition({
-			scrollTop: 0
-		}, 800);
-		return false;
-	});
+//	$(backtotop).find('a').bind( "click", function () {
+//		$(window).transition({scrollTop: 0}, 500);
+//		return false;
+//	});
 
 	// map
 	hotspotcontainer.hover(function() {
@@ -181,7 +183,7 @@ $(document).ready(function(){
 		}, 200)
 		$(this).next(hotspotsinfo).stop().transition({
 			opacity: 1,
-			bottom: "-10px"
+			bottom: "0px"
 		}, 200)
 	});
 	
@@ -226,6 +228,7 @@ function initialize() {
 function loadScript() {
   var script = document.createElement('script');
   script.type = 'text/javascript';
+	script.async = true;
   script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' + 'callback=initialize';
   document.body.appendChild(script);
 }
@@ -238,64 +241,67 @@ var disqus_shortname = 'exploreashevillefall'; // required: replace example with
 
 // Comments code
 (function() {
-		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		var dsq = document.createElement('script');
+		dsq.type = 'text/javascript';
+		dsq.async = true;
 		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 })();
 // Comment count code
 (function () {
-		var s = document.createElement('script'); s.async = true;
+		var s = document.createElement('script');
+		s.async = true;
 		s.type = 'text/javascript';
 		s.src = '//' + disqus_shortname + '.disqus.com/count.js';
 		(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
 }());
   
 // Twitter SDK
-!function(d,s,id){
-	var js,fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location)?'http':'https';
-	if(!d.getElementById(id)){
-		js=d.createElement(s);
-		js.async = true;
-		js.id=id;
-		js.src=p+'://platform.twitter.com/widgets.js';
-		fjs.parentNode.insertBefore(js,fjs);
-	}
-}(document, 'script', 'twitter-wjs');
+//!function(d,s,id){
+//	var js,fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location)?'http':'https';
+//	if(!d.getElementById(id)){
+//		js=d.createElement(s);
+//		js.async = true;
+//		js.id=id;
+//		js.src=p+'://platform.twitter.com/widgets.js';
+//		fjs.parentNode.insertBefore(js,fjs);
+//	}
+//}(document, 'script', 'twitter-wjs');
 
 
 // Google+ button
-(function() {
-	var po = document.createElement('script');
-	po.type = 'text/javascript';
-	po.async = true;
-	po.src = 'https://apis.google.com/js/plusone.js';
-	var s = document.getElementsByTagName('script')[0];
-	s.parentNode.insertBefore(po, s);
-})();
+//(function() {
+//	var po = document.createElement('script');
+//	po.type = 'text/javascript';
+//	po.async = true;
+//	po.src = 'https://apis.google.com/js/plusone.js';
+//	var s = document.getElementsByTagName('script')[0];
+//	s.parentNode.insertBefore(po, s);
+//})();
 
 
 
 /* fb like button
  * ========================================================== */
 
-(function(d, s, id) {
-	var js, fjs = d.getElementsByTagName(s)[0];
-	if (d.getElementById(id)) return;
-	js = d.createElement(s); js.id = id;
-  js.async = true;
-	js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=183563235164799";
-	fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
+//(function(d, s, id) {
+//	var js, fjs = d.getElementsByTagName(s)[0];
+//	if (d.getElementById(id)) return;
+//	js = d.createElement(s); js.id = id;
+//  js.async = true;
+//	js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=183563235164799";
+//	fjs.parentNode.insertBefore(js, fjs);
+//}(document, 'script', 'facebook-jssdk'));
 
 
 // Pinterest
-(function(d){
-  var f = d.getElementsByTagName('SCRIPT')[0], p = d.createElement('SCRIPT');
-  p.type = 'text/javascript';
-  p.async = true;
-  p.src = '//assets.pinterest.com/js/pinit.js';
-  f.parentNode.insertBefore(p, f);
-}(document));
+//(function(d){
+//  var f = d.getElementsByTagName('SCRIPT')[0], p = d.createElement('SCRIPT');
+//  p.type = 'text/javascript';
+//  p.async = true;
+//  p.src = '//assets.pinterest.com/js/pinit.js';
+//  f.parentNode.insertBefore(p, f);
+//}(document));
 
 
 	
