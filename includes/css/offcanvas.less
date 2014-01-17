@@ -2,7 +2,8 @@
 
 .row-offcanvas {
     position: relative;
-    .transition(all 0.25s ease-out);
+    .transition(all .25s ease-in-out);
+    height:100%;
 }
 
 .row-offcanvas-right
@@ -32,6 +33,7 @@
     margin-right:-@default-padding;
     .box-shadow(inset 5px 0px 10px -5px rgba(0,0,0,1));
     background-color:@avl-dark-gray;
+    min-height:100%;
     h1, h2, h3, h4, h5, h6,
     .h1, .h2, .h3, .h4, .h5, .h6{
       color: @gray-lighter;

@@ -161,22 +161,6 @@ $(document).ready(function(){
 	$(".media").fitVids();
 	
 	
-	// youtube
-	$.getScript('http://www.youtube.com/player_api');
-	
-	loadYouTubePlayer = function(playerID) { the_player = new YT.Player(playerID, { events: { 'onReady': playYouTubeVideo } }); };
-	
-	function playYouTubeVideo(event) { event.target.playVideo(); }
-	
-	$('.playbutton').click(function() {
-		var idType = 'data-video-id';
-		var id = $(this).attr(idType);
-		loadYouTubePlayer(id);
-		return false;
-	});
-
-	
-
 });
 $(window).load(function(){
 	intro.transition({'marginTop': videoheight + 'px'}, 1000);
@@ -234,7 +218,7 @@ $(window).load(function(){
 			flyovercontainer.removeClass('affix'),
 			elementafterflyover.css('marginTop', '0px');
 		}
-	}, { offset: '-100px' });
+	}, { offset: '-300px' });
 	
 	// fade out and stop the flyover when the user scrolls past it
 	flyovercontainer.waypoint(function (direction) {
@@ -356,7 +340,6 @@ var disqus_shortname = 'exploreashevillefall'; // required: replace example with
 (function() {
 		var dsq = document.createElement('script');
 		dsq.type = 'text/javascript';
-
 		dsq.async = true;
 		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
@@ -369,55 +352,6 @@ var disqus_shortname = 'exploreashevillefall'; // required: replace example with
 		s.src = '//' + disqus_shortname + '.disqus.com/count.js';
 		(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
 }());
-  
-// Twitter SDK
-//!function(d,s,id){
-//	var js,fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location)?'http':'https';
-//	if(!d.getElementById(id)){
-//		js=d.createElement(s);
-//		js.async = true;
-//		js.id=id;
-//		js.src=p+'://platform.twitter.com/widgets.js';
-//		fjs.parentNode.insertBefore(js,fjs);
-//	}
-//}(document, 'script', 'twitter-wjs');
-
-
-// Google+ button
-//(function() {
-//	var po = document.createElement('script');
-//	po.type = 'text/javascript';
-//	po.async = true;
-//	po.src = 'https://apis.google.com/js/plusone.js';
-//	var s = document.getElementsByTagName('script')[0];
-//	s.parentNode.insertBefore(po, s);
-//})();
-
-
-
-/* fb like button
- * ========================================================== */
-
-//(function(d, s, id) {
-//	var js, fjs = d.getElementsByTagName(s)[0];
-//	if (d.getElementById(id)) return;
-//	js = d.createElement(s); js.id = id;
-//  js.async = true;
-//	js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=183563235164799";
-//	fjs.parentNode.insertBefore(js, fjs);
-//}(document, 'script', 'facebook-jssdk'));
-
-
-// Pinterest
-//(function(d){
-//  var f = d.getElementsByTagName('SCRIPT')[0], p = d.createElement('SCRIPT');
-//  p.type = 'text/javascript';
-//  p.async = true;
-//  p.src = '//assets.pinterest.com/js/pinit.js';
-//  f.parentNode.insertBefore(p, f);
-//}(document));
-
-
 	
 setTimeout(function(){var a=document.createElement("script");
 var b=document.getElementsByTagName("script")[0];
