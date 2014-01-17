@@ -230,7 +230,7 @@ $(window).load(function(){
 			flyover.stop().transition({ opacity: 1 }, 1000),
 			flyover[0].play();
 		}
-	}, { offset: '-600px' });
+	}, { offset: '-900px' });
 
 	// flyover overlay
 	mapoverlaybutton.hover(function() {

@@ -758,6 +758,9 @@ pre code {
 .container p {
   font-size: 15px;
 }
+.container.full-height {
+  height: 100%;
+}
 .row {
   margin-left: 0;
   margin-right: 0;
@@ -5359,7 +5362,6 @@ button.close {
   position: relative;
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
-  height: 100%;
 }
 .row-offcanvas-right .sidebar-offcanvas {
   right: -62.5%;
@@ -6032,6 +6034,13 @@ div.sb-message a:visited {
     position: relative;
   }
 }
+.utilities {
+  position: fixed;
+  text-align: center;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
 .utilities-text-light {
   background-color: rgba(244, 244, 244, 0.5);
   color: rgba(55, 66, 74, 0.9);
@@ -6092,11 +6101,12 @@ div.sb-message a:visited {
 }
 #mapdrawer {
   position: fixed;
-  right: 0;
-  top: 0;
   text-align: center;
   padding: 0;
   background-color: transparent;
+  cursor: pointer;
+  right: 0;
+  top: 0;
   border-bottom-left-radius: 6px;
   background-color: rgba(244, 244, 244, 0.5);
   color: rgba(55, 66, 74, 0.9);
@@ -6109,15 +6119,57 @@ div.sb-message a:visited {
   background-color: rgba(55, 66, 74, 0.5);
   color: rgba(244, 244, 244, 0.9);
   text-shadow: -1px -1px 0px rgba(0, 0, 0, 0.09999999999999998);
-  cursor: pointer;
 }
-#copyright {
+#next-story {
   position: fixed;
-  right: 0;
-  bottom: -58px;
   text-align: center;
   padding: 0;
   background-color: transparent;
+  cursor: pointer;
+  right: 0;
+  bottom: 0;
+  border-top-left-radius: 6px;
+  background-color: rgba(244, 244, 244, 0.5);
+  color: rgba(55, 66, 74, 0.9);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.09999999999999998);
+  text-decoration: none;
+  padding: 14.5px;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  z-index: 999999;
+  background-color: rgba(55, 66, 74, 0.5);
+  color: rgba(244, 244, 244, 0.9);
+  text-shadow: -1px -1px 0px rgba(0, 0, 0, 0.09999999999999998);
+}
+#previous-story {
+  position: fixed;
+  text-align: center;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  left: 0;
+  bottom: 0;
+  border-top-right-radius: 6px;
+  background-color: rgba(244, 244, 244, 0.5);
+  color: rgba(55, 66, 74, 0.9);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.09999999999999998);
+  text-decoration: none;
+  padding: 14.5px;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  z-index: 999999;
+  background-color: rgba(55, 66, 74, 0.5);
+  color: rgba(244, 244, 244, 0.9);
+  text-shadow: -1px -1px 0px rgba(0, 0, 0, 0.09999999999999998);
+}
+#copyright {
+  position: fixed;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  right: 0;
+  bottom: -58px;
+  text-align: center;
   border-top-left-radius: 6px;
   background-color: rgba(244, 244, 244, 0.5);
   color: rgba(55, 66, 74, 0.9);
@@ -6135,13 +6187,13 @@ div.sb-message a:visited {
   color: rgba(244, 244, 244, 0.9);
 }
 #keep-scrolling {
-  opacity: 0;
-  filter: alpha(opacity=0);
   position: fixed;
+  text-align: center;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
   bottom: 0;
   left: 47%;
-  text-align: center;
-  z-index: 9999999;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
   background-color: rgba(244, 244, 244, 0.5);

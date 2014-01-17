@@ -2,36 +2,32 @@
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700|Open+Sans+Condensed:700|Gentium+Book+Basic:700italic' rel='stylesheet' type='text/css'>
 <link href="http://www.exploreasheville.com/includes/css/bootstrap.css" rel='stylesheet' type='text/css' />
 
-<div class="container">
+<div class="container full-height">
 	<section class="row row-offcanvas row-offcanvas-right">
 
-		<article class="col-xs-12 col-md-6 col-md-offset-4">
-			<div class="row">
-				<div class="col-xs-12">
-					<h1>Blue Ridge Parkway!</h1>
-					<p>The Blue Ridge Parkway is a National Parkway and All-American Road in the United States, noted for its scenic beauty. It runs for 469 miles (755 km) through twenty-nine Virginia and North Carolina counties, mostly along the Blue Ridge, a major mountain chain that is part of the Appalachian Mountains. Its southern terminus is on the boundary between Great Smoky Mountains National Park and the Cherokee Indian Reservation in North Carolina, from which it travels north to Shenandoah National Park in Virginia and offers access to the Skyline Drive. While the two roads join together end-to-end, they are separate and distinct entities, built as two different projects and managed by two different National Park Service units. The Blue Ridge Parkway was built to connect Shenandoah National Park to the Great Smoky Mountains National Park.</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consequat pretium pretium. Suspendisse cursus arcu vitae arcu tincidunt posuere. Integer ornare velit vel gravida vulputate. Donec hendrerit arcu eu urna vehicula, eget scelerisque dui tincidunt. Vestibulum tellus justo, pretium eu sem sagittis, feugiat pretium elit. Fusce quis ligula dui. Suspendisse id tempor elit. Donec facilisis congue eros, eget semper eros vulputate eu. Vivamus at semper risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel blandit neque. Donec augue neque, consectetur eu euismod ac, molestie sit amet metus. Nulla mattis viverra placerat. Cras lacinia sapien non elit elementum egestas. Proin feugiat nibh non ante feugiat vehicula a ac leo.</p>
-					<p>Nam risus felis, tincidunt ut tortor et, tempus luctus tortor. Suspendisse volutpat vulputate ornare. Etiam pulvinar dapibus nibh non hendrerit. Nam non fermentum ante. Ut sodales, eros nec pellentesque hendrerit, tellus arcu gravida quam, quis lacinia leo justo id felis. Mauris vitae feugiat lectus, non egestas turpis. Pellentesque a ligula purus. In varius fringilla nibh eu egestas. Mauris aliquam id est nec sollicitudin. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus at auctor libero. Morbi tempus lobortis mauris commodo sagittis. Quisque fermentum nunc quis ante adipiscing egestas.</p>
-				</div>
-			</div>
-
-
-			
-			<div id="mapdrawer">
-				<span class="glyphicon glyphicon-picture"></span><br /><small>View map.</small>
-			</div>
+		<article class="col-xs-12">
+			<div class="row" id="content"></div>
 		</article><!--/left side-->
 
 		<aside class="sidebar-offcanvas" id="sidebar" role="navigation">
+			<nav class="stories row" role="navigation">
+				<div class="col-xs-6"><a href="#" id="story-1">Story 1</a></div>
+				<div class="col-xs-6"><a href="#" id="story-2">Story 2</a></div>
+				<div class="col-xs-6"><a href="#" id="story-3">Story 3</a></div>
+				<div class="col-xs-6"><a href="#" id="story-4">Story 4</a></div>
+				<div class="col-xs-6"><a href="#" id="story-5">Story 5</a></div>
+				<div class="col-xs-6"><a href="#" id="story-6">Story 6</a></div>
+				<div class="col-xs-6"><a href="#" id="story-7">Story 7</a></div>
+				<div class="col-xs-6"><a href="#" id="story-8">Story 8</a></div>
+			</nav><!--/left side-->
 			<div class="media">
-				<h3 class="media-heading">BRP Map</h3>
-				<p class="media-caption">Captions caption caption caption caption caption caption caption caption caption caption caption caption caption caption caption caption caption caption caption caption caption caption caption caption caption caption caption caption caption caption caption caption caption caption caption caption caption caption caption caption caption caption caption caption caption caption caption caption</p>
 				<iframe id="map_canvas" src="https://mapsengine.google.com/map/u/0/embed?mid=zgmMK7LBeUGI.kW2CiDEupeS8&wmode=opaque" class="media-object full-width" width="100%" height="1000px"></iframe>
 			</div>
 		</aside><!--/right side map-->
 		
 	</section><!--/row-->
 </div><!--/.container-->
+<div id="mapdrawer"><span class="glyphicon glyphicon-picture"></span><br /><small>View map.</small></div>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
