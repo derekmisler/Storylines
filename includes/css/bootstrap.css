@@ -5172,6 +5172,7 @@ button.close {
 .featurette img,
 .featurette-mobile img {
   position: relative;
+  width: 100%;
   display: block;
   z-index: 0;
 }
@@ -5282,6 +5283,7 @@ button.close {
 .flyover-container #video,
 .flyover-container img {
   position: relative;
+  width: 100%;
   display: block;
   z-index: 0;
 }
@@ -5337,6 +5339,7 @@ button.close {
 }
 .flyover-container #flyover {
   position: relative;
+  width: 100%;
   display: block;
   z-index: 0;
 }
@@ -5542,6 +5545,7 @@ button.close {
   box-shadow: inset 5px 0px 10px -5px #000000;
   background-color: #37424a;
   min-height: 100%;
+  overflow-y: scroll;
 }
 .sidebar-offcanvas h1,
 .sidebar-offcanvas h2,
@@ -6200,9 +6204,8 @@ div.sb-message a:visited {
   cursor: pointer;
 }
 .utilities-text-light {
-  background-color: rgba(244, 244, 244, 0.5);
   color: rgba(55, 66, 74, 0.9);
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.09999999999999998);
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.050000000000000044);
   text-decoration: none;
   padding: 14.5px;
   -webkit-transition: all 0.25s ease-in-out;
@@ -6210,9 +6213,8 @@ div.sb-message a:visited {
   z-index: 999999;
 }
 .utilities-text-dark {
-  background-color: rgba(244, 244, 244, 0.5);
   color: rgba(55, 66, 74, 0.9);
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.09999999999999998);
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.050000000000000044);
   text-decoration: none;
   padding: 14.5px;
   -webkit-transition: all 0.25s ease-in-out;
@@ -6234,9 +6236,8 @@ div.sb-message a:visited {
 #back-top a {
   display: block;
   border-top-right-radius: 6px;
-  background-color: rgba(244, 244, 244, 0.5);
   color: rgba(55, 66, 74, 0.9);
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.09999999999999998);
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.050000000000000044);
   text-decoration: none;
   padding: 14.5px;
   -webkit-transition: all 0.25s ease-in-out;
@@ -6248,16 +6249,15 @@ div.sb-message a:visited {
 }
 #back-top a:hover,
 #back-top a:focus {
-  background-color: rgba(244, 244, 244, 0.5);
   color: rgba(55, 66, 74, 0.9);
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.09999999999999998);
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.050000000000000044);
   text-decoration: none;
   padding: 14.5px;
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
   z-index: 999999;
 }
-#mapdrawer {
+#drawer {
   position: fixed;
   text-align: center;
   padding: 0;
@@ -6266,59 +6266,13 @@ div.sb-message a:visited {
   right: 0;
   top: 0;
   border-bottom-left-radius: 6px;
-  background-color: rgba(244, 244, 244, 0.5);
   color: rgba(55, 66, 74, 0.9);
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.09999999999999998);
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.050000000000000044);
   text-decoration: none;
   padding: 14.5px;
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
   z-index: 999999;
-  background-color: rgba(55, 66, 74, 0.5);
-  color: rgba(244, 244, 244, 0.9);
-  text-shadow: -1px -1px 0px rgba(0, 0, 0, 0.09999999999999998);
-}
-#next-story {
-  position: fixed;
-  text-align: center;
-  padding: 0;
-  background-color: transparent;
-  cursor: pointer;
-  right: 0;
-  bottom: 0;
-  border-top-left-radius: 6px;
-  background-color: rgba(244, 244, 244, 0.5);
-  color: rgba(55, 66, 74, 0.9);
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.09999999999999998);
-  text-decoration: none;
-  padding: 14.5px;
-  -webkit-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
-  z-index: 999999;
-  background-color: rgba(55, 66, 74, 0.5);
-  color: rgba(244, 244, 244, 0.9);
-  text-shadow: -1px -1px 0px rgba(0, 0, 0, 0.09999999999999998);
-}
-#previous-story {
-  position: fixed;
-  text-align: center;
-  padding: 0;
-  background-color: transparent;
-  cursor: pointer;
-  left: 0;
-  bottom: 0;
-  border-top-right-radius: 6px;
-  background-color: rgba(244, 244, 244, 0.5);
-  color: rgba(55, 66, 74, 0.9);
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.09999999999999998);
-  text-decoration: none;
-  padding: 14.5px;
-  -webkit-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
-  z-index: 999999;
-  background-color: rgba(55, 66, 74, 0.5);
-  color: rgba(244, 244, 244, 0.9);
-  text-shadow: -1px -1px 0px rgba(0, 0, 0, 0.09999999999999998);
 }
 #copyright {
   position: fixed;
@@ -6329,9 +6283,8 @@ div.sb-message a:visited {
   bottom: -58px;
   text-align: center;
   border-top-left-radius: 6px;
-  background-color: rgba(244, 244, 244, 0.5);
   color: rgba(55, 66, 74, 0.9);
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.09999999999999998);
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.050000000000000044);
   text-decoration: none;
   padding: 14.5px;
   -webkit-transition: all 0.25s ease-in-out;
@@ -6354,9 +6307,8 @@ div.sb-message a:visited {
   left: 47%;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
-  background-color: rgba(244, 244, 244, 0.5);
   color: rgba(55, 66, 74, 0.9);
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.09999999999999998);
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.050000000000000044);
   text-decoration: none;
   padding: 14.5px;
   -webkit-transition: all 0.25s ease-in-out;
@@ -6383,9 +6335,8 @@ div.sb-message a:visited {
   border-bottom-right-radius: 6px;
   border-top-right-radius: 6px;
   cursor: help;
-  background-color: rgba(244, 244, 244, 0.5);
   color: rgba(55, 66, 74, 0.9);
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.09999999999999998);
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.050000000000000044);
   text-decoration: none;
   padding: 14.5px;
   -webkit-transition: all 0.25s ease-in-out;
@@ -6397,9 +6348,8 @@ div.sb-message a:visited {
 }
 #map-flyover-map a:hover,
 #map-flyover-map a:focus {
-  background-color: rgba(244, 244, 244, 0.5);
   color: rgba(55, 66, 74, 0.9);
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.09999999999999998);
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.050000000000000044);
   text-decoration: none;
   padding: 14.5px;
   -webkit-transition: all 0.25s ease-in-out;

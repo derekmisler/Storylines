@@ -80,12 +80,13 @@
 var stories = $('.stories div');
 var storiesLocation = 'http://localhost/includes/docs/storylines/brp/';
 var content = $('#content');
-var sidedrawer = $('#mapdrawer');
+var sidedrawer = $('#drawer');
 var sidedrawertext = $(sidedrawer).find('small')[0];
 
 $(document).ready(function(){
-	$.stellar({
+	$('body').stellar({
 		responsive: true,
+		positionProperty: 'transform',
 		horizontalScrolling: false
 	});
 	$(".media").fitVids();

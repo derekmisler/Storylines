@@ -52,9 +52,8 @@
     cursor:pointer;
 }
 .utilities-text-light{
-    background-color: fadeout(@body-bg, 50%);
     color: fadeout(@avl-dark-gray, 10%);
-    text-shadow: 1px 1px 1px fadeout(@black, 90%);
+    text-shadow: 1px 1px 0px fadeout(@black, 95%);
     text-decoration: none;
     padding: (@line-height-computed / 2);
     .transition(all .25s ease-in-out);
@@ -83,26 +82,12 @@
         }
     }
 }
-#mapdrawer{
+#drawer{
     .utilities;
     right:0;
     top:0;
     border-bottom-left-radius: @border-radius-large;
-    .utilities-text-dark;
-}
-#next-story{
-    .utilities;
-    right:0;
-    bottom:0;
-    border-top-left-radius: @border-radius-large;
-    .utilities-text-dark;
-}
-#previous-story{
-    .utilities;
-    left:0;
-    bottom:0;
-    border-top-right-radius: @border-radius-large;
-    .utilities-text-dark;
+    .utilities-text-light;
 }
 #copyright{
     .utilities;
