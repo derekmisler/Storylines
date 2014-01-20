@@ -123,9 +123,9 @@ $(document).ready(function(){
 	// map sidebar
 	$(sidedrawer).click(function() {
     $('.row-offcanvas').toggleClass('active');
-    $(sidedrawertext).text(function(_, oldText) {
-			return oldText === 'Hide map.' ? 'View map.' : 'Hide map.';
-		});
+    //$(sidedrawertext).text(function(_, oldText) {
+//			return oldText === 'Close' ? 'Information' : 'Close';
+//		});
 	});
 	
 	$(stories).click(function() {
