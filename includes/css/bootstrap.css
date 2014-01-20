@@ -327,6 +327,7 @@ img {
 }
 .img-responsive {
   display: block;
+  position: relative;
   max-width: 100%;
 }
 .img-rounded {
@@ -343,6 +344,7 @@ img {
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   display: inline-block;
+  position: relative;
   max-width: 100%;
 }
 .img-circle {
@@ -470,7 +472,7 @@ h6 small,
 h1,
 h2,
 h3 {
-  margin-top: 29px;
+  margin-top: 0;
   margin-bottom: 14px;
   text-transform: uppercase;
 }
@@ -4457,11 +4459,13 @@ a.list-group-item.active > .badge,
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   display: inline-block;
+  position: relative;
   max-width: 100%;
   display: block;
 }
 .thumbnail > img {
   display: block;
+  position: relative;
   max-width: 100%;
 }
 a.thumbnail:hover,
@@ -4681,6 +4685,7 @@ a.thumbnail:focus {
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   display: inline-block;
+  position: relative;
   max-width: 100%;
   display: block;
   margin-left: auto;
@@ -4796,6 +4801,7 @@ a.list-group-item:focus {
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   display: inline-block;
+  position: relative;
   max-width: 100%;
   margin-bottom: 29px;
   background-color: #eae7db;
@@ -5111,6 +5117,7 @@ button.close {
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   display: inline-block;
+  position: relative;
   max-width: 100%;
   margin-bottom: 29px;
   background-color: #eae7db;
@@ -5158,6 +5165,7 @@ button.close {
   overflow: hidden;
   padding: 0 !important;
   min-width: 100%;
+  margin: 0;
 }
 .featurette #video,
 .featurette-mobile #video,
@@ -5167,16 +5175,165 @@ button.close {
   display: block;
   z-index: 0;
 }
+.featurette .col-xs-1,
+.featurette-mobile .col-xs-1,
+.featurette .col-xs-2,
+.featurette-mobile .col-xs-2,
+.featurette .col-xs-3,
+.featurette-mobile .col-xs-3,
+.featurette .col-xs-4,
+.featurette-mobile .col-xs-4,
+.featurette .col-xs-5,
+.featurette-mobile .col-xs-5,
+.featurette .col-xs-6,
+.featurette-mobile .col-xs-6,
+.featurette .col-xs-7,
+.featurette-mobile .col-xs-7,
+.featurette .col-xs-8,
+.featurette-mobile .col-xs-8,
+.featurette .col-xs-9,
+.featurette-mobile .col-xs-9,
+.featurette .col-xs-10,
+.featurette-mobile .col-xs-10,
+.featurette .col-xs-11,
+.featurette-mobile .col-xs-11,
+.featurette .col-xs-12,
+.featurette-mobile .col-xs-12,
+.featurette .col-sm-1,
+.featurette-mobile .col-sm-1,
+.featurette .col-sm-2,
+.featurette-mobile .col-sm-2,
+.featurette .col-sm-3,
+.featurette-mobile .col-sm-3,
+.featurette .col-sm-4,
+.featurette-mobile .col-sm-4,
+.featurette .col-sm-5,
+.featurette-mobile .col-sm-5,
+.featurette .col-sm-6,
+.featurette-mobile .col-sm-6,
+.featurette .col-sm-7,
+.featurette-mobile .col-sm-7,
+.featurette .col-sm-8,
+.featurette-mobile .col-sm-8,
+.featurette .col-sm-9,
+.featurette-mobile .col-sm-9,
+.featurette .col-sm-10,
+.featurette-mobile .col-sm-10,
+.featurette .col-sm-11,
+.featurette-mobile .col-sm-11,
+.featurette .col-sm-12,
+.featurette-mobile .col-sm-12,
+.featurette .col-md-1,
+.featurette-mobile .col-md-1,
+.featurette .col-md-2,
+.featurette-mobile .col-md-2,
+.featurette .col-md-3,
+.featurette-mobile .col-md-3,
+.featurette .col-md-4,
+.featurette-mobile .col-md-4,
+.featurette .col-md-5,
+.featurette-mobile .col-md-5,
+.featurette .col-md-6,
+.featurette-mobile .col-md-6,
+.featurette .col-md-7,
+.featurette-mobile .col-md-7,
+.featurette .col-md-8,
+.featurette-mobile .col-md-8,
+.featurette .col-md-9,
+.featurette-mobile .col-md-9,
+.featurette .col-md-10,
+.featurette-mobile .col-md-10,
+.featurette .col-md-11,
+.featurette-mobile .col-md-11,
+.featurette .col-md-12,
+.featurette-mobile .col-md-12,
+.featurette .col-lg-1,
+.featurette-mobile .col-lg-1,
+.featurette .col-lg-2,
+.featurette-mobile .col-lg-2,
+.featurette .col-lg-3,
+.featurette-mobile .col-lg-3,
+.featurette .col-lg-4,
+.featurette-mobile .col-lg-4,
+.featurette .col-lg-5,
+.featurette-mobile .col-lg-5,
+.featurette .col-lg-6,
+.featurette-mobile .col-lg-6,
+.featurette .col-lg-7,
+.featurette-mobile .col-lg-7,
+.featurette .col-lg-8,
+.featurette-mobile .col-lg-8,
+.featurette .col-lg-9,
+.featurette-mobile .col-lg-9,
+.featurette .col-lg-10,
+.featurette-mobile .col-lg-10,
+.featurette .col-lg-11,
+.featurette-mobile .col-lg-11,
+.featurette .col-lg-12,
+.featurette-mobile .col-lg-12 {
+  padding: 0;
+}
 .flyover-container {
   overflow: hidden;
   padding: 0 !important;
   min-width: 100%;
+  margin: 0;
 }
 .flyover-container #video,
 .flyover-container img {
   position: relative;
   display: block;
   z-index: 0;
+}
+.flyover-container .col-xs-1,
+.flyover-container .col-xs-2,
+.flyover-container .col-xs-3,
+.flyover-container .col-xs-4,
+.flyover-container .col-xs-5,
+.flyover-container .col-xs-6,
+.flyover-container .col-xs-7,
+.flyover-container .col-xs-8,
+.flyover-container .col-xs-9,
+.flyover-container .col-xs-10,
+.flyover-container .col-xs-11,
+.flyover-container .col-xs-12,
+.flyover-container .col-sm-1,
+.flyover-container .col-sm-2,
+.flyover-container .col-sm-3,
+.flyover-container .col-sm-4,
+.flyover-container .col-sm-5,
+.flyover-container .col-sm-6,
+.flyover-container .col-sm-7,
+.flyover-container .col-sm-8,
+.flyover-container .col-sm-9,
+.flyover-container .col-sm-10,
+.flyover-container .col-sm-11,
+.flyover-container .col-sm-12,
+.flyover-container .col-md-1,
+.flyover-container .col-md-2,
+.flyover-container .col-md-3,
+.flyover-container .col-md-4,
+.flyover-container .col-md-5,
+.flyover-container .col-md-6,
+.flyover-container .col-md-7,
+.flyover-container .col-md-8,
+.flyover-container .col-md-9,
+.flyover-container .col-md-10,
+.flyover-container .col-md-11,
+.flyover-container .col-md-12,
+.flyover-container .col-lg-1,
+.flyover-container .col-lg-2,
+.flyover-container .col-lg-3,
+.flyover-container .col-lg-4,
+.flyover-container .col-lg-5,
+.flyover-container .col-lg-6,
+.flyover-container .col-lg-7,
+.flyover-container .col-lg-8,
+.flyover-container .col-lg-9,
+.flyover-container .col-lg-10,
+.flyover-container .col-lg-11,
+.flyover-container .col-lg-12 {
+  padding: 0;
 }
 .flyover-container #flyover {
   position: relative;
@@ -5822,6 +5979,7 @@ div.sb-message a:visited {
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
   display: block;
+  position: relative;
   max-width: 100%;
   width: 100%;
   line-height: 1;

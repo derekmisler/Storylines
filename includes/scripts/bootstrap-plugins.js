@@ -157,7 +157,11 @@ $(document).ready(function(){
 	}
 
 	// turn on scrollspy, parallax
-	$('body').scrollspy({ target: '.top-nav' }).stellar();
+	$('body').scrollspy({ target: '.top-nav' });
+	$.stellar({
+		responsive: true,
+		horizontalScrolling: false
+	});
 	$(".media").fitVids();
 	
 	
