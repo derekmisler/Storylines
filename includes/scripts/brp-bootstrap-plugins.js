@@ -80,8 +80,10 @@
 var stories = $('.stories div');
 var storiesLocation = 'http://localhost/includes/docs/storylines/brp/';
 var content = $('#content');
-var sidedrawer = $('#drawer');
-var sidedrawertext = $(sidedrawer).find('small')[0];
+var fullpage = $('.row-offcanvas');
+var sidedrawerbutton = $('#sidedrawerbutton');
+var sidedrawerbuttontext = $(sidedrawerbutton).find('span')[0];
+var offcanvaswidth = '62.5%';
 
 $(document).ready(function(){
 	$('body').stellar({
@@ -90,23 +92,28 @@ $(document).ready(function(){
 		horizontalScrolling: false
 	});
 	$(".media").fitVids();
-	$(content).load(storiesLocation + 'story-1.html');
-	
-	// map sidebar
-	$(sidedrawer).click(function() {
-    $('.row-offcanvas').toggleClass('active');
-    //$(sidedrawertext).text(function(_, oldText) {
-//			return oldText === 'Close' ? 'Information' : 'Close';
-//		});
+	$(content).transition({ opacity: 0 }, 0, function() {
+		$(content).load(storiesLocation + 'story-1.html', function(){
+			$(content).transition({ opacity: 1 }, 500);
+		});
 	});
 	
+});
+$(window).load(function(){
+	
+	// map sidebar
+	$(sidedrawerbutton).click(function() {
+		$(fullpage).toggleClass('active', 500);
+		$(sidedrawerbuttontext).toggleClass("glyphicon-th-large glyphicon-remove-circle");
+	});
+
 	$(stories).click(function() {
 		var storynumber = $(this).find('a').attr('id');
 		$(content).transition({ opacity: 0 }, 500, function() {
 			$(content).load(storiesLocation + storynumber + '.html', function() {
-				$('.row-offcanvas').toggleClass('active');
+				$(fullpage).toggleClass('active', 500);
+				$(content).transition({ opacity: 1 }, 500);
 			});
-			$(content).transition({ opacity: 1 }, 500);
 		});
 		return false;
 	});
