@@ -5456,17 +5456,11 @@ button.close {
   -o-transition: all 1s ease;
   transition: all 1s ease;
 }
-.row-offcanvas-right .sidebar-offcanvas {
+.row-offcanvas .sidebar-offcanvas {
   right: -62.5%;
 }
-.row-offcanvas-left .sidebar-offcanvas {
-  left: -62.5%;
-}
-.row-offcanvas-right.active {
+.row-offcanvas.active {
   right: 62.5%;
-}
-.row-offcanvas-left.active {
-  left: 62.5%;
 }
 .sidebar-offcanvas {
   position: absolute;

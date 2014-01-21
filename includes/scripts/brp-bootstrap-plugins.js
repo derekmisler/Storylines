@@ -78,11 +78,12 @@
 // DECLARE ALL VARIABLES 
 
 var stories = $('.stories div');
-var storiesLocation = 'http://localhost/includes/docs/storylines/brp/';
+var storiesLocation = 'http://127.0.0.1/Github/Storylines/includes/docs/storylines/brp/';
 var content = $('#content');
 var fullpage = $('.row-offcanvas');
 var sidedrawerbutton = $('#sidedrawerbutton');
 var sidedrawerbuttontext = $(sidedrawerbutton).find('span')[0];
+var sidedrawer = $('.sidebar-offcanvas');
 var offcanvaswidth = '62.5%';
 
 $(document).ready(function(){
@@ -103,7 +104,13 @@ $(window).load(function(){
 	
 	// map sidebar
 	$(sidedrawerbutton).click(function() {
-		$(fullpage).toggleClass('active', 500);
+		if($(fullpage).css('right') == offcanvaswidth){
+			$(this).stop().transition({'right':0},1000);
+		}
+		else {
+			$(this).stop().transition({'right':offcanvaswidth},1000);
+		};
+		//$(fullpage).toggleClass('active');
 		$(sidedrawerbuttontext).toggleClass("glyphicon-th-large glyphicon-remove-circle");
 	});
 
@@ -111,7 +118,8 @@ $(window).load(function(){
 		var storynumber = $(this).find('a').attr('id');
 		$(content).transition({ opacity: 0 }, 500, function() {
 			$(content).load(storiesLocation + storynumber + '.html', function() {
-				$(fullpage).toggleClass('active', 500);
+				$(fullpage).stop().transition({'right':offcanvaswidth},1000);
+				$(sidedrawerbuttontext).toggleClass("glyphicon-th-large glyphicon-remove-circle");
 				$(content).transition({ opacity: 1 }, 500);
 			});
 		});
