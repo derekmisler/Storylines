@@ -89,7 +89,7 @@ var bottomnavbar = $('.navbar-fixed-bottom');
 $(document).ready(function(){
 	
 	$(content).transition({ opacity: 0 }, 0, function() {
-		$(content).load(storiesLocation + 'story-1.html', function(){
+		$(content).load(storiesLocation + 'content.html', function(){
 			$(content).transition({ opacity: 1 }, 500);
 		});
 	});
@@ -111,12 +111,6 @@ $(document).ready(function(){
 
 	// map sidebar
 	$(sidedrawerbutton).click(function() {
-		//if($(fullpage).css('right') == offcanvaswidth){
-//			$(this).stop().transition({'right':0},1000);
-//		}
-//		else {
-//			$(this).stop().transition({'right':offcanvaswidth},1000);
-//		};
 		$(fullpage).toggleClass('active');
 		$(sidedrawerbuttontext).toggleClass("glyphicon-th-large glyphicon-remove-circle");
 	});
