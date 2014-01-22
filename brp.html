@@ -19,34 +19,48 @@
 
 <meta name="robots" content="none" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700|Open+Sans+Condensed:700|Gentium+Book+Basic:700italic' rel='stylesheet' type='text/css'>
-<link href="includes/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="/includes/css/bootstrap.css" rel='stylesheet' type='text/css' />
 
 <section class="row row-offcanvas">
 
-	<article id="content"></article><!--/left side-->
+	<article id="content"></article>
 
 	<aside class="sidebar-offcanvas" id="sidebar" role="navigation">
-		<nav class="stories row" role="navigation">
-			<div class="col-xs-6"><a class="btn btn-info" href="#"id="story-1"><img src="http://placehold.it/500x100/" class="img-responsive" /><span class="glyphicon glyphicon-user"></span> Interview 1</a></div>
-			<div class="col-xs-6"><a class="btn btn-info" href="#"id="story-2"><img src="http://placehold.it/500x100/" class="img-responsive" /><span class="glyphicon glyphicon-user"></span> Interview 2</a></div>
-			<div class="col-xs-6"><a class="btn btn-info" href="#"id="story-3"><img src="http://placehold.it/500x100/" class="img-responsive" /><span class="glyphicon glyphicon-user"></span> Interview 3</a></div>
-			<div class="col-xs-6"><a class="btn btn-info" href="#"id="story-4"><img src="http://placehold.it/500x100/" class="img-responsive" /><span class="glyphicon glyphicon-user"></span> Interview 4</a></div>
-			<div class="col-xs-6"><a class="btn btn-info" href="#"id="story-5"><img src="http://placehold.it/500x100/" class="img-responsive" /><span class="glyphicon glyphicon-user"></span> Interview 5</a></div>
-			<div class="col-xs-6"><a class="btn btn-info" href="#"id="story-6"><img src="http://placehold.it/500x100/" class="img-responsive" /><span class="glyphicon glyphicon-user"></span> Interview 6</a></div>
-			<div class="col-xs-6"><a class="btn btn-info" href="#"id="story-7"><img src="http://placehold.it/500x100/" class="img-responsive" /><span class="glyphicon glyphicon-user"></span> Interview 7</a></div>
-			<div class="col-xs-6"><a class="btn btn-info" href="#"id="story-8"><img src="http://placehold.it/500x100/" class="img-responsive" /><span class="glyphicon glyphicon-user"></span> Interview 8</a></div>
-		</nav><!--/left side-->
-		<div class="media">
-			<iframe id="map_canvas" src="https://mapsengine.google.com/map/u/0/embed?mid=zgmMK7LBeUGI.kW2CiDEupeS8&wmode=opaque" class="media-object full-width" width="100%" height="1000px"></iframe>
-		</div>
-	</aside><!--/right side map-->
+		<nav class="stories row" role="navigation" data-stellar-ratio="0">
+			<div class="col-xs-4"><a class="btn btn-info" href="#story-1"id="story-1"><img src="http://placehold.it/500x200/" class="img-responsive" /><span class="glyphicon glyphicon-user"></span> Interview 1</a></div>
+			<div class="col-xs-4"><a class="btn btn-info" href="#story-2"id="story-2"><img src="http://placehold.it/500x200/" class="img-responsive" /><span class="glyphicon glyphicon-user"></span> Interview 2</a></div>
+			<div class="col-xs-4"><a class="btn btn-info" href="#story-3"id="story-3"><img src="http://placehold.it/500x200/" class="img-responsive" /><span class="glyphicon glyphicon-user"></span> Interview 3</a></div>
+			<div class="col-xs-4"><a class="btn btn-info" href="#story-4"id="story-4"><img src="http://placehold.it/500x200/" class="img-responsive" /><span class="glyphicon glyphicon-user"></span> Interview 4</a></div>
+			<div class="col-xs-4"><a class="btn btn-info" href="#story-5"id="story-5"><img src="http://placehold.it/500x200/" class="img-responsive" /><span class="glyphicon glyphicon-user"></span> Interview 5</a></div>
+			<div class="col-xs-4"><a class="btn btn-info" href="#story-6"id="story-6"><img src="http://placehold.it/500x200/" class="img-responsive" /><span class="glyphicon glyphicon-user"></span> Interview 6</a></div>
+			<div class="col-xs-4"><a class="btn btn-info" href="#story-7"id="story-7"><img src="http://placehold.it/500x200/" class="img-responsive" /><span class="glyphicon glyphicon-user"></span> Interview 7</a></div>
+			<div class="col-xs-4"><a class="btn btn-info" href="#story-8"id="story-8"><img src="http://placehold.it/500x200/" class="img-responsive" /><span class="glyphicon glyphicon-user"></span> Interview 8</a></div>
+			<div class="col-xs-4"><a class="btn btn-info" href="#story-9"id="story-9"><img src="http://placehold.it/500x200/" class="img-responsive" /><span class="glyphicon glyphicon-user"></span> Interview 9</a></div>
+		</nav>
+	</aside>
 	
-</section><!--/row-->
+</section>
+<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+  <div class="col-xs-12 col-md-4 col-md-offset-4 btn-group dropup">
+		<div class="btn-group">
+		
+			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span></button>
+			<ul class="dropdown-menu">
+				<li class="dropdown-header">Interview #1</li>
+				<li><p>Background about this person</p></li>
+				<li><a href="#">Something else here</a></li>
+				<li class="divider"></li>
+				<li><a href="#">Separated link</a></li>
+			</ul>
+									
+		</div>
+	</div>
+</nav>
 <div id="sidedrawerbutton"><span class="glyphicon glyphicon-th-large"></span></div>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-<script src="includes/scripts/brp-bootstrap-plugins.js"></script>
+<script src="/includes/scripts/brp-bootstrap-plugins.js"></script>
 
 
 

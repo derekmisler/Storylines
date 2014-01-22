@@ -3,13 +3,12 @@
     margin:0 -15px;
     padding: 0;
     position: relative;    
-    height: 0;
     overflow: hidden;
     #video, img{
         width:100%;
         display:block;
         z-index: 0;
-        position: absolute;
+        position: relative;
         top: 0;
         left: 0;
     }
@@ -21,25 +20,29 @@
 .ratio-16-9{
     padding-bottom: @ratio-16-9;
     img{
-        top: -(100%-@ratio-16-9)
+        top: -(100%-@ratio-16-9);
+        position:absolute;
     }
 }
 .ratio-4-3{
     padding-bottom: @ratio-4-3;
     img{
-        top: -(100%-@ratio-4-3)
+        top: -(100%-@ratio-4-3);
+        position:absolute;
     }
 }
 .ratio-4-1{
     padding-bottom: @ratio-4-1;
     img{
-        top: -(100%-@ratio-4-1)
+        top: -(100%-@ratio-4-1);
+        position:absolute;
     }
 }
 .ratio-1-1{
     padding-bottom: @ratio-1-1;
     img{
-        top: -(100%-@ratio-1-1)
+        top: -(100%-@ratio-1-1);
+        position:absolute;
     }
 }
 

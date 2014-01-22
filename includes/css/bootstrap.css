@@ -893,8 +893,8 @@ pre code {
 }
 @media (max-width: 768px) {
   .col-xs-12 {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 @media (min-width: 768px) {
@@ -2999,7 +2999,7 @@ input[type="button"].btn-block {
 }
 .dropdown-menu .divider {
   height: 1px;
-  margin: 13.5px 0;
+  margin: 8px 0;
   overflow: hidden;
   background-color: #999999;
 }
@@ -3502,7 +3502,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 .nav .nav-divider {
   height: 1px;
-  margin: 13.5px 0;
+  margin: 8px 0;
   overflow: hidden;
   background-color: #e5e5e5;
 }
@@ -5211,7 +5211,6 @@ button.close {
   margin: 0 -15px;
   padding: 0;
   position: relative;
-  height: 0;
   overflow: hidden;
 }
 .featurette #video,
@@ -5221,7 +5220,7 @@ button.close {
   width: 100%;
   display: block;
   z-index: 0;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
 }
@@ -5230,31 +5229,34 @@ button.close {
 }
 .ratio-16-9 img {
   top: -43.75%;
+  position: absolute;
 }
 .ratio-4-3 {
   padding-bottom: 75%;
 }
 .ratio-4-3 img {
   top: -25%;
+  position: absolute;
 }
 .ratio-4-1 {
   padding-bottom: 25%;
 }
 .ratio-4-1 img {
   top: -75%;
+  position: absolute;
 }
 .ratio-1-1 {
   padding-bottom: 100%;
 }
 .ratio-1-1 img {
   top: 0%;
+  position: absolute;
 }
 .flyover-container {
   min-width: 100%;
   margin: 0 -15px;
   padding: 0;
   position: relative;
-  height: 0;
   overflow: hidden;
 }
 .flyover-container #video,
@@ -5262,7 +5264,7 @@ button.close {
   width: 100%;
   display: block;
   z-index: 0;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
 }
@@ -5270,7 +5272,7 @@ button.close {
   width: 100%;
   display: block;
   z-index: 0;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
 }
