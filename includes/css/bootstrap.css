@@ -3230,9 +3230,6 @@ input[type="button"].btn-block {
 }
 .btn .caret {
   margin-left: 0;
-
-
-
 }
 .btn-lg .caret {
   border-width: 5px 5px 0;
@@ -5261,6 +5258,7 @@ button.close {
   padding: 0;
   position: relative;
   overflow: hidden;
+  margin: 0;
 }
 .flyover-container #video,
 .flyover-container img {
@@ -5348,6 +5346,7 @@ button.close {
 @media (min-width: 1024px) {
   #topvideo {
     height: 340px;
+    margin: 0;
   }
   #intro {
     margin-top: 340px;
