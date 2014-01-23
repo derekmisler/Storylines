@@ -93,23 +93,20 @@ $(document).ready(function(){
 			$(content).transition({ opacity: 1 }, 500);
 		});
 	});
-	$(bottomnavbar).transition({ opacity: 0 }, 500);
-	$(bottomnavbar).mouseover(function() {
-		$(bottomnavbar).transition({ opacity: 1 }, 250);
-	})
-	.mouseleave(function() {
-		$(bottomnavbar).transition({ opacity: 0 }, 500);
-	});
-	
 	$('body').stellar({
 		responsive: true,
 		positionProperty: 'transform',
 		horizontalScrolling: false
 	});
-
 	$(".youtube").fitVids();
 
-	// map sidebar
+	$(bottomnavbar).transition({ opacity: 0 }, 500);
+	$(bottomnavbar).mouseover(function() {
+		$(bottomnavbar).transition({ opacity: 1 }, 250);
+	}).mouseleave(function() {
+		$(bottomnavbar).transition({ opacity: 0 }, 500);
+	});
+	
 	$(sidedrawerbutton).click(function() {
 		$(fullpage).toggleClass('active');
 		$(sidedrawerbuttontext).toggleClass("glyphicon-th-large glyphicon-remove-circle");
@@ -122,5 +119,5 @@ $(document).ready(function(){
 		
 });
 $(window).load(function(){
-	$("#map_canvas").attr("src", "https://mapsengine.google.com/map/u/0/embed?mid=zgmMK7LBeUGI.kW2CiDEupeS8&wmode=opaque");
+	$("#map_canvas").attr("src", "http://mapsengine.google.com/map/u/0/embed?mid=zgmMK7LBeUGI.kW2CiDEupeS8&wmode=opaque");
 });
