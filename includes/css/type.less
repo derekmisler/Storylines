@@ -9,15 +9,18 @@
 p {
   margin: 0 0 (@line-height-computed / 2);
 }
-.lead {
-  margin-bottom: @line-height-computed;
-  font-size: (@font-size-base * 1.15);
-  font-weight: 200;
-  line-height: 1.4;
-
-  @media (min-width: 768px) {
-    font-size: (@font-size-base * 1.5);
-  }
+@media (min-width: 768px) {
+    p.lead:first-line{
+        color:@avl-blue;
+        font-size:(@font-size-base * 2);
+        line-height:150%;
+    }
+    p.lead:first-letter{
+        font-size: (@font-size-base * 12);
+        line-height:85%;
+        margin:0 .1em 0 0;
+        float:left;
+    }
 }
 
 

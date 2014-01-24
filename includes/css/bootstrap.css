@@ -1,13 +1,4 @@
 /* CSS crunched with Crunch - http://crunchapp.net/ */
-/*!
- * Bootstrap v3.0.0
- *
- * Copyright 2013 Twitter, Inc
- * Licensed under the Apache License v2.0
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Designed and built with all the love in the world by @mdo and @fat.
- */
 /*! normalize.css v2.1.0 | MIT License | git.io/normalize */
 article,
 aside,
@@ -395,15 +386,17 @@ hr {
 p {
   margin: 0 0 14.5px;
 }
-.lead {
-  margin-bottom: 29px;
-  font-size: 18.4px;
-  font-weight: 200;
-  line-height: 1.4;
-}
 @media (min-width: 768px) {
-  .lead {
-    font-size: 24px;
+  p.lead:first-line {
+    color: #165788;
+    font-size: 32px;
+    line-height: 150%;
+  }
+  p.lead:first-letter {
+    font-size: 192px;
+    line-height: 85%;
+    margin: 0 .1em 0 0;
+    float: left;
   }
 }
 small {
