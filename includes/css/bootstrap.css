@@ -1,4 +1,12 @@
 /* CSS crunched with Crunch - http://crunchapp.net/ */
+.reset-box-sizing,
+.reset-box-sizing *,
+.reset-box-sizing *:before,
+.reset-box-sizing *:after {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
 /*! normalize.css v2.1.0 | MIT License | git.io/normalize */
 article,
 aside,
@@ -388,15 +396,9 @@ p {
 }
 @media (min-width: 768px) {
   p.lead:first-line {
-    color: #165788;
+    color: #766a65;
     font-size: 32px;
     line-height: 150%;
-  }
-  p.lead:first-letter {
-    font-size: 192px;
-    line-height: 85%;
-    margin: 0 .1em 0 0;
-    float: left;
   }
 }
 small {
@@ -5446,6 +5448,29 @@ button.close {
     line-height: 45px;
   }
 }
+.intro {
+  min-width: 100%;
+  margin: 0 -15px;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  padding: 200px 0;
+  margin-top: -16px;
+  background: url(http://i.imgur.com/lddmkgg.gif) no-repeat bottom center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+.intro #video,
+.intro img {
+  width: 100%;
+  display: block;
+  z-index: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+}
 .row-offcanvas {
   position: relative;
   -webkit-transition: all 1s ease;
@@ -5505,20 +5530,18 @@ button.close {
   color: #eae7db;
 }
 @media (max-width: 768px) {
-  .row-offcanvas-right .sidebar-offcanvas {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+  .row-offcanvas .sidebar-offcanvas {
     right: -100%;
   }
-  .row-offcanvas-left .sidebar-offcanvas {
-    left: -100%;
-  }
-  .row-offcanvas-right.active {
+  .row-offcanvas.active {
     right: 100%;
-  }
-  .row-offcanvas-left.active {
-    left: 100%;
-  }
-  .sidebar-offcanvas {
-    width: 100%;
   }
 }
 #sb-title-inner,

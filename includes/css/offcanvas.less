@@ -35,25 +35,14 @@
 }
 
 @media (max-width: @screen-tablet) {
-    .row-offcanvas-right
-    .sidebar-offcanvas {
+    .row-offcanvas {
+        position: relative;
+        .transition(all 1s ease);
+    }
+    .row-offcanvas .sidebar-offcanvas{
         right: -100%;
     }
-    
-    .row-offcanvas-left
-    .sidebar-offcanvas {
-        left: -100%;
-    }
-    
-    .row-offcanvas-right.active {
+    .row-offcanvas.active {
         right: 100%;
-    }
-    
-    .row-offcanvas-left.active {
-        left: 100%;
-    }
-    
-    .sidebar-offcanvas {
-        width: 100%;
     }
 }

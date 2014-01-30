@@ -172,7 +172,14 @@
      -moz-box-sizing: @boxmodel;
           box-sizing: @boxmodel;
 }
-
+.reset-box-sizing {
+  &,
+  *,
+  *:before,
+  *:after {
+    .box-sizing(content-box);
+  }
+}
 // User select
 // For selecting text on the page
 .user-select(@select) {
@@ -326,7 +333,12 @@
   position:relative;
   max-width: 100%; // Part 1: Set a maximum relative to the parent
 }
-
+.background-size(@background-size) {
+    -webkit-background-size: @background-size;
+    -moz-background-size: @background-size;
+    background-size: @background-size;
+    -o-background-size: @background-size;
+}
 
 // COMPONENT MIXINS
 // --------------------------------------------------
