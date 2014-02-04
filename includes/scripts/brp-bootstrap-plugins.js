@@ -131,6 +131,7 @@ $(document).ready(function(){
 	});*/
 	
 	var myOptions = {
+			scrollwheel: false,
 			zoom: 15,
 			center: new google.maps.LatLng(35.595801, -82.547914),
 			mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -141,7 +142,7 @@ $(document).ready(function(){
 					"stylers": [{
 							"color": "#eae7db"
 					}, {
-							"lightness": 17
+							"lightness": 10
 					}]
 			}, {
 					"featureType": "landscape",
@@ -158,16 +159,6 @@ $(document).ready(function(){
 							"color": "#aeaea6"
 					}, {
 							"lightness": 20
-					}]
-			}, {
-					"featureType": "road.highway",
-					"elementType": "geometry.stroke",
-					"stylers": [{
-							"color": "#aeaea6"
-					}, {
-							"lightness": 40
-					}, {
-							"weight": 1
 					}]
 			}, {
 					"featureType": "road.arterial",
@@ -194,16 +185,7 @@ $(document).ready(function(){
 							"lightness": 50
 					}]
 			}, {
-					"elementType": "labels.text.stroke",
-					"stylers": [{
-							"visibility": "off"
-					}, {
-							"color": "#165788"
-					}, {
-							"lightness": 20
-					}]
-			}, {
-					"elementType": "labels.text.fill",
+					"elementType": "labels.text",
 					"stylers": [{
 							"color": "#165788"
 					}, {
@@ -236,12 +218,15 @@ $(document).ready(function(){
 					"stylers": [{
 							"color": "#eae7db"
 					}, {
-							"lightness": 17
+							"lightness": 10
 					}, {
 							"weight": 0
 					}]
 			}]
 	};
 	
-	var map = new google.maps.Map(document.getElementById('map_canvas'), myOptions);
+	var map = new google.maps.Map(document.getElementById('brp_map_canvas'), myOptions);
+	var mapHeight = $(document).height();
+	$("#brp_map_canvas").attr(height, mapHeight);
+	
 });

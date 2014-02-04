@@ -5067,6 +5067,10 @@ button.close {
   width: 100%;
   height: 600px;
 }
+#brp_map_canvas {
+  width: 100%;
+  height: 100%;
+}
 @media (max-width: 768px) {
   #map_canvas {
     width: 100%;
@@ -5456,7 +5460,7 @@ button.close {
   overflow: hidden;
   padding: 200px 0;
   margin-top: -16px;
-  background: url(http://i.imgur.com/lddmkgg.gif) no-repeat bottom center scroll;
+  background: url(http://farm6.static.flickr.com/5065/5733843611_c354ae62fe_o.gif) no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
