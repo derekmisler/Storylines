@@ -5069,12 +5069,16 @@ button.close {
 }
 #brp_map_canvas {
   width: 100%;
-  height: 100%;
+  height: 1000px;
 }
 @media (max-width: 768px) {
   #map_canvas {
     width: 100%;
     height: 300px;
+  }
+  #brp_map_canvas {
+    width: 100%;
+    height: 600px;
   }
 }
 #map {
@@ -5461,6 +5465,7 @@ button.close {
   padding: 200px 0;
   margin-top: -16px;
   background: url(http://farm6.static.flickr.com/5065/5733843611_c354ae62fe_o.gif) no-repeat;
+  background-attachment: fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -5468,6 +5473,126 @@ button.close {
 }
 .intro #video,
 .intro img {
+  width: 100%;
+  display: block;
+  z-index: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+#story-2 {
+  min-width: 100%;
+  margin: 0 -15px;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  padding: 16px 0;
+  margin-top: -16px;
+  background: url(http://i.imgur.com/u4kq50p.gif) no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+#story-2 #video,
+#story-2 img {
+  width: 100%;
+  display: block;
+  z-index: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+#story-3 {
+  min-width: 100%;
+  margin: 0 -15px;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  padding: 16px 0;
+  margin-top: -16px;
+  background: url(http://i.imgur.com/BaSgARa.gif) no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+#story-3 #video,
+#story-3 img {
+  width: 100%;
+  display: block;
+  z-index: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+#story-4 {
+  min-width: 100%;
+  margin: 0 -15px;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  padding: 16px 0;
+  margin-top: -16px;
+  background: url(http://i.imgur.com/GnEEDN6.jpg) no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+#story-4 #video,
+#story-4 img {
+  width: 100%;
+  display: block;
+  z-index: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+#story-5 {
+  min-width: 100%;
+  margin: 0 -15px;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  padding: 16px 0;
+  margin-top: -16px;
+  background: url(http://i.imgur.com/UxuPhr4.jpg) no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+#story-5 #video,
+#story-5 img {
+  width: 100%;
+  display: block;
+  z-index: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+#story-6 {
+  min-width: 100%;
+  margin: 0 -15px;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  padding: 16px 0;
+  margin-top: -16px;
+  background: url(http://i.imgur.com/BaSgARa.gif) no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+#story-6 #video,
+#story-6 img {
   width: 100%;
   display: block;
   z-index: 0;

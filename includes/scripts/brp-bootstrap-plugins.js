@@ -192,6 +192,13 @@ $(document).ready(function(){
 							"lightness": 0
 					}]
 			}, {
+					"elementType": "labels.text.stroke",
+					"stylers": [{
+							"visibility": "off"
+					}, {
+							"lightness": 100
+					}]
+			}, {
 					"elementType": "labels.icon",
 					"stylers": [{
 							"visibility": "off"
