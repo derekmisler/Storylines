@@ -98,7 +98,8 @@ $(document).ready(function(){
 		responsive: true,
 		positionProperty: 'transform',
 		horizontalScrolling: false,
-		hideDistantElements: false
+		hideDistantElements: true,
+		parallaxBackgrounds: true
 	});
 	$(".youtube").fitVids();
 		
@@ -233,7 +234,5 @@ $(document).ready(function(){
 	};
 	
 	var map = new google.maps.Map(document.getElementById('brp_map_canvas'), myOptions);
-	var mapHeight = $(document).height();
-	$("#brp_map_canvas").attr(height, mapHeight);
 	
 });

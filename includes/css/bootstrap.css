@@ -5462,14 +5462,18 @@ button.close {
   padding: 0;
   position: relative;
   overflow: hidden;
-  padding: 200px 0;
+  padding: 250px 0;
   margin-top: -16px;
-  background: url(http://farm6.static.flickr.com/5065/5733843611_c354ae62fe_o.gif) no-repeat;
+  background: url(http://i.imgur.com/n356iid.jpg) no-repeat;
   background-attachment: fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
 }
 .intro #video,
 .intro img {
@@ -5479,6 +5483,12 @@ button.close {
   position: relative;
   top: 0;
   left: 0;
+}
+.intro:hover {
+  -webkit-filter: blur(0);
+  -moz-filter: blur(0);
+  -o-filter: blur(0);
+  -ms-filter: blur(0);
 }
 #story-2 {
   min-width: 100%;
