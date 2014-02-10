@@ -1,0 +1,48 @@
+@off-canvas-width: 62.5%;
+
+.row-offcanvas {
+    position: relative;
+    .transition(all 1s ease);
+}
+.row-offcanvas .sidebar-offcanvas{
+    right: -@off-canvas-width;
+}
+.row-offcanvas.active {
+    right: @off-canvas-width;
+}
+
+.sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: @off-canvas-width;
+    min-height:100%;
+    padding: floor(@default-padding * 2);
+    margin-right:-@default-padding;
+    .box-shadow(inset 5px 0px 10px -5px rgba(0,0,0,1));
+    background-color:@avl-dark-gray;
+    min-height:100%;
+    h1, h2, h3, h4, h5, h6,
+    .h1, .h2, .h3, .h4, .h5, .h6{
+      color: @gray-lighter;
+      text-shadow: -1px -1px 0px fadeout(@black, 50%);
+      small {
+        color: @gray-light;
+      }
+    }
+    p, li{
+      color: @gray-lighter;
+    }
+}
+
+@media (max-width: @screen-tablet) {
+    .row-offcanvas {
+        position: relative;
+        .transition(all 1s ease);
+    }
+    .row-offcanvas .sidebar-offcanvas{
+        right: -100%;
+    }
+    .row-offcanvas.active {
+        right: 100%;
+    }
+}

@@ -1,0 +1,88 @@
+// Media objects
+// Source: http://stubbornella.org/content/?p=497
+// --------------------------------------------------
+
+
+// Common styles
+// -------------------------
+
+// Clear the floats
+.media,
+.media-body {
+    overflow: hidden;
+    zoom: 1;
+}
+
+// Proper spacing between instances of .media
+.media {
+    border-top:3px solid @media-border-color;
+    border-bottom:3px solid @media-border-color;
+    margin-top: 0;
+    margin-bottom: @font-size-base;
+    padding-top: @font-size-base;
+    padding-bottom: @font-size-base;
+    
+    .media {
+        padding:0;
+        border:0;
+    }
+}
+
+// For images and videos, set to block
+.media-object {
+    .img-thumbnail();
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+}
+.media-object.full-width {
+    margin: @font-size-base auto;
+}
+iframe.media-object, #map_canvas.media-object {
+    border-radius: 0;
+  
+}
+
+// Reset margins on headings for tighter default spacing
+.media-heading {
+    margin: 0 0 5px;
+}
+
+// Reset margins on headings for tighter default spacing
+.media-caption {
+    font-size: (@font-size-base * .85) !important;
+    margin:0;
+    .text-muted;
+}
+
+// Media image alignment
+// -------------------------
+
+.media {
+  > .pull-left {
+    margin-right: (@line-height-computed / 3);
+    margin-top:0;
+  }
+  > .pull-right {
+    margin-left: (@line-height-computed / 3);
+    margin-top:0;
+  }
+}
+.media.pull-left {
+    margin-right: @line-height-computed;
+    margin-top:(@line-height-computed / 3);
+}
+.media.pull-right {
+    margin-left: @line-height-computed;
+    margin-top:(@line-height-computed / 3);
+}
+
+
+// Media list variation
+// -------------------------
+
+// Undo default ul/ol styles
+.media-list {
+    padding-left: 0;
+    list-style: none;
+}
