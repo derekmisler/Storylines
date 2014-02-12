@@ -83,7 +83,7 @@ d)<1/2.75?b*7.5625*a*a+c:a<2/2.75?b*(7.5625*(a-=1.5/2.75)*a+0.75)+c:a<2.5/2.75?b
 
 $(document).ready(function(){
 	
-	$('body').stellar({
+	$(window).stellar({
 		responsive: true,
 		positionProperty: 'transform',
 		horizontalScrolling: false,
@@ -109,12 +109,12 @@ $(document).ready(function(){
         //If the user scrolls up change the navigation link that has the same data-slide attribute as the slide to active and 
         //remove the active class from the previous navigation link 
         if (direction === 'down') {
-            $('.navigation li[data-slide="' + dataslide + '"]').addClass('active').prev().removeClass('active');
+            $('.navigation li[data-slide="' + dataslide + '"]').addClass('currentslide').prev().removeClass('active');
         }
         // else If the user scrolls down change the navigation link that has the same data-slide attribute as the slide to active and 
         //remove the active class from the next navigation link 
         else {
-            $('.navigation li[data-slide="' + dataslide + '"]').addClass('active').next().removeClass('active');
+            $('.navigation li[data-slide="' + dataslide + '"]').addClass('currentslide').next().removeClass('active');
         }
 
     });
@@ -122,8 +122,8 @@ $(document).ready(function(){
     //waypoints doesnt detect the first slide when user scrolls back up to the top so we add this little bit of code, that removes the class from navigation link slide 2 and adds it to navigation link slide 1. 
     mywindow.scroll(function () {
         if (mywindow.scrollTop() == 0) {
-            $('.navigation li[data-slide="1"]').addClass('active');
-            $('.navigation li[data-slide="2"]').removeClass('active');
+            $('.navigation li[data-slide="1"]').addClass('currentslide');
+            $('.navigation li[data-slide="2"]').removeClass('currentslide');
         }
     });
 
@@ -131,7 +131,7 @@ $(document).ready(function(){
     function goToByScroll(dataslide) {
         htmlbody.animate({
             scrollTop: $('.slide[data-slide="' + dataslide + '"]').offset().top
-        }, 2000, 'easeInOutQuint');
+        }, 1000, 'easeInOutQuint');
     }
 
     //When the user clicks on the navigation links, get the data-slide attribute value of the link and pass that variable to the goToByScroll function
@@ -141,7 +141,7 @@ $(document).ready(function(){
         goToByScroll(dataslide);
     });
 
-    //When the user clicks on the button, get the get the data-slide attribute value of the button and pass that variable to the goToByScroll function
+    //When the user clicks on the button, get the data-slide attribute value of the button and pass that variable to the goToByScroll function
     button.click(function (e) {
         e.preventDefault();
         dataslide = $(this).attr('data-slide');

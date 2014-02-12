@@ -346,6 +346,181 @@
     -o-background-size: @background-size;
 }
 
+// COMPONENT MIXINS
+// --------------------------------------------------
+
+// Horizontal dividers
+// -------------------------
+// Dividers (basically an hr) within dropdowns and nav lists
+.nav-divider(@color: #e5e5e5) {
+  height: 1px;
+  margin: (floor(@line-height-computed / 3) - 1) 0;
+  overflow: hidden;
+  background-color: @color;
+}
+
+// Panels
+// -------------------------
+.panel-variant(@border; @heading-text-color; @heading-bg-color; @heading-border;) {
+  border-color: @border;
+  & > .panel-heading {
+    color: @heading-text-color;
+    background-color: @heading-bg-color;
+    border-color: @heading-border;
+    + .panel-collapse .panel-body {
+      border-top-color: @border;
+    }
+  }
+  & > .panel-footer {
+    + .panel-collapse .panel-body {
+      border-bottom-color: @border;
+    }
+  }
+}
+
+// Alerts
+// -------------------------
+.alert-variant(@background; @border; @text-color) {
+  background-color: @background;
+  border-color: @border;
+  color: @text-color;
+  hr {
+    border-top-color: darken(@border, 5%);
+  }
+  .alert-link {
+    color: darken(@text-color, 10%);
+  }
+}
+
+// Tables
+// -------------------------
+.table-row-variant(@state; @background; @border) {
+  // Exact selectors below required to override `.table-striped` and prevent
+  // inheritance to nested tables.
+  .table > thead > tr,
+  .table > tbody > tr,
+  .table > tfoot > tr {
+    > td.@{state},
+    > th.@{state},
+    &.@{state} > td,
+    &.@{state} > th {
+      background-color: @background;
+      border-color: @border;
+    }
+  }
+
+  // Hover states for `.table-hover`
+  // Note: this is not available for cells or rows within `thead` or `tfoot`.
+  .table-hover > tbody > tr {
+    > td.@{state}:hover,
+    > th.@{state}:hover,
+    &.@{state}:hover > td {
+      background-color: darken(@background, 5%);
+      border-color: darken(@border, 5%);
+    }
+  }
+}
+
+// Button variants
+// -------------------------
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+.button-variant(@color; @background; @border) {
+  color: @color;
+  background-color: @background;
+  border-color: @border;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  .open .dropdown-toggle& {
+    color: @color;
+    background-color: darken(@background, 8%);
+        border-color: darken(@border, 12%);
+  }
+  &:active,
+  &.active,
+  .open .dropdown-toggle& {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: @background;
+          border-color: @border
+    }
+  }
+}
+
+// Button sizes
+// -------------------------
+.button-size(@padding-vertical; @padding-horizontal; @font-size; @line-height; @border-radius) {
+  padding: @padding-vertical @padding-horizontal;
+  font-size: @font-size;
+  line-height: @line-height;
+  border-radius: @border-radius;
+}
+
+// Pagination
+// -------------------------
+.pagination-size(@padding-vertical; @padding-horizontal; @font-size; @border-radius) {
+  > li {
+    > a,
+    > span {
+      padding: @padding-vertical @padding-horizontal;
+      font-size: @font-size;
+    }
+    &:first-child {
+      > a,
+      > span {
+        .border-left-radius(@border-radius);
+      }
+    }
+    &:last-child {
+      > a,
+      > span {
+        .border-right-radius(@border-radius);
+      }
+    }
+  }
+}
+
+// Labels
+// -------------------------
+.label-variant(@color) {
+  background-color: @color;
+  &[href] {
+    &:hover,
+    &:focus {
+      background-color: darken(@color, 10%);
+    }
+  }
+}
+
+// Navbar vertical align
+// -------------------------
+// Vertically center elements in the navbar.
+// Example: an element has a height of 30px, so write out `.navbar-vertical-align(30px);` to calculate the appropriate top margin.
+.navbar-vertical-align(@element-height) {
+  margin-top: ((@navbar-height - @element-height) / 2);
+  margin-bottom: ((@navbar-height - @element-height) / 2);
+}
+
+// Progress bars
+// -------------------------
+.progress-bar-variant(@color) {
+  background-color: @color;
+  .progress-striped & {
+    #gradient > .striped(@color);
+  }
+}
+
 // Responsive utilities
 // -------------------------
 // More easily include all the states for responsive-utilities.less.
