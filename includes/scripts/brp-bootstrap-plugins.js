@@ -127,7 +127,7 @@ $(document).ready(function(){
         }
     });
 
-    //Create a function that will be passed a slide number and then will scroll to that slide using jquery.transit.
+    //Create a function that will be passed a slide number and then will scroll to that slide using jquery easing.
     function goToByScroll(dataslide) {
         htmlbody.animate({
             scrollTop: $('.slide[data-slide="' + dataslide + '"]').offset().top
