@@ -9,15 +9,20 @@
     top:0;
     bottom:0;
     padding:@default-padding;
-    margin:0 0 0 -80px;
+    margin:0 0 0 -((@default-padding * 4) + 50);
     width:((@default-padding * 4) + 50);
     .transition(all .1s ease-out);
-    .box-shadow(inset -5px 0px 10px -5px rgba(0,0,0,1));
+    .box-shadow(inset -2px 0px 4px -2px rgba(0,0,0,.3));
     background-color:@avl-dark-gray;
-    &:hover,
-    &:focus,
-    .active {
+    &.active {
         margin-left:0;
+    }
+    > a {
+        display:block;
+        position:absolute;
+        top:0;
+        right:0;
+        margin-right:-(@default-padding * 2);
     }
     > li {
     	display:block;

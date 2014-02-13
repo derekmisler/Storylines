@@ -90,10 +90,11 @@ $(document).ready(function(){
 		hideDistantElements: true,
 		parallaxBackgrounds: true
 	});
-	$(".youtube").fitVids();
+	//$(".youtube").fitVids();
 		
     //Cache some variables
     var links = $('.navigation').find('li');
+    var navtoggle = $('.navigation').find('a');
     slide = $('.slide');
     button = $('.button');
     mywindow = $(window);
@@ -106,15 +107,15 @@ $(document).ready(function(){
         //cache the variable of the data-slide attribute associated with each slide
         dataslide = $(this).attr('data-slide');
 
-        //If the user scrolls up change the navigation link that has the same data-slide attribute as the slide to active and 
-        //remove the active class from the previous navigation link 
+        //If the user scrolls up change the navigation link that has the same data-slide attribute as the slide to currentslide and 
+        //remove the currentslide class from the previous navigation link 
         if (direction === 'down') {
-            $('.navigation li[data-slide="' + dataslide + '"]').addClass('currentslide').prev().removeClass('active');
+            $('.navigation li[data-slide="' + dataslide + '"]').addClass('currentslide').prev().removeClass('currentslide');
         }
-        // else If the user scrolls down change the navigation link that has the same data-slide attribute as the slide to active and 
-        //remove the active class from the next navigation link 
+        // else If the user scrolls down change the navigation link that has the same data-slide attribute as the slide to currentslide and 
+        //remove the currentslide class from the next navigation link 
         else {
-            $('.navigation li[data-slide="' + dataslide + '"]').addClass('currentslide').next().removeClass('active');
+            $('.navigation li[data-slide="' + dataslide + '"]').addClass('currentslide').next().removeClass('currentslide');
         }
 
     });
@@ -146,6 +147,14 @@ $(document).ready(function(){
         e.preventDefault();
         dataslide = $(this).attr('data-slide');
         goToByScroll(dataslide);
+
+    });
+
+
+    //hidden navigation
+    navtoggle.click(function (e) {
+        e.preventDefault();
+        $('.navigation').toggleClass('active');
 
     });
 

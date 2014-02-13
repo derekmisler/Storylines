@@ -1,39 +1,85 @@
-.noslide{
-	position:absolute;
-	top:0;
-	right:0;
-	bottom:0;
-	left:37.5%;
-	margin:0;
-	padding:floor(@default-padding * 2);
-	background-color:@body-bg;
-	.box-shadow(0px 0px 5px rgba(0,0,0,0.2));
-}
+// background images
 .slide{
-	
-	width:100%;
-	height:100%;
-	position: relative;
-	.box-shadow(inset 0px 10px 20px rgba(0,0,0,0.5));
-	border-top:5px solid @avl-gray;
+    .make-row();
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    border-left:5px solid @avl-gray;
 	.background-size(cover);
-}
-.slide:first-of-type{
-	.box-shadow(inset 0px 10px 20px rgba(0,0,0,0));
+    	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
 }
 #slide1{
 	background-image:url(http://i.imgur.com/n356iid.jpg);
-	border-top:5px solid @avl-red;
+	border-left:5px solid @avl-red;
 }
 #slide2{
 	background-image:url(http://i.imgur.com/u4kq50p.gif);
-	border-top:5px solid @avl-blue;
+	border-left:5px solid @avl-blue;
 }
 #slide3{
 	background-image:url(http://i.imgur.com/BaSgARa.gif);
-	border-top:5px solid @avl-green;
+	border-left:5px solid @avl-green;
 }
 #slide4{
 	background-image:url(http://i.imgur.com/UxuPhr4.jpg);
-	border-top:5px solid @avl-yellow;
+	border-left:5px solid @avl-yellow;
+}
+// content
+.noslide{
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+	padding:@default-padding;
+	background-color:@body-bg;
+    .make-xs-column(12);
+    .make-sm-column(10);
+    .make-sm-column-offset(2);
+    .make-md-column(8);
+    .make-md-column-offset(0);
+}
+.caption{
+    .noslide();
+    .text-center();
+    .make-md-column(4);
+    padding-bottom:0;
+    > a{
+        display:inline-block;
+    	padding:0;
+    	margin:0;
+    	.transition(all .1s ease-in);
+    	width:200px;
+    	height:200px;
+    	border-radius:1000px;
+    	.hide-text();
+    	overflow:hidden;
+    	border:5px solid @avl-blue;
+        &:hover,
+        &:focus {
+        	border:10px solid @avl-red;
+        }
+        > img {
+        	min-width:100%;
+        	height:100%;
+        }
+    }
+}
+@media (min-width: @screen-tablet) {
+    .noslide{
+    	padding:floor(@default-padding * 2);
+    }
+    .caption{
+    	padding:floor(@default-padding * 2);
+    	padding-bottom:0;
+        .text-left();
+    }
+}
+@media (min-width: @screen-desktop) {
+    .noslide{
+    	padding:floor(@default-padding * 2);
+    }
+    .caption{
+    	padding:floor(@default-padding * 2);
+        .text-right();
+    }
 }
