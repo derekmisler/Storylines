@@ -2,6 +2,7 @@
 ## Other
 #################
 
+*.lnk
 *.tif
 *.tiff
 *.psd
