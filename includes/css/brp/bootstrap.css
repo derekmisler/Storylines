@@ -3074,6 +3074,7 @@ iframe.media-object,
   top: 0;
   right: 0;
   margin-right: -32px;
+  font-size: 20px;
 }
 .navigation > li {
   display: block;
