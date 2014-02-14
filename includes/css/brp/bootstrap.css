@@ -3101,7 +3101,7 @@ iframe.media-object,
   width: 100px!important;
   height: 100px!important;
 }
-.navigation > li .currentslide {
+.navigation > li.currentslide {
   border: 5px solid #b71234;
 }
 .navigation > li > img {
