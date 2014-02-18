@@ -127,12 +127,12 @@ $(document).ready(function(){
     });
 
     //waypoints doesnt detect the first slide when user scrolls back up to the top so we add this little bit of code, that removes the class from navigation link slide 2 and adds it to navigation link slide 1. 
-    mywindow.scroll(function () {
-        if (mywindow.scrollTop() <= 1) {
-            $('.navigation li[data-slide="1"]').addClass('currentslide');
-            $('.navigation li[data-slide="2"]').removeClass('currentslide');
-        }
-    });
+//    mywindow.scroll(function () {
+//        if (mywindow.scrollTop() <= 1) {
+//            $('.navigation li[data-slide="1"]').addClass('currentslide');
+//            $('.navigation li[data-slide="2"]').removeClass('currentslide');
+//        }
+//    });
 
     //Create a function that will be passed a slide number and then will scroll to that slide using jquery easing.
     function goToByScroll(dataslide) {
