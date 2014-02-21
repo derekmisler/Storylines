@@ -2,21 +2,17 @@
 // Navs
 // --------------------------------------------------
 .pin {
-  width: 30px;
-  height: 30px;
   border-radius: 50% 50% 50% 0;
-  background: #89849b;
+  background: @avl-red;
   position: absolute;
-  transform: rotate(-45deg);
-  left: 50%;
-  top: 50%;
+  .rotate(-45deg);
   margin: -20px 0 0 -20px;
   &:after {
     content: '';
-    width: 14px;
-    height: 14px;
+    width: 25px;
+    height: 25px;
     margin: 8px 0 0 8px;
-    background: #2e353f;
+    background: @avl-blue;
     position: absolute;
     border-radius: 50%;
     .box-shadow(inset 0px 2px 0px #252A32);
@@ -58,8 +54,7 @@
     	.hide-text();
     	overflow:hidden;
     	border:5px solid fadeout(@avl-dark-gray, 100%);
-    	.pin;
-
+        	.pin;
         &:hover,
         &:focus {
         	border:5px solid @avl-red;
@@ -71,6 +66,7 @@
         	border:5px solid @avl-red;
         }
         > img {
+          .rotate(-45deg);
         	min-width:100%;
         	height:100%;
         }
