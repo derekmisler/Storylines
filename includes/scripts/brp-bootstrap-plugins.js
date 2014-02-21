@@ -93,10 +93,10 @@ $(document).ready(function(){
 		responsive: true,
 		positionProperty: 'transform',
 		horizontalScrolling: false,
-		hideDistantElements: true,
+		hideDistantElements: false,
 		parallaxBackgrounds: true
 	});
-	//$(".youtube").fitVids();
+	$(".youtube").fitVids();
 		
     //Cache some variables
     var links = $('.navigation').find('li');
