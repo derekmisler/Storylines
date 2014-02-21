@@ -105,8 +105,7 @@ $(document).ready(function(){
     button = $('.button');
     mywindow = $(window);
     htmlbody = $('html,body');
-
-
+		
     //Setup waypoints plugin
     slide.waypoint(function (event, direction) {
 
@@ -117,6 +116,7 @@ $(document).ready(function(){
         //remove the currentslide class from the previous navigation link 
         if (direction === 'down') {
             $('.navigation li[data-slide="' + dataslide + '"]').addClass('currentslide').prev().removeClass('currentslide');
+						$('.navigation').removeClass('active');
         }
         // else If the user scrolls down change the navigation link that has the same data-slide attribute as the slide to currentslide and 
         //remove the currentslide class from the next navigation link 

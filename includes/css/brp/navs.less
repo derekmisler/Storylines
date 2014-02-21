@@ -1,32 +1,54 @@
 //
 // Navs
 // --------------------------------------------------
+.pin {
+  width: 30px;
+  height: 30px;
+  border-radius: 50% 50% 50% 0;
+  background: #89849b;
+  position: absolute;
+  transform: rotate(-45deg);
+  left: 50%;
+  top: 50%;
+  margin: -20px 0 0 -20px;
+  &:after {
+    content: '';
+    width: 14px;
+    height: 14px;
+    margin: 8px 0 0 8px;
+    background: #2e353f;
+    position: absolute;
+    border-radius: 50%;
+    .box-shadow(inset 0px 2px 0px #252A32);
+  }
+}
 
 .navigation {
-    position:fixed;
-    z-index:9999;
-    overflow:visible;
-    top:0;
-    bottom:0;
+    position: fixed;
+    z-index: 9999;
+    overflow: visible;
+    left: 0;
+    right: 0;
+    bottom: -((@default-padding * 4) + 50);
     padding:@default-padding;
-    margin:0 0 0 -((@default-padding * 4) + 50);
-    width:((@default-padding * 4) + 50);
+    margin: 0 0 0 0;
+    height: ((@default-padding * 4) + 50);
     .transition(all .1s ease-out);
     .box-shadow(inset -2px 0px 4px -2px rgba(0,0,0,.3));
-    background-color:@avl-dark-gray;
+    background-color: @avl-dark-gray;
     &.active {
-        margin-left:0;
+        bottom: 0;
     }
     > a {
-        display:block;
-        position:absolute;
-        top:0;
-        right:0;
-        margin-right:-(@default-padding * 2);
+        display: block;
+        position: absolute;
+        top: 0;
+        left: @default-padding;
+        margin-top:-(@default-padding * 2);
         font-size:@font-size-large;
     }
     > li {
-    	display:block;
+    	display:inline-block;
     	padding: 0;
     	margin:@default-padding;
     	.transition(all .1s ease-in);
@@ -36,13 +58,14 @@
     	.hide-text();
     	overflow:hidden;
     	border:5px solid fadeout(@avl-dark-gray, 100%);
+    	.pin;
 
         &:hover,
         &:focus {
         	border:5px solid @avl-red;
         	cursor:pointer;
-        	width:100px!important;
-        	height:100px!important;
+        	width:50px !important;
+        	height:50px !important;
         }
         &.currentslide {
         	border:5px solid @avl-red;
