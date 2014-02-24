@@ -1,22 +1,56 @@
 //
 // Navs
 // --------------------------------------------------
-.pin {
+.pin{
+  width: 100px;
+  height: 100px;
   border-radius: 50% 50% 50% 0;
   background: @avl-red;
   position: absolute;
   .rotate(-45deg);
-  margin: -20px 0 0 -20px;
-  &:after {
+//  left: 50%;
+//  top: 50%;
+  margin: 0;
+  &:after{
     content: '';
-    width: 25px;
-    height: 25px;
-    margin: 8px 0 0 8px;
-    background: @avl-blue;
+    width: 90px;
+    height: 90px;
+    margin: 5px 0 0 5px;
+    background: @white;
     position: absolute;
     border-radius: 50%;
-    .box-shadow(inset 0px 2px 0px #252A32);
+    .box-shadow(inset 0 2px 0 rgba(0,0,0,.1));
   }
+}
+.pulse{
+  background: rgba(0,0,0,.1);
+  .box-shadow(0 0 10px rgba(0,0,0,.1));
+  border-radius: 50%;
+  height: 25px;
+  width: 50px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: 125px 0 0 25px;
+  .rotate(55deg);
+  z-index: -2;
+  &:after{
+    content: "";
+    border-radius: 50%;
+    height: 25px;
+    width: 50px;
+    position: absolute;
+    margin: 0;
+    animation: pulsate 1s ease-out;
+    animation-iteration-count: infinite;
+    .opacity(0);
+    .box-shadow(0 0 5px @avl-red);
+  }
+}
+@keyframes pulsate{
+  0%{.scale(0.1);.opacity(0)}
+  50%{.opacity(1)}
+  100%{.scale(1.2);.opacity(0)}
 }
 
 .navigation {
@@ -28,7 +62,7 @@
     bottom: -((@default-padding * 4) + 50);
     padding:@default-padding;
     margin: 0 0 0 0;
-    height: ((@default-padding * 4) + 50);
+    height: ((@default-padding * 4) + 250);
     .transition(all .1s ease-out);
     .box-shadow(inset -2px 0px 4px -2px rgba(0,0,0,.3));
     background-color: @avl-dark-gray;
@@ -47,28 +81,20 @@
     	display:inline-block;
     	padding: 0;
     	margin:@default-padding;
-    	.transition(all .1s ease-in);
-    	width:50px;
-    	height:50px;
-    	border-radius:1000px;
-    	.hide-text();
     	overflow:hidden;
-    	border:5px solid fadeout(@avl-dark-gray, 100%);
-        	.pin;
+        .pin;
         &:hover,
         &:focus {
-        	border:5px solid @avl-red;
         	cursor:pointer;
-        	width:50px !important;
-        	height:50px !important;
         }
         &.currentslide {
         	border:5px solid @avl-red;
         }
         > img {
-          .rotate(-45deg);
+          .rotate(45deg);
         	min-width:100%;
         	height:100%;
+        	margin-left:-50%;
         }
     }
 }

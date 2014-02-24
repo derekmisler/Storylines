@@ -3178,25 +3178,79 @@ iframe.media-object,
   }
 }
 .pin {
+  width: 100px;
+  height: 100px;
   border-radius: 50% 50% 50% 0;
   background: #b71234;
   position: absolute;
   -webkit-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  margin: -20px 0 0 -20px;
+  margin: 0;
 }
 .pin:after {
   content: '';
-  width: 25px;
-  height: 25px;
-  margin: 8px 0 0 8px;
-  background: #165788;
+  width: 90px;
+  height: 90px;
+  margin: 5px 0 0 5px;
+  background: #f4f4f4;
   position: absolute;
   border-radius: 50%;
-  -webkit-box-shadow: inset 0px 2px 0px #252a32;
-  -moz-box-shadow: inset 0px 2px 0px #252a32;
-  box-shadow: inset 0px 2px 0px #252a32;
+  -webkit-box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.1);
+}
+.pulse {
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  height: 25px;
+  width: 50px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: 125px 0 0 25px;
+  -webkit-transform: rotate(55deg);
+  -ms-transform: rotate(55deg);
+  transform: rotate(55deg);
+  z-index: -2;
+}
+.pulse:after {
+  content: "";
+  border-radius: 50%;
+  height: 25px;
+  width: 50px;
+  position: absolute;
+  margin: 0;
+  animation: pulsate 1s ease-out;
+  animation-iteration-count: infinite;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-box-shadow: 0 0 5px #b71234;
+  -moz-box-shadow: 0 0 5px #b71234;
+  box-shadow: 0 0 5px #b71234;
+}
+@keyframes pulsate {
+  0% {
+    -webkit-transform: scale(0.1);
+    -ms-transform: scale(0.1);
+    transform: scale(0.1);
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+  50% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
 }
 .navigation {
   position: fixed;
@@ -3207,7 +3261,7 @@ iframe.media-object,
   bottom: -114px;
   padding: 16px;
   margin: 0 0 0 0;
-  height: 114px;
+  height: 314px;
   -webkit-transition: all 0.1s ease-out;
   -moz-transition: all 0.1s ease-out;
   -o-transition: all 0.1s ease-out;
@@ -3232,56 +3286,43 @@ iframe.media-object,
   display: inline-block;
   padding: 0;
   margin: 16px;
-  -webkit-transition: all 0.1s ease-in;
-  -moz-transition: all 0.1s ease-in;
-  -o-transition: all 0.1s ease-in;
-  transition: all 0.1s ease-in;
-  width: 50px;
-  height: 50px;
-  border-radius: 1000px;
-  font: 0/0 a;
-  color: transparent;
-  text-shadow: none;
-  background-color: transparent;
-  border: 0;
   overflow: hidden;
-  border: 5px solid rgba(55, 66, 74, 0);
+  width: 100px;
+  height: 100px;
   border-radius: 50% 50% 50% 0;
   background: #b71234;
   position: absolute;
   -webkit-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  margin: -20px 0 0 -20px;
+  margin: 0;
 }
 .navigation > li:after {
   content: '';
-  width: 25px;
-  height: 25px;
-  margin: 8px 0 0 8px;
-  background: #165788;
+  width: 90px;
+  height: 90px;
+  margin: 5px 0 0 5px;
+  background: #f4f4f4;
   position: absolute;
   border-radius: 50%;
-  -webkit-box-shadow: inset 0px 2px 0px #252a32;
-  -moz-box-shadow: inset 0px 2px 0px #252a32;
-  box-shadow: inset 0px 2px 0px #252a32;
+  -webkit-box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.1);
 }
 .navigation > li:hover,
 .navigation > li:focus {
-  border: 5px solid #b71234;
   cursor: pointer;
-  width: 50px !important;
-  height: 50px !important;
 }
 .navigation > li.currentslide {
   border: 5px solid #b71234;
 }
 .navigation > li > img {
-  -webkit-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
   min-width: 100%;
   height: 100%;
+  margin-left: -50%;
 }
 .slide {
   margin-left: 0;
