@@ -3035,22 +3035,30 @@ iframe.media-object,
   overflow: visible;
   left: 0;
   right: 0;
-  bottom: -112px;
+  bottom: -160px;
   padding: 16px;
   margin: 0 0 0 0;
-  height: 112px;
+  height: 144px;
   -webkit-transition: all 0.1s ease-out;
   -moz-transition: all 0.1s ease-out;
   -o-transition: all 0.1s ease-out;
   transition: all 0.1s ease-out;
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
+  background-image: -webkit-gradient(linear, left 0%, left 100%, from(rgba(244, 244, 244, 0.09999999999999998)), to(rgba(118, 106, 101, 0.09999999999999998)));
+  background-image: -webkit-linear-gradient(top, rgba(244, 244, 244, 0.09999999999999998), 0%, rgba(118, 106, 101, 0.09999999999999998), 100%);
+  background-image: -moz-linear-gradient(top, rgba(244, 244, 244, 0.09999999999999998) 0%, rgba(118, 106, 101, 0.09999999999999998) 100%);
+  background-image: linear-gradient(to bottom, rgba(244, 244, 244, 0.09999999999999998) 0%, rgba(118, 106, 101, 0.09999999999999998) 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#19f4f4f4', endColorstr='#19766a65', GradientType=0);
 }
 .navigation.active {
-  bottom: 0;
+  bottom: -16px;
 }
 .navigation .drawerbutton {
   position: absolute;
   left: 16px;
-  top: -32px;
+  top: -48px;
   font-size: 32px;
 }
 .navigation .drawerbutton:hover {
@@ -3092,9 +3100,6 @@ iframe.media-object,
   transform: rotate(55deg);
   z-index: -2;
 }
-.navigation > li > a.currentslide {
-  background: #165788;
-}
 .navigation > li > a:hover,
 .navigation > li > a:focus {
   cursor: pointer;
@@ -3104,13 +3109,16 @@ iframe.media-object,
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-  height: 80%;
-  width: 80%;
-  margin: 10%;
+  height: 86%;
+  width: 86%;
+  margin: 7%;
   border-radius: 50%;
   -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
   box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
+}
+.navigation > li.currentslide a {
+  background: #165788;
 }
 .slide {
   margin-left: 0;
@@ -3118,7 +3126,6 @@ iframe.media-object,
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  border-left: 5px solid #766a65;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -3146,21 +3153,29 @@ iframe.media-object,
 .slide:after {
   clear: both;
 }
-#slide1 {
+section[data-slide='1'] {
   background-image: url(http://i.imgur.com/n356iid.jpg);
-  border-left: 5px solid #b71234;
 }
-#slide2 {
+section[data-slide='2'] {
   background-image: url(http://i.imgur.com/u4kq50p.gif);
-  border-left: 5px solid #165788;
 }
-#slide3 {
+section[data-slide='3'] {
   background-image: url(http://i.imgur.com/BaSgARa.gif);
-  border-left: 5px solid #90986b;
 }
-#slide4 {
+section[data-slide='4'] {
   background-image: url(http://i.imgur.com/UxuPhr4.jpg);
-  border-left: 5px solid #eeaf30;
+}
+section[data-slide='5'] {
+  background-image: url(http://i.imgur.com/4xbC5o5.gif);
+}
+section[data-slide='6'] {
+  background-image: url(http://25.media.tumblr.com/79644104bcbf660aca2ddeb280ea30b6/tumblr_n1hrbyyenM1razgego1_1280.gif);
+}
+section[data-slide='7'] {
+  background-image: url(https://31.media.tumblr.com/f7ea0c4c86fca961cdbff12fe157ad1f/tumblr_n1fcglATep1t37kpso1_1280.gif);
+}
+section[data-slide='8'] {
+  background-image: url(http://i.imgur.com/B29Ylw3.gif);
 }
 .noslide {
   min-height: 100%;
@@ -3168,6 +3183,9 @@ iframe.media-object,
   height: 100%;
   padding: 16px;
   background-color: #f4f4f4;
+  -webkit-box-shadow: 0 2px 0 rgba(15, 15, 15, 0.15000000000000002);
+  -moz-box-shadow: 0 2px 0 rgba(15, 15, 15, 0.15000000000000002);
+  box-shadow: 0 2px 0 rgba(15, 15, 15, 0.15000000000000002);
   float: left;
   width: 100%;
   position: relative;
@@ -3203,6 +3221,9 @@ iframe.media-object,
   height: 100%;
   padding: 16px;
   background-color: #f4f4f4;
+  -webkit-box-shadow: 0 2px 0 rgba(15, 15, 15, 0.15000000000000002);
+  -moz-box-shadow: 0 2px 0 rgba(15, 15, 15, 0.15000000000000002);
+  box-shadow: 0 2px 0 rgba(15, 15, 15, 0.15000000000000002);
   float: left;
   width: 100%;
   text-align: center;

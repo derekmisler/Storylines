@@ -99,7 +99,7 @@ $(document).ready(function(){
 	$(".youtube").fitVids();
 		
     //Cache some variables
-    var links = $('.navigation li').find('a');
+    var links = $('.navigation').find('li');
     var navtoggle = $('.drawerbutton');
     slide = $('.slide');
     mywindow = $(window);
@@ -114,25 +114,24 @@ $(document).ready(function(){
         //If the user scrolls up change the navigation link that has the same data-slide attribute as the slide to currentslide and 
         //remove the currentslide class from the previous navigation link 
         if (direction === 'down') {
-            $('.navigation li a[data-slide="' + dataslide + '"]').addClass('currentslide').prev().removeClass('currentslide');
+            $('.navigation li[data-slide="' + dataslide + '"]').addClass('currentslide').prev().removeClass('currentslide');
 						$('.navigation').removeClass('active');
 						navtoggle.find('span').removeClass('glyphicon-zoom-out').addClass('glyphicon-zoom-in');
         }
         // else If the user scrolls down change the navigation link that has the same data-slide attribute as the slide to currentslide and 
         //remove the currentslide class from the next navigation link 
         else {
-            $('.navigation li a[data-slide="' + dataslide + '"]').addClass('currentslide').next().removeClass('currentslide');
+            $('.navigation li[data-slide="' + dataslide + '"]').addClass('currentslide').next().removeClass('currentslide');
         }
 
     });
 
     //waypoints doesnt detect the first slide when user scrolls back up to the top so we add this little bit of code, that removes the class from navigation link slide 2 and adds it to navigation link slide 1. 
-//    mywindow.scroll(function () {
-//        if (mywindow.scrollTop() <= 1) {
-//            $('.navigation li[data-slide="1"]').addClass('currentslide');
-//            $('.navigation li[data-slide="2"]').removeClass('currentslide');
-//        }
-//    });
+    mywindow.scroll(function () {
+        if (mywindow.scrollTop() <= 400) {
+            $('.navigation li[data-slide="1"]').removeClass('currentslide');
+        }
+    });
 
     //Create a function that will be passed a slide number and then will scroll to that slide using jquery easing.
     function goToByScroll(dataslide) {
