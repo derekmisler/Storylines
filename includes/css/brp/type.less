@@ -30,10 +30,10 @@ cite    { font-style: normal; }
 // Contextual emphasis
 .text-muted          { color: @text-muted; }
 .text-primary        { color: @brand-primary; }
-.text-warning        { color: @state-warning-text; }
-.text-danger         { color: @state-danger-text; }
-.text-success        { color: @state-success-text; }
-.text-info           { color: @state-info-text; }
+.text-warning        { color: @brand-warning; }
+.text-danger         { color: @brand-danger; }
+.text-success        { color: @brand-success; }
+.text-info           { color: @brand-info; }
 
 // Alignment
 .text-left           { text-align: left; }
@@ -127,49 +127,6 @@ ol {
   }
 }
 
-// Description Lists
-dl {
-  margin-bottom: @line-height-computed;
-}
-dt,
-dd {
-  line-height: @line-height-base;
-}
-dt {
-  font-weight: bold;
-}
-dd {
-  margin-left: 0; // Undo browser default
-}
-
-// Horizontal description lists
-//
-// Defaults to being stacked without any of the below styles applied, until the
-// grid breakpoint is reached (default of ~768px).
-
-@media (min-width: @grid-float-breakpoint) {
-    .dropcap{
-        .h1;
-        display:block;
-        float:left;
-        margin-top:-@font-size-base;
-        font-size: 100px;
-    }
-  .dl-horizontal {
-    dt {
-      float: left;
-      width: (@component-offset-horizontal - 20);
-      clear: left;
-      text-align: right;
-      .text-overflow();
-    }
-    dd {
-      margin-left: @component-offset-horizontal;
-      .clearfix(); // Clear the floated `dt` if an empty `dd` is present
-    }
-  }
-}
-
 // MISC
 // ----
 
@@ -178,7 +135,7 @@ abbr[title],
 // Added data-* attribute to help out our tooltip plugin, per https://github.com/twbs/bootstrap/issues/5257
 abbr[data-original-title] {
   cursor: help;
-  border-bottom: 1px dotted @abbr-border-color;
+  border-bottom: 1px dotted @link-color;
 }
 abbr.initialism {
   font-size: 90%;
@@ -189,8 +146,8 @@ abbr.initialism {
 blockquote {
   padding: (@line-height-computed / 2) @line-height-computed;
   margin: 0 0 (@line-height-computed * 2);
-  border-top: 3px solid @blockquote-border-color;
-  border-bottom: 3px solid @blockquote-border-color;
+  border-top: 3px solid @default-border-color;
+  border-bottom: 3px solid @default-border-color;
   p {
     font-size: (@font-size-base * 1.25) !important;
     font-weight: 300;
@@ -217,7 +174,7 @@ blockquote {
   small {
     display: block;
     line-height: @line-height-base;
-    color: @blockquote-small-color;
+    color: @text-muted;
     &:before {
       content: '\2014 \00A0';// EM DASH, NBSP
     }

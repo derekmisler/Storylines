@@ -99,10 +99,9 @@ $(document).ready(function(){
 	$(".youtube").fitVids();
 		
     //Cache some variables
-    var links = $('.navigation').find('li');
-    var navtoggle = $('.navigation').find('a');
+    var links = $('.navigation li').find('a');
+    var navtoggle = $('.drawerbutton');
     slide = $('.slide');
-    button = $('.button');
     mywindow = $(window);
     htmlbody = $('html,body');
 		
@@ -115,13 +114,14 @@ $(document).ready(function(){
         //If the user scrolls up change the navigation link that has the same data-slide attribute as the slide to currentslide and 
         //remove the currentslide class from the previous navigation link 
         if (direction === 'down') {
-            $('.navigation li[data-slide="' + dataslide + '"]').addClass('currentslide').prev().removeClass('currentslide');
+            $('.navigation li a[data-slide="' + dataslide + '"]').addClass('currentslide').prev().removeClass('currentslide');
 						$('.navigation').removeClass('active');
+						navtoggle.find('span').removeClass('glyphicon-zoom-out').addClass('glyphicon-zoom-in');
         }
         // else If the user scrolls down change the navigation link that has the same data-slide attribute as the slide to currentslide and 
         //remove the currentslide class from the next navigation link 
         else {
-            $('.navigation li[data-slide="' + dataslide + '"]').addClass('currentslide').next().removeClass('currentslide');
+            $('.navigation li a[data-slide="' + dataslide + '"]').addClass('currentslide').next().removeClass('currentslide');
         }
 
     });
@@ -150,6 +150,7 @@ $(document).ready(function(){
     navtoggle.click(function (e) {
         e.preventDefault();
         $('.navigation').toggleClass('active');
+				navtoggle.find('span').toggleClass('glyphicon-zoom-in glyphicon-zoom-out');
     });
 });
 $(window).load(function()

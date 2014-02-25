@@ -1,100 +1,70 @@
 //
 // Navs
 // --------------------------------------------------
-.pin{
-  width: 100px;
-  height: 100px;
-  border-radius: 50% 50% 50% 0;
-  background: @avl-red;
-  position: absolute;
-  .rotate(-45deg);
-//  left: 50%;
-//  top: 50%;
-  margin: 0;
-  &:after{
-    content: '';
-    width: 90px;
-    height: 90px;
-    margin: 5px 0 0 5px;
-    background: @white;
-    position: absolute;
-    border-radius: 50%;
-    .box-shadow(inset 0 2px 0 rgba(0,0,0,.1));
-  }
-}
-.pulse{
-  background: rgba(0,0,0,.1);
-  .box-shadow(0 0 10px rgba(0,0,0,.1));
-  border-radius: 50%;
-  height: 25px;
-  width: 50px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin: 125px 0 0 25px;
-  .rotate(55deg);
-  z-index: -2;
-  &:after{
-    content: "";
-    border-radius: 50%;
-    height: 25px;
-    width: 50px;
-    position: absolute;
-    margin: 0;
-    animation: pulsate 1s ease-out;
-    animation-iteration-count: infinite;
-    .opacity(0);
-    .box-shadow(0 0 5px @avl-red);
-  }
-}
-@keyframes pulsate{
-  0%{.scale(0.1);.opacity(0)}
-  50%{.opacity(1)}
-  100%{.scale(1.2);.opacity(0)}
-}
-
 .navigation {
     position: fixed;
     z-index: 9999;
     overflow: visible;
     left: 0;
     right: 0;
-    bottom: -((@default-padding * 4) + 50);
-    padding:@default-padding;
+    bottom: -@navbar-height;
+    padding: @default-padding;
     margin: 0 0 0 0;
-    height: ((@default-padding * 4) + 250);
+    height: @navbar-height;
     .transition(all .1s ease-out);
-    .box-shadow(inset -2px 0px 4px -2px rgba(0,0,0,.3));
-    background-color: @avl-dark-gray;
     &.active {
         bottom: 0;
     }
-    > a {
-        display: block;
+    .drawerbutton {
         position: absolute;
-        top: 0;
         left: @default-padding;
-        margin-top:-(@default-padding * 2);
-        font-size:@font-size-large;
+        top: -(@default-padding * 2);
+        font-size: @font-size-large;
+        &:hover{
+            cursor: pointer;
+        }
     }
     > li {
-    	display:inline-block;
-    	padding: 0;
-    	margin:@default-padding;
-    	overflow:hidden;
-        .pin;
-        &:hover,
-        &:focus {
-        	cursor:pointer;
-        }
-        &.currentslide {
-        	border:5px solid @avl-red;
-        }
-        > img {
-          .rotate(45deg);
-        	min-width:100%;
-        	height:100%;
-        	margin-left:-50%;
+        > a {
+            display: block;
+            width: @map-markers;
+            height: @map-markers;
+            border-radius: 50% 50% 50% 0;
+            background: @avl-red;
+            overflow: hidden;
+            .rotate(-45deg);
+            margin: 0 auto;
+            .transition(all 0.2s ease-out);
+            .box-shadow(2px 2px 4px 0 rgba(0,0,0,.3));
+            &:after{
+                background: rgba(0,0,0,1);
+                .box-shadow(0 0 10px rgba(0,0,0,1));
+                border-radius: 50%;
+                height: 25px;
+                width: 50px;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                margin: 125px 0 0 25px;
+                .rotate(55deg);
+                z-index: -2;
+            }
+            &.currentslide{
+                background: @avl-blue;
+            }
+            &:hover,
+            &:focus{
+                cursor: pointer;
+                background: @avl-blue;
+            }
+            > img {
+                .rotate(45deg);
+            	height: 80%;
+            	width: 80%;
+            	margin: 10%;
+            	border-radius: 50%;
+            	.box-shadow(inset 0 0 2px rgba(0,0,0,.5));
+            }
         }
     }
 }

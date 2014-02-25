@@ -53,6 +53,7 @@
     line-height:1;
 }
 .utilities-text-light{
+    .utilities;
     background-color: fadeout(@body-bg, 50%);
     color: @avl-dark-gray;
     text-decoration: none;
@@ -64,86 +65,14 @@
     background-color: fadeout(@avl-dark-gray, 50%);
     color: @body-bg;
 }
-#back-top{
-    position:fixed;
-    bottom:0;
-    left:0;
-    .opacity(0);
-    text-align:center;
-    a{
-        display:block;
-        border-top-right-radius: @border-radius-large;
-        .utilities-text-dark;
-        &:hover,
-        &:focus {
-            .utilities-text-light;
-        }
-    }
-}
-#sidedrawerbutton{
-    .utilities;
-    right:0;
-    top:0;
-    border-bottom-left-radius: @border-radius-large;
-    .utilities-text-light;
-}
-#copyright{
-    .utilities;
-    right:0;
-    bottom: -(@line-height-computed * 2);
-    text-align:center;
-    border-top-left-radius: @border-radius-large;
-    .utilities-text-dark;
-    a{
-        color: fadeout(@body-bg, 10%);
-    }
-}
 #keep-scrolling{
     .utilities;
     bottom:0;
     left:47%;
-    border-top-left-radius: @border-radius-large;
-    border-top-right-radius: @border-radius-large;
+    .border-top-radius(@border-radius-large);
     .utilities-text-dark;
 }
-#map-flyover-map{
-    position:absolute;
-    width:100%;
-    height:100%;
-    a{
-        position:absolute;
-        left:0;
-        top:@navbar-height;
-        z-index:2;
-        .opacity(1);
-        text-align:center;
-        display:block;
-        border-bottom-right-radius: @border-radius-large;
-        border-top-right-radius: @border-radius-large;
-        cursor:help;
-        .utilities-text-dark;
-        &:hover,
-        &:focus {
-            .utilities-text-light;
-        }
-    }
-    img{
-        .opacity(0);
-        width:70%;
-        position:absolute;
-        z-index:1;
-        top:15%;
-        left:15%;
-    }
-}
-#map-overlay{
-    .opacity(0);
-    width:100%;
-    position:absolute;
-    bottom:0;
-    left:0;
-}
-a.playbutton{
+.playbutton{
     .transition(all .25s ease-in-out);
     text-decoration:none;
     display:inline-block;
