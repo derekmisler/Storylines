@@ -8,12 +8,11 @@
     left: 0;
     right: 0;
     bottom: -(@navbar-height + @default-padding);
-    padding: @default-padding;
+    padding: @default-padding 0;
     margin: 0 0 0 0;
     height: @navbar-height;
     .transition(all .1s ease-out);
-    .border-top-radius(@border-radius-large);
-    #gradient > .vertical(@start-color: fadeout(@white, 90%); @end-color: fadeout(@gray, 90%));
+    background: url(http://www.exploreasheville.com/includes/images/storylines/blue-ridge-parkway/mountain-range.png) left 220% repeat-x;
     
     &.active {
         bottom: -@default-padding;
