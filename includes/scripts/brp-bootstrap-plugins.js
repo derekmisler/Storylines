@@ -125,7 +125,7 @@ $(document).ready(function(){
 
     //waypoints doesnt detect the first slide when user scrolls back up to the top so we add this little bit of code, that removes the class from navigation link slide 2 and adds it to navigation link slide 1. 
     mywindow.scroll(function () {
-        if (mywindow.scrollTop() <= 400) {
+        if (mywindow.scrollTop() <= 100) {
             $('.navigation li[data-slide="1"]').removeClass('currentslide');
 						$('.navigation').addClass('active');
 						navtoggle.find('span').addClass('glyphicon-zoom-out').removeClass('glyphicon-zoom-in');
