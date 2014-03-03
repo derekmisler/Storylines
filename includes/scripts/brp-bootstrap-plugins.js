@@ -90,13 +90,10 @@ d)<1/2.75?b*7.5625*a*a+c:a<2/2.75?b*(7.5625*(a-=1.5/2.75)*a+0.75)+c:a<2.5/2.75?b
 $(document).ready(function(){
 	
 	$.stellar({
-		responsive: false,
-		positionProperty: 'transform',
 		horizontalScrolling: false,
-		hideDistantElements: false,
-		parallaxBackgrounds: true
+		parallaxBackgrounds: false
 	});
-	$(".youtube").fitVids();
+	$('.youtube').fitVids();
 		
     //Cache some variables
     var links = $('.navigation').find('li');
@@ -130,6 +127,8 @@ $(document).ready(function(){
     mywindow.scroll(function () {
         if (mywindow.scrollTop() <= 400) {
             $('.navigation li[data-slide="1"]').removeClass('currentslide');
+						$('.navigation').addClass('active');
+						navtoggle.find('span').addClass('glyphicon-zoom-out').removeClass('glyphicon-zoom-in');
         }
     });
 
