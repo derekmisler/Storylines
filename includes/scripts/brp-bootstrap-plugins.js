@@ -1,3 +1,4 @@
+/*jslint white: true */
 /*
 jQuery Waypoints - v1.1.7
 Copyright (c) 2011-2012 Caleb Troughton
@@ -91,7 +92,8 @@ $(document).ready(function(){
 	
 	$.stellar({
 		horizontalScrolling: false,
-		parallaxBackgrounds: false
+		parallaxBackgrounds: false,
+		hideDistantElements: false
 	});
 	$('.youtube').fitVids();
 		
@@ -112,23 +114,22 @@ $(document).ready(function(){
         //remove the currentslide class from the previous navigation link 
         if (direction === 'down') {
             $('.navigation li[data-slide="' + dataslide + '"]').addClass('currentslide').prev().removeClass('currentslide');
-						$('.navigation').removeClass('active');
-						navtoggle.find('span').removeClass('glyphicon-zoom-out').addClass('glyphicon-zoom-in');
+				$('.navigation').removeClass('active');
+				navtoggle.find('span').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
         }
         // else If the user scrolls down change the navigation link that has the same data-slide attribute as the slide to currentslide and 
         //remove the currentslide class from the next navigation link 
         else {
             $('.navigation li[data-slide="' + dataslide + '"]').addClass('currentslide').next().removeClass('currentslide');
         }
-
     });
 
     //waypoints doesnt detect the first slide when user scrolls back up to the top so we add this little bit of code, that removes the class from navigation link slide 2 and adds it to navigation link slide 1. 
     mywindow.scroll(function () {
         if (mywindow.scrollTop() <= 100) {
             $('.navigation li[data-slide="1"]').removeClass('currentslide');
-						$('.navigation').addClass('active');
-						navtoggle.find('span').addClass('glyphicon-zoom-out').removeClass('glyphicon-zoom-in');
+				$('.navigation').addClass('active');
+				navtoggle.find('span').addClass('glyphicon-chevron-up').removeClass('glyphicon-chevron-down');
         }
     });
 
@@ -148,7 +149,7 @@ $(document).ready(function(){
     navtoggle.click(function (e) {
         e.preventDefault();
         $('.navigation').toggleClass('active');
-				navtoggle.find('span').toggleClass('glyphicon-zoom-in glyphicon-zoom-out');
+				navtoggle.find('span').toggleClass('glyphicon-chevron-up glyphicon-chevron-down');
     });
 });
 $(window).load(function()

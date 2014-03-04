@@ -3065,6 +3065,9 @@ iframe.media-object,
 .navigation .drawerbutton:hover {
   cursor: pointer;
 }
+.navigation .drawerbutton h3 {
+  display: inline-block;
+}
 .navigation > li > a {
   display: block;
   width: 80px;
