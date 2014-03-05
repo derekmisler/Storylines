@@ -8,10 +8,10 @@
     left: 0;
     right: 0;
     bottom: -(@navbar-height + @default-padding);
-    padding: @default-padding 0;
+    padding: 0 0 @default-padding 0;
     margin: 0 0 0 0;
     height: @navbar-height;
-    .transition(all .1s ease-out);
+    .transition(bottom .1s ease);
     background: url(http://www.exploreasheville.com/includes/images/storylines/blue-ridge-parkway/mountain-range.png) left 220% repeat-x;
     
     &.active {
@@ -19,14 +19,25 @@
     }
     .drawerbutton {
         position: absolute;
-        left: @default-padding;
-        top: -(@default-padding * 3);
+        display: block;
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+        left: 0;
+        right: 0;
+        width: 100%;
+        .text-center;
+        bottom: @navbar-height;
         font-size: @font-size-large;
         &:hover{
             cursor: pointer;
         }
-        h3{
-            display: inline-block;
+        .drawerbuttonheader{
+            display: block;
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+            .text-muted;
         }
     }
     > li {

@@ -78,7 +78,7 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/GPL-license.txt
 
 // Lazy Load - jQuery plugin for lazy loading images
 !function(a,b,c,d){var e=a(b);a.fn.lazyload=function(f){function g(){var b=0;i.each(function(){var c=a(this);if(!j.skip_invisible||c.is(":visible"))if(a.abovethetop(this,j)||a.leftofbegin(this,j));else if(a.belowthefold(this,j)||a.rightoffold(this,j)){if(++b>j.failure_limit)return!1}else c.trigger("appear"),b=0})}var h,i=this,j={threshold:0,failure_limit:0,event:"scroll",effect:"show",container:b,data_attribute:"original",skip_invisible:!0,appear:null,load:null,placeholder:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"};return f&&(d!==f.failurelimit&&(f.failure_limit=f.failurelimit,delete f.failurelimit),d!==f.effectspeed&&(f.effect_speed=f.effectspeed,delete f.effectspeed),a.extend(j,f)),h=j.container===d||j.container===b?e:a(j.container),0===j.event.indexOf("scroll")&&h.bind(j.event,function(){return g()}),this.each(function(){var b=this,c=a(b);b.loaded=!1,(c.attr("src")===d||c.attr("src")===!1)&&c.attr("src",j.placeholder),c.one("appear",function(){if(!this.loaded){if(j.appear){var d=i.length;j.appear.call(b,d,j)}a("<img />").bind("load",function(){var d=c.data(j.data_attribute);c.hide(),c.is("img")?c.attr("src",d):c.css("background-image","url('"+d+"')"),c[j.effect](j.effect_speed),b.loaded=!0;var e=a.grep(i,function(a){return!a.loaded});if(i=a(e),j.load){var f=i.length;j.load.call(b,f,j)}}).attr("src",c.data(j.data_attribute))}}),0!==j.event.indexOf("scroll")&&c.bind(j.event,function(){b.loaded||c.trigger("appear")})}),e.bind("resize",function(){g()}),/iphone|ipod|ipad.*os 5/gi.test(navigator.appVersion)&&e.bind("pageshow",function(b){b.originalEvent&&b.originalEvent.persisted&&i.each(function(){a(this).trigger("appear")})}),a(c).ready(function(){g()}),this},a.belowthefold=function(c,f){var g;return g=f.container===d||f.container===b?(b.innerHeight?b.innerHeight:e.height())+e.scrollTop():a(f.container).offset().top+a(f.container).height(),g<=a(c).offset().top-f.threshold},a.rightoffold=function(c,f){var g;return g=f.container===d||f.container===b?e.width()+e.scrollLeft():a(f.container).offset().left+a(f.container).width(),g<=a(c).offset().left-f.threshold},a.abovethetop=function(c,f){var g;return g=f.container===d||f.container===b?e.scrollTop():a(f.container).offset().top,g>=a(c).offset().top+f.threshold+a(c).height()},a.leftofbegin=function(c,f){var g;return g=f.container===d||f.container===b?e.scrollLeft():a(f.container).offset().left,g>=a(c).offset().left+f.threshold+a(c).width()},a.inviewport=function(b,c){return!(a.rightoffold(b,c)||a.leftofbegin(b,c)||a.belowthefold(b,c)||a.abovethetop(b,c))},a.extend(a.expr[":"],{"below-the-fold":function(b){return a.belowthefold(b,{threshold:0})},"above-the-top":function(b){return!a.belowthefold(b,{threshold:0})},"right-of-screen":function(b){return a.rightoffold(b,{threshold:0})},"left-of-screen":function(b){return!a.rightoffold(b,{threshold:0})},"in-viewport":function(b){return a.inviewport(b,{threshold:0})},"above-the-fold":function(b){return!a.belowthefold(b,{threshold:0})},"right-of-fold":function(b){return a.rightoffold(b,{threshold:0})},"left-of-fold":function(b){return!a.rightoffold(b,{threshold:0})}})}(jQuery,window,document);
-
+//easing
 jQuery.easing.jswing=jQuery.easing.swing;
 jQuery.extend(jQuery.easing,{def:"easeOutQuad",swing:function(e,a,c,b,d){return jQuery.easing[jQuery.easing.def](e,a,c,b,d)},easeInQuad:function(e,a,c,b,d){return b*(a/=d)*a+c},easeOutQuad:function(e,a,c,b,d){return-b*(a/=d)*(a-2)+c},easeInOutQuad:function(e,a,c,b,d){if((a/=d/2)<1)return b/2*a*a+c;return-b/2*(--a*(a-2)-1)+c},easeInCubic:function(e,a,c,b,d){return b*(a/=d)*a*a+c},easeOutCubic:function(e,a,c,b,d){return b*((a=a/d-1)*a*a+1)+c},easeInOutCubic:function(e,a,c,b,d){if((a/=d/2)<1)return b/
 2*a*a*a+c;return b/2*((a-=2)*a*a+2)+c},easeInQuart:function(e,a,c,b,d){return b*(a/=d)*a*a*a+c},easeOutQuart:function(e,a,c,b,d){return-b*((a=a/d-1)*a*a*a-1)+c},easeInOutQuart:function(e,a,c,b,d){if((a/=d/2)<1)return b/2*a*a*a*a+c;return-b/2*((a-=2)*a*a*a-2)+c},easeInQuint:function(e,a,c,b,d){return b*(a/=d)*a*a*a*a+c},easeOutQuint:function(e,a,c,b,d){return b*((a=a/d-1)*a*a*a*a+1)+c},easeInOutQuint:function(e,a,c,b,d){if((a/=d/2)<1)return b/2*a*a*a*a*a+c;return b/2*((a-=2)*a*a*a*a+2)+c},easeInSine:function(e,
@@ -87,23 +87,41 @@ easeInCirc:function(e,a,c,b,d){return-b*(Math.sqrt(1-(a/=d)*a)-1)+c},easeOutCirc
 a,c,b,d){e=1.70158;var f=0,g=b;if(a==0)return c;if((a/=d)==1)return c+b;f||(f=d*0.3);if(g<Math.abs(b)){g=b;e=f/4}else e=f/(2*Math.PI)*Math.asin(b/g);return g*Math.pow(2,-10*a)*Math.sin((a*d-e)*2*Math.PI/f)+b+c},easeInOutElastic:function(e,a,c,b,d){e=1.70158;var f=0,g=b;if(a==0)return c;if((a/=d/2)==2)return c+b;f||(f=d*0.3*1.5);if(g<Math.abs(b)){g=b;e=f/4}else e=f/(2*Math.PI)*Math.asin(b/g);if(a<1)return-0.5*g*Math.pow(2,10*(a-=1))*Math.sin((a*d-e)*2*Math.PI/f)+c;return g*Math.pow(2,-10*(a-=1))*Math.sin((a*
 d-e)*2*Math.PI/f)*0.5+b+c},easeInBack:function(e,a,c,b,d,f){if(f==undefined)f=1.70158;return b*(a/=d)*a*((f+1)*a-f)+c},easeOutBack:function(e,a,c,b,d,f){if(f==undefined)f=1.70158;return b*((a=a/d-1)*a*((f+1)*a+f)+1)+c},easeInOutBack:function(e,a,c,b,d,f){if(f==undefined)f=1.70158;if((a/=d/2)<1)return b/2*a*a*(((f*=1.525)+1)*a-f)+c;return b/2*((a-=2)*a*(((f*=1.525)+1)*a+f)+2)+c},easeInBounce:function(e,a,c,b,d){return b-jQuery.easing.easeOutBounce(e,d-a,0,b,d)+c},easeOutBounce:function(e,a,c,b,d){return(a/=
 d)<1/2.75?b*7.5625*a*a+c:a<2/2.75?b*(7.5625*(a-=1.5/2.75)*a+0.75)+c:a<2.5/2.75?b*(7.5625*(a-=2.25/2.75)*a+0.9375)+c:b*(7.5625*(a-=2.625/2.75)*a+0.984375)+c},easeInOutBounce:function(e,a,c,b,d){if(a<d/2)return jQuery.easing.easeInBounce(e,a*2,0,b,d)*0.5+c;return jQuery.easing.easeOutBounce(e,a*2-d,0,b,d)*0.5+b*0.5+c}});
-
+//Start
+//Start
+//Start
+//Start
+//Start
+//Start
+//Start
+//Start
+//Start
 $(document).ready(function(){
 	
-	$.stellar({
-		horizontalScrolling: false,
-		parallaxBackgrounds: false,
-		hideDistantElements: false
-	});
+	//$.stellar({
+	//	horizontalScrolling: false,
+	//	parallaxBackgrounds: false,
+	//	hideDistantElements: false
+	//});
 	$('.youtube').fitVids();
 		
     //Cache some variables
-    var links = $('.navigation').find('li');
-    var navtoggle = $('.drawerbutton');
-    slide = $('.slide');
-    mywindow = $(window);
+	mywindow = $(window);
     htmlbody = $('html,body');
-		
+    links = $('.navigation').find('li');
+    thumbnail = links.find('img');
+	profilePhoto = $('.caption').find('img');
+    navtoggle = $('.drawerbutton');
+    slide = $('.slide');
+	lastScroll = 0;
+	
+	slide.each(function(index) {
+  		zindex = $(this).attr('data-slide');
+		$(this).css('z-index', -zindex);
+		$(this).find('.slide-divider').css('z-index', zindex);
+	});
+
+	
     //Setup waypoints plugin
     slide.waypoint(function (event, direction) {
 
@@ -114,28 +132,40 @@ $(document).ready(function(){
         //remove the currentslide class from the previous navigation link 
         if (direction === 'down') {
             $('.navigation li[data-slide="' + dataslide + '"]').addClass('currentslide').prev().removeClass('currentslide');
-				$('.navigation').removeClass('active');
-				navtoggle.find('span').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
         }
         // else If the user scrolls down change the navigation link that has the same data-slide attribute as the slide to currentslide and 
         //remove the currentslide class from the next navigation link 
         else {
             $('.navigation li[data-slide="' + dataslide + '"]').addClass('currentslide').next().removeClass('currentslide');
         }
-    });
-
-    //waypoints doesnt detect the first slide when user scrolls back up to the top so we add this little bit of code, that removes the class from navigation link slide 2 and adds it to navigation link slide 1. 
-    mywindow.scroll(function () {
-        if (mywindow.scrollTop() <= 100) {
-            $('.navigation li[data-slide="1"]').removeClass('currentslide');
-				$('.navigation').addClass('active');
-				navtoggle.find('span').addClass('glyphicon-chevron-up').removeClass('glyphicon-chevron-down');
-        }
+    }, {offset: 100});
+	
+    //hide the navigation when scrolling down, show it when scrolling up	
+    mywindow.scroll(function(event){
+		var st = $(this).scrollTop();
+		if (st > lastScroll){
+			$('.navigation').removeClass('active');
+			$('.drawerbuttonheader').fadeTo("slow", 0);
+			navtoggle.find('.glyphicon').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+		} 
+		else {
+			$('.navigation').addClass('active');
+			navtoggle.find('.glyphicon').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+		}
+		//Updates scroll position
+		lastScroll = st;
+	});
+    //hide and show the navigation by clicking the arrow
+    navtoggle.click(function (e) {
+        e.preventDefault();
+        $('.navigation').toggleClass('active');
+        $('.drawerbuttonheader').fadeOut("slow");
+		navtoggle.find('.glyphicon').toggleClass('glyphicon-chevron-up glyphicon-chevron-down');
     });
 
     //Create a function that will be passed a slide number and then will scroll to that slide using jquery easing.
     function goToByScroll(dataslide) {
-        htmlbody.animate({ scrollTop: $('.slide[data-slide="' + dataslide + '"]').offset().top + 1 }, 2000, 'easeInOutQuint');
+        htmlbody.animate({ scrollTop: $('.slide[data-slide="' + dataslide + '"]').offset().top + 0 }, 1000, 'easeInOutQuad');
     }
 
     //When the user clicks on the navigation links, get the data-slide attribute value of the link and pass that variable to the goToByScroll function
@@ -145,13 +175,13 @@ $(document).ready(function(){
         goToByScroll(dataslide);
     });
 
-    //hidden navigation
-    navtoggle.click(function (e) {
-        e.preventDefault();
-        $('.navigation').toggleClass('active');
-				navtoggle.find('span').toggleClass('glyphicon-chevron-up glyphicon-chevron-down');
-    });
 });
+//Heavy stuff down here
+//Heavy stuff down here
+//Heavy stuff down here
+//Heavy stuff down here
+//Heavy stuff down here
+//Heavy stuff down here
 $(window).load(function()
 {
 	var myOptions = {
