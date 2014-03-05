@@ -21,13 +21,14 @@
             position:absolute;
             bottom:0;
             left:0;
-            .text-right;
+            right:0;
+            .text-center;
             z-index:999;
         	padding:(@default-padding * 2);
         	padding-bottom:(@default-padding * 4);
-        	background-color: fadeout(@body-bg, 50%);
+        	#gradient > .vertical(@start-color: fadeout(@body-bg, 100%); @end-color: fadeout(@body-bg, 20%););
         	> a {
-                display: block;
+                display: inline-block;
                 width: 200px;
                 height: 200px;
                 border-radius: 50% 50% 50% 0;
@@ -35,7 +36,6 @@
                 overflow: hidden;
                 .rotate(-45deg);
                 margin: 0;
-                float: right;
                 .transition(all 0.2s ease-out);
                 .box-shadow(1px 1px 2px 0 rgba(0,0,0,.1));
                 &:after{

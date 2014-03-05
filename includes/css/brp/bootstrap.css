@@ -265,7 +265,7 @@ html {
 body {
   font-family: 'Open Sans', Verdana, "Lucida Grande", "Lucida Sans Unicode", "Bitstream Vera Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
-  line-height: 1.85;
+  line-height: 1.6;
   color: #0f0f0f;
   background-color: #f4f4f4;
 }
@@ -334,7 +334,7 @@ img {
 }
 .img-thumbnail {
   padding: 0px;
-  line-height: 1.85;
+  line-height: 1.6;
   background-color: #eae7db;
   border: 1px solid #aeaea6;
   border-radius: 4px;
@@ -392,7 +392,7 @@ hr {
   box-sizing: content-box;
 }
 p {
-  margin: 0 0 16.5px;
+  margin: 0 0 14px;
 }
 @media (min-width: 768px) {
   p.lead:first-line {
@@ -471,47 +471,47 @@ h1,
 h2,
 h3 {
   margin-top: 0;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   text-transform: uppercase;
 }
 h4,
 h5,
 h6 {
-  margin-top: 16.5px;
-  margin-bottom: 16.5px;
+  margin-top: 14px;
+  margin-bottom: 14px;
 }
 h1,
 .h1 {
-  font-size: 46px;
+  font-size: 54px;
   text-shadow: 1px 1px 0 rgba(244, 244, 244, 0.25);
 }
 h2,
 .h2 {
-  font-size: 38px;
+  font-size: 46px;
 }
 h3,
 .h3 {
-  font-size: 31px;
+  font-size: 39px;
 }
 h4,
 .h4 {
-  font-size: 23px;
+  font-size: 31px;
 }
 h5,
 .h5 {
-  font-size: 18px;
+  font-size: 23px;
 }
 h6,
 .h6 {
-  font-size: 16px;
+  font-size: 18px;
 }
 h1 small,
 .h1 small {
-  font-size: 31px;
+  font-size: 47px;
 }
 h2 small,
 .h2 small {
-  font-size: 23px;
+  font-size: 31px;
 }
 h3 small,
 .h3 small,
@@ -520,14 +520,14 @@ h4 small,
   font-size: 18px;
 }
 .page-header {
-  padding-bottom: 15.5px;
+  padding-bottom: 13px;
   margin: 0;
   border-bottom: 0px solid rgba(168, 168, 168, 0.5);
 }
 ul,
 ol {
   margin-top: 0;
-  margin-bottom: 16.5px;
+  margin-bottom: 14px;
 }
 ul ul,
 ol ul,
@@ -558,8 +558,8 @@ abbr.initialism {
   text-transform: uppercase;
 }
 blockquote {
-  padding: 16.5px 33px;
-  margin: 0 0 66px;
+  padding: 14px 28px;
+  margin: 0 0 56px;
   border-top: 3px solid #aeaea6;
   border-bottom: 3px solid #aeaea6;
 }
@@ -588,7 +588,7 @@ blockquote p:last-child {
 }
 blockquote small {
   display: block;
-  line-height: 1.85;
+  line-height: 1.6;
   color: #766a65;
 }
 blockquote small:before {
@@ -619,9 +619,9 @@ blockquote:after {
 }
 address {
   display: block;
-  margin-bottom: 33px;
+  margin-bottom: 28px;
   font-style: normal;
-  line-height: 1.85;
+  line-height: 1.6;
 }
 .container {
   margin-right: auto;
@@ -1477,7 +1477,7 @@ address {
   margin-bottom: 0;
   font-size: 18px;
   font-weight: normal;
-  line-height: 1.85;
+  line-height: 1.6;
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
@@ -2430,7 +2430,7 @@ input[type="button"].btn-block {
 }
 .thumbnail {
   padding: 0px;
-  line-height: 1.85;
+  line-height: 1.6;
   background-color: #eae7db;
   border: 1px solid #aeaea6;
   border-radius: 4px;
@@ -2482,7 +2482,7 @@ a.thumbnail:focus {
 }
 .media-object {
   padding: 0px;
-  line-height: 1.85;
+  line-height: 1.6;
   background-color: #eae7db;
   border: 1px solid #aeaea6;
   border-radius: 4px;
@@ -2516,20 +2516,20 @@ iframe.media-object,
   color: #766a65;
 }
 .media > .pull-left {
-  margin-right: 11px;
+  margin-right: 9.333333333333334px;
   margin-top: 0;
 }
 .media > .pull-right {
-  margin-left: 11px;
+  margin-left: 9.333333333333334px;
   margin-top: 0;
 }
 .media.pull-left {
-  margin-right: 33px;
-  margin-top: 11px;
+  margin-right: 28px;
+  margin-top: 9.333333333333334px;
 }
 .media.pull-right {
-  margin-left: 33px;
-  margin-top: 11px;
+  margin-left: 28px;
+  margin-top: 9.333333333333334px;
 }
 .media-list {
   padding-left: 0;
@@ -2537,7 +2537,7 @@ iframe.media-object,
 }
 .panel {
   padding: 0px;
-  line-height: 1.85;
+  line-height: 1.6;
   border: 1px solid #aeaea6;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -2549,7 +2549,7 @@ iframe.media-object,
   display: inline-block;
   position: relative;
   max-width: 100%;
-  margin-bottom: 33px;
+  margin-bottom: 28px;
   background-color: #eae7db;
   border-radius: 4px;
   -webkit-box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1);
@@ -2733,7 +2733,7 @@ iframe.media-object,
 }
 .hotspotcontainer .info {
   padding: 0px;
-  line-height: 1.85;
+  line-height: 1.6;
   border: 1px solid #aeaea6;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -2745,7 +2745,7 @@ iframe.media-object,
   display: inline-block;
   position: relative;
   max-width: 100%;
-  margin-bottom: 33px;
+  margin-bottom: 28px;
   background-color: #eae7db;
   border-radius: 4px;
   -webkit-box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1);
@@ -2952,14 +2952,20 @@ iframe.media-object,
   position: absolute;
   bottom: 0;
   left: 0;
-  text-align: right;
+  right: 0;
+  text-align: center;
   z-index: 999;
   padding: 36px;
   padding-bottom: 72px;
-  background-color: rgba(244, 244, 244, 0.5);
+  background-image: -webkit-gradient(linear, left 0%, left 100%, from(rgba(244, 244, 244, 0)), to(rgba(244, 244, 244, 0.8)));
+  background-image: -webkit-linear-gradient(top, rgba(244, 244, 244, 0), 0%, rgba(244, 244, 244, 0.8), 100%);
+  background-image: -moz-linear-gradient(top, rgba(244, 244, 244, 0) 0%, rgba(244, 244, 244, 0.8) 100%);
+  background-image: linear-gradient(to bottom, rgba(244, 244, 244, 0) 0%, rgba(244, 244, 244, 0.8) 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00f4f4f4', endColorstr='#ccf4f4f4', GradientType=0);
 }
 .slide .caption > aside > a {
-  display: block;
+  display: inline-block;
   width: 200px;
   height: 200px;
   border-radius: 50% 50% 50% 0;
@@ -2969,7 +2975,6 @@ iframe.media-object,
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
   margin: 0;
-  float: right;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
@@ -3385,7 +3390,7 @@ iframe.media-object,
   background-color: rgba(244, 244, 244, 0.5);
   color: #37424a;
   text-decoration: none;
-  padding: 11px;
+  padding: 9px;
   z-index: 999999;
 }
 .utilities-text-dark {
@@ -3398,7 +3403,7 @@ iframe.media-object,
   background-color: rgba(244, 244, 244, 0.5);
   color: #37424a;
   text-decoration: none;
-  padding: 11px;
+  padding: 9px;
   z-index: 999999;
   background-color: rgba(55, 66, 74, 0.5);
   color: #f4f4f4;
@@ -3417,7 +3422,7 @@ iframe.media-object,
   background-color: rgba(244, 244, 244, 0.5);
   color: #37424a;
   text-decoration: none;
-  padding: 11px;
+  padding: 9px;
   z-index: 999999;
   background-color: rgba(55, 66, 74, 0.5);
   color: #f4f4f4;
