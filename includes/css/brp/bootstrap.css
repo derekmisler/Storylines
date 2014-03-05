@@ -2827,7 +2827,7 @@ iframe.media-object,
   margin: 0;
   padding: 0;
   line-height: 1;
-  color: #766a65;
+  color: #f4f4f4;
 }
 .navigation > li > a {
   display: block;
@@ -2892,7 +2892,7 @@ iframe.media-object,
   -moz-box-shadow: 0 -5px 5px rgba(15, 15, 15, 0.15000000000000002);
   box-shadow: 0 -5px 5px rgba(15, 15, 15, 0.15000000000000002);
   z-index: 0;
-  height: 100%;
+  min-height: 100%;
 }
 .slide:before,
 .slide:after {
@@ -2914,111 +2914,60 @@ iframe.media-object,
 .slide:after {
   clear: both;
 }
-#top {
+.slide#top {
   z-index: 999;
+  min-height: 100%;
+  padding: 128px 0;
 }
-.slide-divider {
+.slide .caption {
+  padding-bottom: 0;
+}
+.slide .caption .slide-divider {
   margin-left: 0;
   margin-right: 0;
   position: relative;
   min-width: 100%;
   z-index: -1;
 }
-.slide-divider:before,
-.slide-divider:after {
+.slide .caption .slide-divider:before,
+.slide .caption .slide-divider:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */
 }
-.slide-divider:after {
+.slide .caption .slide-divider:after {
   clear: both;
 }
-.slide-divider:before,
-.slide-divider:after {
+.slide .caption .slide-divider:before,
+.slide .caption .slide-divider:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */
 }
-.slide-divider:after {
+.slide .caption .slide-divider:after {
   clear: both;
 }
-.noslide {
-  min-height: 100%;
-  padding: 64px;
-  background-color: #f4f4f4;
-  float: left;
-  width: 100%;
+.slide .caption > aside {
   position: relative;
   min-height: 1px;
   padding-left: 16px;
   padding-right: 16px;
-}
-@media (min-width: 768px) {
-  .noslide {
-    float: left;
-    width: 83.33333333333334%;
-  }
-}
-@media (min-width: 768px) {
-  .noslide {
-    margin-left: 16.666666666666664%;
-  }
-}
-@media (min-width: 1024px) {
-  .noslide {
-    float: left;
-    width: 66.66666666666666%;
-  }
-}
-@media (min-width: 1024px) {
-  .noslide {
-    margin-left: 0%;
-  }
-}
-.caption {
-  min-height: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: right;
+  z-index: 999;
   padding: 64px;
   background-color: #f4f4f4;
-  float: left;
-  width: 100%;
-  text-align: center;
-  position: relative;
-  min-height: 1px;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-bottom: 0;
-}
-@media (min-width: 768px) {
-  .caption {
-    float: left;
-    width: 83.33333333333334%;
-  }
-}
-@media (min-width: 768px) {
-  .caption {
-    margin-left: 16.666666666666664%;
-  }
 }
 @media (min-width: 1024px) {
-  .caption {
+  .slide .caption > aside {
     float: left;
-    width: 66.66666666666666%;
+    width: 41.66666666666667%;
   }
 }
-@media (min-width: 1024px) {
-  .caption {
-    margin-left: 0%;
-  }
-}
-@media (min-width: 1024px) {
-  .caption {
-    float: left;
-    width: 33.33333333333333%;
-  }
-}
-.caption > a {
+.slide .caption > aside > a {
   display: inline-block;
   padding: 0;
   margin: 0;
@@ -3037,31 +2986,64 @@ iframe.media-object,
   overflow: hidden;
   border: 5px solid #165788;
 }
-.caption > a:hover,
-.caption > a:focus {
+.slide .caption > aside > a:hover,
+.slide .caption > aside > a:focus {
   border: 10px solid #b71234;
 }
-.caption > a > img {
+.slide .caption > aside > a > img {
   min-width: 100%;
   height: 100%;
 }
+.slide .noslide {
+  min-height: 100%;
+  background-color: #f4f4f4;
+  position: relative;
+  float: left;
+  width: 100%;
+  min-height: 1px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.slide .noslide .assets {
+  float: left;
+  width: 100%;
+  position: relative;
+  min-height: 1px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding: 64px 16px;
+}
 @media (min-width: 768px) {
-  .noslide {
-    padding: 32px;
-  }
-  .caption {
-    padding: 32px;
-    padding-bottom: 0;
-    text-align: left;
+  .slide .noslide .assets {
+    float: left;
+    width: 33.33333333333333%;
   }
 }
 @media (min-width: 1024px) {
-  .noslide {
-    padding: 32px;
+  .slide .noslide .assets {
+    float: left;
+    width: 41.66666666666667%;
   }
-  .caption {
-    padding: 32px;
-    text-align: right;
+}
+.slide .noslide .story {
+  float: left;
+  width: 100%;
+  position: relative;
+  min-height: 1px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding: 64px;
+}
+@media (min-width: 768px) {
+  .slide .noslide .story {
+    float: left;
+    width: 66.66666666666666%;
+  }
+}
+@media (min-width: 1024px) {
+  .slide .noslide .story {
+    float: left;
+    width: 58.333333333333336%;
   }
 }
 .row-offcanvas {

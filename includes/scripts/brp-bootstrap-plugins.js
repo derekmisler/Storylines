@@ -114,6 +114,7 @@ $(document).ready(function(){
     navtoggle = $('.drawerbutton');
     slide = $('.slide');
 	lastScroll = 0;
+	windowHeight = mywindow.height();
 	
 	slide.each(function(index) {
   		zindex = $(this).attr('data-slide');
@@ -165,7 +166,7 @@ $(document).ready(function(){
 
     //Create a function that will be passed a slide number and then will scroll to that slide using jquery easing.
     function goToByScroll(dataslide) {
-        htmlbody.animate({ scrollTop: $('.slide[data-slide="' + dataslide + '"]').offset().top + 0 }, 1000, 'easeInOutQuad');
+        htmlbody.animate({ scrollTop: $('.slide[data-slide="' + dataslide + '"]').offset().top + (windowHeight * .5) }, 1000, 'easeInOutQuad');
     }
 
     //When the user clicks on the navigation links, get the data-slide attribute value of the link and pass that variable to the goToByScroll function
