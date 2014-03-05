@@ -7,45 +7,64 @@
     &#top{
         z-index: 999;
         min-height:100%;
-        padding:@navbar-height 0;
     }
     // content
     .caption{
         padding-bottom:0;
+        height: 100%;
         .slide-divider{
             .make-row();
-            position: relative;
             min-width: 100%;
-            z-index: -1;
+            min-height: 100%;
         }
         > aside {
-            .make-md-column(5);
             position:absolute;
             bottom:0;
+            left:0;
             .text-right;
             z-index:999;
-        	padding:(@default-padding * 4);
-           	background-color:@body-bg;
+        	padding:(@default-padding * 2);
+        	padding-bottom:(@default-padding * 4);
+        	background-color: fadeout(@body-bg, 50%);
         	> a {
-                display:inline-block;
-            	padding:0;
-            	margin:0;
-            	.transition(all .1s ease-in);
-            	width:200px;
-            	height:200px;
-            	border-radius:1000px;
-            	.hide-text();
-            	overflow:hidden;
-            	border:5px solid @avl-blue;
+                display: block;
+                width: 200px;
+                height: 200px;
+                border-radius: 50% 50% 50% 0;
+                background: @avl-blue;
+                overflow: hidden;
+                .rotate(-45deg);
+                margin: 0;
+                float: right;
+                .transition(all 0.2s ease-out);
+                .box-shadow(1px 1px 2px 0 rgba(0,0,0,.1));
+                &:after{
+                    background: rgba(0,0,0,1);
+                    .box-shadow(0 0 10px rgba(0,0,0,1));
+                    border-radius: 50%;
+                    height: 25px;
+                    width: 50px;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    margin: 125px 0 0 25px;
+                    .rotate(55deg);
+                    z-index: -2;
+                }
                 &:hover,
-                &:focus {
-                	border:10px solid @avl-red;
+                &:focus{
+                    cursor: pointer;
+                    background: @avl-blue;
                 }
                 > img {
-                	min-width:100%;
-                	height:100%;
+                    .rotate(45deg);
+                	height: 86%;
+                	width: 86%;
+                	margin: 7%;
+                	border-radius: 50%;
+                	.box-shadow(inset 0 0 2px rgba(0,0,0,.5));
                 }
-            }
+        	}
         }
     }
     .noslide{

@@ -264,7 +264,7 @@ html {
 }
 body {
   font-family: 'Open Sans', Verdana, "Lucida Grande", "Lucida Sans Unicode", "Bitstream Vera Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.85;
   color: #0f0f0f;
   background-color: #f4f4f4;
@@ -291,7 +291,7 @@ hr {
   z-index: 1;
 }
 #intro {
-  padding-top: 48px;
+  padding-top: 54px;
   padding-bottom: 0;
 }
 #intro .first-paragraph:first-line {
@@ -305,7 +305,7 @@ hr {
   }
 }
 #map-flyover {
-  padding-bottom: 48px;
+  padding-bottom: 54px;
 }
 a {
   color: #b71234;
@@ -330,7 +330,7 @@ img {
   max-width: 100%;
 }
 .img-rounded {
-  border-radius: 16px;
+  border-radius: 18px;
 }
 .img-thumbnail {
   padding: 0px;
@@ -365,7 +365,7 @@ hr {
   border: 0;
   outline: 0;
   margin: 0;
-  padding: 16px 0;
+  padding: 18px 0;
 }
 .sr-only {
   position: absolute;
@@ -392,12 +392,12 @@ hr {
   box-sizing: content-box;
 }
 p {
-  margin: 0 0 14.5px;
+  margin: 0 0 16.5px;
 }
 @media (min-width: 768px) {
   p.lead:first-line {
     color: #766a65;
-    font-size: 32px;
+    font-size: 36px;
     line-height: 150%;
   }
 }
@@ -471,63 +471,63 @@ h1,
 h2,
 h3 {
   margin-top: 0;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
   text-transform: uppercase;
 }
 h4,
 h5,
 h6 {
-  margin-top: 14.5px;
-  margin-bottom: 14.5px;
+  margin-top: 16.5px;
+  margin-bottom: 16.5px;
 }
 h1,
 .h1 {
-  font-size: 41px;
-  text-shadow: 1px 1px 1px #f4f4f4;
+  font-size: 46px;
+  text-shadow: 1px 1px 0 rgba(244, 244, 244, 0.25);
 }
 h2,
 .h2 {
-  font-size: 34px;
+  font-size: 38px;
 }
 h3,
 .h3 {
-  font-size: 28px;
+  font-size: 31px;
 }
 h4,
 .h4 {
-  font-size: 20px;
+  font-size: 23px;
 }
 h5,
 .h5 {
-  font-size: 16px;
+  font-size: 18px;
 }
 h6,
 .h6 {
-  font-size: 14px;
+  font-size: 16px;
 }
 h1 small,
 .h1 small {
-  font-size: 28px;
+  font-size: 31px;
 }
 h2 small,
 .h2 small {
-  font-size: 20px;
+  font-size: 23px;
 }
 h3 small,
 .h3 small,
 h4 small,
 .h4 small {
-  font-size: 16px;
+  font-size: 18px;
 }
 .page-header {
-  padding-bottom: 13.5px;
+  padding-bottom: 15.5px;
   margin: 0;
   border-bottom: 0px solid rgba(168, 168, 168, 0.5);
 }
 ul,
 ol {
   margin-top: 0;
-  margin-bottom: 14.5px;
+  margin-bottom: 16.5px;
 }
 ul ul,
 ol ul,
@@ -558,13 +558,13 @@ abbr.initialism {
   text-transform: uppercase;
 }
 blockquote {
-  padding: 14.5px 29px;
-  margin: 0 0 58px;
+  padding: 16.5px 33px;
+  margin: 0 0 66px;
   border-top: 3px solid #aeaea6;
   border-bottom: 3px solid #aeaea6;
 }
 blockquote p {
-  font-size: 20px !important;
+  font-size: 22.5px !important;
   font-weight: 300;
   line-height: 1.25;
   font-family: 'Gentium Book Basic', Georgia, "Times New Roman", Times, serif;
@@ -595,7 +595,7 @@ blockquote small:before {
   content: '\2014 \00A0';
 }
 blockquote.pull-right {
-  padding-right: 16px;
+  padding-right: 18px;
   padding-left: 0;
   border-right: 5px solid rgba(168, 168, 168, 0.5);
   border-left: 0;
@@ -619,15 +619,15 @@ blockquote:after {
 }
 address {
   display: block;
-  margin-bottom: 29px;
+  margin-bottom: 33px;
   font-style: normal;
   line-height: 1.85;
 }
 .container {
   margin-right: auto;
   margin-left: auto;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 18px;
+  padding-right: 18px;
 }
 .container:before,
 .container:after {
@@ -729,7 +729,7 @@ address {
 .col-lg-12 {
   position: relative;
   min-height: 1px;
-  padding: 16px;
+  padding: 18px;
 }
 .col-xs-1,
 .col-xs-2,
@@ -782,8 +782,8 @@ address {
 }
 @media (max-width: 768px) {
   .col-xs-12 {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 18px;
+    padding-right: 18px;
   }
 }
 @media (min-width: 768px) {
@@ -1013,10 +1013,10 @@ address {
     max-width: 100%;
   }
   .navbar {
-    padding: 16px 0;
+    padding: 18px 0;
   }
   footer {
-    padding: 16px 0;
+    padding: 18px 0;
   }
   .col-md-1,
   .col-md-2,
@@ -1181,7 +1181,7 @@ address {
     max-width: 100%;
   }
   footer {
-    padding: 32px;
+    padding: 36px;
   }
   .col-lg-1,
   .col-lg-2,
@@ -1473,9 +1473,9 @@ address {
 }
 .btn {
   display: inline-block;
-  padding: 8px 16px;
+  padding: 9px 18px;
   margin-bottom: 0;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: normal;
   line-height: 1.85;
   text-align: center;
@@ -1776,15 +1776,15 @@ fieldset[disabled] .btn-link:focus {
   text-decoration: none;
 }
 .btn-lg {
-  padding: 16px 32px;
-  font-size: 32px;
+  padding: 18px 36px;
+  font-size: 36px;
   line-height: 2;
-  border-radius: 16px;
+  border-radius: 18px;
 }
 .btn-sm,
 .btn-xs {
-  padding: 5px 8px;
-  font-size: 14px;
+  padding: 6px 9px;
+  font-size: 16px;
   line-height: 1.4;
   border-radius: 2px;
 }
@@ -2472,9 +2472,9 @@ a.thumbnail:focus {
   border-top: 3px solid rgba(168, 168, 168, 0.5);
   border-bottom: 3px solid rgba(168, 168, 168, 0.5);
   margin-top: 0;
-  margin-bottom: 16px;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  margin-bottom: 18px;
+  padding-top: 18px;
+  padding-bottom: 18px;
 }
 .media .media {
   padding: 0;
@@ -2501,7 +2501,7 @@ a.thumbnail:focus {
   margin-right: auto;
 }
 .media-object.full-width {
-  margin: 16px auto;
+  margin: 18px auto;
 }
 iframe.media-object,
 #map_canvas.media-object {
@@ -2511,25 +2511,25 @@ iframe.media-object,
   margin: 0 0 5px;
 }
 .media-caption {
-  font-size: 13.6px !important;
+  font-size: 15.299999999999999px !important;
   margin: 0;
   color: #766a65;
 }
 .media > .pull-left {
-  margin-right: 9.666666666666666px;
+  margin-right: 11px;
   margin-top: 0;
 }
 .media > .pull-right {
-  margin-left: 9.666666666666666px;
+  margin-left: 11px;
   margin-top: 0;
 }
 .media.pull-left {
-  margin-right: 29px;
-  margin-top: 9.666666666666666px;
+  margin-right: 33px;
+  margin-top: 11px;
 }
 .media.pull-right {
-  margin-left: 29px;
-  margin-top: 9.666666666666666px;
+  margin-left: 33px;
+  margin-top: 11px;
 }
 .media-list {
   padding-left: 0;
@@ -2549,7 +2549,7 @@ iframe.media-object,
   display: inline-block;
   position: relative;
   max-width: 100%;
-  margin-bottom: 29px;
+  margin-bottom: 33px;
   background-color: #eae7db;
   border-radius: 4px;
   -webkit-box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1);
@@ -2557,7 +2557,7 @@ iframe.media-object,
   box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 .panel-body {
-  padding: 16px;
+  padding: 18px;
 }
 .panel-body:before,
 .panel-body:after {
@@ -2602,7 +2602,7 @@ iframe.media-object,
   border-top: 1px solid #aeaea6;
 }
 .panel-heading {
-  padding: 10px 16px;
+  padding: 10px 18px;
   border-bottom: 1px solid transparent;
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
@@ -2610,13 +2610,13 @@ iframe.media-object,
 .panel-title {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 18px;
+  font-size: 21px;
 }
 .panel-title > a {
   color: inherit;
 }
 .panel-footer {
-  padding: 10px 16px;
+  padding: 10px 18px;
   background-color: #aeaea6;
   border-top: 1px solid #aeaea6;
   border-bottom-right-radius: 3px;
@@ -2745,7 +2745,7 @@ iframe.media-object,
   display: inline-block;
   position: relative;
   max-width: 100%;
-  margin-bottom: 29px;
+  margin-bottom: 33px;
   background-color: #eae7db;
   border-radius: 4px;
   -webkit-box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1);
@@ -2759,7 +2759,7 @@ iframe.media-object,
   opacity: 0;
   filter: alpha(opacity=0);
   margin: 0;
-  padding: 8px;
+  padding: 9px;
 }
 .hotspotcontainer .info > .list-group {
   margin-bottom: 0;
@@ -2793,10 +2793,10 @@ iframe.media-object,
   overflow: visible;
   left: 0;
   right: 0;
-  bottom: -144px;
-  padding: 0 0 16px 0;
+  bottom: -152px;
+  padding: 0 0 18px 0;
   margin: 0 0 0 0;
-  height: 128px;
+  height: 134px;
   -webkit-transition: bottom 0.1s ease;
   -moz-transition: bottom 0.1s ease;
   -o-transition: bottom 0.1s ease;
@@ -2804,7 +2804,7 @@ iframe.media-object,
   background: url(http://www.exploreasheville.com/includes/images/storylines/blue-ridge-parkway/mountain-range.png) left 220% repeat-x;
 }
 .navigation.active {
-  bottom: -16px;
+  bottom: -18px;
 }
 .navigation .drawerbutton {
   position: absolute;
@@ -2816,8 +2816,8 @@ iframe.media-object,
   right: 0;
   width: 100%;
   text-align: center;
-  bottom: 128px;
-  font-size: 32px;
+  bottom: 134px;
+  font-size: 36px;
 }
 .navigation .drawerbutton:hover {
   cursor: pointer;
@@ -2917,17 +2917,16 @@ iframe.media-object,
 .slide#top {
   z-index: 999;
   min-height: 100%;
-  padding: 128px 0;
 }
 .slide .caption {
   padding-bottom: 0;
+  height: 100%;
 }
 .slide .caption .slide-divider {
   margin-left: 0;
   margin-right: 0;
-  position: relative;
   min-width: 100%;
-  z-index: -1;
+  min-height: 100%;
 }
 .slide .caption .slide-divider:before,
 .slide .caption .slide-divider:after {
@@ -2950,49 +2949,68 @@ iframe.media-object,
   clear: both;
 }
 .slide .caption > aside {
-  position: relative;
-  min-height: 1px;
-  padding-left: 16px;
-  padding-right: 16px;
   position: absolute;
   bottom: 0;
+  left: 0;
   text-align: right;
   z-index: 999;
-  padding: 64px;
-  background-color: #f4f4f4;
-}
-@media (min-width: 1024px) {
-  .slide .caption > aside {
-    float: left;
-    width: 41.66666666666667%;
-  }
+  padding: 36px;
+  padding-bottom: 72px;
+  background-color: rgba(244, 244, 244, 0.5);
 }
 .slide .caption > aside > a {
-  display: inline-block;
-  padding: 0;
-  margin: 0;
-  -webkit-transition: all 0.1s ease-in;
-  -moz-transition: all 0.1s ease-in;
-  -o-transition: all 0.1s ease-in;
-  transition: all 0.1s ease-in;
+  display: block;
   width: 200px;
   height: 200px;
-  border-radius: 1000px;
-  font: 0/0 a;
-  color: transparent;
-  text-shadow: none;
-  background-color: transparent;
-  border: 0;
+  border-radius: 50% 50% 50% 0;
+  background: #165788;
   overflow: hidden;
-  border: 5px solid #165788;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  margin: 0;
+  float: right;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  -webkit-box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.1);
+}
+.slide .caption > aside > a:after {
+  background: #000000;
+  -webkit-box-shadow: 0 0 10px #000000;
+  -moz-box-shadow: 0 0 10px #000000;
+  box-shadow: 0 0 10px #000000;
+  border-radius: 50%;
+  height: 25px;
+  width: 50px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: 125px 0 0 25px;
+  -webkit-transform: rotate(55deg);
+  -ms-transform: rotate(55deg);
+  transform: rotate(55deg);
+  z-index: -2;
 }
 .slide .caption > aside > a:hover,
 .slide .caption > aside > a:focus {
-  border: 10px solid #b71234;
+  cursor: pointer;
+  background: #165788;
 }
 .slide .caption > aside > a > img {
-  min-width: 100%;
-  height: 100%;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  height: 86%;
+  width: 86%;
+  margin: 7%;
+  border-radius: 50%;
+  -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
 }
 .slide .noslide {
   min-height: 100%;
@@ -3001,17 +3019,17 @@ iframe.media-object,
   float: left;
   width: 100%;
   min-height: 1px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 18px;
+  padding-right: 18px;
 }
 .slide .noslide .assets {
   float: left;
   width: 100%;
   position: relative;
   min-height: 1px;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding: 64px 16px;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding: 72px 18px;
 }
 @media (min-width: 768px) {
   .slide .noslide .assets {
@@ -3030,9 +3048,9 @@ iframe.media-object,
   width: 100%;
   position: relative;
   min-height: 1px;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding: 64px;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding: 72px;
 }
 @media (min-width: 768px) {
   .slide .noslide .story {
@@ -3063,8 +3081,8 @@ iframe.media-object,
   position: absolute;
   top: 0;
   width: 62.5%;
-  padding: 32px;
-  margin-right: -16px;
+  padding: 36px;
+  margin-right: -18px;
   -webkit-box-shadow: inset 5px 0px 10px -5px #000000;
   -moz-box-shadow: inset 5px 0px 10px -5px #000000;
   box-shadow: inset 5px 0px 10px -5px #000000;
@@ -3276,7 +3294,7 @@ iframe.media-object,
   text-align: center;
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
   background-color: rgba(55, 66, 74, 0.5);
-  border-radius: 16px;
+  border-radius: 18px;
 }
 .carousel-caption .btn {
   text-shadow: none;
@@ -3285,16 +3303,16 @@ iframe.media-object,
   color: #f4f4f4;
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
   margin: 0;
-  font-size: 28px;
+  font-size: 31px;
 }
 @media screen and (min-width: 768px) {
   .carousel-control .icon-prev,
   .carousel-control .icon-next {
-    width: 32px;
-    height: 32px;
-    margin-top: -16px;
-    margin-left: -16px;
-    font-size: floor 32px;
+    width: 36px;
+    height: 36px;
+    margin-top: -18px;
+    margin-left: -18px;
+    font-size: floor 36px;
   }
   .carousel-caption {
     left: 25%;
@@ -3302,7 +3320,7 @@ iframe.media-object,
     padding-bottom: 30px;
   }
   .carousel-caption h1 {
-    font-size: 41px;
+    font-size: 46px;
   }
   .carousel-indicators {
     bottom: 20px;
@@ -3367,7 +3385,7 @@ iframe.media-object,
   background-color: rgba(244, 244, 244, 0.5);
   color: #37424a;
   text-decoration: none;
-  padding: 9px;
+  padding: 11px;
   z-index: 999999;
 }
 .utilities-text-dark {
@@ -3380,7 +3398,7 @@ iframe.media-object,
   background-color: rgba(244, 244, 244, 0.5);
   color: #37424a;
   text-decoration: none;
-  padding: 9px;
+  padding: 11px;
   z-index: 999999;
   background-color: rgba(55, 66, 74, 0.5);
   color: #f4f4f4;
@@ -3388,8 +3406,8 @@ iframe.media-object,
 #keep-scrolling {
   bottom: 0;
   left: 47%;
-  border-top-right-radius: 16px;
-  border-top-left-radius: 16px;
+  border-top-right-radius: 18px;
+  border-top-left-radius: 18px;
   position: fixed;
   text-align: center;
   padding: 0;
@@ -3399,7 +3417,7 @@ iframe.media-object,
   background-color: rgba(244, 244, 244, 0.5);
   color: #37424a;
   text-decoration: none;
-  padding: 9px;
+  padding: 11px;
   z-index: 999999;
   background-color: rgba(55, 66, 74, 0.5);
   color: #f4f4f4;
@@ -3413,7 +3431,7 @@ iframe.media-object,
   display: inline-block;
   background-color: rgba(168, 168, 168, 0.050000000000000044);
   padding: 2px 6px;
-  border-radius: 16px;
+  border-radius: 18px;
   text-shadow: 1px 1px 1px rgba(244, 244, 244, 0.5);
 }
 .playbutton:hover,

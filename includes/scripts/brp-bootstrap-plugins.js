@@ -98,11 +98,11 @@ d)<1/2.75?b*7.5625*a*a+c:a<2/2.75?b*(7.5625*(a-=1.5/2.75)*a+0.75)+c:a<2.5/2.75?b
 //Start
 $(document).ready(function(){
 	
-	//$.stellar({
-	//	horizontalScrolling: false,
-	//	parallaxBackgrounds: false,
-	//	hideDistantElements: false
-	//});
+	$.stellar({
+		horizontalScrolling: false,
+		parallaxBackgrounds: false,
+		hideDistantElements: false
+	});
 	$('.youtube').fitVids();
 		
     //Cache some variables
@@ -111,20 +111,15 @@ $(document).ready(function(){
     links = $('.navigation').find('li');
     thumbnail = links.find('img');
 	profilePhoto = $('.caption').find('img');
+	caption = $('.caption').find('aside');
     navtoggle = $('.drawerbutton');
     slide = $('.slide');
 	lastScroll = 0;
 	windowHeight = mywindow.height();
 	
-	slide.each(function(index) {
-  		zindex = $(this).attr('data-slide');
-		$(this).css('z-index', -zindex);
-		$(this).find('.slide-divider').css('z-index', zindex);
-	});
-
 	
     //Setup waypoints plugin
-    slide.waypoint(function (event, direction) {
+    caption.waypoint(function (event, direction) {
 
         //cache the variable of the data-slide attribute associated with each slide
         dataslide = $(this).attr('data-slide');
@@ -146,7 +141,6 @@ $(document).ready(function(){
 		var st = $(this).scrollTop();
 		if (st > lastScroll){
 			$('.navigation').removeClass('active');
-			$('.drawerbuttonheader').fadeTo("slow", 0);
 			navtoggle.find('.glyphicon').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
 		} 
 		else {
@@ -160,13 +154,12 @@ $(document).ready(function(){
     navtoggle.click(function (e) {
         e.preventDefault();
         $('.navigation').toggleClass('active');
-        $('.drawerbuttonheader').fadeOut("slow");
 		navtoggle.find('.glyphicon').toggleClass('glyphicon-chevron-up glyphicon-chevron-down');
     });
 
     //Create a function that will be passed a slide number and then will scroll to that slide using jquery easing.
     function goToByScroll(dataslide) {
-        htmlbody.animate({ scrollTop: $('.slide[data-slide="' + dataslide + '"]').offset().top + (windowHeight * .5) }, 1000, 'easeInOutQuad');
+        htmlbody.animate({ scrollTop: $('aside[data-slide="' + dataslide + '"]').offset().top + 0 }, 1000, 'easeInOutQuad');
     }
 
     //When the user clicks on the navigation links, get the data-slide attribute value of the link and pass that variable to the goToByScroll function
