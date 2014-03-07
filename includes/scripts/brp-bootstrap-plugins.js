@@ -104,40 +104,38 @@ $(document).ready(function(){
 		hideDistantElements: false
 	});
 	$('.youtube').fitVids();
-		
-    //Cache some variables
+	
+	//Cache some variables
 	mywindow = $(window);
-    htmlbody = $('html,body');
-    links = $('.navigation').find('li');
-    thumbnail = links.find('img');
+	htmlbody = $('html,body');
+	links = $('.navigation').find('li');
+	thumbnail = links.find('img');
 	profilePhoto = $('.caption').find('img');
 	caption = $('.caption').find('aside');
-    navtoggle = $('.drawerbutton');
-    slide = $('.slide');
+	navtoggle = $('.drawerbutton');
+	slide = $('.slide');
 	lastScroll = 0;
 	windowHeight = mywindow.height();
 	
 	
-    //Setup waypoints plugin
-    caption.waypoint(function (event, direction) {
-
-        //cache the variable of the data-slide attribute associated with each slide
-        dataslide = $(this).attr('data-slide');
-
-        //If the user scrolls up change the navigation link that has the same data-slide attribute as the slide to currentslide and 
-        //remove the currentslide class from the previous navigation link 
-        if (direction === 'down') {
-            $('.navigation li[data-slide="' + dataslide + '"]').addClass('currentslide').prev().removeClass('currentslide');
-        }
-        // else If the user scrolls down change the navigation link that has the same data-slide attribute as the slide to currentslide and 
-        //remove the currentslide class from the next navigation link 
-        else {
-            $('.navigation li[data-slide="' + dataslide + '"]').addClass('currentslide').next().removeClass('currentslide');
-        }
-    }, {offset: 100});
-	
-    //hide the navigation when scrolling down, show it when scrolling up	
-    mywindow.scroll(function(event){
+	//Setup waypoints plugin
+	caption.waypoint(function (event, direction) {
+		
+		//cache the variable of the data-slide attribute associated with each slide
+		dataslide = $(this).attr('data-slide');
+		//If the user scrolls up change the navigation link that has the same data-slide attribute as the slide to currentslide and 
+		//remove the currentslide class from the previous navigation link 
+		if (direction === 'down') {
+			$('.navigation li[data-slide="' + dataslide + '"]').addClass('currentslide').prev().removeClass('currentslide');
+		}
+		// else If the user scrolls down change the navigation link that has the same data-slide attribute as the slide to currentslide and 
+		//remove the currentslide class from the next navigation link 
+		else {
+			$('.navigation li[data-slide="' + dataslide + '"]').addClass('currentslide').next().removeClass('currentslide');
+		}
+	}, {offset: 100});
+	//hide the navigation when scrolling down, show it when scrolling up	
+	mywindow.scroll(function(event){
 		var st = $(this).scrollTop();
 		if (st > lastScroll){
 			$('.navigation').removeClass('active');
@@ -150,25 +148,22 @@ $(document).ready(function(){
 		//Updates scroll position
 		lastScroll = st;
 	});
-    //hide and show the navigation by clicking the arrow
-    navtoggle.click(function (e) {
-        e.preventDefault();
-        $('.navigation').toggleClass('active');
+	//hide and show the navigation by clicking the arrow
+	navtoggle.click(function (e) {
+		e.preventDefault();
+		$('.navigation').toggleClass('active');
 		navtoggle.find('.glyphicon').toggleClass('glyphicon-chevron-up glyphicon-chevron-down');
-    });
-
-    //Create a function that will be passed a slide number and then will scroll to that slide using jquery easing.
-    function goToByScroll(dataslide) {
-        htmlbody.animate({ scrollTop: $('aside[data-slide="' + dataslide + '"]').offset().top + 0 }, 1000, 'easeInOutQuad');
-    }
-
-    //When the user clicks on the navigation links, get the data-slide attribute value of the link and pass that variable to the goToByScroll function
-    links.click(function (e) {
-        e.preventDefault();
-        dataslide = $(this).attr('data-slide');
-        goToByScroll(dataslide);
-    });
-
+	});
+	//Create a function that will be passed a slide number and then will scroll to that slide using jquery easing.
+	function goToByScroll(dataslide) {
+		htmlbody.animate({ scrollTop: $('aside[data-slide="' + dataslide + '"]').offset().top + 0 }, 1000, 'easeInOutQuad');
+	}
+	//When the user clicks on the navigation links, get the data-slide attribute value of the link and pass that variable to the goToByScroll function
+	links.click(function (e) {
+		e.preventDefault();
+		dataslide = $(this).attr('data-slide');
+		goToByScroll(dataslide);
+	});
 });
 //Heavy stuff down here
 //Heavy stuff down here

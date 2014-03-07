@@ -92,6 +92,14 @@ body {
 // ==========================================================================
 
 //
+// Remove the gray background color from active links in IE 10.
+//
+
+a {
+  background: transparent;
+}
+
+//
 // Address `outline` inconsistency between Chrome and other browsers.
 //
 
@@ -229,7 +237,7 @@ img[src$=".gif"], img[src$=".png"] {
     image-rendering: -moz-crisp-edges;         /* Firefox */
     image-rendering:   -o-crisp-edges;         /* Opera */
     image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
-    image-rendering: crisp-edges;
+    image-rendering:      crisp-edges;
     -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
 }
 //
@@ -286,7 +294,7 @@ button,
 input,
 select,
 textarea {
-  font-family: inherit; // 1
+  font-family: inherit; font: inherit; // 1
   font-size: 100%; // 2
   margin: 0; // 3
 }
@@ -403,4 +411,8 @@ textarea {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
 }

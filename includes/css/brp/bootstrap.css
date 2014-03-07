@@ -51,6 +51,9 @@ body {
   margin: 0;
   height: 100%;
 }
+a {
+  background: transparent;
+}
 a:focus {
   outline: thin dotted;
 }
@@ -145,6 +148,7 @@ input,
 select,
 textarea {
   font-family: inherit;
+  font: inherit;
   font-size: 100%;
   margin: 0;
 }
@@ -194,6 +198,10 @@ textarea {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
 }
 @media print {
   * {
