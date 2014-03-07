@@ -52,6 +52,13 @@ audio:not([controls]) {
 [hidden] {
   display: none;
 }
+//
+// only run filters on ie8/7
+//
+.ie9 * {
+        filter: none !important;
+    -ms-filter: none !important;
+}
 
 // ==========================================================================
 // Base
@@ -215,18 +222,16 @@ sub {
   bottom: -0.25em;
 }
 
-// ==========================================================================
-// Embedded content
-// ==========================================================================
-
-//
-// Remove border when inside `a` element in IE 8/9.
-//
-
 img {
   border: 0;
 }
-
+img[src$=".gif"], img[src$=".png"] {
+    image-rendering: -moz-crisp-edges;         /* Firefox */
+    image-rendering:   -o-crisp-edges;         /* Opera */
+    image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
+}
 //
 // Correct overflow displayed oddly in IE 9.
 //
@@ -256,7 +261,7 @@ figure {
 //
 
 fieldset {
-  border: 1px solid #c0c0c0;
+  border: 1px solid @default-border-color;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
