@@ -2840,10 +2840,10 @@ iframe.media-object,
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
   margin: 0 auto;
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -o-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  transition: all 0.1s linear;
   -webkit-box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.3);
   box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.3);
@@ -2869,6 +2869,7 @@ iframe.media-object,
 .navigation > li > a:focus {
   cursor: pointer;
   background: #165788;
+  margin-top: -4px;
 }
 .navigation > li > a > img {
   -webkit-transform: rotate(45deg);
@@ -2921,6 +2922,7 @@ iframe.media-object,
 .slide .caption {
   padding-bottom: 0;
   height: 100%;
+  overflow: hidden;
 }
 .slide .caption .slide-divider {
   margin-left: 0;
@@ -2955,8 +2957,8 @@ iframe.media-object,
   right: 0;
   text-align: center;
   z-index: 999;
-  padding: 36px;
-  padding-bottom: 72px;
+  padding: 0;
+  padding-top: 72px;
   background-image: -webkit-gradient(linear, left 0%, left 100%, from(rgba(244, 244, 244, 0)), to(rgba(244, 244, 244, 0.8)));
   background-image: -webkit-linear-gradient(top, rgba(244, 244, 244, 0), 0%, rgba(244, 244, 244, 0.8), 100%);
   background-image: -moz-linear-gradient(top, rgba(244, 244, 244, 0) 0%, rgba(244, 244, 244, 0.8) 100%);
@@ -2974,7 +2976,7 @@ iframe.media-object,
   -webkit-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  margin: 0;
+  margin: 0 0 36px 0;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
@@ -3069,79 +3071,6 @@ iframe.media-object,
     width: 58.333333333333336%;
   }
 }
-.row-offcanvas {
-  position: relative;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
-}
-.row-offcanvas .sidebar-offcanvas {
-  right: -62.5%;
-}
-.row-offcanvas.active {
-  right: 62.5%;
-}
-.sidebar-offcanvas {
-  position: absolute;
-  top: 0;
-  width: 62.5%;
-  padding: 36px;
-  margin-right: -18px;
-  -webkit-box-shadow: inset 5px 0px 10px -5px #000000;
-  -moz-box-shadow: inset 5px 0px 10px -5px #000000;
-  box-shadow: inset 5px 0px 10px -5px #000000;
-  background-color: #37424a;
-  min-height: 100%;
-}
-.sidebar-offcanvas h1,
-.sidebar-offcanvas h2,
-.sidebar-offcanvas h3,
-.sidebar-offcanvas h4,
-.sidebar-offcanvas h5,
-.sidebar-offcanvas h6,
-.sidebar-offcanvas .h1,
-.sidebar-offcanvas .h2,
-.sidebar-offcanvas .h3,
-.sidebar-offcanvas .h4,
-.sidebar-offcanvas .h5,
-.sidebar-offcanvas .h6 {
-  color: #eae7db;
-  text-shadow: -1px -1px 0px rgba(15, 15, 15, 0.5);
-}
-.sidebar-offcanvas h1 small,
-.sidebar-offcanvas h2 small,
-.sidebar-offcanvas h3 small,
-.sidebar-offcanvas h4 small,
-.sidebar-offcanvas h5 small,
-.sidebar-offcanvas h6 small,
-.sidebar-offcanvas .h1 small,
-.sidebar-offcanvas .h2 small,
-.sidebar-offcanvas .h3 small,
-.sidebar-offcanvas .h4 small,
-.sidebar-offcanvas .h5 small,
-.sidebar-offcanvas .h6 small {
-  color: #a8a8a8;
-}
-.sidebar-offcanvas p,
-.sidebar-offcanvas li {
-  color: #eae7db;
-}
-@media (max-width: 768px) {
-  .row-offcanvas {
-    position: relative;
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    transition: all 1s ease;
-  }
-  .row-offcanvas .sidebar-offcanvas {
-    right: -100%;
-  }
-  .row-offcanvas.active {
-    right: 100%;
-  }
-}
 .carousel {
   position: relative;
   margin-top: 0;
@@ -3155,10 +3084,10 @@ iframe.media-object,
 .carousel-inner > .item {
   display: none;
   position: relative;
-  -webkit-transition: 0.6s ease-in-out left;
-  -moz-transition: 0.6s ease-in-out left;
-  -o-transition: 0.6s ease-in-out left;
-  transition: 0.6s ease-in-out left;
+  -webkit-transition: 0.2s linear left;
+  -moz-transition: 0.2s linear left;
+  -o-transition: 0.2s linear left;
+  transition: 0.2s linear left;
 }
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {

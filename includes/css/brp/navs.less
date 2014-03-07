@@ -50,7 +50,7 @@
             overflow: hidden;
             .rotate(-45deg);
             margin: 0 auto;
-            .transition(all 0.2s ease-out);
+            .transition(all 0.1s linear);
             .box-shadow(2px 2px 4px 0 rgba(0,0,0,.3));
             &:after{
                 background: rgba(0,0,0,1);
@@ -69,6 +69,7 @@
             &:focus{
                 cursor: pointer;
                 background: @avl-blue;
+                margin-top:-4px;
             }
             > img {
                 .rotate(45deg);

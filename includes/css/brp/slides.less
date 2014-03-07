@@ -12,6 +12,7 @@
     .caption{
         padding-bottom:0;
         height: 100%;
+        overflow:hidden;
         .slide-divider{
             .make-row();
             min-width: 100%;
@@ -24,9 +25,12 @@
             right:0;
             .text-center;
             z-index:999;
-        	padding:(@default-padding * 2);
-        	padding-bottom:(@default-padding * 4);
+        	padding: 0;
+        	padding-top:(@default-padding * 4);
         	#gradient > .vertical(@start-color: fadeout(@body-bg, 100%); @end-color: fadeout(@body-bg, 20%););
+        	> h1 {
+        	   
+        	}
         	> a {
                 display: inline-block;
                 width: 200px;
@@ -35,7 +39,7 @@
                 background: @avl-blue;
                 overflow: hidden;
                 .rotate(-45deg);
-                margin: 0;
+                margin: 0 0 (@default-padding * 2) 0;
                 .transition(all 0.2s ease-out);
                 .box-shadow(1px 1px 2px 0 rgba(0,0,0,.1));
                 &:after{
