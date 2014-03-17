@@ -108,6 +108,8 @@ $(document).ready(function(){
 	mywindow = $(window);
 	htmlbody = $('html,body');
 	links = $('.navigation').find('li');
+	links = $('.navigation').find('li');
+	namecards = $('.namecard');
 	thumbnail = links.find('img');
 	profilePhoto = $('.caption').find('img');
 	caption = $('.caption').find('aside');
@@ -147,6 +149,12 @@ $(document).ready(function(){
 		//Updates scroll position
 		lastScroll = st;
 	});
+	
+	//namecards hover effect
+	links.find('a').hover(function (e) {
+		$(this).parent().find(namecards).toggleClass('active');
+	});
+	
 	//hide and show the navigation by clicking the arrow
 	navtoggle.click(function (e) {
 		e.preventDefault();
