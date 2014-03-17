@@ -83,5 +83,12 @@
         &.currentslide a{
             background: @avl-blue;
         }
+        .namecard{
+            position: absolute;
+            padding: 0 @default-padding;
+            bottom: floor(@map-markers * 2);
+            width: 12.5%;
+            #gradient > .vertical(@start-color: fadeout(@body-bg, 10%); @end-color: fadeout(@body-bg, 50%););
+        }
     }
 }

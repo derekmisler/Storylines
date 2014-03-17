@@ -2790,6 +2790,18 @@ iframe.media-object,
 .navigation > li.currentslide a {
   background: #165788;
 }
+.navigation > li .namecard {
+  position: absolute;
+  padding: 0 18px;
+  bottom: 160px;
+  width: 12.5%;
+  background-image: -webkit-gradient(linear, left 0%, left 100%, from(rgba(244, 244, 244, 0.9)), to(rgba(244, 244, 244, 0.5)));
+  background-image: -webkit-linear-gradient(top, rgba(244, 244, 244, 0.9), 0%, rgba(244, 244, 244, 0.5), 100%);
+  background-image: -moz-linear-gradient(top, rgba(244, 244, 244, 0.9) 0%, rgba(244, 244, 244, 0.5) 100%);
+  background-image: linear-gradient(to bottom, rgba(244, 244, 244, 0.9) 0%, rgba(244, 244, 244, 0.5) 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e6f4f4f4', endColorstr='#80f4f4f4', GradientType=0);
+}
 .slide {
   margin-left: 0;
   margin-right: 0;
