@@ -4,6 +4,7 @@
 
 // Wrapper for the slide container and indicators
 .carousel {
+  .media-object();
   position: relative;
   margin-top:0;
   padding:0 !important;
@@ -13,11 +14,11 @@
   position: relative;
   overflow: hidden;
   width: 100%;
+  .transition(all 0.2s ease-out);
 
   > .item {
     display: none;
     position: relative;
-    .transition(.2s linear left);
 
     // Account for jankitude on images
     > img,
