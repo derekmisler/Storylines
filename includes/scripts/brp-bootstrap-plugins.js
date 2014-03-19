@@ -151,8 +151,12 @@ $(document).ready(function(){
 	});
 	
 	//namecards hover effect
-	links.find('a').hover(function (e) {
-		$(this).parent().find(namecards).toggleClass('active');
+	links.find('a')
+	.mouseenter(function() {
+		$(this).parent().find(namecards).addClass('active');
+	})
+	.mouseleave(function() {
+		$(this).parent().find(namecards).removeClass('active');
 	});
 	
 	//hide and show the navigation by clicking the arrow

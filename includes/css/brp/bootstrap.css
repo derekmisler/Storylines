@@ -507,7 +507,7 @@ h6 {
 h1,
 .h1 {
   font-size: 54px;
-  text-shadow: 1px 1px 0 rgba(244, 244, 244, 0.25);
+  text-shadow: 1px 1px 0 rgba(15, 15, 15, 0.19999999999999996);
 }
 h2,
 .h2 {
@@ -2691,127 +2691,6 @@ iframe.media-object,
 .panel-group .panel-footer + .panel-collapse .panel-body {
   border-bottom: 1px solid #aeaea6;
 }
-.navigation {
-  position: fixed;
-  z-index: 9999;
-  overflow: visible;
-  left: 0;
-  right: 0;
-  bottom: -152px;
-  padding: 0 0 18px 0;
-  margin: 0 0 0 0;
-  height: 134px;
-  -webkit-transition: bottom 0.1s ease;
-  -moz-transition: bottom 0.1s ease;
-  -o-transition: bottom 0.1s ease;
-  transition: bottom 0.1s ease;
-  background: url(http://www.exploreasheville.com/includes/images/storylines/blue-ridge-parkway/mountain-range.png) left 220% repeat-x;
-}
-.navigation.active {
-  bottom: -18px;
-}
-.navigation .drawerbutton {
-  position: absolute;
-  display: block;
-  margin: 0;
-  padding: 0;
-  line-height: 1;
-  left: 0;
-  right: 0;
-  width: 100%;
-  text-align: center;
-  bottom: 134px;
-  font-size: 36px;
-}
-.navigation .drawerbutton:hover {
-  cursor: pointer;
-}
-.navigation .drawerbutton .drawerbuttonheader {
-  display: block;
-  margin: 0;
-  padding: 0;
-  line-height: 1;
-  color: #f4f4f4;
-}
-.navigation > li > a {
-  display: block;
-  width: 80px;
-  height: 80px;
-  border-radius: 50% 50% 50% 0;
-  background: #b71234;
-  overflow: hidden;
-  -webkit-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  margin: 0 auto;
-  -webkit-transition: all 0.1s linear;
-  -moz-transition: all 0.1s linear;
-  -o-transition: all 0.1s linear;
-  transition: all 0.1s linear;
-  -webkit-box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.3);
-  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.3);
-}
-.navigation > li > a:after {
-  background: #000000;
-  -webkit-box-shadow: 0 0 10px #000000;
-  -moz-box-shadow: 0 0 10px #000000;
-  box-shadow: 0 0 10px #000000;
-  border-radius: 50%;
-  height: 25px;
-  width: 50px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin: 125px 0 0 25px;
-  -webkit-transform: rotate(55deg);
-  -ms-transform: rotate(55deg);
-  transform: rotate(55deg);
-  z-index: -2;
-}
-.navigation > li > a:hover,
-.navigation > li > a:focus {
-  cursor: pointer;
-  background: #165788;
-  margin-top: -4px;
-}
-.navigation > li > a > img {
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  height: 86%;
-  width: 86%;
-  margin: 7%;
-  border-radius: 50%;
-  -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
-  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
-}
-.navigation > li.currentslide a {
-  background: #165788;
-}
-.navigation > li .namecard {
-  position: absolute;
-  padding: 0 18px;
-  bottom: 160px;
-  width: 12.5%;
-  background-image: -webkit-gradient(linear, left 0%, left 100%, from(rgba(244, 244, 244, 0.9)), to(rgba(244, 244, 244, 0.5)));
-  background-image: -webkit-linear-gradient(top, rgba(244, 244, 244, 0.9), 0%, rgba(244, 244, 244, 0.5), 100%);
-  background-image: -moz-linear-gradient(top, rgba(244, 244, 244, 0.9) 0%, rgba(244, 244, 244, 0.5) 100%);
-  background-image: linear-gradient(to bottom, rgba(244, 244, 244, 0.9) 0%, rgba(244, 244, 244, 0.5) 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e6f4f4f4', endColorstr='#80f4f4f4', GradientType=0);
-  opacity: 0;
-  filter: alpha(opacity=0);
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -o-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
-}
-.navigation > li .namecard.active {
-  opacity: 1;
-  filter: alpha(opacity=100);
-}
 .slide {
   margin-left: 0;
   margin-right: 0;
@@ -2996,6 +2875,133 @@ iframe.media-object,
     float: left;
     width: 58.333333333333336%;
   }
+}
+.navigation {
+  position: fixed;
+  z-index: 1;
+  overflow: visible;
+  left: 0;
+  right: 0;
+  bottom: -152px;
+  padding: 0 0 18px 0;
+  margin: 0 0 0 0;
+  height: 134px;
+  -webkit-transition: bottom 0.1s ease;
+  -moz-transition: bottom 0.1s ease;
+  -o-transition: bottom 0.1s ease;
+  transition: bottom 0.1s ease;
+  background: url(http://www.exploreasheville.com/includes/images/storylines/blue-ridge-parkway/mountain-range.png) left 220% repeat-x;
+}
+.navigation.active {
+  bottom: -18px;
+}
+.navigation .drawerbutton {
+  position: absolute;
+  display: block;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  bottom: 134px;
+  font-size: 36px;
+}
+.navigation .drawerbutton:hover {
+  cursor: pointer;
+}
+.navigation .drawerbutton .drawerbuttonheader {
+  display: block;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  color: #f4f4f4;
+}
+.navigation > li > a {
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50% 50% 50% 0;
+  background: #b71234;
+  overflow: hidden;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  margin: 0 auto;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+  -webkit-box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.3);
+}
+.navigation > li > a:after {
+  background: #000000;
+  -webkit-box-shadow: 0 0 10px #000000;
+  -moz-box-shadow: 0 0 10px #000000;
+  box-shadow: 0 0 10px #000000;
+  border-radius: 50%;
+  height: 25px;
+  width: 50px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: 125px 0 0 25px;
+  -webkit-transform: rotate(55deg);
+  -ms-transform: rotate(55deg);
+  transform: rotate(55deg);
+  z-index: -2;
+}
+.navigation > li > a:hover,
+.navigation > li > a:focus {
+  width: 88px;
+  height: 88px;
+  -webkit-box-shadow: 2px 10px 10px 0 rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 2px 10px 10px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 10px 10px 0 rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  background: #165788;
+  margin-top: -10px;
+}
+.navigation > li > a > img {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  height: 86%;
+  width: 86%;
+  margin: 7%;
+  border-radius: 50%;
+  -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
+}
+.navigation > li.currentslide a {
+  background: #165788;
+}
+.navigation > li .namecard {
+  position: absolute;
+  padding: 72px 0 160px 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  text-align: center;
+  width: 100%;
+  visibility: hidden;
+  background-image: -webkit-gradient(linear, left 0%, left 100%, from(rgba(244, 244, 244, 0.9)), to(rgba(244, 244, 244, 0.5)));
+  background-image: -webkit-linear-gradient(top, rgba(244, 244, 244, 0.9), 0%, rgba(244, 244, 244, 0.5), 100%);
+  background-image: -moz-linear-gradient(top, rgba(244, 244, 244, 0.9) 0%, rgba(244, 244, 244, 0.5) 100%);
+  background-image: linear-gradient(to bottom, rgba(244, 244, 244, 0.9) 0%, rgba(244, 244, 244, 0.5) 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e6f4f4f4', endColorstr='#80f4f4f4', GradientType=0);
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.navigation > li .namecard.active {
+  visibility: visible;
 }
 .carousel {
   position: relative;
