@@ -1,6 +1,6 @@
 .bx-wrapper {
 	position: relative;
-	margin: 0 auto 60px;
+	margin: 0;
 	padding: 0;
 	*zoom: 1;
 }
@@ -14,26 +14,23 @@
 ===================================*/
 
 .bx-wrapper .bx-viewport {
-	-moz-box-shadow: 0 0 5px #ccc;
-	-webkit-box-shadow: 0 0 5px #ccc;
-	box-shadow: 0 0 5px #ccc;
-	border: solid #fff 5px;
-	left: -5px;
-	background: #fff;
+	.media-object;
+	background-color: @body-bg;
 }
 
 .bx-wrapper .bx-pager,
 .bx-wrapper .bx-controls-auto {
 	position: absolute;
-	bottom: -30px;
 	width: 100%;
 }
 
 /* LOADER */
 
 .bx-wrapper .bx-loading {
+	.glyphicon;
+	.glyphicon-refresh;
 	min-height: 50px;
-	background: url(images/bx_loader.gif) center center no-repeat #fff;
+	background-color: @white;
 	height: 100%;
 	width: 100%;
 	position: absolute;
@@ -46,11 +43,8 @@
 
 .bx-wrapper .bx-pager {
 	text-align: center;
-	font-size: .85em;
-	font-family: Arial;
-	font-weight: bold;
-	color: #666;
-	padding-top: 20px;
+	color: @avl-blue;
+	padding-top: @default-padding;
 }
 
 .bx-wrapper .bx-pager .bx-pager-item,
@@ -61,52 +55,48 @@
 }
 
 .bx-wrapper .bx-pager.bx-default-pager a {
-	background: #666;
+	background: @gray;
 	text-indent: -9999px;
 	display: block;
-	width: 10px;
-	height: 10px;
-	margin: 0 5px;
+	width: floor(@default-padding / 2);
+	height: floor(@default-padding / 2);
+	margin: 0 floor(@default-padding / 3);
 	outline: 0;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
+	border-radius: 50%;
+	
 }
 
 .bx-wrapper .bx-pager.bx-default-pager a:hover,
 .bx-wrapper .bx-pager.bx-default-pager a.active {
-	background: #000;
+	background: @avl-dark-gray;
 }
 
 /* DIRECTION CONTROLS (NEXT / PREV) */
 
 .bx-wrapper .bx-prev {
-	left: 10px;
-	background: url(images/controls.png) no-repeat 0 -32px;
+	left: @default-padding;
+	.glyphicon;
+	.glyphicon-chevron-left;
 }
-
 .bx-wrapper .bx-next {
-	right: 10px;
-	background: url(images/controls.png) no-repeat -43px -32px;
+	right: @default-padding;
+	.glyphicon;
+	.glyphicon-chevron-right;
 }
-
-.bx-wrapper .bx-prev:hover {
-	background-position: 0 0;
-}
-
-.bx-wrapper .bx-next:hover {
-	background-position: -43px 0;
-}
-
 .bx-wrapper .bx-controls-direction a {
 	position: absolute;
 	top: 50%;
-	margin-top: -16px;
+	margin-top: -(floor(@font-size-base * 2));
 	outline: 0;
-	width: 32px;
-	height: 32px;
-	text-indent: -9999px;
+	width: floor(@font-size-base * 2);
+	height: floor(@font-size-base * 2);
+	font-size: @font-size-base;
+	line-height: (floor(@font-size-base * 2) - 2);
 	z-index: 9999;
+	background-color: fadeout(@body-bg, 25%);
+	color: @avl-dark-gray;
+	border-radius: 50%;
+	text-align: center;
 }
 
 .bx-wrapper .bx-controls-direction a.disabled {
@@ -118,37 +108,29 @@
 .bx-wrapper .bx-controls-auto {
 	text-align: center;
 }
-
+.bx-wrapper .bx-controls-auto .bx-start,
+.bx-wrapper .bx-controls-auto .bx-stop{
+	.glyphicon;
+    display: inline-block;
+    float:left;
+	outline: 0;
+	margin: 0;
+	color: @avl-gray;
+}
 .bx-wrapper .bx-controls-auto .bx-start {
-	display: block;
-	text-indent: -9999px;
-	width: 10px;
-	height: 11px;
-	outline: 0;
-	background: url(images/controls.png) -86px -11px no-repeat;
-	margin: 0 3px;
+	.glyphicon-play;
+	&:hover,
+    &.active {
+	    color: @avl-red;	
+    }
 }
-
-.bx-wrapper .bx-controls-auto .bx-start:hover,
-.bx-wrapper .bx-controls-auto .bx-start.active {
-	background-position: -86px 0;
-}
-
 .bx-wrapper .bx-controls-auto .bx-stop {
-	display: block;
-	text-indent: -9999px;
-	width: 9px;
-	height: 11px;
-	outline: 0;
-	background: url(images/controls.png) -86px -44px no-repeat;
-	margin: 0 3px;
+	.glyphicon-stop;
+    &:hover,
+    &.active {
+	    color: @avl-red;	
+    }
 }
-
-.bx-wrapper .bx-controls-auto .bx-stop:hover,
-.bx-wrapper .bx-controls-auto .bx-stop.active {
-	background-position: -86px -33px;
-}
-
 /* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
 
 .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
@@ -167,15 +149,13 @@
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	background: #666\9;
-	background: rgba(80, 80, 80, 0.75);
+	background-color: fadeout(@body-bg, 25%);
 	width: 100%;
 }
 
 .bx-wrapper .bx-caption span {
-	color: #fff;
-	font-family: Arial;
+	color: @avl-dark-gray;
+	font-size: @font-size-small;
 	display: block;
-	font-size: .85em;
-	padding: 10px;
+	padding: @default-padding;
 }

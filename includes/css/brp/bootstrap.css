@@ -338,7 +338,7 @@ a {
 a:hover,
 a:focus {
   color: #a0102d;
-  text-decoration: underline;
+  text-decoration: none;
 }
 a:focus {
   outline: thin dotted #333;
@@ -1826,14 +1826,14 @@ fieldset[disabled] .btn-link:focus {
 }
 .btn-lg {
   padding: 18px 36px;
-  font-size: 36px;
+  font-size: 27px;
   line-height: 2;
   border-radius: 18px;
 }
 .btn-sm,
 .btn-xs {
   padding: 6px 9px;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.4;
   border-radius: 2px;
 }
@@ -2903,7 +2903,7 @@ iframe.media-object,
   width: 100%;
   text-align: center;
   bottom: 134px;
-  font-size: 36px;
+  font-size: 27px;
 }
 .navigation .drawerbutton:hover {
   cursor: pointer;
@@ -3008,7 +3008,7 @@ iframe.media-object,
 }
 .bx-wrapper {
   position: relative;
-  margin: 0 auto 60px;
+  margin: 0;
   padding: 0;
   *zoom: 1;
 }
@@ -3019,23 +3019,43 @@ iframe.media-object,
 /** THEME
 ===================================*/
 .bx-wrapper .bx-viewport {
-  -moz-box-shadow: 0 0 5px #ccc;
-  -webkit-box-shadow: 0 0 5px #ccc;
-  box-shadow: 0 0 5px #ccc;
-  border: solid #fff 5px;
-  left: -5px;
-  background: #fff;
+  padding: 0px;
+  line-height: 1.6;
+  background-color: #eae7db;
+  border: 1px solid #aeaea6;
+  border-radius: 4px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f4f4f4;
 }
 .bx-wrapper .bx-pager,
 .bx-wrapper .bx-controls-auto {
   position: absolute;
-  bottom: -30px;
   width: 100%;
 }
 /* LOADER */
 .bx-wrapper .bx-loading {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
   min-height: 50px;
-  background: url(images/bx_loader.gif) center center no-repeat #ffffff;
+  background-color: #f4f4f4;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -3043,14 +3063,14 @@ iframe.media-object,
   left: 0;
   z-index: 2000;
 }
+.bx-wrapper .bx-loading:before {
+  content: "\e031";
+}
 /* PAGER */
 .bx-wrapper .bx-pager {
   text-align: center;
-  font-size: .85em;
-  font-family: Arial;
-  font-weight: bold;
-  color: #666;
-  padding-top: 20px;
+  color: #165788;
+  padding-top: 18px;
 }
 .bx-wrapper .bx-pager .bx-pager-item,
 .bx-wrapper .bx-controls-auto .bx-controls-auto-item {
@@ -3059,45 +3079,62 @@ iframe.media-object,
   *display: inline;
 }
 .bx-wrapper .bx-pager.bx-default-pager a {
-  background: #666;
+  background: #766a65;
   text-indent: -9999px;
   display: block;
-  width: 10px;
-  height: 10px;
-  margin: 0 5px;
+  width: 9px;
+  height: 9px;
+  margin: 0 6px;
   outline: 0;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
+  border-radius: 50%;
 }
 .bx-wrapper .bx-pager.bx-default-pager a:hover,
 .bx-wrapper .bx-pager.bx-default-pager a.active {
-  background: #000;
+  background: #37424a;
 }
 /* DIRECTION CONTROLS (NEXT / PREV) */
 .bx-wrapper .bx-prev {
-  left: 10px;
-  background: url(images/controls.png) no-repeat 0 -32px;
+  left: 18px;
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+.bx-wrapper .bx-prev:before {
+  content: "\e079";
 }
 .bx-wrapper .bx-next {
-  right: 10px;
-  background: url(images/controls.png) no-repeat -43px -32px;
+  right: 18px;
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
 }
-.bx-wrapper .bx-prev:hover {
-  background-position: 0 0;
-}
-.bx-wrapper .bx-next:hover {
-  background-position: -43px 0;
+.bx-wrapper .bx-next:before {
+  content: "\e080";
 }
 .bx-wrapper .bx-controls-direction a {
   position: absolute;
   top: 50%;
-  margin-top: -16px;
+  margin-top: -36px;
   outline: 0;
-  width: 32px;
-  height: 32px;
-  text-indent: -9999px;
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
+  line-height: 34px;
   z-index: 9999;
+  background-color: rgba(244, 244, 244, 0.75);
+  color: #37424a;
+  border-radius: 50%;
+  text-align: center;
 }
 .bx-wrapper .bx-controls-direction a.disabled {
   display: none;
@@ -3106,31 +3143,34 @@ iframe.media-object,
 .bx-wrapper .bx-controls-auto {
   text-align: center;
 }
-.bx-wrapper .bx-controls-auto .bx-start {
-  display: block;
-  text-indent: -9999px;
-  width: 10px;
-  height: 11px;
+.bx-wrapper .bx-controls-auto .bx-start,
+.bx-wrapper .bx-controls-auto .bx-stop {
+  position: relative;
+  top: 1px;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  float: left;
   outline: 0;
-  background: url(images/controls.png) -86px -11px no-repeat;
-  margin: 0 3px;
+  margin: 0;
+  color: #766a65;
+}
+.bx-wrapper .bx-controls-auto .bx-start:before {
+  content: "\e072";
 }
 .bx-wrapper .bx-controls-auto .bx-start:hover,
 .bx-wrapper .bx-controls-auto .bx-start.active {
-  background-position: -86px 0;
+  color: #b71234;
 }
-.bx-wrapper .bx-controls-auto .bx-stop {
-  display: block;
-  text-indent: -9999px;
-  width: 9px;
-  height: 11px;
-  outline: 0;
-  background: url(images/controls.png) -86px -44px no-repeat;
-  margin: 0 3px;
+.bx-wrapper .bx-controls-auto .bx-stop:before {
+  content: "\e074";
 }
 .bx-wrapper .bx-controls-auto .bx-stop:hover,
 .bx-wrapper .bx-controls-auto .bx-stop.active {
-  background-position: -86px -33px;
+  color: #b71234;
 }
 /* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
 .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
@@ -3146,16 +3186,14 @@ iframe.media-object,
   position: absolute;
   bottom: 0;
   left: 0;
-  background: #666\9;
-  background: rgba(80, 80, 80, 0.75);
+  background-color: rgba(244, 244, 244, 0.75);
   width: 100%;
 }
 .bx-wrapper .bx-caption span {
-  color: #fff;
-  font-family: Arial;
+  color: #37424a;
+  font-size: 14px;
   display: block;
-  font-size: .85em;
-  padding: 10px;
+  padding: 18px;
 }
 .clearfix:before,
 .clearfix:after {
