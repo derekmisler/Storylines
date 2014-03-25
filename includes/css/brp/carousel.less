@@ -10,9 +10,6 @@
 	display: block;
 }
 
-/** THEME
-===================================*/
-
 .bx-wrapper .bx-viewport {
 	.media-object;
 	background-color: @body-bg;
@@ -77,11 +74,19 @@
 	left: @default-padding;
 	.glyphicon;
 	.glyphicon-chevron-left;
+	.opacity(.1);
 }
 .bx-wrapper .bx-next {
 	right: @default-padding;
 	.glyphicon;
 	.glyphicon-chevron-right;
+	.opacity(.1);
+}
+.bx-wrapper:hover .bx-next,
+.bx-wrapper:focus .bx-next,
+.bx-wrapper:hover .bx-prev,
+.bx-wrapper:focus .bx-prev{
+	.opacity(1);
 }
 .bx-wrapper .bx-controls-direction a {
 	position: absolute;

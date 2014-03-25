@@ -101,6 +101,7 @@ $(document).ready(function(){
 	$('.youtube').fitVids();
 	$('.bxslider').bxSlider({
   	adaptiveHeight: true,
+		adaptiveHeightSpeed: 0,
 		captions: true
 	});
 	
