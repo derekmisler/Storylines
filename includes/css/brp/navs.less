@@ -43,8 +43,8 @@
     > li {
         > a {
             display: block;
-            width: @map-markers;
-            height: @map-markers;
+            width: floor(@map-markers * .8);
+            height: floor(@map-markers * .8);
             border-radius: 50% 50% 50% 0;
             background: @avl-red;
             overflow: hidden;
@@ -67,8 +67,8 @@
             }
             &:hover,
             &:focus{
-                width: floor(@map-markers * 1.1);
-                height: floor(@map-markers * 1.1);
+                width: floor(@map-markers * 1);
+                height: floor(@map-markers * 1);
                 .box-shadow(-10px 10px 10px rgba(0,0,0,.2));
                 cursor: pointer;
                 background: @avl-blue;
@@ -101,6 +101,63 @@
             &.active{
                 bottom: 0;
                 .opacity(1);
+            }
+        }
+    }
+}
+@media (min-width: @screen-desktop) {
+    //
+    // Desktop Navs
+    // --------------------------------------------------
+    .navigation {
+        bottom: -(@navbar-height + @default-padding);
+        padding: 0 0 @default-padding 0;
+        margin: 0 0 0 0;
+        height: @navbar-height;
+       
+        &.active {
+            bottom: -@default-padding;
+        }
+        .drawerbutton {
+            bottom: @navbar-height;
+            font-size: @font-size-large;
+            &:hover{
+                cursor: pointer;
+            }
+            .drawerbuttonheader{
+
+            }
+        }
+        > li {
+            > a {
+                width: @map-markers;
+                height: @map-markers;
+                &:after{
+                    height: 25px;
+                    width: 50px;
+                    margin: 125px 0 0 25px;
+                }
+                &:hover,
+                &:focus{
+                    width: floor(@map-markers * 1.1);
+                    height: floor(@map-markers * 1.1);
+                    margin-top:-10px;
+                }
+                > img {
+                	height: 86%;
+                	width: 86%;
+                	margin: 7%;
+                }
+            }
+            &.currentslide a{
+
+            }
+            .namecard{
+                padding: (@default-padding * 4) 0 floor(@map-markers * 2) 0;
+                bottom: -260px;
+                &.active{
+                    bottom: 0;
+                }
             }
         }
     }
