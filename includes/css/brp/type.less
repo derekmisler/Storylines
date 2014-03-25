@@ -9,7 +9,7 @@
 p {
   margin: 0 0 (@line-height-computed / 2);
 }
-@media (min-width: 768px) {
+@media (min-width: @screen-desktop) {
     p.lead:first-line{
         color:@avl-gray;
         font-size:(@font-size-base * 2);
@@ -70,7 +70,6 @@ h6 {
   margin-top: (@line-height-computed / 2);
   margin-bottom: (@line-height-computed / 2);
 }
-
 h1, .h1 { font-size: floor(@font-size-base * 3); text-shadow: 1px 1px 0 fadeout(@black, 80%); }
 h2, .h2 { font-size: floor(@font-size-base * 2.6); }
 h3, .h3 { font-size: ceil(@font-size-base * 2.15); }
@@ -83,6 +82,10 @@ h2 small, .h2 small { font-size: ceil(@font-size-base * 1.7); }
 h3 small, .h3 small,
 h4 small, .h4 small { font-size: @font-size-base; }
 
+@media (max-width: @screen-desktop) {
+    h1, .h1 { font-size: floor(@font-size-base * 2) }
+    h1 small, .h1 small { font-size: ceil(@font-size-base * 1.8); }
+}
 
 
 // Page header
