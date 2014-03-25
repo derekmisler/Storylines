@@ -136,6 +136,13 @@ $(document).ready(function(){
 			$('.navigation li[data-story="' + dataslide + '"]').addClass('currentslide').next().removeClass('currentslide');
 		}
 	}, {offset: 100});
+	
+	$('#top').waypoint(function() {
+		//show the logo
+		$('.topnav').addClass('active');
+	});
+	
+	
 	//hide the navigation when scrolling down, show it when scrolling up	
 	mywindow.scroll(function(event){
 		var st = $(this).scrollTop();

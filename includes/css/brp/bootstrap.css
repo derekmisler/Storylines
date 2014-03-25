@@ -2909,6 +2909,32 @@ iframe.media-object,
     padding: 72px;
   }
 }
+.topnav {
+  width: 200px;
+  height: 49px;
+  background: url(http://www.exploreasheville.com/includes/images/fall/logo.png) 0 0 no-repeat;
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+  position: fixed;
+  top: -49px;
+  left: 18px;
+  z-index: 999999;
+  -webkit-transition: all 0.1s ease;
+  -moz-transition: all 0.1s ease;
+  -o-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  display: block;
+}
+.topnav.active {
+  top: 0;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
 .navigation {
   position: fixed;
   z-index: 1;

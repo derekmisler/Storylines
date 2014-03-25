@@ -1,6 +1,23 @@
 //
 // Navs
 // --------------------------------------------------
+.topnav{
+    width: 200px;
+    height: 49px;
+    background: url(http://www.exploreasheville.com/includes/images/fall/logo.png) 0 0 no-repeat;
+    .text-hide;
+    position: fixed;
+    top: -49px;
+    left: @default-padding;
+    z-index:999999;
+    .transition(all .1s ease);
+    .opacity(0);
+    display: block;
+    &.active{
+        top: 0;
+        .opacity(1);
+    }
+}
 .navigation {
     position: fixed;
     z-index: 1;
