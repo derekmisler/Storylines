@@ -98,16 +98,9 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/GPL-license.txt
 //Start
 //Start
 //Start
+
 $(document).ready(function(){
 
-	$('.youtube').fitVids();
-	$.stellar();
-	$('.bxslider').bxSlider({
-  	adaptiveHeight: true,
-		adaptiveHeightSpeed: 0,
-		captions: true
-	});
-	
 	//Cache some variables
 	mywindow = $(window);
 	htmlbody = $('html,body');
@@ -122,6 +115,27 @@ $(document).ready(function(){
 	lastScroll = 0;
 	windowHeight = mywindow.height();
 	
+	$('.youtube').fitVids();
+	mywindow.stellar();
+	$("img.lazy").lazyload({
+		event : "sporty",
+		effect : "fadeIn"
+	});
+	$('.bxslider').bxSlider({
+  	adaptiveHeight: true,
+		adaptiveHeightSpeed: 100,
+		captions: true,
+		preloadImages: 'all',
+		pager: false
+	});
+
+	//Setup some function
+	function slideFade(fadedSlide) {
+		$(fadedSlide).css({'opacity':( 300-$(window).scrollTop() )/300});
+	}
+	function goToByScroll(dataslide) {
+		htmlbody.animate({ scrollTop: $('aside[data-story="' + dataslide + '"]').offset().top + 0 }, 1000);
+	}
 	
 	//Setup waypoints plugin
 	caption.waypoint(function (event, direction) {
@@ -140,15 +154,13 @@ $(document).ready(function(){
 		}
 	}, {offset: 100});
 	
-	$('#top').waypoint(function() {
-		//show the logo
-		$('.topnav').addClass('active');
-	});
-	
-	
 	//hide the navigation when scrolling down, show it when scrolling up	
 	mywindow.scroll(function(event){
+		
 		var st = $(this).scrollTop();
+		
+		slideFade('#top .caption > aside');
+
 		if (st > lastScroll){
 			$('.navigation').removeClass('active');
 			navtoggle.find('.glyphicon').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
@@ -172,10 +184,7 @@ $(document).ready(function(){
 		$('.navigation').toggleClass('active');
 		navtoggle.find('.glyphicon').toggleClass('glyphicon-chevron-up glyphicon-chevron-down');
 	});
-	//Create a function that will be passed a slide number and then will scroll to that slide using jquery easing.
-	function goToByScroll(dataslide) {
-		htmlbody.animate({ scrollTop: $('aside[data-story="' + dataslide + '"]').offset().top + 0 }, 1000);
-	}
+
 	//When the user clicks on the navigation links, get the data-story attribute value of the link and pass that variable to the goToByScroll function
 	links.click(function (e) {
 		e.preventDefault();
@@ -191,6 +200,10 @@ $(document).ready(function(){
 //Heavy stuff down here
 $(window).load(function()
 {
+	var timeout = setTimeout(function() {
+			$("img.lazy").trigger("sporty")
+	}, 100);
+	
 	var myOptions = {
 		scrollwheel: false,
 		zoom: 15,

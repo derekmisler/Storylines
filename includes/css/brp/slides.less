@@ -4,7 +4,8 @@
     z-index: 0;
     min-height:100%;
     z-index: 2;
-    .box-shadow(0 5px 5px rgba(0,0,0,.1));
+    .box-shadow(0 -5px 5px rgba(0,0,0,.3));
+    position: relative;
     // content
     .caption{
         padding-bottom:0;
@@ -86,12 +87,16 @@
         }
     }
     &#top{
-        z-index: 999;
-        min-height:100%;
+        z-index: 0;
+        height:100%;
         .caption{
             > aside {
                 top: 0;
                 text-align: left;
+                #gradient > .vertical(@start-color: fadeout(@body-bg, 0%); @end-color: fadeout(@body-bg, 50%););
+            }
+            .slide-divider{
+                height: 100%;
             }
         }
     }
