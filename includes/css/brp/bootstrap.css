@@ -2707,9 +2707,9 @@ iframe.media-object,
   z-index: 0;
   min-height: 100%;
   z-index: 2;
-  -webkit-box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 -2px 2px 1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 -2px 2px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 -2px 2px 1px rgba(0, 0, 0, 0.3);
   position: relative;
 }
 .slide:before,
@@ -2790,10 +2790,10 @@ iframe.media-object,
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
   margin: 0 0 36px 0;
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -o-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
   -webkit-box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.1);
@@ -2841,6 +2841,9 @@ iframe.media-object,
   min-height: 1px;
   padding-left: 18px;
   padding-right: 18px;
+  -webkit-box-shadow: inset 0 3px 2px 0 rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset 0 3px 2px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 3px 2px 0 rgba(0, 0, 0, 0.3);
 }
 .slide .noslide .assets {
   float: left;
@@ -2936,10 +2939,10 @@ iframe.media-object,
   top: 0;
   left: 18px;
   z-index: 999999;
-  -webkit-transition: all 0.1s ease;
-  -moz-transition: all 0.1s ease;
-  -o-transition: all 0.1s ease;
-  transition: all 0.1s ease;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
   opacity: 0;
   filter: alpha(opacity=0);
   display: block;
@@ -2959,10 +2962,10 @@ iframe.media-object,
   padding: 0 0 18px 0;
   margin: 0 0 0 0;
   height: 134px;
-  -webkit-transition: bottom 0.1s ease;
-  -moz-transition: bottom 0.1s ease;
-  -o-transition: bottom 0.1s ease;
-  transition: bottom 0.1s ease;
+  -webkit-transition: bottom 0.1s ease-out;
+  -moz-transition: bottom 0.1s ease-out;
+  -o-transition: bottom 0.1s ease-out;
+  transition: bottom 0.1s ease-out;
   background: url(http://www.exploreasheville.com/includes/images/storylines/blue-ridge-parkway/mountain-range.png) left 220% repeat-x;
 }
 .navigation.active {
@@ -3002,10 +3005,10 @@ iframe.media-object,
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
   margin: 0 auto;
-  -webkit-transition: all 0.1s linear;
-  -moz-transition: all 0.1s linear;
-  -o-transition: all 0.1s linear;
-  transition: all 0.1s linear;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
   -webkit-box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.3);
   box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.3);
@@ -3072,10 +3075,10 @@ iframe.media-object,
   background-image: linear-gradient(to bottom, rgba(244, 244, 244, 0.9) 0%, rgba(244, 244, 244, 0.5) 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e6f4f4f4', endColorstr='#80f4f4f4', GradientType=0);
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -o-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
 }
 .navigation > li .namecard.active {
   bottom: 0;
