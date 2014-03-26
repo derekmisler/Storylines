@@ -2731,10 +2731,6 @@ iframe.media-object,
 .slide:after {
   clear: both;
 }
-.slide#top {
-  z-index: 999;
-  min-height: 100%;
-}
 .slide .caption {
   padding-bottom: 0;
   height: 100%;
@@ -2887,6 +2883,14 @@ iframe.media-object,
     width: 58.33333333%;
   }
 }
+.slide#top {
+  z-index: 999;
+  min-height: 100%;
+}
+.slide#top .caption > aside {
+  top: 0;
+  text-align: left;
+}
 @media (min-width: 1024px) {
   .slide .caption > aside > a {
     width: 200px;
@@ -2919,7 +2923,7 @@ iframe.media-object,
   background-color: transparent;
   border: 0;
   position: fixed;
-  top: -49px;
+  top: 0;
   left: 18px;
   z-index: 999999;
   -webkit-transition: all 0.1s ease;
@@ -3042,7 +3046,7 @@ iframe.media-object,
 .navigation > li .namecard {
   position: absolute;
   padding: 72px 0 160px 0;
-  bottom: -260px;
+  bottom: -400px;
   left: 0;
   z-index: -1;
   text-align: center;
@@ -3107,7 +3111,7 @@ iframe.media-object,
   }
   .navigation > li .namecard {
     padding: 72px 0 160px 0;
-    bottom: -260px;
+    bottom: -400px;
   }
   .navigation > li .namecard.active {
     bottom: 0;

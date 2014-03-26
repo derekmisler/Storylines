@@ -5,10 +5,6 @@
     min-height:100%;
     z-index: 2;
     .box-shadow(0 5px 5px rgba(0,0,0,.1));
-    &#top{
-        z-index: 999;
-        min-height:100%;
-    }
     // content
     .caption{
         padding-bottom:0;
@@ -87,6 +83,16 @@
             .make-sm-column(8);
             .make-md-column(7);
         	padding:(@default-padding);
+        }
+    }
+    &#top{
+        z-index: 999;
+        min-height:100%;
+        .caption{
+            > aside {
+                top: 0;
+                text-align: left;
+            }
         }
     }
 }
