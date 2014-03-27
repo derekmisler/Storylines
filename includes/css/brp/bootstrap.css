@@ -3369,12 +3369,12 @@ iframe.media-object,
     position: relative;
   }
 }
-.sticky {
+.sticky-wrapper {
   position: fixed;
   top: 0;
 }
 @media (max-width: 768px) {
-  .sticky {
+  .sticky-wrapper {
     position: relative;
   }
 }

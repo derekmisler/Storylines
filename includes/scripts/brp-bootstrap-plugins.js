@@ -168,7 +168,6 @@ $(document).ready(function(){
 		}
 	}, {offset: '50%'});
 	
-	//Setup waypoints plugin
 	caption.waypoint(function(direction) {
 		
 		//cache the variable of the data-story attribute associated with each slide
