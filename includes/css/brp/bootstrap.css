@@ -3369,6 +3369,15 @@ iframe.media-object,
     position: relative;
   }
 }
+.sticky {
+  position: fixed;
+  top: 0;
+}
+@media (max-width: 768px) {
+  .sticky {
+    position: relative;
+  }
+}
 .utilities {
   position: fixed;
   text-align: center;
