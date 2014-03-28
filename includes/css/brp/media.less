@@ -15,8 +15,8 @@
 
 // Proper spacing between instances of .media
 .media {
-    border-top:3px solid @media-border-color;
-    border-bottom:3px solid @media-border-color;
+    border-top:@media-border;
+    border-bottom:@media-border;
     margin-top: 0;
     margin-bottom: @font-size-base;
     padding-top: @font-size-base;
@@ -52,7 +52,8 @@ iframe.media-object, #map_canvas.media-object {
 .media-caption {
     font-size: (@font-size-base * .85) !important;
     margin:0;
-    .text-muted;
+		font-family: @font-family-caption;
+    color: @avl-gray;
 }
 
 // Media image alignment

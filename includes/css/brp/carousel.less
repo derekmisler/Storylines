@@ -26,7 +26,7 @@
 .bx-wrapper .bx-loading {
 	.glyphicon;
 	.glyphicon-refresh;
-	min-height: 50px;
+	min-height: floor(@default-padding * 4);
 	background-color: @white;
 	height: 100%;
 	width: 100%;
@@ -52,7 +52,7 @@
 }
 
 .bx-wrapper .bx-pager.bx-default-pager a {
-	background: @gray;
+	background: @avl-gray;
 	text-indent: -9999px;
 	display: block;
 	width: floor(@default-padding / 2);
@@ -99,7 +99,7 @@
 	line-height: (floor(@font-size-base * 2) - 2);
 	z-index: 9999;
 	background-color: fadeout(@body-bg, 25%);
-	color: @avl-dark-gray;
+	color: @avl-gray;
 	border-radius: 50%;
 	text-align: center;
 }
@@ -145,7 +145,7 @@
 
 .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
 	right: 0;
-	width: 35px;
+	width: 20%;
 }
 
 /* IMAGE CAPTIONS */
@@ -159,8 +159,9 @@
 }
 
 .bx-wrapper .bx-caption span {
-	color: @avl-dark-gray;
+	color: @avl-gray;
 	font-size: @font-size-small;
+	font-family: @font-family-caption;
 	display: block;
 	padding: @default-padding;
 }

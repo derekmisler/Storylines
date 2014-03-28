@@ -10,7 +10,7 @@
     top: 0;
     left: @default-padding;
     z-index:999999;
-    .transition(all 0.1s ease-out);
+    .transition(all @transition-timing);
     .opacity(0);
     display: block;
     &.active{
@@ -28,7 +28,7 @@
     padding: 0 0 @default-padding 0;
     margin: 0 0 0 0;
     height: @navbar-height;
-    .transition(bottom 0.1s ease-out);
+    .transition(bottom @transition-timing);
     background: url(http://www.exploreasheville.com/includes/images/storylines/blue-ridge-parkway/mountain-range.png) left 220% repeat-x;
     
     &.active {
@@ -67,11 +67,11 @@
             overflow: hidden;
             .rotate(-45deg);
             margin: 0 auto;
-            .transition(all 0.1s ease-out);
-            .box-shadow(-2px 2px 2px rgba(0,0,0,.3));
+            .transition(all @transition-timing);
+            .box-shadow(-2px 2px 2px @default-box-shadow);
             &:after{
-                background: rgba(0,0,0,1);
-                .box-shadow(0 0 10px rgba(0,0,0,1));
+                background: @black;
+                .box-shadow(0 0 10px @default-box-shadow);
                 border-radius: 50%;
                 height: 25px;
                 width: 50px;
@@ -86,7 +86,7 @@
             &:focus{
                 width: floor(@map-markers * 1);
                 height: floor(@map-markers * 1);
-                .box-shadow(-10px 10px 10px rgba(0,0,0,.2));
+                .box-shadow(-10px 10px 10px @default-box-shadow);
                 cursor: pointer;
                 background: @avl-blue;
                 margin-top:-10px;
@@ -97,7 +97,7 @@
             	width: 86%;
             	margin: 7%;
             	border-radius: 50%;
-            	.box-shadow(inset 0 0 2px rgba(0,0,0,.5));
+            	.box-shadow(inset 0 0 2px @default-box-shadow);
             }
         }
         &.currentslide a{
@@ -112,9 +112,9 @@
             text-align: center;
             width: 100%;
             .opacity(0);
-            .box-shadow(0 -2px 5px rgba(0,0,0,.1));
-            #gradient > .vertical(@start-color: fadeout(@body-bg, 10%); @end-color: fadeout(@body-bg, 50%););
-            .transition(all 0.1s ease-out);
+            .box-shadow(0 -2px 5px @default-box-shadow);
+            #gradient > .vertical(@start-color: fadeout(@body-bg, 5%); @end-color: fadeout(@body-bg, 30%););
+            .transition(all @transition-timing);
             &.active{
                 bottom: 0;
                 .opacity(1);

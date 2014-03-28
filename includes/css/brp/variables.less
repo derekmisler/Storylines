@@ -15,56 +15,54 @@
 @avl-gray:              #766a65;
 @avl-dark-gray:         #37424a;
 
-@brand-primary:         @avl-blue;
-@brand-success:         @avl-green;
-@brand-warning:         @avl-yellow;
-@brand-danger:          @avl-red;
-@brand-info:            @avl-gray;
 
 // Grays
 // -------------------------
 
-@black:                  #0f0f0f;
-@gray-darker:            @avl-dark-gray;
-@gray-dark:              #AEAEA6;
-@gray:                   @avl-gray;
-@gray-light:             lighten(@black, 60%);
-@gray-lighter:           #eae7db;
-@white:                  #f4f4f4;
+@black:                  #100c08;
+@gray:                   lighten(#000000, 50%);
+@gray-light:             lighten(#000000, 75%);
+@white:                  #fffafa;
 
 // Scaffolding
 // -------------------------
 
 @body-bg:               @white;
-@default-box-bg:        @gray-lighter;
-@default-border-color:  @gray-dark;
+@default-box-bg:        @white;
+@default-border-color:  @gray-light;
 @text-color:            @black;
-@text-muted:            @avl-gray;
+@transition-timing:			.2s ease-out;
 
 // Links
 // -------------------------
 
-@link-color:            @brand-danger;
-@link-hover-color:      darken(@link-color, 5%);
+@link-color:            @avl-red;
+@link-hover-color:      darken(@link-color, 10%);
 
 // Typography
 // -------------------------
 
-@font-family-sans-serif:  'Open Sans', Verdana, "Lucida Grande", "Lucida Sans Unicode", "Bitstream Vera Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-@font-family-serif:       'Gentium Book Basic', Georgia, "Times New Roman", Times, serif;
+@font-family-sans-serif:  "Open Sans","Helvetica Neue",sans-serif;
+@font-family-serif:       "Gentium Book Basic",Georgia,serif;
 @font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace;
-@font-family-base:        @font-family-sans-serif;
+@font-family-base:        @font-family-serif;
+@font-family-caption:			@font-family-sans-serif;
 
-@font-size-base:          18px;
+@font-size-base:          22px;
 @font-size-large:         ceil(@font-size-base * 1.5);
-@font-size-small:         ceil(@font-size-base * 0.75);
+@font-size-small:         ceil(@font-size-base * 0.85);
 
 @line-height-base:        1.6;
 @line-height-computed:    floor(@font-size-base * @line-height-base);
 
-@headings-font-family:    'Open Sans Condensed', "Helvetica Neue", Helvetica, Arial, sans-serif;
+@headings-font-family:    @font-family-serif;
 @headings-font-weight:    700;
 @headings-line-height:    1.1;
+
+@subheadings-font-family:    @font-family-sans-serif;
+@subheadings-font-weight:    400;
+@subheadings-line-height:    1.1;
+@subheadings-letter-spacing: 1px;
 
 // Iconography
 // -------------------------
@@ -96,7 +94,7 @@
 
 // Navbar
 // -------------------------
-@map-markers:                 80px;
+@map-markers:                 floor(@font-size-base * 4);
 @navbar-height:               @map-markers + (@default-padding * 3);
 
 // Tables
@@ -115,30 +113,28 @@
 // Buttons
 // -------------------------
 
-@btn-font-weight:                normal;
-
 @btn-default-color:              @white;
-@btn-default-bg:                 @brand-danger;
+@btn-default-bg:                 @avl-red;
 @btn-default-border:             darken(@btn-default-bg, 5%);
 
 @btn-primary-color:              @white;
-@btn-primary-bg:                 @brand-primary;
+@btn-primary-bg:                 @avl-blue;
 @btn-primary-border:             darken(@btn-primary-bg, 5%);
 
 @btn-success-color:              @white;
-@btn-success-bg:                 @brand-success;
+@btn-success-bg:                 @avl-green;
 @btn-success-border:             darken(@btn-success-bg, 5%);
 
 @btn-warning-color:              @white;
-@btn-warning-bg:                 @brand-warning;
+@btn-warning-bg:                 @avl-yellow;
 @btn-warning-border:             darken(@btn-warning-bg, 5%);
 
 @btn-danger-color:               @white;
-@btn-danger-bg:                  @brand-danger;
+@btn-danger-bg:                  @avl-red;
 @btn-danger-border:              darken(@btn-danger-bg, 5%);
 
 @btn-info-color:                 @white;
-@btn-info-bg:                    @brand-info;
+@btn-info-bg:                    @avl-gray;
 @btn-info-border:                darken(@btn-info-bg, 5%);
 
 @btn-link-disabled-color:        @gray-light;
@@ -148,9 +144,9 @@
 // -------------------------
 
 @input-bg:                       @body-bg;
-@input-bg-disabled:              @gray-lighter;
+@input-bg-disabled:              @gray-light;
 
-@input-color:                    @gray;
+@input-color:                    @avl-gray;
 @input-border:                   @default-border-color;
 @input-border-radius:            @border-radius-base;
 @input-border-focus:             @default-border-color;
@@ -161,10 +157,10 @@
 @input-height-large:             (floor(@font-size-large * @line-height-large) + (@padding-large-vertical * 2) + 2);
 @input-height-small:             (floor(@font-size-small * @line-height-small) + (@padding-small-vertical * 2) + 2);
 
-@legend-color:                   @gray-dark;
+@legend-color:                   @avl-gray;
 @legend-border-color:            @default-border-color;
 
-@input-group-addon-bg:           @gray-lighter;
+@input-group-addon-bg:           @gray-light;
 @input-group-addon-border-color: @input-border;
 
 
@@ -213,45 +209,32 @@
 @panel-border-radius:         @border-radius-base;
 @panel-footer-bg:             @default-border-color;
 
-@panel-default-text:          @gray-dark;
+@panel-default-text:          @avl-gray;
 @panel-default-border:        @default-border-color;
 @panel-default-heading-bg:    @default-border-color;
 
-
 // Thumbnails
 // -------------------------
-@thumbnail-padding:           0px;
+@thumbnail-padding:           0;
 @thumbnail-bg:                @default-box-bg;
 @thumbnail-border:            @default-border-color;
 @thumbnail-border-radius:     @border-radius-base;
 
-@thumbnail-caption-color:     @text-color;
-@thumbnail-caption-padding:   9px;
-
-// Carousel
-// ------------------------
-@carousel-text-shadow:                        1px 1px 0px rgba(0,0,0,.3);
-
-@carousel-control-color:                      @white;
-@carousel-control-width:                      15%;
-@carousel-control-opacity:                    .7;
-@carousel-control-font-size:                  20px;
-
-@carousel-indicator-active-bg:                @white;
-@carousel-indicator-border-color:             @white;
-
-@carousel-caption-color:                      @white;
-
+@thumbnail-caption-color:     @avl-gray;
+@thumbnail-caption-padding:   floor(@default-padding / 2);
 
 // Type
 // ------------------------
-@text-muted:                  @avl-gray;
-@abbr-border-color:           @avl-red;
+@dark-text-shadow:						fadeout(@black, 90%);
+@light-text-shadow:						fadeout(@white, 20%);
+@default-box-shadow:					fadeout(@black, 70%);
+@abbr-border-color:           @default-border-color;
 @headings-small-color:        @avl-gray;
 @blockquote-small-color:      @avl-gray;
-@blockquote-border-color:     fadeout(@gray-light, 50%);
-@page-header-border-color:    fadeout(@gray-light, 50%);
-@media-border-color:          fadeout(@gray-light, 50%);
+@blockquote-border-color:     @default-border-color;
+@page-header-border-color:    @default-border-color;
+@media-border-color:          @default-border-color;
+@media-border:          	  3px solid @default-border-color;
 
 
 // Container sizes
