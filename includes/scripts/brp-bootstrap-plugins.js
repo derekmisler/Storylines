@@ -225,10 +225,10 @@ $(window).load(function()
 	
 	var myOptions = {
 		scrollwheel: false,
-		zoom: 15,
-		center: new google.maps.LatLng(35.595801, -82.547914),
+		zoom: 11,
+		center: new google.maps.LatLng(35.5800, -82.5558),
 		mapTypeId: google.maps.MapTypeId.ROADMAP,
-		disableDefaultUI: true,
+		disableDefaultUI: false,
 		styles: [{
 				"featureType": "water",
 				"elementType": "geometry",
