@@ -25,6 +25,8 @@ body {
   line-height: @line-height-base;
   color: @text-color;
   background-color: @body-bg;
+  -webkit-text-stroke: 1px;
+  -webkit-text-stroke-color: fadeout(@text-color, 70%);
 }
 
 // Reset fonts for relevant elements
@@ -110,8 +112,8 @@ img {
   border: 1px solid @default-border-color;
   border-radius: @thumbnail-border-radius;
   .transition(all @transition-timing);
-  @shadow: 0 1px 1px @default-box-shadow, 0 0 40px @default-box-shadow inset;
-  .box-shadow(@shadow);
+  @box-shadow: 0 1px 1px @default-box-shadow;
+  .box-shadow(@box-shadow);
 
   // Keep them at most 100% wide
   .img-responsive(inline-block);

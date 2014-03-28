@@ -1,3 +1,7 @@
+$('p, blockquote').each(function() {
+	$(this).html($(this).html().replace(/\s([^\s<]+)\s*$/,'&nbsp;$1'));
+});
+
 // FitVids 1.0.3
 
 (function( $ ){

@@ -3,165 +3,163 @@
 	margin: 0;
 	padding: 0;
 	*zoom: 1;
-}
-
-.bx-wrapper img {
-	max-width: 100%;
-	display: block;
-}
-
-.bx-wrapper .bx-viewport {
-	.media-object;
-	background-color: @body-bg;
-}
-
-.bx-wrapper .bx-pager,
-.bx-wrapper .bx-controls-auto {
-	position: absolute;
-	width: 100%;
-}
-
-/* LOADER */
-
-.bx-wrapper .bx-loading {
-	.glyphicon;
-	.glyphicon-refresh;
-	min-height: floor(@default-padding * 4);
-	background-color: @white;
-	height: 100%;
-	width: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 2000;
-}
-
-/* PAGER */
-
-.bx-wrapper .bx-pager {
-	text-align: center;
-	color: @avl-blue;
-	padding-top: @default-padding;
-}
-
-.bx-wrapper .bx-pager .bx-pager-item,
-.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
-	display: inline-block;
-	*zoom: 1;
-	*display: inline;
-}
-
-.bx-wrapper .bx-pager.bx-default-pager a {
-	background: @avl-gray;
-	text-indent: -9999px;
-	display: block;
-	width: floor(@default-padding / 2);
-	height: floor(@default-padding / 2);
-	margin: 0 floor(@default-padding / 3);
-	outline: 0;
-	border-radius: 50%;
-	
-}
-
-.bx-wrapper .bx-pager.bx-default-pager a:hover,
-.bx-wrapper .bx-pager.bx-default-pager a.active {
-	background: @avl-dark-gray;
-}
-
-/* DIRECTION CONTROLS (NEXT / PREV) */
-
-.bx-wrapper .bx-prev {
-	left: @default-padding;
-	.glyphicon;
-	.glyphicon-chevron-left;
-	.opacity(.1);
-}
-.bx-wrapper .bx-next {
-	right: @default-padding;
-	.glyphicon;
-	.glyphicon-chevron-right;
-	.opacity(.1);
-}
-.bx-wrapper:hover .bx-next,
-.bx-wrapper:focus .bx-next,
-.bx-wrapper:hover .bx-prev,
-.bx-wrapper:focus .bx-prev{
-	.opacity(1);
-}
-.bx-wrapper .bx-controls-direction a {
-	position: absolute;
-	top: 50%;
-	margin-top: -(floor(@font-size-base * 2));
-	outline: 0;
-	width: floor(@font-size-base * 2);
-	height: floor(@font-size-base * 2);
-	font-size: @font-size-base;
-	line-height: (floor(@font-size-base * 2) - 2);
-	z-index: 9999;
-	background-color: fadeout(@body-bg, 25%);
-	color: @avl-gray;
-	border-radius: 50%;
-	text-align: center;
-}
-
-.bx-wrapper .bx-controls-direction a.disabled {
-	display: none;
-}
-
-/* AUTO CONTROLS (START / STOP) */
-
-.bx-wrapper .bx-controls-auto {
-	text-align: center;
-}
-.bx-wrapper .bx-controls-auto .bx-start,
-.bx-wrapper .bx-controls-auto .bx-stop{
-	.glyphicon;
-    display: inline-block;
-    float:left;
-	outline: 0;
-	margin: 0;
-	color: @avl-gray;
-}
-.bx-wrapper .bx-controls-auto .bx-start {
-	.glyphicon-play;
-	&:hover,
-    &.active {
-	    color: @avl-red;	
+    
+    img {
+    	max-width: 100%;
+    	display: block;
     }
-}
-.bx-wrapper .bx-controls-auto .bx-stop {
-	.glyphicon-stop;
-    &:hover,
-    &.active {
-	    color: @avl-red;	
+    
+    .bx-viewport {
+    	.media-object;
+    	background-color: @body-bg;
     }
-}
-/* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
+    
+    .bx-pager,
+    .bx-controls-auto {
+    	position: absolute;
+    	width: 100%;
+    }
+    
+    /* LOADER */
+    
+    .bx-loading {
+    	.glyphicon;
+    	.glyphicon-refresh;
+    	min-height: floor(@default-padding * 4);
+    	background-color: @white;
+    	height: 100%;
+    	width: 100%;
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    	z-index: 2000;
+    }
+    
+    /* PAGER */
+    
+    .bx-pager {
+    	text-align: center;
+    	color: @avl-blue;
+    	padding-top: @default-padding;
+        
+        .bx-pager-item{
+        	display: inline-block;
+        	*zoom: 1;
+        	*display: inline;
+        }
+        
+        &.bx-default-pager a {
+        	background: @avl-gray;
+        	text-indent: -9999px;
+        	display: block;
+        	width: floor(@default-padding / 2);
+        	height: floor(@default-padding / 2);
+        	margin: 0 floor(@default-padding / 3);
+        	outline: 0;
+        	border-radius: 50%;
+            &:hover,
+            &.active {
+            	background: @avl-dark-gray;
+            }
+        }
+    }
+    .bx-controls-auto .bx-controls-auto-item {
+    	display: inline-block;
+    	*zoom: 1;
+    	*display: inline;
+    }
+    /* DIRECTION CONTROLS (NEXT / PREV) */
+    
+    .bx-prev {
+    	left: @default-padding;
+    	.glyphicon;
+    	.glyphicon-chevron-left;
+    	.opacity(.1);
+    }
+    .bx-next {
+    	right: @default-padding;
+    	.glyphicon;
+    	.glyphicon-chevron-right;
+    	.opacity(.1);
+    }
+    &:hover .bx-next,
+    &:focus .bx-next,
+    &:hover .bx-prev,
+    &:focus .bx-prev{
+    	.opacity(1);
+    }
+    .bx-controls-direction a {
+    	position: absolute;
+    	top: 50%;
+    	margin-top: -(floor(@font-size-base * 2));
+    	outline: 0;
+    	width: floor(@font-size-base * 2);
+    	height: floor(@font-size-base * 2);
+    	font-size: @font-size-base;
+    	line-height: (floor(@font-size-base * 2) - 2);
+    	z-index: 9999;
+    	background-color: fadeout(@body-bg, 25%);
+    	color: @avl-gray;
+    	border-radius: 50%;
+    	text-align: center;
 
-.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
-	text-align: left;
-	width: 80%;
-}
-
-.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
-	right: 0;
-	width: 20%;
-}
-
-/* IMAGE CAPTIONS */
-
-.bx-wrapper .bx-caption {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	background-color: fadeout(@body-bg, 25%);
-	width: 100%;
-}
-
-.bx-wrapper .bx-caption span {
-	color: @avl-gray;
-	font-size: @font-size-small;
-	font-family: @font-family-caption;
-	display: block;
-	padding: @default-padding;
+        &.disabled {
+        	display: none;
+        }
+    }    
+    /* AUTO CONTROLS (START / STOP) */
+    
+    .bx-controls-auto {
+    	text-align: center;
+        .bx-start,
+        .bx-stop{
+        	.glyphicon;
+            display: inline-block;
+            float:left;
+        	outline: 0;
+        	margin: 0;
+        	color: @avl-gray;
+        }
+        .bx-start {
+        	.glyphicon-play;
+        	&:hover,
+            &.active {
+        	    color: @avl-red;	
+            }
+        }
+        .bx-stop {
+        	.glyphicon-stop;
+            &:hover,
+            &.active {
+        	    color: @avl-red;	
+            }
+        }
+    }
+    /* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
+    
+    .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+    	text-align: left;
+    	width: 80%;
+    }
+    .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
+    	right: 0;
+    	width: 20%;
+    }
+    
+    /* IMAGE CAPTIONS */
+    
+    .bx-caption {
+    	position: absolute;
+    	bottom: 0;
+    	left: 0;
+    	background-color: fadeout(@body-bg, 25%);
+    	width: 100%;
+        span {
+    	    color: @avl-gray;
+    	    font-size: @font-size-small;
+    	    font-family: @font-family-caption;
+        	display: block;
+        	padding: @default-padding;
+        }
+    }
 }

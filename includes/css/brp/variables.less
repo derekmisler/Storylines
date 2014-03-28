@@ -19,9 +19,9 @@
 // Grays
 // -------------------------
 
-@black:                  #100c08;
-@gray:                   lighten(#000000, 50%);
-@gray-light:             lighten(#000000, 75%);
+@black:                  #000000;
+@gray:                   lighten(@black, 50%);
+@gray-light:             lighten(@black, 75%);
 @white:                  #fffafa;
 
 // Scaffolding
@@ -30,8 +30,8 @@
 @body-bg:               @white;
 @default-box-bg:        @white;
 @default-border-color:  @gray-light;
-@text-color:            @black;
-@transition-timing:			.2s ease-out;
+@text-color:            #3d2b1f;
+@transition-timing:		.1s ease-out;
 
 // Links
 // -------------------------
@@ -43,14 +43,14 @@
 // -------------------------
 
 @font-family-sans-serif:  "Open Sans","Helvetica Neue",sans-serif;
-@font-family-serif:       "Gentium Book Basic",Georgia,serif;
+@font-family-serif:       "Playfair Display",Georgia,serif;
 @font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace;
-@font-family-base:        @font-family-serif;
-@font-family-caption:			@font-family-sans-serif;
+@font-family-base:        @font-family-sans-serif;
+@font-family-caption:	  @font-family-serif;
 
-@font-size-base:          22px;
+@font-size-base:          20px;
 @font-size-large:         ceil(@font-size-base * 1.5);
-@font-size-small:         ceil(@font-size-base * 0.85);
+@font-size-small:         floor(@font-size-base * 0.75);
 
 @line-height-base:        1.6;
 @line-height-computed:    floor(@font-size-base * @line-height-base);
@@ -95,7 +95,7 @@
 // Navbar
 // -------------------------
 @map-markers:                 floor(@font-size-base * 4);
-@navbar-height:               @map-markers + (@default-padding * 3);
+@navbar-height:               floor(@font-size-base + 100);
 
 // Tables
 // -------------------------
@@ -225,9 +225,9 @@
 
 // Type
 // ------------------------
-@dark-text-shadow:						fadeout(@black, 90%);
-@light-text-shadow:						fadeout(@white, 20%);
-@default-box-shadow:					fadeout(@black, 70%);
+@dark-text-shadow:			  fadeout(@black, 90%);
+@light-text-shadow:			  fadeout(@white, 20%);
+@default-box-shadow:		  fadeout(@black, 70%);
 @abbr-border-color:           @default-border-color;
 @headings-small-color:        @avl-gray;
 @blockquote-small-color:      @avl-gray;
