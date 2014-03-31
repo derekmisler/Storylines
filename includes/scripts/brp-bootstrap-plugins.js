@@ -112,17 +112,14 @@ $(document).ready(function(){
 	var bottomNavigation = $('.bottom.navigation');
 	var leftNavigation = $('.left.navigation');
 	var links = bottomNavigation.find('li');
-	var thumbnail = links.find('img');
 	var namecards = $('.namecard');
-	var profilePhoto = $('.caption').find('img');
 	var caption = $('.caption').find('aside');
-	var navtoggle = $('.drawerbutton');
+	var bottomNavToggle = $('.drawerbutton');
 	var slide = $('.slide');
-	var topSlide = $('#top');
 	var lastScroll = 0;
 	
 	$('.youtube').fitVids();
-	mywindow.stellar();
+	$(mywindow).stellar();
 	$("img.lazy").lazyload({
 		event : "sporty",
 		effect : "fadeIn"
@@ -136,27 +133,49 @@ $(document).ready(function(){
 	});
 
 	//Setup some functions
-	function slideFade(fadedSlide) {
-		$(fadedSlide).css({'opacity':( 300-$(window).scrollTop() )/300});
+	function slideFade(whatToFade) {
+		$(whatToFade).css({'opacity':( 300-$(window).scrollTop() )/300});
 	}
 	
 	//hide the navigation when scrolling down, show it when scrolling up	
-	mywindow.scroll(function(event){
-		var st = $(this).scrollTop();
+	$(mywindow).scroll(function(){
 		slideFade('#top .caption > aside');
-		if (st > lastScroll){
+		
+		var currentLocation = $(this).scrollTop();
+		if (currentLocation > lastScroll){
 			bottomNavigation.removeClass('active');
-			navtoggle.find('.glyphicon').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+			bottomNavToggle.find('.glyphicon').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
 		} 
 		else {
 			bottomNavigation.addClass('active');
-			navtoggle.find('.glyphicon').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+			bottomNavToggle.find('.glyphicon').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
 		}
-		if (st <= 300){
+		if (currentLocation <= 300){
 			$('.currentslide').removeClass('currentslide');
 		} 
 		//Updates scroll position
-		lastScroll = st;
+		lastScroll = currentLocation;
+	});
+	//When the user clicks on the navigation links, get the data-story attribute value of the link and pass that variable to the goToByScroll function
+	function goToByScroll(dataslide) {
+		htmlbody.animate({ scrollTop: $('aside[data-story="' + dataslide + '"]').offset().top + 0 }, 1000);
+	}
+	links.click(function(e) {
+		e.preventDefault();
+		dataslide = $(this).attr('data-story');
+		goToByScroll(dataslide);
+	});
+	
+	//namecards hover effect
+	links.find('a').hover(function() {
+		$(this).parent().find(namecards).toggleClass('active');
+	});
+	
+	//hide and show the navigation by clicking the arrow
+	bottomNavToggle.click(function(e) {
+		e.preventDefault();
+		bottomNavigation.toggleClass('active');
+		bottomNavToggle.find('.glyphicon').toggleClass('glyphicon-chevron-up glyphicon-chevron-down');
 	});
 	
 	//Setup waypoints plugin
@@ -173,6 +192,7 @@ $(document).ready(function(){
 			$(links + '[data-story="' + dataslide + '"]').addClass('currentslide');
 		}
 	}, {offset: '50%'});
+	
 	caption.waypoint(function(direction) {
 		
 		//cache the variable of the data-story attribute associated with each slide
@@ -187,30 +207,6 @@ $(document).ready(function(){
 		}
 	}, {offset: '-100%'});
 	
-	//When the user clicks on the navigation links, get the data-story attribute value of the link and pass that variable to the goToByScroll function
-	function goToByScroll(dataslide) {
-		htmlbody.animate({ scrollTop: $('aside[data-story="' + dataslide + '"]').offset().top + 0 }, 1000);
-	}
-	links.click(function (e) {
-		e.preventDefault();
-		dataslide = $(this).attr('data-story');
-		goToByScroll(dataslide);
-	});
-	
-
-	
-	//namecards hover effect
-	links.find('a').hover(function() {
-		$(this).parent().find(namecards).toggleClass('active');
-	});
-	
-	//hide and show the navigation by clicking the arrow
-	navtoggle.click(function (e) {
-		e.preventDefault();
-		bottomNavigation.toggleClass('active');
-		navtoggle.find('.glyphicon').toggleClass('glyphicon-chevron-up glyphicon-chevron-down');
-	});
-
 });
 //Heavy stuff down here
 //Heavy stuff down here
