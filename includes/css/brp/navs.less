@@ -1,34 +1,27 @@
 //
 // Navs
 // --------------------------------------------------
-.topnav{
-    width: 200px;
-    height: 49px;
-    background: url(http://www.exploreasheville.com/includes/images/fall/logo.png) 0 0 no-repeat;
-    .text-hide;
-    position: fixed;
-    top: 0;
-    left: @default-padding;
-    z-index:999999;
-    .transition(all @transition-timing);
-    .opacity(0);
-    display: block;
-    &.active{
-        top: 0;
-        .opacity(1);
-    }
-}
-.navigation {
+.navigation{
     position: fixed;
     z-index: 10;
     overflow: visible;
+    padding: 0;
+    margin: 0;
+    .transition(all @transition-timing);
+}
+.navigation.left{
+    left: -50%;
+    top: 0;
+    width: 50%;
+    &.active{
+        left: 0;
+    }
+}
+.navigation.bottom {
     left: 0;
     right: 0;
     bottom: -(@navbar-height + @default-padding);
-    padding: 0;
-    margin: 0;
     height: @navbar-height;
-    .transition(bottom @transition-timing);
     background: url(http://www.exploreasheville.com/includes/images/storylines/blue-ridge-parkway/mountain-range.png) left 220% repeat-x;
     &.active {
         bottom: -@default-padding;
@@ -48,14 +41,7 @@
         &:hover{
             cursor: pointer;
         }
-        .drawerbuttonheader{
-            display: block;
-            margin: 0;
-            padding: 0;
-            line-height: 1;
-            color: @white;
-        }
-    }
+     }
     > li {
         > a {
             display: block;
@@ -104,7 +90,7 @@
         }
         .namecard{
             position: absolute;
-            padding: (@default-padding * 4) 0 floor(@map-markers * 2) 0;
+            padding: @default-padding 0 floor(@map-markers * 2) 0;
             bottom: -400px;
             left: 0;
             z-index: -1;
@@ -112,7 +98,7 @@
             width: 100%;
             .opacity(0);
             .box-shadow(0 -2px 5px @default-box-shadow);
-            #gradient > .vertical(@start-color: fadeout(@body-bg, 5%); @end-color: fadeout(@body-bg, 30%););
+            #gradient > .vertical(@start-color: fadeout(@body-bg, 10%); @end-color: fadeout(@body-bg, 10%););
             .transition(all @transition-timing);
             &.active{
                 bottom: 0;
@@ -121,16 +107,16 @@
         }
     }
 }
+
+//
+// Desktop Navs
+// --------------------------------------------------
 @media (min-width: @screen-desktop) {
-    //
-    // Desktop Navs
-    // --------------------------------------------------
-    .navigation {
+    .navigation.bottom {
         bottom: -(@navbar-height + @default-padding);
         padding: 0 0 @default-padding 0;
         margin: 0 0 0 0;
         height: @navbar-height;
-       
         &.active {
             bottom: -@default-padding;
         }
@@ -139,9 +125,6 @@
             font-size: @font-size-large;
             &:hover{
                 cursor: pointer;
-            }
-            .drawerbuttonheader{
-
             }
         }
         > li {
@@ -165,12 +148,10 @@
                 	margin: 7%;
                 }
             }
-            &.currentslide a{
-
-            }
             .namecard{
-                padding: (@default-padding * 4) 0 floor(@map-markers * 2) 0;
+                padding: @default-padding 0 floor(@map-markers * 2) 0;
                 bottom: -400px;
+                #gradient > .vertical(@start-color: fadeout(@body-bg, 10%); @end-color: fadeout(@body-bg, 50%););
                 &.active{
                     bottom: 0;
                 }

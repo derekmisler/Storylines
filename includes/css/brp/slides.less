@@ -94,7 +94,7 @@
             > aside {
                 top: 0;
                 text-align: left;
-                #gradient > .vertical(@start-color: fadeout(@body-bg, 0%); @end-color: fadeout(@body-bg, 50%););
+                #gradient > .vertical(@start-color: fadeout(@body-bg, 20%); @end-color: fadeout(@body-bg, 50%););
             }
             .slide-divider{
                 height: 100%;
@@ -102,9 +102,7 @@
         }
     }
 }
-article:last-of-type{
-    .box-shadow(inset 0 2px 2px 1px @default-box-shadow);
-}
+
 @media (min-width: @screen-desktop) {
     .slide{
 

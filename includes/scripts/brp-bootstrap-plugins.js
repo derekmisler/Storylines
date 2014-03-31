@@ -109,9 +109,11 @@ $(document).ready(function(){
 	var mywindow = $(window);
 	var windowHeight = mywindow.height();
 	var htmlbody = $('html,body');
-	var links = $('.navigation').find('li');
-	var namecards = $('.namecard');
+	var bottomNavigation = $('.bottom.navigation');
+	var leftNavigation = $('.left.navigation');
+	var links = bottomNavigation.find('li');
 	var thumbnail = links.find('img');
+	var namecards = $('.namecard');
 	var profilePhoto = $('.caption').find('img');
 	var caption = $('.caption').find('aside');
 	var navtoggle = $('.drawerbutton');
@@ -143,11 +145,11 @@ $(document).ready(function(){
 		var st = $(this).scrollTop();
 		slideFade('#top .caption > aside');
 		if (st > lastScroll){
-			$('.navigation').removeClass('active');
+			bottomNavigation.removeClass('active');
 			navtoggle.find('.glyphicon').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
 		} 
 		else {
-			$('.navigation').addClass('active');
+			bottomNavigation.addClass('active');
 			navtoggle.find('.glyphicon').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
 		}
 		if (st <= 300){
@@ -167,11 +169,10 @@ $(document).ready(function(){
 		
 		if (direction == 'down') {
 			//If the user scrolls down, remove the 'currentslide' class from the previous nav highlight the current slide in the navigation
-			$('.navigation li[data-story="' + prevdataslide + '"]').removeClass('currentslide');
-			$('.navigation li[data-story="' + dataslide + '"]').addClass('currentslide');
+			$(links + '[data-story="' + prevdataslide + '"]').removeClass('currentslide');
+			$(links + '[data-story="' + dataslide + '"]').addClass('currentslide');
 		}
 	}, {offset: '50%'});
-	
 	caption.waypoint(function(direction) {
 		
 		//cache the variable of the data-story attribute associated with each slide
@@ -181,8 +182,8 @@ $(document).ready(function(){
 		
 		if (direction == 'up') {
 			//Or, if the user scrolls up, remove the 'currentslide' class from the next nav and highlight the current slide in the navigation
-			$('.navigation li[data-story="' + nextdataslide + '"]').removeClass('currentslide');
-			$('.navigation li[data-story="' + dataslide + '"]').addClass('currentslide');
+			$(links + '[data-story="' + nextdataslide + '"]').removeClass('currentslide');
+			$(links + '[data-story="' + dataslide + '"]').addClass('currentslide');
 		}
 	}, {offset: '-100%'});
 	
@@ -206,7 +207,7 @@ $(document).ready(function(){
 	//hide and show the navigation by clicking the arrow
 	navtoggle.click(function (e) {
 		e.preventDefault();
-		$('.navigation').toggleClass('active');
+		bottomNavigation.toggleClass('active');
 		navtoggle.find('.glyphicon').toggleClass('glyphicon-chevron-up glyphicon-chevron-down');
 	});
 

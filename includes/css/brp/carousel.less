@@ -71,13 +71,13 @@
     /* DIRECTION CONTROLS (NEXT / PREV) */
     
     .bx-prev {
-    	left: @default-padding;
+    	left: 0;
     	.glyphicon;
     	.glyphicon-chevron-left;
     	.opacity(.1);
     }
     .bx-next {
-    	right: @default-padding;
+    	right: 0;
     	.glyphicon;
     	.glyphicon-chevron-right;
     	.opacity(.1);
@@ -90,21 +90,22 @@
     }
     .bx-controls-direction a {
     	position: absolute;
-    	top: 50%;
-    	margin-top: -(floor(@font-size-base * 2));
+    	top: 0;
     	outline: 0;
-    	width: floor(@font-size-base * 2);
+    	width: 50%;
     	height: floor(@font-size-base * 2);
     	font-size: @font-size-base;
     	line-height: (floor(@font-size-base * 2) - 2);
     	z-index: 9999;
     	background-color: fadeout(@body-bg, 25%);
     	color: @avl-gray;
-    	border-radius: 50%;
     	text-align: center;
 
         &.disabled {
         	display: none;
+        }
+        &:hover{
+            color: @avl-red;
         }
     }    
     /* AUTO CONTROLS (START / STOP) */
