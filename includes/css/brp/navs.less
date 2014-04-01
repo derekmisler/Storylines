@@ -8,36 +8,72 @@
     padding: 0;
     margin: 0;
     .transition(all @transition-timing);
-}
-.navigation.left{
-    left: -50%;
-    top: 0;
-    width: 50%;
-    &.active{
-        left: 0;
-    }
-}
-.navigation.bottom {
-    left: 0;
-    right: 0;
-    bottom: -(@navbar-height + @default-padding);
-    height: @navbar-height;
-    background: url(http://www.exploreasheville.com/includes/images/storylines/blue-ridge-parkway/mountain-range.png) left 220% repeat-x;
-    &.active {
-        bottom: -@default-padding;
-    }
     .drawerbutton {
         position: absolute;
         display: block;
         margin: 0;
         padding: 0;
         line-height: 1;
+        font-size: @font-size-large;
+        &:hover{
+            cursor: pointer;
+        }
+     }
+}
+.navigation.left{
+    left: -50%;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color:@body-bg;
+    .box-shadow(2px 0 2px @default-box-shadow);
+    padding: @default-padding;
+    &.active{
+        left: 0;
+    }
+    .logo{
+        .make-xs-column(12);
+        .make-sm-column(6);
+        .make-md-column(8);
+        .text-hide;
+    }
+    .social{
+        .make-xs-column(12);
+        .make-sm-column(6);        
+        .make-md-column(4);        
+    }
+    #brp_map_canvas{
+        .make-xs-column(12);
+        .media-object;
+    }
+    .drawerbutton {
+        background-color: fadeout(@body-bg, 50%);
+        top: @font-size-base;
+        right: -((@font-size-base * 4) + (@font-size-base * 1));
+        font-size: @font-size-base;
+        line-height: @line-height-computed;
+        padding: (@font-size-base / 2) @font-size-base;
+        .border-right-radius(@border-radius-base);
+        &:hover{
+            cursor: pointer;
+        }
+     }
+}
+.navigation.bottom {
+    left: 0;
+    right: 0;
+    bottom: -(@navbar-height + (@default-padding * 2));
+    height: @navbar-height;
+    background: url(http://www.exploreasheville.com/includes/images/storylines/blue-ridge-parkway/mountain-range.png) left 220% repeat-x;
+    &.active {
+        bottom: -@default-padding;
+    }
+    .drawerbutton {
         left: 0;
         right: 0;
         width: 100%;
         .text-center;
-        bottom: @navbar-height;
-        font-size: @font-size-large;
+        bottom: @navbar-height + @default-padding;
         &:hover{
             cursor: pointer;
         }
@@ -45,8 +81,8 @@
     > li {
         > a {
             display: block;
-            width: floor(@map-markers * .8);
-            height: floor(@map-markers * .8);
+            width: @map-markers;
+            height: @map-markers;
             border-radius: 50% 50% 50% 0;
             background: @avl-red;
             overflow: hidden;
@@ -69,8 +105,8 @@
             }
             &:hover,
             &:focus{
-                width: floor(@map-markers * 1);
-                height: floor(@map-markers * 1);
+                width: floor(@map-markers * 1.2);
+                height: floor(@map-markers * 1.2);
                 .box-shadow(-10px 10px 10px @default-box-shadow);
                 cursor: pointer;
                 background: @avl-blue;
@@ -98,7 +134,7 @@
             width: 100%;
             .opacity(0);
             .box-shadow(0 -2px 5px @default-box-shadow);
-            #gradient > .vertical(@start-color: fadeout(@body-bg, 10%); @end-color: fadeout(@body-bg, 10%););
+            #gradient > .vertical(@start-color: fadeout(@body-bg, 0%); @end-color: fadeout(@body-bg, 50%););
             .transition(all @transition-timing);
             &.active{
                 bottom: 0;
@@ -109,19 +145,27 @@
 }
 
 //
-// Desktop Navs
+// mobile Navs
 // --------------------------------------------------
-@media (min-width: @screen-desktop) {
+@media (max-width: @screen-tablet) {
+    .navigation.left{
+        left: -100%;
+        top: 0;
+        width: 100%;
+        &.active{
+            left: 0;
+        }
+    }
     .navigation.bottom {
-        bottom: -(@navbar-height + @default-padding);
+        bottom: -(@navbar-height + (@default-padding * 2));
         padding: 0 0 @default-padding 0;
         margin: 0 0 0 0;
         height: @navbar-height;
         &.active {
-            bottom: -@default-padding;
+            bottom: -(@default-padding * 3);
         }
         .drawerbutton {
-            bottom: @navbar-height;
+            bottom: @navbar-height + @default-padding;
             font-size: @font-size-large;
             &:hover{
                 cursor: pointer;
@@ -129,8 +173,8 @@
         }
         > li {
             > a {
-                width: @map-markers;
-                height: @map-markers;
+                width: floor(@map-markers * .75);
+                height: floor(@map-markers * .75);
                 &:after{
                     height: 25px;
                     width: 50px;
@@ -138,9 +182,8 @@
                 }
                 &:hover,
                 &:focus{
-                    width: floor(@map-markers * 1.1);
-                    height: floor(@map-markers * 1.1);
-                    margin-top:-10px;
+                    width: floor(@map-markers * .9);
+                    height: floor(@map-markers * .9);
                 }
                 > img {
                 	height: 86%;
@@ -151,7 +194,7 @@
             .namecard{
                 padding: @default-padding 0 floor(@map-markers * 2) 0;
                 bottom: -400px;
-                #gradient > .vertical(@start-color: fadeout(@body-bg, 10%); @end-color: fadeout(@body-bg, 50%););
+                #gradient > .vertical(@start-color: fadeout(@body-bg, 5%); @end-color: fadeout(@body-bg, 10%););
                 &.active{
                     bottom: 0;
                 }

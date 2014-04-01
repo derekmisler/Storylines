@@ -114,12 +114,16 @@ $(document).ready(function(){
 	var links = bottomNavigation.find('li');
 	var namecards = $('.namecard');
 	var caption = $('.caption').find('aside');
-	var bottomNavToggle = $('.drawerbutton');
+	var leftNavToggle = $('.left .drawerbutton');
+	var bottomNavToggle = $('.bottom .drawerbutton');
 	var slide = $('.slide');
 	var lastScroll = 0;
 	
 	$('.youtube').fitVids();
-	$(mywindow).stellar();
+	$(mywindow).stellar({
+		responsive: true,
+		hideDistantElements: false
+	});
 	$("img.lazy").lazyload({
 		event : "sporty",
 		effect : "fadeIn"
@@ -140,7 +144,7 @@ $(document).ready(function(){
 	//hide the navigation when scrolling down, show it when scrolling up	
 	$(mywindow).scroll(function(){
 		slideFade('#top .caption > aside');
-		
+
 		var currentLocation = $(this).scrollTop();
 		if (currentLocation > lastScroll){
 			bottomNavigation.removeClass('active');
@@ -150,6 +154,9 @@ $(document).ready(function(){
 			bottomNavigation.addClass('active');
 			bottomNavToggle.find('.glyphicon').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
 		}
+		if (currentLocation >= 300){
+			leftNavigation.removeClass('active');
+		} 		
 		if (currentLocation <= 300){
 			$('.currentslide').removeClass('currentslide');
 		} 
@@ -177,33 +184,28 @@ $(document).ready(function(){
 		bottomNavigation.toggleClass('active');
 		bottomNavToggle.find('.glyphicon').toggleClass('glyphicon-chevron-up glyphicon-chevron-down');
 	});
+	leftNavToggle.click(function(e) {
+		e.preventDefault();
+		leftNavigation.toggleClass('active');
+		leftNavToggle.find('.glyphicon').toggleClass('glyphicon-chevron-right glyphicon-remove');
+	});
 	
 	//Setup waypoints plugin
 	caption.waypoint(function(direction) {
-		
 		//cache the variable of the data-story attribute associated with each slide
 		var dataslide = $(this).attr('data-story');
-		var prevdataslide = parseInt(dataslide);
-		prevdataslide--;
-		
 		if (direction == 'down') {
 			//If the user scrolls down, remove the 'currentslide' class from the previous nav highlight the current slide in the navigation
-			$(links + '[data-story="' + prevdataslide + '"]').removeClass('currentslide');
-			$(links + '[data-story="' + dataslide + '"]').addClass('currentslide');
+			$('.bottom.navigation li[data-story="' + dataslide + '"]').addClass('currentslide').prev().removeClass('currentslide');
 		}
 	}, {offset: '50%'});
 	
 	caption.waypoint(function(direction) {
-		
 		//cache the variable of the data-story attribute associated with each slide
 		var dataslide = $(this).attr('data-story');
-		var nextdataslide = parseInt(dataslide);
-		nextdataslide++;
-		
 		if (direction == 'up') {
 			//Or, if the user scrolls up, remove the 'currentslide' class from the next nav and highlight the current slide in the navigation
-			$(links + '[data-story="' + nextdataslide + '"]').removeClass('currentslide');
-			$(links + '[data-story="' + dataslide + '"]').addClass('currentslide');
+			$('.bottom.navigation li[data-story="' + dataslide + '"]').addClass('currentslide').next().removeClass('currentslide');
 		}
 	}, {offset: '-100%'});
 	

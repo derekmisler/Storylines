@@ -100,7 +100,7 @@
     	background-color: fadeout(@body-bg, 25%);
     	color: @avl-gray;
     	text-align: center;
-
+        .transition(all @transition-timing);
         &.disabled {
         	display: none;
         }
@@ -154,13 +154,35 @@
     	bottom: 0;
     	left: 0;
     	background-color: fadeout(@body-bg, 25%);
-    	width: 100%;
         span {
     	    color: @avl-gray;
     	    font-size: @font-size-small;
     	    font-family: @font-family-caption;
         	display: block;
         	padding: @default-padding;
+        }
+    }
+}
+//
+// mobile Navs
+// --------------------------------------------------
+@media (max-width: @screen-tablet) {
+.bx-wrapper {
+        .bx-prev {
+        	.opacity(1);
+        }
+        .bx-next {
+        	.opacity(1);
+        }
+        .bx-caption {
+        	background-color: fadeout(@body-bg, 25%);
+            span {
+        	    color: @avl-gray;
+        	    font-size: @font-size-small;
+        	    font-family: @font-family-caption;
+            	display: block;
+            	padding: floor(@default-padding / 2);
+            }
         }
     }
 }

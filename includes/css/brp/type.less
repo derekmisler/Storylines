@@ -65,8 +65,13 @@ h4 { font-size: ceil(@font-size-base * 1.7); }
 h5 { font-size: ceil(@font-size-base * 1.25); }
 h6 { font-size: @font-size-base; }
 
-@media (max-width: @screen-desktop) {
+@media (max-width: @screen-tablet) {
     h1 { font-size: floor(@font-size-base * 2) }
+    h2 { font-size: floor(@font-size-base * 1.8); }
+    h3 { font-size: ceil(@font-size-base * 1.6); color: @headings-small-color; font-style: italic; }
+    h4 { font-size: ceil(@font-size-base * 1.25); }
+    h5 { font-size: ceil(@font-size-base * 1); }
+    h6 { font-size: ceil(@font-size-base * 1); }
 }
 
 
