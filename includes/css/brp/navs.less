@@ -21,13 +21,13 @@
      }
 }
 .navigation.left{
-    left: -50%;
+    left: -45%;
     top: 0;
-    width: 50%;
+    width: 45%;
     height: 100%;
-    background-color:@body-bg;
+    background-color: fadeout(@body-bg, 10%);
     .box-shadow(2px 0 2px @default-box-shadow);
-    padding: @default-padding;
+    padding:(@default-padding * 2);
     &.active{
         left: 0;
     }
@@ -36,24 +36,27 @@
         .make-sm-column(6);
         .make-md-column(8);
         .text-hide;
+        width: 200px;
+        height: 40px;
+        background: url(http://www.exploreasheville.com/includes/images/fall/logo.png) 0 0 no-repeat;
+        padding:0;
     }
     .social{
         .make-xs-column(12);
         .make-sm-column(6);        
         .make-md-column(4);        
+        padding:0;
     }
     #brp_map_canvas{
         .make-xs-column(12);
         .media-object;
     }
     .drawerbutton {
-        background-color: fadeout(@body-bg, 50%);
-        top: @font-size-base;
-        right: -((@font-size-base * 4) + (@font-size-base * 1));
-        font-size: @font-size-base;
-        line-height: @line-height-computed;
-        padding: (@font-size-base / 2) @font-size-base;
-        .border-right-radius(@border-radius-base);
+        position: fixed;
+        top: @default-padding;
+        left: @default-padding;
+        font-size: @font-size-small;
+        line-height: @default-padding;
         &:hover{
             cursor: pointer;
         }
@@ -66,7 +69,7 @@
     height: @navbar-height;
     background: url(http://www.exploreasheville.com/includes/images/storylines/blue-ridge-parkway/mountain-range.png) left 220% repeat-x;
     &.active {
-        bottom: -@default-padding;
+        bottom: -(@default-padding * 2);
     }
     .drawerbutton {
         left: 0;

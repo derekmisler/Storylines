@@ -111,6 +111,7 @@ $(document).ready(function(){
 	var htmlbody = $('html,body');
 	var bottomNavigation = $('.bottom.navigation');
 	var leftNavigation = $('.left.navigation');
+	var bothNavigations = $('.navigation');
 	var links = bottomNavigation.find('li');
 	var namecards = $('.namecard');
 	var caption = $('.caption').find('aside');
@@ -136,27 +137,21 @@ $(document).ready(function(){
 		pager: false
 	});
 
-	//Setup some functions
-	function slideFade(whatToFade) {
-		$(whatToFade).css({'opacity':( 300-$(window).scrollTop() )/300});
-	}
-	
 	//hide the navigation when scrolling down, show it when scrolling up	
 	$(mywindow).scroll(function(){
-		slideFade('#top .caption > aside');
-
+		$('#top .caption > aside').css({'opacity':( 300-$(window).scrollTop() )/300});
 		var currentLocation = $(this).scrollTop();
 		if (currentLocation > lastScroll){
-			bottomNavigation.removeClass('active');
+			bothNavigations.removeClass('active');
 			bottomNavToggle.find('.glyphicon').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+			leftNavToggle.find('.glyphicon').removeClass('glyphicon-remove').addClass('glyphicon-chevron-right');
 		} 
 		else {
 			bottomNavigation.addClass('active');
 			bottomNavToggle.find('.glyphicon').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
-		}
-		if (currentLocation >= 300){
 			leftNavigation.removeClass('active');
-		} 		
+			leftNavToggle.find('.glyphicon').removeClass('glyphicon-remove').addClass('glyphicon-chevron-right');
+		}
 		if (currentLocation <= 300){
 			$('.currentslide').removeClass('currentslide');
 		} 
@@ -183,11 +178,15 @@ $(document).ready(function(){
 		e.preventDefault();
 		bottomNavigation.toggleClass('active');
 		bottomNavToggle.find('.glyphicon').toggleClass('glyphicon-chevron-up glyphicon-chevron-down');
+		leftNavigation.removeClass('active');
+		leftNavToggle.find('.glyphicon').removeClass('glyphicon-remove').addClass('glyphicon-chevron-right');
 	});
 	leftNavToggle.click(function(e) {
 		e.preventDefault();
 		leftNavigation.toggleClass('active');
 		leftNavToggle.find('.glyphicon').toggleClass('glyphicon-chevron-right glyphicon-remove');
+		bottomNavigation.removeClass('active');
+		bottomNavToggle.find('.glyphicon').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
 	});
 	
 	//Setup waypoints plugin
@@ -218,9 +217,8 @@ $(document).ready(function(){
 //Heavy stuff down here
 $(window).load(function()
 {
-	var timeout = setTimeout(function() {
-			$("img.lazy").trigger("sporty")
-	}, 100);
+	
+	var timeout = setTimeout(function() { $("img.lazy").trigger("sporty") }, 100);
 	
 	var myOptions = {
 		scrollwheel: false,
