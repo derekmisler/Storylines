@@ -123,7 +123,7 @@ $(document).ready(function(){
 	$('.youtube').fitVids();
 	$(mywindow).stellar({
 		responsive: true,
-		hideDistantElements: false
+		hideDistantElements: false,
 	});
 	$("img.lazy").lazyload({
 		event : "sporty",
