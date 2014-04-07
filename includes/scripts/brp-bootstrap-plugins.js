@@ -121,17 +121,30 @@ $(document).ready(function(){
 	var lastScroll = 0;
 	
 	$('.youtube').fitVids();
-	$(mywindow).stellar({
-		responsive: true,
-		hideDistantElements: false,
-	});
+	(function(){
+		var ua = navigator.userAgent,
+		isMobileWebkit = /WebKit/.test(ua) && /Mobile/.test(ua);
+	
+		$(function(){
+
+			if (!isMobileWebkit) {
+	
+				$(mywindow).stellar({
+					responsive: true,
+					hideDistantElements: false,
+					positionProperty: 'transform',
+				});
+			}
+		});
+	
+	})();
 	$("img.lazy").lazyload({
 		event : "sporty",
 		effect : "fadeIn"
 	});
 	$('.bxslider').bxSlider({
   	adaptiveHeight: true,
-		adaptiveHeightSpeed: 100,
+		adaptiveHeightSpeed: 0,
 		captions: true,
 		preloadImages: 'all',
 		pager: false

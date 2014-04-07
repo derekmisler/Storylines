@@ -5,19 +5,9 @@
 
 // Body text
 // -------------------------
-
 p {
   margin: 0 0 (@line-height-computed / 2);
 }
-@media (min-width: @screen-desktop) {
-    p.lead:first-line{
-        color:@avl-gray;
-        font-size:(@font-size-base * 2);
-        line-height:150%;
-    }
-}
-
-
 // Emphasis & misc
 // -------------------------
 
@@ -66,12 +56,13 @@ h5 { font-size: ceil(@font-size-base * 1.25); }
 h6 { font-size: @font-size-base; }
 
 @media (max-width: @screen-tablet) {
-    h1 { font-size: floor(@font-size-base * 2) }
-    h2 { font-size: floor(@font-size-base * 1.8); }
-    h3 { font-size: ceil(@font-size-base * 1.6); color: @headings-small-color; font-style: italic; }
-    h4 { font-size: ceil(@font-size-base * 1.25); }
-    h5 { font-size: ceil(@font-size-base * 1); }
-    h6 { font-size: ceil(@font-size-base * 1); }
+    h1 { font-size: floor(@font-size-base * 1.6) }
+    h2 { font-size: floor(@font-size-base * 1.4); }
+    h3 { font-size: ceil(@font-size-base * 1.25); color: @headings-small-color; font-style: italic; }
+    h4 { font-size: ceil(@font-size-base * 1); }
+    h5 { font-size: ceil(@font-size-base * .85); }
+    h6 { font-size: ceil(@font-size-base * .85); }
+    p { font-size: ceil(@font-size-base * .85); }
 }
 
 
