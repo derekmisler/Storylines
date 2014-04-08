@@ -75,13 +75,18 @@
             .make-xs-column(12);
             .make-sm-column(4);
             .make-md-column(5);
-        	padding:(@default-padding * 4) @default-padding;
+            padding:(@default-padding * 4) @default-padding;
+        	.pull-left;
+        	h3, h4, h5, h6, .h3, .h4, .h5, .h6{
+        	    margin: 0;
+        	}
         }
         .story{
             .make-xs-column(12);
             .make-sm-column(8);
             .make-md-column(7);
         	padding:(@default-padding * 4) @default-padding;
+        	.pull-right;
         }
     }
     &#top{

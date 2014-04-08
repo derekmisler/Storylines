@@ -89,14 +89,43 @@
 @line-height-large:              2;
 @line-height-small:              1.4;
 
-@border-radius-base:             floor(@default-padding / 4);
+@border-radius-base:             floor(@default-padding / 5);
 @border-radius-large:            @default-padding;
-@border-radius-small:            floor(@default-padding / 8);
+@border-radius-small:            floor(@default-padding / 10);
 
 // Navbar
 // -------------------------
 @map-markers:                 floor(@font-size-base * 4);
 @navbar-height:               floor(@font-size-base + 100);
+//== Navs
+//
+//##
+
+//=== Shared nav styles
+@nav-link-padding:                          floor(@default-padding / 4);
+@nav-link-hover-bg:                         @gray-light;
+
+@nav-disabled-link-color:                   @gray-light;
+@nav-disabled-link-hover-color:             @gray-light;
+
+@nav-open-link-hover-color:                 @body-bg;
+
+//== Tabs
+@nav-tabs-border-color:                     @default-border-color;
+
+@nav-tabs-link-hover-border-color:          @gray-light;
+
+@nav-tabs-active-link-hover-bg:             @body-bg;
+@nav-tabs-active-link-hover-color:          @gray;
+@nav-tabs-active-link-hover-border-color:   @default-border-color;
+
+@nav-tabs-justified-link-border-color:            @default-border-color;
+@nav-tabs-justified-active-link-border-color:     @body-bg;
+
+//== Pills
+@nav-pills-border-radius:                   @border-radius-base;
+@nav-pills-active-link-hover-bg:            @default-box-bg;
+@nav-pills-active-link-hover-color:         @body-bg;
 
 // Tables
 // -------------------------
@@ -237,6 +266,8 @@
 @media-border-color:          @default-border-color;
 @media-border:          	  3px solid @default-border-color;
 
+//** Horizontal offset for forms and lists.
+@component-offset-horizontal: 10%;
 
 // Container sizes
 // --------------------------------------------------

@@ -24,45 +24,46 @@ cite    { font-style: normal; }
 // Headings
 // -------------------------
 
-h1, h2, h3, h4, h5, h6{
-  font-family: @headings-font-family;
-  font-weight: @headings-font-weight;
-  line-height: @headings-line-height;
-	margin-top: 0;
-	margin-bottom: floor(@line-height-computed / 2);
-  color: @avl-blue;
-  small {
-    line-height: 1;
-    font-style: italic;
-    color: @headings-small-color;
-  }
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+    font-family: @headings-font-family;
+    font-weight: @headings-font-weight;
+    line-height: @headings-line-height;
+    margin-top: 0;
+    margin-bottom: floor(@line-height-computed / 2);
+    color: @avl-blue;
+    small {
+        line-height: 1;
+        font-style: italic;
+        color: @headings-small-color;
+    }
 }
 
-h4,
-h5,
-h6 {
+h4, .h4,
+h5, .h5,
+h6, .h6 {
   font-family: @subheadings-font-family;
   font-weight: @subheadings-font-weight;
   letter-spacing: @subheadings-letter-spacing;
   text-transform: uppercase;
   margin-top: @line-height-computed;
   margin-bottom: (@line-height-computed / 2);
+  line-height: @line-height-base;
 }
-h1 { font-size: floor(@font-size-base * 3); text-shadow: 1px 1px 0 @dark-text-shadow; }
-h2 { font-size: floor(@font-size-base * 2.6); }
-h3 { font-size: ceil(@font-size-base * 2); color: @headings-small-color; font-style: italic; }
-h4 { font-size: ceil(@font-size-base * 1.7); }
-h5 { font-size: ceil(@font-size-base * 1.25); }
-h6 { font-size: @font-size-base; }
+h1, .h1 { font-size: floor(@font-size-base * 3); text-shadow: 1px 1px 0 @dark-text-shadow; }
+h2, .h2 { font-size: floor(@font-size-base * 2.6); }
+h3, .h3 { font-size: ceil(@font-size-base * 2); color: @headings-small-color; font-style: italic; }
+h4, .h4 { font-size: ceil(@font-size-base * 1.7); }
+h5, .h5 { font-size: ceil(@font-size-base * 1.25); }
+h6, .h6 { font-size: @font-size-base; }
 
 @media (max-width: @screen-tablet) {
-    h1 { font-size: floor(@font-size-base * 1.6) }
-    h2 { font-size: floor(@font-size-base * 1.4); }
-    h3 { font-size: ceil(@font-size-base * 1.25); color: @headings-small-color; font-style: italic; }
-    h4 { font-size: ceil(@font-size-base * 1); }
-    h5 { font-size: ceil(@font-size-base * .85); }
-    h6 { font-size: ceil(@font-size-base * .85); }
-    p { font-size: ceil(@font-size-base * .85); }
+    h1, .h1 { font-size: floor(@font-size-base * 1.6) }
+    h2, .h2 { font-size: floor(@font-size-base * 1.4); }
+    h3, .h3 { font-size: ceil(@font-size-base * 1.25); color: @headings-small-color; font-style: italic; }
+    h4, .h4 { font-size: ceil(@font-size-base * 1); }
+    h5, .h5 { font-size: ceil(@font-size-base * .85); }
+    h6, .h6 { font-size: ceil(@font-size-base * .75); }
+    p { font-size: ceil(@font-size-base * .75); }
 }
 
 
@@ -105,6 +106,48 @@ ol {
     display: inline-block;
     padding-left: 5px;
     padding-right: 5px;
+  }
+}
+// Description Lists
+dl {
+  margin-top: 0; // Remove browser default
+  margin-bottom: @line-height-computed;
+}
+dt,
+dd {
+  line-height: @line-height-base;
+  padding: (@default-padding / 2) 0;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-left: 0; // Undo browser default
+  border-top: 1px solid @default-border-color;
+}
+dd:first-of-type {
+  border-top: 0;
+}
+// Horizontal description lists
+//
+// Defaults to being stacked without any of the below styles applied, until the
+// grid breakpoint is reached (default of ~768px).
+
+@media (min-width: @grid-float-breakpoint) {
+  .dl-horizontal {
+    dt {
+      float: left;
+      width: (@component-offset-horizontal - 2);
+      clear: left;
+      text-align: right;
+      .text-overflow();
+      .h6;
+      margin: 0;
+    }
+    dd {
+      margin-left: @component-offset-horizontal;
+      &:extend(.clearfix all); // Clear the floated `dt` if an empty `dd` is present
+    }
   }
 }
 
