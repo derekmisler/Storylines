@@ -26,7 +26,7 @@
     width: 45%;
     height: 100%;
     background-color: fadeout(@body-bg, 10%);
-    .box-shadow(2px 0 2px @default-box-shadow);
+    .box-shadow(4px 0 0 -2px @default-box-shadow-color);
     padding:(@default-padding * 2);
     &.active{
         left: 0;
@@ -46,6 +46,15 @@
         .make-sm-column(6);        
         .make-md-column(4);        
         padding:0;
+        .text-center;
+        a {
+            font-size: @font-size-large;
+            color: @avl-gray;
+            &:hover,
+            &:focus{
+                color: @avl-red;
+            }
+        }
     }
     #brp_map_canvas{
         .make-xs-column(12);
@@ -92,10 +101,9 @@
             .rotate(-45deg);
             margin: 0 auto;
             .transition(all @transition-timing);
-            .box-shadow(-2px 2px 2px @default-box-shadow);
+            .box-shadow(-2px 2px 0 @default-box-shadow-color);
             &:after{
                 background: @black;
-                .box-shadow(0 0 10px @default-box-shadow);
                 border-radius: 50%;
                 height: 25px;
                 width: 50px;
@@ -110,7 +118,7 @@
             &:focus{
                 width: floor(@map-markers * 1.2);
                 height: floor(@map-markers * 1.2);
-                .box-shadow(-10px 10px 10px @default-box-shadow);
+                .box-shadow(-10px 10px 0 @default-box-shadow-color);
                 cursor: pointer;
                 background: @avl-blue;
                 margin-top:-10px;
@@ -121,7 +129,6 @@
             	width: 86%;
             	margin: 7%;
             	border-radius: 50%;
-            	.box-shadow(inset 0 0 2px @default-box-shadow);
             }
         }
         &.currentslide a{
@@ -136,7 +143,7 @@
             text-align: center;
             width: 100%;
             .opacity(0);
-            .box-shadow(0 -2px 5px @default-box-shadow);
+            .box-shadow(0 -4px 0 -2px @default-box-shadow-color);
             #gradient > .vertical(@start-color: fadeout(@body-bg, 0%); @end-color: fadeout(@body-bg, 50%););
             .transition(all @transition-timing);
             &.active{
@@ -441,7 +448,7 @@
     .tab-content {
         border: 1px solid @default-border-color;
         border-top: 0;
-      @box-shadow: 0 1px 1px @default-box-shadow;
+      @box-shadow: @default-box-shadow;
       .box-shadow(@box-shadow);
     }
 }

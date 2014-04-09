@@ -1,4 +1,4 @@
-$('p, blockquote').each(function() {
+$('p, blockquote, dd, li p, h3, h4, h5, h6').each(function() {
 	$(this).html($(this).html().replace(/\s([^\s<]+)\s*$/,'&nbsp;$1'));
 });
 
@@ -272,14 +272,14 @@ $(document).ready(function(){
 		var currentLocation = $(this).scrollTop();
 		if (currentLocation > lastScroll){
 			bothNavigations.removeClass('active');
-			bottomNavToggle.find('.glyphicon').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
-			leftNavToggle.find('.glyphicon').removeClass('glyphicon-remove').addClass('glyphicon-chevron-right');
+			bottomNavToggle.find('.icon').removeClass('icon-arrow-down').addClass('icon-arrow-up');
+			leftNavToggle.find('.icon').removeClass('icon-arrow-left').addClass('icon-arrow-right');
 		} 
 		else {
 			bottomNavigation.addClass('active');
-			bottomNavToggle.find('.glyphicon').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+			bottomNavToggle.find('.icon').removeClass('icon-arrow-up').addClass('icon-arrow-down');
 			leftNavigation.removeClass('active');
-			leftNavToggle.find('.glyphicon').removeClass('glyphicon-remove').addClass('glyphicon-chevron-right');
+			leftNavToggle.find('.icon').removeClass('icon-arrow-left').addClass('icon-arrow-right');
 		}
 		if (currentLocation <= 300){
 			$('.currentslide').removeClass('currentslide');
@@ -306,16 +306,16 @@ $(document).ready(function(){
 	bottomNavToggle.click(function(e) {
 		e.preventDefault();
 		bottomNavigation.toggleClass('active');
-		bottomNavToggle.find('.glyphicon').toggleClass('glyphicon-chevron-up glyphicon-chevron-down');
+		bottomNavToggle.find('.icon').toggleClass('icon-arrow-up icon-arrow-down');
 		leftNavigation.removeClass('active');
-		leftNavToggle.find('.glyphicon').removeClass('glyphicon-remove').addClass('glyphicon-chevron-right');
+		leftNavToggle.find('.icon').removeClass('icon-arrow-left').addClass('icon-arrow-right');
 	});
 	leftNavToggle.click(function(e) {
 		e.preventDefault();
 		leftNavigation.toggleClass('active');
-		leftNavToggle.find('.glyphicon').toggleClass('glyphicon-chevron-right glyphicon-remove');
+		leftNavToggle.find('.icon').toggleClass('icon-arrow-right icon-arrow-left');
 		bottomNavigation.removeClass('active');
-		bottomNavToggle.find('.glyphicon').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+		bottomNavToggle.find('.icon').removeClass('icon-arrow-down').addClass('icon-arrow-up');
 	});
 	
 	//Setup waypoints plugin
@@ -335,7 +335,7 @@ $(document).ready(function(){
 			//Or, if the user scrolls up, remove the 'currentslide' class from the next nav and highlight the current slide in the navigation
 			$('.bottom.navigation li[data-story="' + dataslide + '"]').addClass('currentslide').next().removeClass('currentslide');
 		}
-	}, {offset: '-100%'});
+	}, {offset: '-175%'});
 	
 });
 //Heavy stuff down here
@@ -344,8 +344,7 @@ $(document).ready(function(){
 //Heavy stuff down here
 //Heavy stuff down here
 //Heavy stuff down here
-$(window).load(function()
-{
+$(window).load(function(){
 	
 	var timeout = setTimeout(function() { $("img.lazy").trigger("sporty") }, 100);
 	

@@ -22,7 +22,7 @@
 
 @black:                  #000000;
 @gray:                   lighten(@black, 50%);
-@gray-light:             lighten(@black, 75%);
+@gray-light:             fadeout(@black, 75%);
 @white:                  #fffafa;
 
 // Scaffolding
@@ -31,6 +31,7 @@
 @body-bg:               @white;
 @default-box-bg:        @white;
 @default-border-color:  @gray-light;
+@default-border:        3px solid @default-border-color;
 @text-color:            #3d2b1f;
 @transition-timing:		.1s ease-out;
 
@@ -47,7 +48,7 @@
 @font-family-serif:       "Playfair Display",Georgia,serif;
 @font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace;
 @font-family-base:        @font-family-sans-serif;
-@font-family-caption:	  @font-family-serif;
+@font-family-caption:	  @font-family-sans-serif;
 
 @font-size-base:          20px;
 @font-size-large:         ceil(@font-size-base * 1.5);
@@ -70,6 +71,7 @@
 
 @icon-font-path:          "http://www.exploreasheville.com/includes/css/fonts/";
 @icon-font-name:          "glyphicons-halflings-regular";
+@icon-font-name-2:        "icons";
 
 
 // Components
@@ -89,9 +91,9 @@
 @line-height-large:              2;
 @line-height-small:              1.4;
 
-@border-radius-base:             floor(@default-padding / 5);
-@border-radius-large:            @default-padding;
-@border-radius-small:            floor(@default-padding / 10);
+@border-radius-base:             floor(@default-padding / 10);
+@border-radius-large:            floor(@default-padding / 5);
+@border-radius-small:            0;
 
 // Navbar
 // -------------------------
@@ -236,7 +238,7 @@
 @panel-bg:                    @default-box-bg;
 @panel-primary-border:        @default-border-color;
 @panel-inner-border:          @default-border-color;
-@panel-border-radius:         @border-radius-base;
+@panel-border-radius:         @border-radius-small;
 @panel-footer-bg:             @default-border-color;
 
 @panel-default-text:          @avl-gray;
@@ -248,7 +250,7 @@
 @thumbnail-padding:           0;
 @thumbnail-bg:                @default-box-bg;
 @thumbnail-border:            @default-border-color;
-@thumbnail-border-radius:     @border-radius-base;
+@thumbnail-border-radius:     @border-radius-small;
 
 @thumbnail-caption-color:     @avl-gray;
 @thumbnail-caption-padding:   floor(@default-padding / 2);
@@ -257,14 +259,15 @@
 // ------------------------
 @dark-text-shadow:			  fadeout(@black, 90%);
 @light-text-shadow:			  fadeout(@white, 70%);
-@default-box-shadow:		  fadeout(@black, 80%);
+@default-box-shadow-color:	  @default-border-color;
+@default-box-shadow:          0 4px 0 -2px @default-box-shadow-color;
 @abbr-border-color:           @default-border-color;
 @headings-small-color:        @avl-gray;
 @blockquote-small-color:      @avl-gray;
 @blockquote-border-color:     @default-border-color;
 @page-header-border-color:    @default-border-color;
 @media-border-color:          @default-border-color;
-@media-border:          	  3px solid @default-border-color;
+@media-border:          	  @default-border;
 
 //** Horizontal offset for forms and lists.
 @component-offset-horizontal: 10%;
