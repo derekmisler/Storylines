@@ -64,7 +64,7 @@
         position: fixed;
         top: @default-padding;
         left: @default-padding;
-        font-size: @font-size-small;
+        font-size: @font-size-base;
         line-height: @default-padding;
         &:hover{
             cursor: pointer;
@@ -85,6 +85,7 @@
         right: 0;
         width: 100%;
         .text-center;
+        font-size: floor(@font-size-base * 2);
         bottom: @navbar-height + @default-padding;
         &:hover{
             cursor: pointer;

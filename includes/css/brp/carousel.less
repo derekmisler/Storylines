@@ -69,13 +69,13 @@
     /* DIRECTION CONTROLS (NEXT / PREV) */
     
     .bx-prev {
-    	left: 0;
+    	left: @font-size-base;
     	.icon;
     	.icon-arrow-left;
-    	.opacity(.1);
+    	.opacity(.2);
     }
     .bx-next {
-    	right: 0;
+    	right: @font-size-base;
     	.icon;
     	.icon-arrow-right;
     	.opacity(.1);
@@ -84,26 +84,30 @@
     &:focus .bx-next,
     &:hover .bx-prev,
     &:focus .bx-prev{
-    	.opacity(1);
+    	.opacity(2);
     }
     .bx-controls-direction a {
     	position: absolute;
-    	top: 0;
+    	top: @font-size-base;
     	outline: 0;
-    	width: 50%;
+    	width: floor(@font-size-base * 2);
     	height: floor(@font-size-base * 2);
     	font-size: @font-size-base;
-    	line-height: (floor(@font-size-base * 2) - 2);
+    	line-height: (floor(@font-size-base * 2) - 5);
     	z-index: 9999;
-    	background-color: fadeout(@body-bg, 25%);
-    	color: @avl-gray;
+    	background-color: @gray-light;
+    	color: @white;
     	text-align: center;
+    	border-radius: 50%;
+    	border: @default-border;
         .transition(all @transition-timing);
         &.disabled {
         	display: none;
         }
         &:hover{
-            color: @avl-red;
+            color: @white;
+            background-color: @avl-red;
+            border-color: @avl-red;
         }
     }    
     /* AUTO CONTROLS (START / STOP) */
@@ -151,9 +155,10 @@
     	position: absolute;
     	bottom: 0;
     	left: 0;
-    	background-color: fadeout(@body-bg, 25%);
+    	background-color: @gray-light;
+    	width: 100%;
         span {
-    	    color: @avl-gray;
+    	    color: @white;
     	    font-size: @font-size-small;
     	    font-family: @font-family-caption;
         	display: block;
@@ -173,13 +178,7 @@
         	display: none;
         }
         .bx-caption {
-        	background-color: fadeout(@body-bg, 25%);
             span {
-        	    color: @avl-gray;
-        	    font-size: @font-size-small;
-        	    font-family: @font-family-caption;
-            	display: block;
-            	padding: floor(@default-padding / 2);
             }
         }
     }
