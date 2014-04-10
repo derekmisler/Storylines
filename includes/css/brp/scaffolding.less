@@ -20,13 +20,12 @@ html {
 }
 
 body {
-  font-family: @font-family-base;
-  font-size: @font-size-base;
-  line-height: @line-height-base;
-  color: @text-color;
-  background-color: @body-bg;
-  -webkit-text-stroke: 1px;
-  -webkit-text-stroke-color: fadeout(@text-color, 90%);
+    font-family: @font-family-base;
+    font-size: @font-size-base;
+    line-height: @line-height-base;
+    color: @text-color;
+    background-color: @body-bg;
+    -webkit-text-stroke: 1px fadeout(@text-color, 80%);
 }
 
 // Reset fonts for relevant elements
@@ -52,21 +51,6 @@ section, footer, hr {
     background-color: @body-bg;
     position:relative;
     z-index:1;
-}
-#intro {
-    padding-top: (@font-size-base * 3);
-    padding-bottom: 0;
-    .first-paragraph:first-line{
-        font-weight: bold;
-        color:@avl-gray;
-    }
-    @media (max-width: @grid-float-breakpoint) {
-        padding-top:0;
-        margin-top:0 !important;
-    }
-}
-#map-flyover {
-    padding-bottom: (@font-size-base * 3);
 }
 // Links
 

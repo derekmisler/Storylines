@@ -9,12 +9,7 @@
     margin: 0;
     .transition(all @transition-timing);
     .drawerbutton {
-        position: absolute;
-        display: block;
-        margin: 0;
-        padding: 0;
-        line-height: 1;
-        font-size: @font-size-large;
+        .btn;
         &:hover{
             cursor: pointer;
         }
@@ -26,7 +21,7 @@
     width: 45%;
     height: 100%;
     background-color: fadeout(@body-bg, 10%);
-    .box-shadow(4px 0 0 -2px @default-box-shadow-color);
+    .box-shadow(2px 0 0 0 @default-box-shadow-color);
     padding:(@default-padding * 2);
     &.active{
         left: 0;
@@ -48,12 +43,7 @@
         padding:0;
         .text-center;
         a {
-            font-size: @font-size-large;
-            color: @avl-gray;
-            &:hover,
-            &:focus{
-                color: @avl-red;
-            }
+            .btn;
         }
     }
     #brp_map_canvas{
@@ -62,10 +52,9 @@
     }
     .drawerbutton {
         position: fixed;
+        display: block;
         top: @default-padding;
         left: @default-padding;
-        font-size: @font-size-base;
-        line-height: @default-padding;
         &:hover{
             cursor: pointer;
         }
@@ -74,56 +63,39 @@
 .navigation.bottom {
     left: 0;
     right: 0;
-    bottom: -(@navbar-height + (@default-padding * 2));
+    bottom: -(@navbar-height + @default-padding);
     height: @navbar-height;
     background: url(http://www.exploreasheville.com/includes/images/storylines/blue-ridge-parkway/mountain-range.png) left 220% repeat-x;
+    .text-center;
     &.active {
         bottom: -(@default-padding * 2);
     }
-    .drawerbutton {
-        left: 0;
-        right: 0;
+    .drawerbuttonwrapper {
+        position:absolute;
+        bottom: @navbar-height;
         width: 100%;
+        display:block;
         .text-center;
-        font-size: floor(@font-size-base * 2);
-        bottom: @navbar-height + @default-padding;
         &:hover{
             cursor: pointer;
         }
+        > .drawerbutton{
+            display: inline-block; 
+        }
      }
     > li {
-        > a {
+        > .map-marker {
             display: block;
             width: @map-markers + 10;
             height: @map-markers + 10;
             border-radius: 50% 50% 50% 0;
-            background: @avl-red;
+            background-color: @avl-red;
+            .backface-visibility(hidden);
             overflow: hidden;
             .rotate(-45deg);
             margin: 0 auto;
             .transition(all @transition-timing);
             .box-shadow(-2px 2px 0 @default-box-shadow-color);
-            &:after{
-                background: @black;
-                border-radius: 50%;
-                height: 25px;
-                width: 50px;
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                margin: 125px 0 0 25px;
-                .rotate(55deg);
-                z-index: -2;
-            }
-            &:hover,
-            &:focus{
-                width: floor(@map-markers * 1.2);
-                height: floor(@map-markers * 1.2);
-                .box-shadow(-10px 10px 0 @default-box-shadow-color);
-                cursor: pointer;
-                background: @avl-blue;
-                margin-top:-10px;
-            }
             > img {
                 .rotate(45deg);
             	height: @map-markers;
@@ -131,9 +103,23 @@
             	margin: 5px;
             	border-radius: 50%;
             }
+            &:hover,
+            &:focus{
+                .box-shadow(-10px 10px 0 @default-box-shadow-color);
+                margin: -10px auto 10px;
+                cursor: pointer;
+                background-color: @avl-blue;
+            }
         }
-        &.currentslide a{
-            background: @avl-blue;
+        &.currentslide > .map-marker{
+            background-color: @avl-blue;
+            &:hover,
+            &:focus{
+                margin-top:0;
+                .box-shadow(-2px 2px 0 @default-box-shadow-color);
+                cursor: auto;
+                background-color: @avl-blue;
+            }
         }
         .namecard{
             position: absolute;
@@ -144,6 +130,7 @@
             text-align: center;
             width: 100%;
             .opacity(0);
+            border: 1px solid @default-border-color;
             .box-shadow(0 -4px 0 -2px @default-box-shadow-color);
             #gradient > .vertical(@start-color: fadeout(@body-bg, 0%); @end-color: fadeout(@body-bg, 50%););
             .transition(all @transition-timing);
@@ -183,9 +170,9 @@
             }
         }
         > li {
-            > a {
-                width: floor(@map-markers * .75);
-                height: floor(@map-markers * .75);
+            > .map-marker {
+                width: @map-markers + 10;
+                height: @map-markers + 10;
                 &:after{
                     height: 25px;
                     width: 50px;
@@ -193,13 +180,11 @@
                 }
                 &:hover,
                 &:focus{
-                    width: floor(@map-markers * .9);
-                    height: floor(@map-markers * .9);
                 }
                 > img {
-                	height: 86%;
-                	width: 86%;
-                	margin: 7%;
+                	height: @map-markers;
+                	width: @map-markers;
+                	margin: 5px;
                 }
             }
             .namecard{

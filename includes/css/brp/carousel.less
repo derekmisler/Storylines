@@ -76,25 +76,9 @@
     .bx-controls-direction a {
     	position: absolute;
     	top: @font-size-base;
-    	outline: 0;
-    	width: floor(@font-size-base * 2);
-    	height: floor(@font-size-base * 2);
-    	font-size: @font-size-base;
-    	line-height: (floor(@font-size-base * 2) - 5);
-    	z-index: 9999;
-    	background-color: @gray-light;
-    	color: @white;
-    	text-align: center;
-    	border-radius: 50%;
-    	border: @default-border;
-        .transition(all @transition-timing);
+    	.btn;
         &.disabled {
         	display: none;
-        }
-        &:hover{
-            color: @white;
-            background-color: @avl-red;
-            border-color: @avl-red;
         }
     }    
 /* AUTO CONTROLS (START / STOP) */

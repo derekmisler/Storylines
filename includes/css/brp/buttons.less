@@ -8,35 +8,29 @@
 
 // Core styles
 .btn {
-  display: inline-block;
-  padding: @padding-base-vertical @padding-base-horizontal;
-  margin-bottom: 0; // For input.btn
-  font-size: @font-size-base;
-  line-height: @line-height-base;
-  font-family: @font-family-caption;
-  text-align: center;
-  vertical-align: middle;
-  cursor: pointer;
-  border: 1px solid transparent;
-  border-radius: @border-radius-base;
-  white-space: nowrap;
-  .user-select(none);
-
+    outline: 0;
+    width: floor(@font-size-base * 2);
+    height: floor(@font-size-base * 2);
+    font-size: @font-size-base;
+    line-height: (floor(@font-size-base * 2) - 5);
+    z-index: 9999;
+    background-color: @gray-light;
+    color: @white;
+    text-align: center;
+    border-radius: 50%;
+    border: @default-border;
+    .transition(all @transition-timing);
+    display: inline-block;
   &:focus {
     .tab-focus();
   }
-
   &:hover,
-  &:focus {
-    color: @btn-default-color;
-    text-decoration: none;
-  }
-
+  &:focus,
   &:active,
   &.active {
-    outline: 0;
-    background-image: none;
-    .box-shadow(inset 0 1px 0 @dark-text-shadow);
+    color: @white;
+    background-color: @avl-red;
+    border-color: @avl-red;
   }
 
   &.disabled,

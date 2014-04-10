@@ -114,14 +114,14 @@
 
 //== Tabs
 @nav-tabs-border-color:                     @default-border-color;
-@nav-tabs-link-hover-border-color:          @gray-light;
+@nav-tabs-link-hover-border-color:          @default-border-color;
 
 @nav-tabs-active-link-hover-bg:             @body-bg;
 @nav-tabs-active-link-hover-color:          @gray;
 @nav-tabs-active-link-hover-border-color:   @default-border-color;
 
 @nav-tabs-justified-link-border-color:            @default-border-color;
-@nav-tabs-justified-active-link-border-color:     @body-bg;
+@nav-tabs-justified-active-link-border-color:     fadeout(@nav-tabs-justified-link-border-color, 100%);
 
 //== Pills
 @nav-pills-border-radius:                   @border-radius-base;

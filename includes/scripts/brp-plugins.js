@@ -1,4 +1,4 @@
-$('p, blockquote, dd, li p, h3, h4, h5, h6').each(function() {
+$('p, blockquote, dd p, li p, h3, h4, h5, h6').each(function() {
 	$(this).html($(this).html().replace(/\s([^\s<]+)\s*$/,'&nbsp;$1'));
 });
 
@@ -238,16 +238,17 @@ $(document).ready(function(){
 	var leftNavigation = $('.left.navigation');
 	var bothNavigations = $('.navigation');
 	var links = bottomNavigation.find('li');
+	var mapmarker = $('.map-marker');
 	var namecards = $('.namecard');
 	var caption = $('.caption').find('aside');
 	var leftNavToggle = $('.left .drawerbutton');
 	var bottomNavToggle = $('.bottom .drawerbutton');
 	var slide = $('.slide');
 	var lastScroll = 0;
+	var notMobileScreen = Modernizr.mq('only screen and (min-width: 768px)');
 	
 	$('.youtube').fitVids();
-	if ( Modernizr.touch ) {
-	} else {
+	if (notMobileScreen) {
 		$(mywindow).stellar({
 			responsive: true,
 			hideDistantElements: false,
@@ -268,18 +269,20 @@ $(document).ready(function(){
 
 	//hide the navigation when scrolling down, show it when scrolling up	
 	$(mywindow).scroll(function(){
-		if ( Modernizr.touch ) {} else{ $('#top .caption > aside').css({'opacity':( 300-$(window).scrollTop() )/300}); }
+		if (notMobileScreen) {
+			$('#top .caption > aside').css({'opacity':( 300-$(window).scrollTop() )/300});
+		}
 		var currentLocation = $(this).scrollTop();
 		if (currentLocation > lastScroll){
 			bothNavigations.removeClass('active');
-			bottomNavToggle.find('.icon').removeClass('icon-arrow-down').addClass('icon-arrow-up');
-			leftNavToggle.find('.icon').removeClass('icon-arrow-left').addClass('icon-arrow-right');
+			bottomNavToggle.removeClass('icon-arrow-down').addClass('icon-arrow-up');
+			leftNavToggle.removeClass('icon-arrow-left').addClass('icon-arrow-right');
 		} 
 		else {
 			bottomNavigation.addClass('active');
-			bottomNavToggle.find('.icon').removeClass('icon-arrow-up').addClass('icon-arrow-down');
+			bottomNavToggle.removeClass('icon-arrow-up').addClass('icon-arrow-down');
 			leftNavigation.removeClass('active');
-			leftNavToggle.find('.icon').removeClass('icon-arrow-left').addClass('icon-arrow-right');
+			leftNavToggle.removeClass('icon-arrow-left').addClass('icon-arrow-right');
 		}
 		if (currentLocation <= 300){
 			$('.currentslide').removeClass('currentslide');
@@ -293,29 +296,32 @@ $(document).ready(function(){
 	}
 	links.click(function(e) {
 		e.preventDefault();
+		namecards.removeClass('active');
 		dataslide = $(this).attr('data-story');
 		goToByScroll(dataslide);
 	});
 	
 	//namecards hover effect
-	links.find('a').hover(function() {
-		$(this).parent().find(namecards).toggleClass('active');
+	mapmarker.hover(function() {
+		$(this).parent().not('.currentslide').find(namecards).addClass('active');
+	}, function() {
+		$(this).parent().not('.currentslide').find(namecards).removeClass('active');
 	});
 	
 	//hide and show the navigation by clicking the arrow
 	bottomNavToggle.click(function(e) {
 		e.preventDefault();
 		bottomNavigation.toggleClass('active');
-		bottomNavToggle.find('.icon').toggleClass('icon-arrow-up icon-arrow-down');
+		bottomNavToggle.toggleClass('icon-arrow-up icon-arrow-down');
 		leftNavigation.removeClass('active');
-		leftNavToggle.find('.icon').removeClass('icon-arrow-left').addClass('icon-arrow-right');
+		leftNavToggle.removeClass('icon-arrow-left').addClass('icon-arrow-right');
 	});
 	leftNavToggle.click(function(e) {
 		e.preventDefault();
 		leftNavigation.toggleClass('active');
-		leftNavToggle.find('.icon').toggleClass('icon-arrow-right icon-arrow-left');
+		leftNavToggle.toggleClass('icon-arrow-right icon-arrow-left');
 		bottomNavigation.removeClass('active');
-		bottomNavToggle.find('.icon').removeClass('icon-arrow-down').addClass('icon-arrow-up');
+		bottomNavToggle.removeClass('icon-arrow-down').addClass('icon-arrow-up');
 	});
 	
 	//Setup waypoints plugin
