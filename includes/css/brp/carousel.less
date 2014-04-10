@@ -3,25 +3,19 @@
 	margin: 0;
 	padding: 0;
 	*zoom: 1;
-    
     img {
     	max-width: 100%;
     	display: block;
     }
-    
     .bx-viewport {
     	.media-object;
     	background-color: @body-bg;
     }
-    
     .bx-pager,
     .bx-controls-auto {
     	position: absolute;
     	width: 100%;
     }
-    
-    /* LOADER */
-    
     .bx-loading {
     	min-height: floor(@default-padding * 4);
     	background-color: @white;
@@ -32,20 +26,15 @@
     	left: 50%;
     	z-index: 2000;
     }
-    
-    /* PAGER */
-    
     .bx-pager {
     	text-align: center;
     	color: @avl-blue;
     	padding-top: @default-padding;
-        
         .bx-pager-item{
         	display: inline-block;
         	*zoom: 1;
         	*display: inline;
         }
-        
         &.bx-default-pager a {
         	background: @avl-gray;
         	.hide-text();
@@ -66,25 +55,23 @@
     	*zoom: 1;
     	*display: inline;
     }
-    /* DIRECTION CONTROLS (NEXT / PREV) */
-    
     .bx-prev {
     	left: @font-size-base;
     	.icon;
     	.icon-arrow-left;
-    	.opacity(.2);
+    	.opacity(.5);
     }
     .bx-next {
     	right: @font-size-base;
     	.icon;
     	.icon-arrow-right;
-    	.opacity(.1);
+    	.opacity(.5);
     }
     &:hover .bx-next,
     &:focus .bx-next,
     &:hover .bx-prev,
     &:focus .bx-prev{
-    	.opacity(2);
+    	.opacity(1);
     }
     .bx-controls-direction a {
     	position: absolute;
@@ -110,8 +97,7 @@
             border-color: @avl-red;
         }
     }    
-    /* AUTO CONTROLS (START / STOP) */
-    
+/* AUTO CONTROLS (START / STOP) */
     .bx-controls-auto {
     	text-align: center;
         .bx-start,
@@ -138,8 +124,7 @@
             }
         }
     }
-    /* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
-    
+/* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
     .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
     	text-align: left;
     	width: 80%;
@@ -148,9 +133,7 @@
     	right: 0;
     	width: 20%;
     }
-    
-    /* IMAGE CAPTIONS */
-    
+/* IMAGE CAPTIONS */
     .bx-caption {
     	position: absolute;
     	bottom: 0;
@@ -166,16 +149,15 @@
         }
     }
 }
-//
-// mobile Navs
 // --------------------------------------------------
+// mobile
 @media (max-width: @screen-tablet) {
 .bx-wrapper {
         .bx-prev {
-        	display: none;
+        	//display: none;
         }
         .bx-next {
-        	display: none;
+        	//display: none;
         }
         .bx-caption {
             span {

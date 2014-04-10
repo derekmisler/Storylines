@@ -28,15 +28,15 @@
         	}
         	> a {
                 display: inline-block;
-                width: 200px;
-                height: 200px;
+                width: 220px;
+                height: 220px;
                 border-radius: 50% 50% 50% 0;
                 background: @avl-blue;
                 overflow: hidden;
                 .rotate(-45deg);
                 margin: 0 0 (@default-padding * 2) 0;
                 .transition(all @transition-timing);
-                .box-shadow(2px 2px 0 @default-box-shadow-color);
+                .box-shadow(-2px 2px 0 @default-box-shadow-color);
                 &:after{
                     background: @black;
                     border-radius: 50%;
@@ -56,9 +56,9 @@
                 }
                 > img {
                     .rotate(45deg);
-                	height: 86%;
-                	width: 86%;
-                	margin: 7%;
+                	height: 200px;
+                	width: 200px;
+                	margin: 10px;
                 	border-radius: 50%;
                 }
         	}
@@ -119,8 +119,8 @@
             	   
             	}
             	> a {
-                    width: 200px;
-                    height: 200px;
+                    width: 220px;
+                    height: 220px;
                      &:after{
                         height: 25px;
                         width: 50px;
@@ -130,9 +130,9 @@
                     &:focus{
                     }
                     > img {
-                    	height: 86%;
-                    	width: 86%;
-                    	margin: 7%;
+                    	height: 200px;
+                    	width: 200px;
+                    	margin: 10px;
                     }
             	}
             }

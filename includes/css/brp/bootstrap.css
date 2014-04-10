@@ -486,7 +486,7 @@ h6,
 h1,
 .h1 {
   font-size: 60px;
-  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
 }
 h2,
 .h2 {
@@ -1889,7 +1889,7 @@ input[type="button"].btn-block {
 }
 @font-face {
   font-family: 'icons';
-  src: url('fonts/icons.eot');
+  src: url('http://www.exploreasheville.com/includes/css/fonts/icons.eot');
 }
 @font-face {
   font-family: 'icons';
@@ -2328,8 +2328,8 @@ iframe.media-object,
 }
 .slide .caption > aside > a {
   display: inline-block;
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
   border-radius: 50% 50% 50% 0;
   background: #165788;
   overflow: hidden;
@@ -2341,9 +2341,9 @@ iframe.media-object,
   -moz-transition: all 0.1s ease-out;
   -o-transition: all 0.1s ease-out;
   transition: all 0.1s ease-out;
-  -webkit-box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
-  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: -2px 2px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: -2px 2px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: -2px 2px 0 rgba(0, 0, 0, 0.25);
 }
 .slide .caption > aside > a:after {
   background: #000000;
@@ -2368,9 +2368,9 @@ iframe.media-object,
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-  height: 86%;
-  width: 86%;
-  margin: 7%;
+  height: 200px;
+  width: 200px;
+  margin: 10px;
   border-radius: 50%;
 }
 .slide .noslide {
@@ -2463,8 +2463,8 @@ iframe.media-object,
 }
 @media (max-width: 768px) {
   .slide .caption > aside > a {
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
   }
   .slide .caption > aside > a:after {
     height: 25px;
@@ -2472,9 +2472,9 @@ iframe.media-object,
     margin: 125px 0 0 25px;
   }
   .slide .caption > aside > a > img {
-    height: 86%;
-    width: 86%;
-    margin: 7%;
+    height: 200px;
+    width: 200px;
+    margin: 10px;
   }
   .slide .noslide .assets {
     padding: 20px 0 0 0;
@@ -2640,8 +2640,8 @@ iframe.media-object,
 }
 .navigation.bottom > li > a {
   display: block;
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   border-radius: 50% 50% 50% 0;
   background: #b71234;
   overflow: hidden;
@@ -2686,9 +2686,9 @@ iframe.media-object,
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-  height: 86%;
-  width: 86%;
-  margin: 7%;
+  height: 80px;
+  width: 80px;
+  margin: 5px;
   border-radius: 50%;
 }
 .navigation.bottom > li.currentslide a {
@@ -3010,9 +3010,6 @@ iframe.media-object,
   margin: 0;
   padding: 0;
   *zoom: 1;
-  /* LOADER */
-  /* PAGER */
-  /* DIRECTION CONTROLS (NEXT / PREV) */
   /* AUTO CONTROLS (START / STOP) */
   /* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
   /* IMAGE CAPTIONS */
@@ -3101,8 +3098,8 @@ iframe.media-object,
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  opacity: 0.2;
-  filter: alpha(opacity=20);
+  opacity: 0.5;
+  filter: alpha(opacity=50);
 }
 .bx-wrapper .bx-prev:before {
   content: "\e61c";
@@ -3119,8 +3116,8 @@ iframe.media-object,
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  opacity: 0.1;
-  filter: alpha(opacity=10);
+  opacity: 0.5;
+  filter: alpha(opacity=50);
 }
 .bx-wrapper .bx-next:before {
   content: "\e61f";
@@ -3129,8 +3126,8 @@ iframe.media-object,
 .bx-wrapper:focus .bx-next,
 .bx-wrapper:hover .bx-prev,
 .bx-wrapper:focus .bx-prev {
-  opacity: 2;
-  filter: alpha(opacity=200);
+  opacity: 1;
+  filter: alpha(opacity=100);
 }
 .bx-wrapper .bx-controls-direction a {
   position: absolute;
@@ -3215,14 +3212,6 @@ iframe.media-object,
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
   display: block;
   padding: 10px;
-}
-@media (max-width: 768px) {
-  .bx-wrapper .bx-prev {
-    display: none;
-  }
-  .bx-wrapper .bx-next {
-    display: none;
-  }
 }
 .clearfix:before,
 .clearfix:after,

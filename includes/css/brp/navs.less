@@ -94,8 +94,8 @@
     > li {
         > a {
             display: block;
-            width: @map-markers;
-            height: @map-markers;
+            width: @map-markers + 10;
+            height: @map-markers + 10;
             border-radius: 50% 50% 50% 0;
             background: @avl-red;
             overflow: hidden;
@@ -126,9 +126,9 @@
             }
             > img {
                 .rotate(45deg);
-            	height: 86%;
-            	width: 86%;
-            	margin: 7%;
+            	height: @map-markers;
+            	width: @map-markers;
+            	margin: 5px;
             	border-radius: 50%;
             }
         }
