@@ -2684,8 +2684,8 @@ fieldset[disabled] .navigation.left .social a {
 .navigation.left .drawerbutton {
   position: fixed;
   display: block;
-  top: 20px;
-  left: 20px;
+  top: 0;
+  left: 0;
 }
 .navigation.left .drawerbutton:hover {
   cursor: pointer;
@@ -3158,7 +3158,7 @@ fieldset[disabled] .navigation.left .social a {
   *display: inline;
 }
 .bx-wrapper .bx-prev {
-  left: 20px;
+  left: 0;
   font-family: 'icons';
   speak: none;
   font-style: normal;
@@ -3176,7 +3176,7 @@ fieldset[disabled] .navigation.left .social a {
   content: "\e61c";
 }
 .bx-wrapper .bx-next {
-  right: 20px;
+  right: 0;
   font-family: 'icons';
   speak: none;
   font-style: normal;
@@ -3202,7 +3202,7 @@ fieldset[disabled] .navigation.left .social a {
 }
 .bx-wrapper .bx-controls-direction a {
   position: absolute;
-  top: 20px;
+  top: 0;
   outline: 0;
   width: 40px;
   height: 40px;
