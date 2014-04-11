@@ -63,7 +63,7 @@
 .navigation.bottom {
     left: 0;
     right: 0;
-    bottom: -(@navbar-height + @default-padding);
+    bottom: -(@navbar-height + (@default-padding * 2));
     height: @navbar-height;
     background: url(http://www.exploreasheville.com/includes/images/storylines/blue-ridge-parkway/mountain-range.png) left 220% repeat-x;
     .text-center;
@@ -72,7 +72,7 @@
     }
     .drawerbuttonwrapper {
         position:absolute;
-        bottom: @navbar-height;
+        bottom: (@navbar-height + @default-padding);
         width: 100%;
         display:block;
         .text-center;
@@ -123,7 +123,7 @@
         }
         .namecard{
             position: absolute;
-            padding: @default-padding 0 floor(@map-markers * 2) 0;
+            padding: @default-padding 0 floor((@map-markers * 2) + @default-padding) 0;
             bottom: -400px;
             left: 0;
             z-index: -1;

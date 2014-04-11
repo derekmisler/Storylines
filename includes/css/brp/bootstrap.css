@@ -561,7 +561,7 @@ dl {
 dt,
 dd {
   line-height: 1.6;
-  padding: 10px 0;
+  padding-top: 16px;
 }
 dt {
   font-weight: bold;
@@ -573,7 +573,6 @@ dt {
 dd {
   margin-left: 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-  padding-top: 0;
 }
 dd:last-of-type {
   border-bottom: 0;
@@ -2062,12 +2061,13 @@ a.thumbnail:focus {
   zoom: 1;
 }
 .media {
-  border-top: 3px solid rgba(0, 0, 0, 0.25);
-  border-bottom: 3px solid rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.25);
   margin-top: 0;
   margin-bottom: 40px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px;
+  -webkit-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.25);
 }
 .media .media {
   padding: 0;
@@ -2102,6 +2102,8 @@ iframe.media-object,
 }
 .media-heading {
   margin: -10px 0 10px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  padding-bottom: 10px;
 }
 .media-caption {
   font-size: 17px !important;
@@ -2693,7 +2695,7 @@ fieldset[disabled] .navigation.left .social a {
 .navigation.bottom {
   left: 0;
   right: 0;
-  bottom: -140px;
+  bottom: -160px;
   height: 120px;
   background: url(http://www.exploreasheville.com/includes/images/storylines/blue-ridge-parkway/mountain-range.png) left 220% repeat-x;
   text-align: center;
@@ -2703,7 +2705,7 @@ fieldset[disabled] .navigation.left .social a {
 }
 .navigation.bottom .drawerbuttonwrapper {
   position: absolute;
-  bottom: 120px;
+  bottom: 140px;
   width: 100%;
   display: block;
   text-align: center;
@@ -2768,7 +2770,7 @@ fieldset[disabled] .navigation.left .social a {
 }
 .navigation.bottom > li .namecard {
   position: absolute;
-  padding: 20px 0 160px 0;
+  padding: 20px 0 180px 0;
   bottom: -400px;
   left: 0;
   z-index: -1;
@@ -2850,7 +2852,7 @@ fieldset[disabled] .navigation.left .social a {
   }
 }
 .tabs {
-  margin-bottom: 0;
+  margin: 0 0 -1px 0;
   padding-left: 0;
   list-style: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
@@ -2939,7 +2941,7 @@ fieldset[disabled] .navigation.left .social a {
   }
 }
 .tabs.nav-justified > li > a {
-  margin-right: 0;
+  margin-right: -1px;
   border-radius: 0;
 }
 .tabs.nav-justified > li > a:hover,
@@ -2961,10 +2963,19 @@ fieldset[disabled] .navigation.left .social a {
     border-bottom: 1px solid rgba(0, 0, 0, 0.25);
     border-radius: 0 0 0 0;
   }
+  .tabs.nav-justified > li > a:hover,
+  .tabs.nav-justified > li > a:focus {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
   .tabs.nav-justified > .active > a,
   .tabs.nav-justified > .active > a:hover,
   .tabs.nav-justified > .active > a:focus {
     border-bottom-color: rgba(0, 0, 0, 0);
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
   }
 }
 .nav-pills > li {
@@ -3015,7 +3026,7 @@ fieldset[disabled] .navigation.left .social a {
   border-bottom: 0;
 }
 .nav-tabs-justified > li > a {
-  margin-right: 0;
+  margin-right: -1px;
   border-radius: 0;
 }
 .nav-tabs-justified > li > a:hover,
@@ -3037,14 +3048,24 @@ fieldset[disabled] .navigation.left .social a {
     border-bottom: 1px solid rgba(0, 0, 0, 0.25);
     border-radius: 0 0 0 0;
   }
+  .nav-tabs-justified > li > a:hover,
+  .nav-tabs-justified > li > a:focus {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
   .nav-tabs-justified > .active > a,
   .nav-tabs-justified > .active > a:hover,
   .nav-tabs-justified > .active > a:focus {
     border-bottom-color: rgba(0, 0, 0, 0);
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
   }
 }
 .tab-content {
   border: 1px solid rgba(0, 0, 0, 0.25);
+  border-top: 0px;
   -webkit-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.25);
   box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.25);

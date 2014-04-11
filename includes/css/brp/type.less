@@ -118,7 +118,7 @@ dl {
 dt,
 dd {
   line-height: @line-height-base;
-  padding: (@default-padding / 2) 0;
+  padding-top: (@line-height-computed / 2);
 }
 dt {
   font-weight: bold;
@@ -129,8 +129,7 @@ dt {
 }
 dd {
   margin-left: 0; // Undo browser default
-  border-bottom: 1px solid @default-border-color;
-  padding-top: 0;
+  border-bottom: @default-border;
 }
 dd:last-of-type {
   border-bottom: 0;
