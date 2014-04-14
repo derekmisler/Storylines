@@ -60,6 +60,7 @@
                 	width: 200px;
                 	margin: 10px;
                 	border-radius: 50%;
+                	background-color: @gray-light;
                 }
         	}
         }
@@ -68,10 +69,12 @@
         min-height: 100%;
         .make-row();
         border: 1px solid @default-border-color;
-        .box-shadow(0 -6px 0 -4px @default-box-shadow-color);
+        border-left: 0;
+        border-right: 0;
+        .box-shadow(0 -4px 0 -2px @default-box-shadow-color);
         .assets{
             .make-xs-column(12);
-            .make-sm-column(4);
+            .make-sm-column(12);
             .make-md-column(5);
             padding:(@default-padding * 4) @default-padding;
         	.pull-left;
@@ -81,7 +84,7 @@
         }
         .story{
             .make-xs-column(12);
-            .make-sm-column(8);
+            .make-sm-column(12);
             .make-md-column(7);
         	padding:(@default-padding * 4) @default-padding;
         	.pull-right;
@@ -90,8 +93,8 @@
     &#top{
         min-height: 100%;
         z-index: 2;
-        border: 1px solid @default-border-color;
-        .box-shadow(0 6px 0 -4px @default-box-shadow-color);
+        border-bottom: 1px solid @default-border-color;
+        .box-shadow(0 4px 0 -2px @default-box-shadow-color);
        .caption{
             > aside {
                 top: 0;

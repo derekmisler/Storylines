@@ -248,6 +248,13 @@ $(document).ready(function(){
 	var notMobileScreen = Modernizr.mq('only screen and (min-width: 768px)');
 	
 	$('.youtube').fitVids();
+	$("img.lazy").lazyload({
+		placeholder : "http://www.exploreasheville.com/includes/images/assets/1pixel.gif",
+		event : "sporty",
+		effect : "fadeIn",
+		skip_invisible: false,
+		failurelimit : 100
+	});
 	if (notMobileScreen) {
 		$(mywindow).stellar({
 			responsive: true,
@@ -255,10 +262,6 @@ $(document).ready(function(){
 			positionProperty: 'transform',
 		});
 	}
-	$("img.lazy").lazyload({
-		event : "sporty",
-		effect : "fadeIn"
-	});
 	$('.bxslider').bxSlider({
   	adaptiveHeight: true,
 		adaptiveHeightSpeed: 0,

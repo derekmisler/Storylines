@@ -118,7 +118,7 @@ dl {
 dt,
 dd {
   line-height: @line-height-base;
-  padding-top: (@line-height-computed / 2);
+  padding-top: 0;
 }
 dt {
   font-weight: bold;
@@ -135,26 +135,41 @@ dd:last-of-type {
   border-bottom: 0;
   padding-bottom: 0;
 }
-// Horizontal description lists
-//
-// Defaults to being stacked without any of the below styles applied, until the
-// grid breakpoint is reached (default of ~768px).
-
-@media (min-width: @grid-float-breakpoint) {
-  .dl-horizontal {
+// Horizontal description lists on desktops
+.dl-horizontal {
     dt {
-      float: left;
-      width: (@component-offset-horizontal - 2);
-      clear: left;
-      .text-right;
-      .text-overflow();
-      margin: 0;
+        font-size: @font-size-base * 2;
     }
     dd {
-      margin-left: @component-offset-horizontal;
-      &:extend(.clearfix all); // Clear the floated `dt` if an empty `dd` is present
+        &:extend(.clearfix all); // Clear the floated `dt` if an empty `dd` is present
     }
-  }
+}
+@media (min-width: @screen-tablet) {
+    .dl-horizontal {
+        dt {
+            float: left;
+            font-size: @font-size-base * 2;
+            width: (@component-offset-horizontal + 10);
+            clear: left;
+            .text-right;
+            margin: 0;
+        }
+        dd {
+            padding-top: (@line-height-computed / 2);
+            margin-left: (@component-offset-horizontal + 12);
+            &:extend(.clearfix all); // Clear the floated `dt` if an empty `dd` is present
+        }
+    }
+}
+@media (min-width: @screen-lg-desktop) {
+    .dl-horizontal {
+        dt {
+            width: (@component-offset-horizontal + 0);
+        }
+        dd {
+            margin-left: (@component-offset-horizontal + 2);
+        }
+    }
 }
 
 // MISC

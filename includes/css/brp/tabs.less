@@ -15,6 +15,7 @@
       position: relative;
       display: block;
       padding: @nav-link-padding floor(@nav-link-padding * 2);
+      .transition(all @transition-timing);
       .h6;
       margin: 0;
       margin-right: 2px;
@@ -143,7 +144,7 @@
   border-bottom: 0;
   > li > a {
     // Override margin from .nav-tabs
-    margin-right: -1px;
+    margin-right: 0;
     border-radius: @border-radius-small;
     &:hover,
     &:focus {
