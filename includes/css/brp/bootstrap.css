@@ -2467,6 +2467,38 @@ iframe.media-object,
   height: 100%;
 }
 @media (max-width: 768px) {
+  .slide .caption {
+    padding-bottom: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+  .slide .caption > img {
+    margin-left: 0;
+    margin-right: 0;
+    left: -50%;
+    min-width: 100%;
+    position: relative;
+  }
+  .slide .caption > img:before,
+  .slide .caption > img:after {
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */
+  }
+  .slide .caption > img:after {
+    clear: both;
+  }
+  .slide .caption > img:before,
+  .slide .caption > img:after {
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */
+  }
+  .slide .caption > img:after {
+    clear: both;
+  }
   .slide .caption > aside > a {
     width: 220px;
     height: 220px;
