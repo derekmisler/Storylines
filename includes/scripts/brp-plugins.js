@@ -260,6 +260,8 @@ $(document).ready(function(){
 			responsive: true,
 			hideDistantElements: false,
 			positionProperty: 'transform',
+			horizontalScrolling: false,
+			parallaxBackgrounds: false,
 		});
 	}
 	$('.bxslider').bxSlider({
