@@ -275,7 +275,7 @@ $(document).ready(function(){
 	//hide the navigation when scrolling down, show it when scrolling up	
 	$(mywindow).scroll(function(){
 		if (notMobileScreen) {
-			$('#top .caption > aside').css({'opacity':( 300-$(window).scrollTop() )/300});
+			$('#top .youtube').css({'opacity':( 300-$(window).scrollTop() )/300});
 		}
 		var currentLocation = $(this).scrollTop();
 		if (currentLocation > lastScroll){

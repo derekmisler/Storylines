@@ -17,7 +17,7 @@
 .media {
     border:@media-border;
     margin-top: 0;
-    margin-bottom: ceil(@default-padding * 2);
+    margin-bottom: @default-padding;
     padding: @default-padding;
     .box-shadow(@default-box-shadow);
     .media {
@@ -32,6 +32,12 @@
     display: block;
     margin-left:auto;
     margin-right:auto;
+    &.pull-left,
+    &.pull-right{
+        .make-xs-column(12);
+        .make-sm-column(5);
+        padding:0;
+    }
 }
 .media-object.full-width {
     margin: @font-size-base auto;
@@ -46,13 +52,14 @@ iframe.media-object, #map_canvas.media-object {
     border-bottom: @default-border;
     padding-bottom: floor(@default-padding / 2);
 }
-
+.media-body {
+//    .make-xs-column(12);
+//    .make-sm-column(7);
+    padding: 0;
+}
 // Reset margins on headings for tighter default spacing
 .media-caption {
-    font-size: (@font-size-base * .85) !important;
-    margin:0;
-	font-family: @font-family-caption;
-    color: @avl-gray;
+    color: @avl-blue;
 }
 
 // Media image alignment
