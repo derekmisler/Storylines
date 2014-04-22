@@ -11,7 +11,31 @@
 			"file": "brp.html",
 			"settings":
 			{
-				"buffer_size": 42116,
+				"buffer_size": 42114,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "includes/scripts/brp-plugins.js",
+			"settings":
+			{
+				"buffer_size": 55807,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "brp-storyline.sublime-project",
+			"settings":
+			{
+				"buffer_size": 136,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/Web Manager/AppData/Roaming/Sublime Text 3/Settings/SideBarEnhancements.json",
+			"settings":
+			{
+				"buffer_size": 172,
 				"line_ending": "Windows"
 			}
 		}
@@ -23,11 +47,15 @@
 		"selected_items":
 		[
 			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
 				"package",
 				"Package Control: Install Package"
 			]
 		],
-		"width": 400.0
+		"width": 512.0
 	},
 	"console":
 	{
@@ -49,10 +77,17 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Web Manager/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/xampp/apache/conf/httpd.conf",
+		"/C/Users/Web Manager/Desktop/april.html",
+		"/C/Users/Web Manager/AppData/Roaming/Sublime Text 3/Packages/SideBarEnhancements/Side Bar.sublime-settings",
+		"/C/Users/Web Manager/AppData/Roaming/Sublime Text 3/Packages/User/Side Bar.sublime-settings",
+		"/C/Users/Web Manager/AppData/Roaming/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"/C/Users/Web Manager/AppData/Roaming/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
+		"/C/Users/Web Manager/Documents/GitHub/Storylines/brp.html",
 		"/C/Users/Web Manager/Documents/GitHub/Storylines/brp-storyline.sublime-project",
 		"/C/Users/Web Manager/AppData/Roaming/Sublime Text 3/Settings/SideBarEnhancements.json",
-		"/C/Users/Web Manager/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
-		"/C/Users/Web Manager/AppData/Roaming/Sublime Text 3/Packages/SideBarEnhancements/Side Bar.sublime-settings"
+		"/C/Users/Web Manager/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings"
 	],
 	"find":
 	{
@@ -96,15 +131,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 42116,
+						"buffer_size": 42114,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								292,
-								292
+								41013,
+								41013
 							]
 						],
 						"settings":
@@ -113,10 +148,98 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 6495.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "includes/scripts/brp-plugins.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 55807,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								138,
+								138
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "brp-storyline.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 136,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								134,
+								134
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/Users/Web Manager/AppData/Roaming/Sublime Text 3/Settings/SideBarEnhancements.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 172,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								163,
+								163
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -181,11 +304,11 @@
 	},
 	"select_symbol":
 	{
-		"height": 0.0,
+		"height": 392.0,
 		"selected_items":
 		[
 		],
-		"width": 0.0
+		"width": 392.0
 	},
 	"settings":
 	{

@@ -2,14 +2,8 @@
 	"folders":
 	[
 		{
-			"path": "/C/Users/Web Manager/Documents/GitHub/Storylines",
+			"path": "/C/Users/Web Manager/Documents/GitHub/Storylines/",
       "file_exclude_patterns": ["*.lnk"]
     }
-	],
-   "settings": {
-      "sublime-view-in-browser": {
-         "baseUrl": "http://127.0.0.1/",
-         "basePath": "C:\\users\\Web Manager\\Documents\\GitHub\\Storylines"
-      }
-   }
+	]
 }
