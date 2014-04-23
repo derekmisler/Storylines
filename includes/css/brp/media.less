@@ -24,6 +24,13 @@
         padding:0;
         border:0;
     }
+    > a{
+        .pull-left;
+        .make-xs-column(5);
+        .make-sm-column(4);
+        .make-md-column(3);
+        padding:0;
+    }
 }
 
 // For images and videos, set to block
@@ -32,15 +39,13 @@
     display: block;
     margin-left:auto;
     margin-right:auto;
-    &.pull-left,
-    &.pull-right{
-        .make-xs-column(12);
-        .make-sm-column(5);
-        padding:0;
+    &.circle{
+        //.square(100%);
+        border-radius: 50%;
     }
-}
-.media-object.full-width {
-    margin: @font-size-base auto;
+    &.full-width {
+        margin: @font-size-base auto;
+    }
 }
 iframe.media-object, #map_canvas.media-object {
     border-radius: 0;  
@@ -53,9 +58,10 @@ iframe.media-object, #map_canvas.media-object {
     padding-bottom: floor(@default-padding / 2);
 }
 .media-body {
-//    .make-xs-column(12);
-//    .make-sm-column(7);
-    padding: 0;
+    .make-xs-column(7);
+    .make-sm-column(8);
+    .make-md-column(9);
+    padding-right: 0;
 }
 // Reset margins on headings for tighter default spacing
 .media-caption {
@@ -92,4 +98,16 @@ iframe.media-object, #map_canvas.media-object {
 .media-list {
     padding-left: 0;
     list-style: none;
+}
+@media (max-width: @screen-tablet) {
+    .media-object {
+        margin-top:@default-padding;
+        &.circle{
+            //.square(100%);
+            border-radius: 50%;
+        }
+        &.full-width {
+            margin: @font-size-base auto;
+        }
+    }
 }
