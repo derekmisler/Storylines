@@ -2,6 +2,7 @@ $('p, blockquote, dd p, li p, h3, h4, h5, h6').each(function() {
 	$(this).html($(this).html().replace(/\s([^\s<]+)\s*$/,'&nbsp;$1'));
 });
 
+
 // FitVids 1.0.3
 
 (function( $ ){
@@ -233,7 +234,8 @@ $(document).ready(function(){
 
 	//Cache some variables
 	var mywindow = $(window);
-	var windowHeight = mywindow.height();
+	var windowHeight = parseInt(mywindow.height());
+	var windowHeightX2 = windowHeight*2;
 	var htmlbody = $('html,body');
 	var bottomNavigation = $('.bottom.navigation');
 	var leftNavigation = $('.left.navigation');
@@ -241,13 +243,26 @@ $(document).ready(function(){
 	var links = bottomNavigation.find('li');
 	var mapmarker = $('.map-marker');
 	var namecards = $('.namecard');
-	var topVideo = $('#top .youtube');
+	var topSlide = $('.titlecard');
+	var topVideo = $('.titlecard video');
+	var topVideoSrc = topVideo.attr('data-youtube-src');
+	var topStory = $('#top .noslide');
 	var caption = $('.caption').find('aside');
 	var leftNavToggle = $('.left .drawerbutton');
 	var bottomNavToggle = $('.bottom .drawerbutton');
 	var slide = $('.slide');
 	var lastScroll = 0;
 	var notMobileScreen = Modernizr.mq('only screen and (min-width: 768px)');
+	function activate(element) {
+		element.addClass('active');
+	}
+	function deactivate(element) {
+		element.removeClass('active');
+	}
+	function toggleactive(element) {
+		element.toggleClass('active');
+	}
+
 	
 	$('.youtube').fitVids();
 	$("img.lazy").lazyload({
@@ -270,39 +285,62 @@ $(document).ready(function(){
 		captions: true,
 		pager: false
 	});
-	function activate(element) {
-		element.addClass('active');
-	}
-	function deactivate(element) {
-		element.removeClass('active');
-	}
-	function toggleactive(element) {
-		element.toggleClass('active');
-	}
 	
-	//hide the navigation when scrolling down, show it when scrolling up
-	$(mywindow).scroll(function(){
-		if (notMobileScreen) {
-			var topVideoTimer = window.setTimeout(function() { activate(topVideo); }, 8500 );
-		}
-		var currentLocation = $(this).scrollTop();
-		if (currentLocation < lastScroll){
-			activate(bottomNavigation);
-			bottomNavToggle.removeClass('icon-arrow-up').addClass('icon-arrow-down');
-			deactivate(leftNavigation);
-			leftNavToggle.removeClass('icon-arrow-left').addClass('icon-arrow-right');
+	var topVideoTimer = window.setTimeout(function() {
+		//topVideo.attr("src", topVideoSrc);
+		//topVideo.removeAttr("data-youtube-src");
+		activate(topSlide);
+		topVideo.get(0).play();
+	}, 8500 );
+	topVideo.get(0).click(function() {
+		if (topVideo.playing){
+			topVideo.get(0).pause();
 		}
 		else {
-			deactivate(bothNavigations);
-			bottomNavToggle.removeClass('icon-arrow-down').addClass('icon-arrow-up');
-			leftNavToggle.removeClass('icon-arrow-left').addClass('icon-arrow-right');
+			topVideo.get(0).play();
 		}
-		if (currentLocation <= 300){
-			$('.currentslide').removeClass('currentslide');
-		}
-		//Updates scroll position
-		lastScroll = currentLocation;
 	});
+	topStory.waypoint(function(direction) {
+		if (direction == 'down') {
+			activate(bottomNavigation);
+			bottomNavToggle.removeClass('icon-arrow-up').addClass('icon-arrow-down');
+		}
+	}, {offset: '90%'});
+	topStory.waypoint(function(direction) {
+		if (direction == 'down') {
+			deactivate(bottomNavigation);
+			bottomNavToggle.removeClass('icon-arrow-down').addClass('icon-arrow-up');
+		}
+	}, {
+		offset: function() { return -$(this).height(); }
+	});
+	
+	//hide the navigation when scrolling down, show it when scrolling up
+/*
+	caption.waypoint(function(direction) {
+		if (direction == 'down') {
+			$(mywindow).scroll(function(){
+				var currentLocation = $(this).scrollTop();
+				if (currentLocation < lastScroll){
+					activate(bottomNavigation);
+					bottomNavToggle.removeClass('icon-arrow-up').addClass('icon-arrow-down');
+					deactivate(leftNavigation);
+					leftNavToggle.removeClass('icon-arrow-left').addClass('icon-arrow-right');
+				}
+				else{
+					deactivate(bothNavigations);
+					bottomNavToggle.removeClass('icon-arrow-down').addClass('icon-arrow-up');
+					leftNavToggle.removeClass('icon-arrow-left').addClass('icon-arrow-right');
+				}
+				if (currentLocation <= 300){
+					$('.currentslide').removeClass('currentslide');
+				}
+				//Updates scroll position
+				lastScroll = currentLocation;
+			});
+		}
+	});
+*/
 	//When the user clicks on the navigation links, get the data-story attribute value of the link and pass that variable to the goToByScroll function
 	function goToByScroll(dataslide) {
 		htmlbody.animate({ scrollTop: $('aside[data-story="' + dataslide + '"]').offset().top + 0 }, 1000);
@@ -320,7 +358,7 @@ $(document).ready(function(){
 	}, function() {
 		$(this).parent().not('.currentslide').find(namecards).removeClass('active');
 	});
-	
+
 	//hide and show the navigation by clicking the arrow
 	bottomNavToggle.click(function(e) {
 		e.preventDefault();
@@ -355,7 +393,7 @@ $(document).ready(function(){
 			$('.bottom.navigation li[data-story="' + dataslide + '"]').addClass('currentslide').next().removeClass('currentslide');
 		}
 	}, {offset: '-175%'});
-	
+
 });
 //Heavy stuff down here
 //Heavy stuff down here

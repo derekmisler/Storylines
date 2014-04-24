@@ -96,22 +96,29 @@
         border-bottom: 1px solid @default-border-color;
         .box-shadow(0 4px 0 -2px @default-box-shadow-color);
         .video{
+            .caption();
             #video {
                 .make-row();
                 min-width: 100%;
                 min-height: 100%;
                 position: relative;
             }
-            .youtube{
-                .make-xs-column(12);
-                .make-md-column(6);
-                .make-md-column-offset(3);
-                padding:0;
-                .clearfix();
+            > aside.titlecard{
                 .opacity(0);
                 .transition(opacity 1.5s linear);
+                top: 0;
+                background-image: none;
+                background-color: fadeout(@body-bg, 20%);
+                padding: 0 @default-padding;
                 &.active{
                     .opacity(1);
+                }
+                video{
+                    .make-xs-column(12);
+                    //.make-md-column(8);
+                    //.make-md-column-offset(2);
+                    padding:0;
+                    .clearfix();
                 }
             }
         }
@@ -124,9 +131,11 @@
             .box-shadow(0 -4px 0 -2px @default-box-shadow-color);
             .story{
                 .make-xs-column(12);
-                .make-sm-column(12);
-                .make-md-column(8);
-                .make-md-column-offset(2);
+                .make-sm-column(8);
+                .make-sm-column-offset(2);
+                .make-md-column(6);
+                .make-md-column-offset(3);
+                float: none !important;
             	padding:(@default-padding * 4) @default-padding;
             }
         }
