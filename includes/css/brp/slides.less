@@ -95,33 +95,39 @@
         z-index: 2;
         border-bottom: 1px solid @default-border-color;
         .box-shadow(0 4px 0 -2px @default-box-shadow-color);
-        .caption{
-            > img{
+        .video{
+            #video {
                 .make-row();
                 min-width: 100%;
                 min-height: 100%;
                 position: relative;
             }
-            .video {
-                .make-row();
-                top:0;
-                padding-top: 0;
-                .text-center;
-                #gradient > .vertical(@start-color: fadeout(@body-bg, 20%); @end-color: fadeout(@body-bg, 50%););
-                .youtube{
-                    .make-xs-column(12);
-                    .make-md-column(6);
-                    .make-md-column-offset(3);
-                    padding:0;
-                    .clearfix();
+            .youtube{
+                .make-xs-column(12);
+                .make-md-column(6);
+                .make-md-column-offset(3);
+                padding:0;
+                .clearfix();
+                .opacity(0);
+                .transition(opacity 1.5s linear);
+                &.active{
+                    .opacity(1);
                 }
-                .story {
-                    .make-xs-column(12);
-                    .make-md-column(8);
-                    .make-md-column-offset(2);
-                    .text-left;
-                    .clearfix();
-                }
+            }
+        }
+        .noslide{
+            min-height: 100%;
+            .make-row();
+            border: 1px solid @default-border-color;
+            border-left: 0;
+            border-right: 0;
+            .box-shadow(0 -4px 0 -2px @default-box-shadow-color);
+            .story{
+                .make-xs-column(12);
+                .make-sm-column(12);
+                .make-md-column(8);
+                .make-md-column-offset(2);
+            	padding:(@default-padding * 4) @default-padding;
             }
         }
     }
@@ -172,6 +178,23 @@
             }
             .story{
             	padding: 0;
+            }
+        }
+        &#top{
+            min-height: 100%;
+            z-index: 2;
+            border-bottom: 1px solid @default-border-color;
+            .box-shadow(0 4px 0 -2px @default-box-shadow-color);
+            .caption{
+                #video {
+                    .make-row();
+                    min-width: 100%;
+                    min-height: 100%;
+                    position: relative;
+                }
+                .youtube{
+                   .opacity(1); 
+                }
             }
         }
     }

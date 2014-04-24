@@ -228,6 +228,7 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
 //Start
 //Start
 
+
 $(document).ready(function(){
 
 	//Cache some variables
@@ -240,6 +241,7 @@ $(document).ready(function(){
 	var links = bottomNavigation.find('li');
 	var mapmarker = $('.map-marker');
 	var namecards = $('.namecard');
+	var topVideo = $('#top .youtube');
 	var caption = $('.caption').find('aside');
 	var leftNavToggle = $('.left .drawerbutton');
 	var bottomNavToggle = $('.bottom .drawerbutton');
@@ -268,27 +270,36 @@ $(document).ready(function(){
 		captions: true,
 		pager: false
 	});
-
-	//hide the navigation when scrolling down, show it when scrolling up	
+	function activate(element) {
+		element.addClass('active');
+	}
+	function deactivate(element) {
+		element.removeClass('active');
+	}
+	function toggleactive(element) {
+		element.toggleClass('active');
+	}
+	
+	//hide the navigation when scrolling down, show it when scrolling up
 	$(mywindow).scroll(function(){
 		if (notMobileScreen) {
-			$('#top .youtube').css({'opacity':( 300-$(window).scrollTop() )/300});
+			var topVideoTimer = window.setTimeout(function() { activate(topVideo); }, 8500 );
 		}
 		var currentLocation = $(this).scrollTop();
-		if (currentLocation > lastScroll){
-			bothNavigations.removeClass('active');
-			bottomNavToggle.removeClass('icon-arrow-down').addClass('icon-arrow-up');
-			leftNavToggle.removeClass('icon-arrow-left').addClass('icon-arrow-right');
-		} 
-		else {
-			bottomNavigation.addClass('active');
+		if (currentLocation < lastScroll){
+			activate(bottomNavigation);
 			bottomNavToggle.removeClass('icon-arrow-up').addClass('icon-arrow-down');
-			leftNavigation.removeClass('active');
+			deactivate(leftNavigation);
+			leftNavToggle.removeClass('icon-arrow-left').addClass('icon-arrow-right');
+		}
+		else {
+			deactivate(bothNavigations);
+			bottomNavToggle.removeClass('icon-arrow-down').addClass('icon-arrow-up');
 			leftNavToggle.removeClass('icon-arrow-left').addClass('icon-arrow-right');
 		}
 		if (currentLocation <= 300){
 			$('.currentslide').removeClass('currentslide');
-		} 
+		}
 		//Updates scroll position
 		lastScroll = currentLocation;
 	});
@@ -298,7 +309,7 @@ $(document).ready(function(){
 	}
 	links.click(function(e) {
 		e.preventDefault();
-		namecards.removeClass('active');
+		deactivate(namecards);
 		dataslide = $(this).attr('data-story');
 		goToByScroll(dataslide);
 	});
@@ -313,16 +324,16 @@ $(document).ready(function(){
 	//hide and show the navigation by clicking the arrow
 	bottomNavToggle.click(function(e) {
 		e.preventDefault();
-		bottomNavigation.toggleClass('active');
+		toggleactive(bottomNavigation);
 		bottomNavToggle.toggleClass('icon-arrow-up icon-arrow-down');
-		leftNavigation.removeClass('active');
+		deactivate(leftNavigation);
 		leftNavToggle.removeClass('icon-arrow-left').addClass('icon-arrow-right');
 	});
 	leftNavToggle.click(function(e) {
 		e.preventDefault();
-		leftNavigation.toggleClass('active');
+		toggleactive(leftNavigation);
 		leftNavToggle.toggleClass('icon-arrow-right icon-arrow-left');
-		bottomNavigation.removeClass('active');
+		deactivate(bottomNavigation);
 		bottomNavToggle.removeClass('icon-arrow-down').addClass('icon-arrow-up');
 	});
 	
@@ -354,7 +365,7 @@ $(document).ready(function(){
 //Heavy stuff down here
 $(window).load(function(){
 	
-	var timeout = setTimeout(function() { $("img.lazy").trigger("sporty") }, 100);
+	var timeout = setTimeout(function() { $("img.lazy").trigger("sporty") }, 1000);
 	
 	var myOptions = {
 		scrollwheel: false,
