@@ -7,8 +7,8 @@
 // -------------------------
 p {
   margin: 0 0 (@line-height-computed / 2);
-  -webkit-text-stroke: 1px;
-  -webkit-text-stroke-color: fadeout(@text-color, 90%);
+  //-webkit-text-stroke: 1px;
+  //-webkit-text-stroke-color: fadeout(@text-color, 90%);
 }
 // Emphasis & misc
 // -------------------------
@@ -33,35 +33,49 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
     margin-top: 0;
     margin-bottom: floor(@line-height-computed / 2);
     color: @avl-blue;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: fadeout(@avl-blue, 90%);
     small {
         line-height: 1;
         font-style: italic;
         color: @headings-small-color;
     }
 }
-
+h1, .h1,
+h2, .h2 {
+    small {
+        -webkit-text-stroke-color: fadeout(@headings-small-color, 90%);
+    }
+}
+h3, .h3,
+h4, .h4 {
+    color: @headings-small-color;
+    font-style: italic;
+    -webkit-text-stroke-color: fadeout(@headings-small-color, 90%);
+}
 h5, .h5,
 h6, .h6 {
-  font-family: @subheadings-font-family;
-  font-weight: @subheadings-font-weight;
-  letter-spacing: @subheadings-letter-spacing;
-  text-transform: uppercase;
-  margin-top: @line-height-computed;
-  margin-bottom: (@line-height-computed / 2);
-  line-height: @line-height-base;
+    font-family: @subheadings-font-family;
+    font-weight: @subheadings-font-weight;
+    letter-spacing: @subheadings-letter-spacing;
+    text-transform: uppercase;
+    margin-top: @line-height-computed;
+    margin-bottom: (@line-height-computed / 2);
+    line-height: @line-height-base;
 }
+
 h1, .h1 { font-size: floor(@font-size-base * 3); text-shadow: 0 1px 0 @dark-text-shadow; }
 h2, .h2 { font-size: floor(@font-size-base * 2.6); }
-h3, .h3 { font-size: ceil(@font-size-base * 2); color: @headings-small-color; font-style: italic; }
-h4, .h4 { font-size: ceil(@font-size-base * 1.7); color: @headings-small-color; font-style: italic; }
+h3, .h3 { font-size: ceil(@font-size-base * 2); }
+h4, .h4 { font-size: ceil(@font-size-base * 1.7); }
 h5, .h5 { font-size: ceil(@font-size-base * 1.25); }
 h6, .h6 { font-size: @font-size-base; }
 
 @media (max-width: @screen-tablet) {
     h1, .h1 { font-size: floor(@font-size-base * 1.6) }
     h2, .h2 { font-size: floor(@font-size-base * 1.4); }
-    h3, .h3 { font-size: ceil(@font-size-base * 1.25); color: @headings-small-color; font-style: italic; }
-    h4, .h4 { font-size: ceil(@font-size-base * 1); color: @headings-small-color; font-style: italic; }
+    h3, .h3 { font-size: ceil(@font-size-base * 1.25); }
+    h4, .h4 { font-size: ceil(@font-size-base * 1); }
     h5, .h5 { font-size: ceil(@font-size-base * .85); }
     h6, .h6 { font-size: ceil(@font-size-base * .75); }
     p { font-size: ceil(@font-size-base * .75); }

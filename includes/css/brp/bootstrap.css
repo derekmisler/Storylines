@@ -413,8 +413,6 @@ hr {
 }
 p {
   margin: 0 0 16px;
-  -webkit-text-stroke: 1px;
-  -webkit-text-stroke-color: rgba(61, 43, 31, 0.1);
 }
 small {
   font-size: 85%;
@@ -449,6 +447,8 @@ h6,
   margin-top: 0;
   margin-bottom: 16px;
   color: #165788;
+  -webkit-text-stroke: 1px;
+  -webkit-text-stroke-color: rgba(22, 87, 136, 0.1);
 }
 h1 small,
 h2 small,
@@ -465,6 +465,20 @@ h6 small,
   line-height: 1;
   font-style: italic;
   color: #766a65;
+}
+h1 small,
+.h1 small,
+h2 small,
+.h2 small {
+  -webkit-text-stroke-color: rgba(118, 106, 101, 0.1);
+}
+h3,
+.h3,
+h4,
+.h4 {
+  color: #766a65;
+  font-style: italic;
+  -webkit-text-stroke-color: rgba(118, 106, 101, 0.1);
 }
 h5,
 .h5,
@@ -490,14 +504,10 @@ h2,
 h3,
 .h3 {
   font-size: 40px;
-  color: #766a65;
-  font-style: italic;
 }
 h4,
 .h4 {
   font-size: 34px;
-  color: #766a65;
-  font-style: italic;
 }
 h5,
 .h5 {
@@ -519,14 +529,10 @@ h6,
   h3,
   .h3 {
     font-size: 25px;
-    color: #766a65;
-    font-style: italic;
   }
   h4,
   .h4 {
     font-size: 20px;
-    color: #766a65;
-    font-style: italic;
   }
   h5,
   .h5 {
@@ -3046,10 +3052,10 @@ fieldset[disabled] .navigation.left .social a {
   -moz-box-shadow: 0 -4px 0 -2px rgba(0, 0, 0, 0.25);
   box-shadow: 0 -4px 0 -2px rgba(0, 0, 0, 0.25);
   background-color: rgba(255, 250, 250, 0.8);
-  -webkit-transition: all 0.1s ease-out;
-  -moz-transition: all 0.1s ease-out;
-  -o-transition: all 0.1s ease-out;
-  transition: all 0.1s ease-out;
+  -webkit-transition: opacity 0.1s ease-out;
+  -moz-transition: opacity 0.1s ease-out;
+  -o-transition: opacity 0.1s ease-out;
+  transition: opacity 0.1s ease-out;
 }
 .navigation.bottom > li .namecard.active {
   bottom: 0;
@@ -3133,6 +3139,8 @@ fieldset[disabled] .navigation.left .social a {
   line-height: 1.1;
   margin-top: 0;
   color: #165788;
+  -webkit-text-stroke: 1px;
+  -webkit-text-stroke-color: rgba(22, 87, 136, 0.1);
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 400;
   letter-spacing: 1px;

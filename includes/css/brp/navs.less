@@ -134,7 +134,7 @@
             border: 1px solid @default-border-color;
             .box-shadow(0 -4px 0 -2px @default-box-shadow-color);
             background-color: fadeout(@body-bg, 20%);
-            .transition(all @transition-timing);
+            .transition(opacity @transition-timing);
             &.active{
                 bottom: 0;
                 .opacity(1);
