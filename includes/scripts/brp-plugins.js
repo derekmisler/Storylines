@@ -253,6 +253,8 @@ $(document).ready(function(){
 	var slide = $('.slide');
 	var lastScroll = 0;
 	var notMobileScreen = Modernizr.mq('only screen and (min-width: 768px)');
+
+	//Cache some functions
 	function activate(element) {
 		element.addClass('active');
 	}
@@ -262,8 +264,26 @@ $(document).ready(function(){
 	function toggleactive(element) {
 		element.toggleClass('active');
 	}
+	function closeLeftNav() {
+		deactivate(leftNavigation);
+		leftNavToggle.removeClass('icon-close').addClass('icon-arrow-right');
+	}
+	function closeBottomNav() {
+		deactivate(bottomNavigation);
+		bottomNavToggle.removeClass('icon-close').addClass('icon-arrow-down');
+	}
+	function openBottomNav() {
+		closeLeftNav();
+		activate(bottomNavigation);
+		bottomNavToggle.removeClass('icon-arrow-down').addClass('icon-close');
+	}
+	function openLeftNav() {
+		closeBottomNav();
+		activate(leftNavigation);
+		leftNavToggle.removeClass('icon-arrow-right').addClass('icon-close');
+	}
 
-	
+	//Go!
 	$('.youtube').fitVids();
 	$("img.lazy").lazyload({
 		placeholder : "http://www.exploreasheville.com/includes/images/assets/1pixel.gif",
@@ -287,30 +307,15 @@ $(document).ready(function(){
 	});
 	
 	var topVideoTimer = window.setTimeout(function() {
-		//topVideo.attr("src", topVideoSrc);
-		//topVideo.removeAttr("data-youtube-src");
 		activate(topSlide);
 		topVideo.get(0).play();
 	}, 8500 );
-	topVideo.get(0).click(function() {
-		if (topVideo.playing){
-			topVideo.get(0).pause();
-		}
-		else {
-			topVideo.get(0).play();
-		}
-	});
+	
 	topStory.waypoint(function(direction) {
-		if (direction == 'down') {
-			activate(bottomNavigation);
-			bottomNavToggle.removeClass('icon-arrow-up').addClass('icon-arrow-down');
-		}
-	}, {offset: '90%'});
+		if (direction == 'down') { openBottomNav(); }
+	}, {offset: '75%'});
 	topStory.waypoint(function(direction) {
-		if (direction == 'down') {
-			deactivate(bottomNavigation);
-			bottomNavToggle.removeClass('icon-arrow-down').addClass('icon-arrow-up');
-		}
+		if (direction == 'down') { closeBottomNav(); }
 	}, {
 		offset: function() { return -$(this).height(); }
 	});
@@ -362,18 +367,23 @@ $(document).ready(function(){
 	//hide and show the navigation by clicking the arrow
 	bottomNavToggle.click(function(e) {
 		e.preventDefault();
-		toggleactive(bottomNavigation);
-		bottomNavToggle.toggleClass('icon-arrow-up icon-arrow-down');
-		deactivate(leftNavigation);
-		leftNavToggle.removeClass('icon-arrow-left').addClass('icon-arrow-right');
+		if (bottomNavigation.hasClass('active')) {
+			closeBottomNav();
+		} else {
+			openBottomNav();
+		}
 	});
 	leftNavToggle.click(function(e) {
 		e.preventDefault();
-		toggleactive(leftNavigation);
-		leftNavToggle.toggleClass('icon-arrow-right icon-arrow-left');
-		deactivate(bottomNavigation);
-		bottomNavToggle.removeClass('icon-arrow-down').addClass('icon-arrow-up');
+		if (leftNavigation.hasClass('active')) {
+			closeLeftNav();
+		} else {
+			openLeftNav();
+		}
 	});
+
+	
+	
 	
 	//Setup waypoints plugin
 	caption.waypoint(function(direction) {

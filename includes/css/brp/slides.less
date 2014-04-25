@@ -107,8 +107,7 @@
                 .opacity(0);
                 .transition(opacity 1.5s linear);
                 top: 0;
-                background-image: none;
-                background-color: fadeout(@body-bg, 20%);
+                #gradient > .vertical(@start-color: fadeout(@body-bg, 20%); @end-color: fadeout(@body-bg, 100%););
                 padding: 0 @default-padding;
                 &.active{
                     .opacity(1);
