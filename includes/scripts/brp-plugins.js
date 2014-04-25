@@ -1,4 +1,4 @@
-$('p, blockquote, dd p, li p, h3, h4, h5, h6').each(function() {
+$('p, blockquote, dd p, li p, .media a, h3, h4, h5, h6').each(function() {
 	$(this).html($(this).html().replace(/\s([^\s<]+)\s*$/,'&nbsp;$1'));
 });
 
@@ -433,6 +433,14 @@ $(document).ready(function(){
 			$('.bottom.navigation li[data-story="' + dataslide + '"]').addClass('currentslide').next().removeClass('currentslide');
 		}
 	}, {offset: '-175%'});
+	
+	$("article").waypoint(function() {
+		$(this).find('.cinemagraph').get(0).play();
+	}, {offset: '50%'});
+
+	$("article").waypoint(function() {
+		$(this).find('.cinemagraph').get(0).pause();
+	}, {offset: function() { return -$(this).height(); }});
 
 });
 //Heavy stuff down here
