@@ -53,7 +53,7 @@ iframe.media-object, #map_canvas.media-object {
 
 // Reset margins on headings for tighter default spacing
 .media-heading {
-    margin: -10px 0 10px 0;
+    margin: 0 0 floor(@default-padding / 2) 0;
     border-bottom: @default-border;
     padding-bottom: floor(@default-padding / 2);
 }
@@ -98,6 +98,9 @@ iframe.media-object, #map_canvas.media-object {
 .media-list {
     padding-left: 0;
     list-style: none;
+}
+.youtube{
+    margin-bottom: (@default-padding * 2);
 }
 @media (max-width: @screen-tablet) {
     .media-object {

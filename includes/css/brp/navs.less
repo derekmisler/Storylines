@@ -8,13 +8,13 @@
     padding: 0;
     margin: 0;
     .transition(all @transition-timing);
-    .drawerbutton {
-        .btn;
-        &:hover{
-            cursor: pointer;
-        }
-     }
 }
+.drawerbutton {
+    .btn;
+    &:hover{
+        cursor: pointer;
+    }
+ }
 .navigation.left{
     left: -45%;
     top: 0;
@@ -22,43 +22,76 @@
     height: 100%;
     background-color: fadeout(@body-bg, 10%);
     .box-shadow(2px 0 0 0 @default-box-shadow-color);
-    padding:(@default-padding * 2);
+    padding: (@default-padding / 2) (@default-padding * 2);
     &.active{
         left: 0;
     }
     .logo{
-        .make-xs-column(12);
-        .make-sm-column(6);
-        .make-md-column(8);
-        .text-hide;
-        width: 200px;
-        height: 40px;
-        background: url(http://www.exploreasheville.com/includes/images/fall/logo.png) 0 0 no-repeat;
+        .make-row();
         padding:0;
-    }
-    .social{
-        .make-xs-column(12);
-        .make-sm-column(6);        
-        .make-md-column(4);        
-        padding:0;
-        .text-center;
-        a {
-            .btn;
-        }
+        .text-center();
+        display:block;
     }
     #brp_map_canvas{
-        .make-xs-column(12);
+        .make-row();
         .media-object;
+        margin-top: (@default-padding / 2);
     }
-    .drawerbutton {
+    .drawerbuttonwrapper {
         position: fixed;
         display: block;
         top: 0;
         left: 0;
-        &:hover{
-            cursor: pointer;
+        bottom: 0;
+        width: floor(@font-size-base * 2);
+        .icon{
+            padding:0;
+            .text-center;
+            .btn;
+            .opacity(.25);
         }
-     }
+        &:hover{
+            .icon{
+                .opacity(1);
+            }
+        }
+        .icon-facebook{
+          &:hover,
+          &:focus,
+          &:active,
+          &.active {
+            background-color: @facebook;
+            border-color: @facebook;
+          }
+        }
+        .icon-twitter{
+          &:hover,
+          &:focus,
+          &:active,
+          &.active {
+            background-color: @twitter;
+            border-color: @twitter;
+          }
+        }
+        .icon-googleplus{
+          &:hover,
+          &:focus,
+          &:active,
+          &.active {
+            background-color: @googleplus;
+            border-color: @googleplus;
+          }
+        }
+        .icon-pinterest{
+          &:hover,
+          &:focus,
+          &:active,
+          &.active {
+            background-color: @pinterest;
+            border-color: @pinterest;
+          }
+        }
+  }
 }
 .navigation.bottom {
     left: 0;
@@ -76,11 +109,15 @@
         width: 100%;
         display:block;
         .text-center;
-        &:hover{
-            cursor: pointer;
-        }
         > .drawerbutton{
-            display: inline-block; 
+            display: inline-block;
+            .opacity(.25);
+        }
+        &:hover{
+            .drawerbutton{
+                .opacity(1);
+            }
+            cursor: pointer;
         }
      }
     > li {

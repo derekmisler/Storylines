@@ -26,7 +26,7 @@
         	> h1 {
         	   
         	}
-        	> a {
+        	> .profilephoto {
                 display: inline-block;
                 width: 220px;
                 height: 220px;
@@ -102,23 +102,33 @@
                 min-width: 100%;
                 min-height: 100%;
                 position: relative;
+                max-width: none;
             }
-            > aside.titlecard{
+            > .titlecard{
                 .opacity(0);
                 .transition(opacity 1.5s linear);
                 top: 0;
                 #gradient > .vertical(@start-color: fadeout(@body-bg, 20%); @end-color: fadeout(@body-bg, 100%););
-                padding: 0 @default-padding;
+                padding: 0 (@default-padding * 2);
                 &.active{
                     .opacity(1);
                 }
+                .drawerbutton {
+                    .opacity(0);
+                    position: absolute;
+                    top: 25%;
+                    margin-left: -@default-padding;
+                    &.active{
+                        .opacity(1);
+                    }
+                 }
                 video{
                     .make-xs-column(12);
                     //.make-md-column(8);
                     //.make-md-column-offset(2);
                     padding:0;
                     .clearfix();
-                }
+               }
             }
         }
         .noslide{

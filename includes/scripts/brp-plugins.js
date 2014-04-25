@@ -245,7 +245,7 @@ $(document).ready(function(){
 	var namecards = $('.namecard');
 	var topSlide = $('.titlecard');
 	var topVideo = $('.titlecard video');
-	var topVideoSrc = topVideo.attr('data-youtube-src');
+	var topVideoControls = $('#top .drawerbutton');
 	var topStory = $('#top .noslide');
 	var caption = $('.caption').find('aside');
 	var leftNavToggle = $('.left .drawerbutton');
@@ -266,7 +266,7 @@ $(document).ready(function(){
 	}
 	function closeLeftNav() {
 		deactivate(leftNavigation);
-		leftNavToggle.removeClass('icon-close').addClass('icon-arrow-right');
+		leftNavToggle.removeClass('icon-close').addClass('icon-map');
 	}
 	function closeBottomNav() {
 		deactivate(bottomNavigation);
@@ -280,7 +280,7 @@ $(document).ready(function(){
 	function openLeftNav() {
 		closeBottomNav();
 		activate(leftNavigation);
-		leftNavToggle.removeClass('icon-arrow-right').addClass('icon-close');
+		leftNavToggle.removeClass('icon-map').addClass('icon-close');
 	}
 
 	//Go!
@@ -305,11 +305,40 @@ $(document).ready(function(){
 		captions: true,
 		pager: false
 	});
+
+	//video stuff
+	$("#video").bind('play', function () {
+		var topVideoTimer = window.setTimeout(function() {
+			activate(topSlide);
+			topVideo.get(0).play();
+		}, 9000 );
+	});
 	
-	var topVideoTimer = window.setTimeout(function() {
-		activate(topSlide);
-		topVideo.get(0).play();
-	}, 8500 );
+	topVideo.bind('pause', function () {
+		activate(topVideoControls);
+	});
+	topVideo.bind('play', function () {
+		deactivate(topVideoControls);
+	});
+	topVideo.click(function(e) {
+		if (topVideo.get(0).paused) {
+			topVideo.get(0).play();
+			deactivate(topVideoControls);
+		} else {
+			topVideo.get(0).pause();
+			activate(topVideoControls);
+		}
+	});
+	topVideoControls.click(function(e) {
+		e.preventDefault();
+		if (topVideoControls.hasClass('active')) {
+			deactivate(topVideoControls);
+			topVideo.get(0).play();
+		} else {deactivate
+			activate(topVideoControls);
+			topVideo.get(0).pause();
+		}
+	});
 	
 	topStory.waypoint(function(direction) {
 		if (direction == 'down') { openBottomNav(); }
@@ -320,7 +349,6 @@ $(document).ready(function(){
 		offset: function() { return -$(this).height(); }
 	});
 	
-	//hide the navigation when scrolling down, show it when scrolling up
 /*
 	caption.waypoint(function(direction) {
 		if (direction == 'down') {
