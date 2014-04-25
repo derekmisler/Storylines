@@ -303,7 +303,9 @@ $(document).ready(function(){
 	}
 	$('.bxslider').bxSlider({
 		captions: true,
-		pager: false
+		pager: false,
+		adaptiveHeight: true,
+		adaptiveHeightSpeed: 0
 	});
 
 	//video stuff

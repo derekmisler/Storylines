@@ -2378,31 +2378,31 @@ iframe.media-object,
   min-height: 100%;
   overflow: hidden;
 }
-.slide .caption > img {
+.slide .caption > .cinemagraph {
   margin-left: 0;
   margin-right: 0;
   min-width: 100%;
   min-height: 120%;
   position: relative;
 }
-.slide .caption > img:before,
-.slide .caption > img:after {
+.slide .caption > .cinemagraph:before,
+.slide .caption > .cinemagraph:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */
 }
-.slide .caption > img:after {
+.slide .caption > .cinemagraph:after {
   clear: both;
 }
-.slide .caption > img:before,
-.slide .caption > img:after {
+.slide .caption > .cinemagraph:before,
+.slide .caption > .cinemagraph:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */
 }
-.slide .caption > img:after {
+.slide .caption > .cinemagraph:after {
   clear: both;
 }
 .slide .caption > aside {
@@ -2563,31 +2563,31 @@ iframe.media-object,
   min-height: 100%;
   overflow: hidden;
 }
-.slide#top .video > img {
+.slide#top .video > .cinemagraph {
   margin-left: 0;
   margin-right: 0;
   min-width: 100%;
   min-height: 120%;
   position: relative;
 }
-.slide#top .video > img:before,
-.slide#top .video > img:after {
+.slide#top .video > .cinemagraph:before,
+.slide#top .video > .cinemagraph:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */
 }
-.slide#top .video > img:after {
+.slide#top .video > .cinemagraph:after {
   clear: both;
 }
-.slide#top .video > img:before,
-.slide#top .video > img:after {
+.slide#top .video > .cinemagraph:before,
+.slide#top .video > .cinemagraph:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */
 }
-.slide#top .video > img:after {
+.slide#top .video > .cinemagraph:after {
   clear: both;
 }
 .slide#top .video > aside {
