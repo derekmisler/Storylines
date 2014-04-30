@@ -292,6 +292,7 @@ $(document).ready(function(){
 		skip_invisible: false,
 		failurelimit : 100
 	});
+	var timeout = setTimeout(function() { $("img.lazy").trigger("sporty") }, 500);
 	if (notMobileScreen) {
 		$(mywindow).stellar({
 			responsive: true,
@@ -434,12 +435,20 @@ $(document).ready(function(){
 		}
 	}, {offset: '-175%'});
 	
-	$("article").waypoint(function() {
-		$(this).find('.cinemagraph').get(0).play();
+	$("article").waypoint(function(direction) {
+		if (direction == 'down') {
+		  $(this).find('.cinemagraph').get(0).play();
+        } else {
+		  $(this).find('.cinemagraph').get(0).pause();
+        }
 	}, {offset: '50%'});
 
-	$("article").waypoint(function() {
-		$(this).find('.cinemagraph').get(0).pause();
+	$("article").waypoint(function(direction) {
+		if (direction == 'down') {
+            $(this).find('.cinemagraph').get(0).pause();
+        } else {
+            $(this).find('.cinemagraph').get(0).play();
+        }
 	}, {offset: function() { return -$(this).height(); }});
 
 });
@@ -451,7 +460,6 @@ $(document).ready(function(){
 //Heavy stuff down here
 $(window).load(function(){
 	
-	var timeout = setTimeout(function() { $("img.lazy").trigger("sporty") }, 1000);
 	
 	var myOptions = {
 		scrollwheel: false,
