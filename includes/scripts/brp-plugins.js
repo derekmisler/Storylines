@@ -1,4 +1,4 @@
-$('p, blockquote, dd p, li p, .media a, h3, h4, h5, h6').each(function() {
+$('p, blockquote, dd p, li p, h3, h4, h5, h6').each(function() {
 	$(this).html($(this).html().replace(/\s([^\s<]+)\s*$/,'&nbsp;$1'));
 });
 
