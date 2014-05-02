@@ -15,10 +15,11 @@
 
 // Proper spacing between instances of .media
 .media {
+    border-top:@media-border;
     border-bottom:@media-border;
     margin: 0 -20px 20px -20px;
-    padding: @default-padding;
-    .box-shadow(@default-box-shadow);
+    padding: @default-padding 0;
+    .box-shadow(@top-box-shadow);
     .media {
         padding:0;
         border:0;
@@ -52,7 +53,7 @@ iframe.media-object, #map_canvas.media-object {
 
 // Reset margins on headings for tighter default spacing
 .media-heading {
-    margin: @default-padding 0 floor(@default-padding / 2) 0;
+    margin: 0 0 floor(@default-padding / 2) 0;
     //border-bottom: @default-border;
     .subhead;
     color: @avl-blue;

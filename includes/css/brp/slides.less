@@ -115,12 +115,13 @@
                     .opacity(1);
                 }
                 .drawerbutton {
-                    .opacity(0);
-                    position: absolute;
-                    top: 25%;
-                    margin-left: -@default-padding;
+                    .opacity(1);
+                    width: floor(@font-size-large * 2);
+                    height: floor(@font-size-large * 2);
+                    font-size: @font-size-large;
+                    line-height: (floor(@font-size-large * 2) - 5);
                     &.active{
-                        .opacity(1);
+                        .opacity(0);
                     }
                  }
                 video{
