@@ -297,6 +297,7 @@ $(document).ready(function(){
 		$(mywindow).stellar({
 			responsive: true,
 			hideDistantElements: false,
+			scrollProperty: 'transform',
 			positionProperty: 'transform',
 			horizontalScrolling: false,
 			parallaxBackgrounds: false,

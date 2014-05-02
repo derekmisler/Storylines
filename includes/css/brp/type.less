@@ -21,7 +21,19 @@ cite    { font-style: normal; }
 .text-left           { text-align: left; }
 .text-right          { text-align: right; }
 .text-center         { text-align: center; }
-
+.subhead {
+    line-height: 1;
+    color: @headings-small-color;
+    font-family: @subheadings-font-family;
+    font-weight: @subheadings-font-weight;
+    letter-spacing: @subheadings-letter-spacing;
+}
+.page-header {
+    font-family: @headings-font-family;
+    font-weight: @headings-font-weight;
+    font-size: 150%;
+    color: @avl-blue;
+}
 
 // Headings
 // -------------------------
@@ -36,29 +48,29 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
     -webkit-text-stroke: 1px;
     -webkit-text-stroke-color: fadeout(@avl-blue, 90%);
     small {
-        line-height: 1;
+        .subhead;
+        font-family: @headings-font-family;
         font-style: italic;
-        color: @headings-small-color;
     }
 }
 h1, .h1,
 h2, .h2 {
+    //text-transform: uppercase;
     small {
         -webkit-text-stroke-color: fadeout(@headings-small-color, 90%);
     }
 }
-h3, .h3,
-h4, .h4 {
+
+h3, .h3 {
     color: @headings-small-color;
-    font-style: italic;
+    //font-style: italic;
     -webkit-text-stroke-color: fadeout(@headings-small-color, 90%);
 }
+h4, .h4,
 h5, .h5,
 h6, .h6 {
-    font-family: @subheadings-font-family;
-    font-weight: @subheadings-font-weight;
-    letter-spacing: @subheadings-letter-spacing;
-    text-transform: uppercase;
+    .subhead;
+    color: @avl-blue;
     margin-top: @line-height-computed;
     margin-bottom: (@line-height-computed / 2);
     line-height: @line-height-base;
@@ -80,18 +92,6 @@ h6, .h6 { font-size: @font-size-base; }
     h6, .h6 { font-size: ceil(@font-size-base * .75); }
     p { font-size: ceil(@font-size-base * .75); }
 }
-
-
-// Page header
-// -------------------------
-
-.page-header {
-  padding-bottom: ((@line-height-computed / 2) - 1);
-  margin: 0;
-  border-bottom: 0px solid @default-border-color;
-}
-
-
 
 // Lists
 // --------------------------------------------------

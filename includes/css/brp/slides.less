@@ -11,10 +11,11 @@
         > .cinemagraph{
             .make-row();
             min-width: 100%;
+            max-width: none !important;
             min-height: 120%;
             position: relative;
         }
-        > aside {
+        > .header {
             position:absolute;
             bottom:0;
             left:0;
@@ -90,7 +91,7 @@
         	.pull-right;
         }
     }
-    &#top{
+    &#top, &.centered{
         min-height: 100%;
         z-index: 2;
         border-bottom: 1px solid @default-border-color;
@@ -165,7 +166,7 @@
                 //max-width: 100%;
                 position: relative;
             }
-            > aside {
+            > .header {
                 
             	> h1 {
             	   
