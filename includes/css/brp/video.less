@@ -1,11 +1,10 @@
 #top{
     min-height: 100%;
-    z-index: 2;
     border-bottom: 1px solid @default-border-color;
     .box-shadow(@default-box-shadow);
     > .titlecard{
         .opacity(0);
-        .transition(opacity 1.5s linear);
+        .transition(opacity @slow-transition-timing);
         position: absolute;
         top: 0;
         left: 0;
@@ -18,11 +17,12 @@
             .opacity(1);
         }
         .drawerbutton {
-            .opacity(0);
             width: floor(@font-size-large * 2);
             height: floor(@font-size-large * 2);
             font-size: @font-size-large;
             line-height: (floor(@font-size-large * 2) - 5);
+            .transition(opacity @slow-transition-timing);
+            .opacity(0);
             &.active{
                 .opacity(1);
             }
@@ -44,6 +44,13 @@
         position: absolute;
         top: 0;
         left: 0;
+        right: 0;
+        min-height: 1px;
+        .media-object;
+        .transition(none);
+        position: absolute;
+        border-left: 0;
+        border-right: 0;
     }
 }
 @media (max-width: @screen-tablet) {

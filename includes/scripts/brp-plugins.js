@@ -316,30 +316,35 @@ $(document).ready(function(){
 	//video stuff
 	topVideo.one('play', function () {
 		setTimeout(function(){
-			topSlide.addClass('active');
+			activate(topSlide);
 		}, 500);
 	});
 
 	topVideo2.bind('play', function () {
-		activate(topSlide);
+		deactivate(topVideoControls);
 	});
 	topVideo2.bind('pause', function () {
-		deactivate(topSlide);
+		activate(topVideoControls);
+	});
+	topVideo2.bind('ended', function () {
+		activate(topVideoControls);
+		topVideo2.animate({"opacity":0}, 1000);
+		topVideo.get(0).play();
+	});
+	topVideo2.click(function(e) {
+		if (topVideo2.get(0).paused) {
+			topVideo2.get(0).play();
+		} else {
+			topVideo2.get(0).pause();
+		}
 	});
 	topVideoControls.click(function(e) {
 		e.preventDefault();
 		if (topVideoControls.hasClass('active')) {
-			deactivate(topSlide);
+			deactivate(topVideoControls);
 			topVideo.get(0).pause();
+			topVideo2.animate({"opacity":1}, 1000);
 			topVideo2.get(0).play();
-			deactivate(topVideo);
-			activate(topVideo2);
-		} else {
-			activate(topSlide);
-			topVideo2.get(0).pause();
-			topVideo.get(0).play();
-			activate(topVideo);
-			deactivate(topVideo2);
 		}
 	});
 	
