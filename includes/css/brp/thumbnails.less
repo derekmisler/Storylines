@@ -2,32 +2,48 @@
 // Thumbnails
 // --------------------------------------------------
 
-
-// Mixin and adjust the regular image class
 .thumbnail {
-    .img-thumbnail();
-    display: block; // Override the inline-block from `.img-thumbnail`
-
-  > img {
-    .img-responsive();
-    
-  }
+    .make-xs-column(12);
+    .make-sm-column(9);
+    .make-md-column(6);
+    .pull-right;
+    .media;
+    .text-center;
+    display: block;
+    margin: floor(@line-height-computed / 4) 0;
+    a{
+        &:hover img,
+        &:focus img{
+            border-color: @link-color;
+        }
+        > img {
+            width: @default-padding * 5;
+            height: @default-padding * 5;
+        }
+    }
+    .media-heading {
+        color: @avl-blue;
+    }
 }
-
-
-// Add a hover state for linked versions only
-a.thumbnail:hover,
-a.thumbnail:focus {
-    border-color: @link-color;
-}
-
-// Images and captions
-.thumbnail > img {
-    margin-left: auto;
-    margin-right: auto;
-}
-.thumbnail .caption {
-    padding: @thumbnail-caption-padding;
-    color: @thumbnail-caption-color;
-	font-family: @font-family-caption;
+@media (max-width: @screen-tablet) {
+     .thumbnail {
+         .media;
+        float:none !important;
+        margin: 0 -(@default-padding * 2) @default-padding -(@default-padding * 2);
+        .clearfix;
+        width: auto;
+        a{
+            &:hover img,
+            &:focus img{
+                border-color: @link-color;
+            }
+            > img {
+                .img-responsive();
+                width: @default-padding * 5;
+            }
+        }
+        .media-heading {
+            color: @avl-blue;
+        }
+    }
 }
