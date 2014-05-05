@@ -72,7 +72,7 @@
 @subheadings-font-family:    @font-family-sans-serif;
 @subheadings-font-weight:    400;
 @subheadings-line-height:    1.1;
-@subheadings-letter-spacing: 1px;
+@subheadings-letter-spacing: 0px;
 
 // Iconography
 // -------------------------
@@ -265,9 +265,9 @@
 // ------------------------
 @dark-text-shadow:			  fadeout(@black, 90%);
 @light-text-shadow:			  fadeout(@white, 70%);
-@default-box-shadow-color:	  @default-border-color;
-@default-box-shadow:          0 4px 0 -2px @default-box-shadow-color;
-@top-box-shadow:              0 4px 0 -2px @default-box-shadow-color, 0 -4px 0 -2px @default-box-shadow-color;
+@default-box-shadow-color:	  fadeout(@default-border-color, 10%);
+@default-box-shadow:          0 6px 0 -4px @default-box-shadow-color;
+@top-box-shadow:              @default-box-shadow, 0 -6px 0 -4px @default-box-shadow-color;
 @abbr-border-color:           @default-border-color;
 @headings-small-color:        @avl-gray;
 @blockquote-small-color:      @avl-gray;

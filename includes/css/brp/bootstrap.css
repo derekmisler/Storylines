@@ -359,9 +359,9 @@ img {
   -webkit-transition: all 0.1s ease-out;
   -o-transition: all 0.1s ease-out;
   transition: all 0.1s ease-out;
-  -webkit-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05);
   display: inline-block;
   position: relative;
   max-width: 100%;
@@ -431,7 +431,7 @@ cite {
   color: #766a65;
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 400;
-  letter-spacing: 1px;
+  letter-spacing: 0px;
 }
 .page-header {
   font-family: "Cardo", sans-serif;
@@ -476,7 +476,7 @@ h6 small,
   color: #766a65;
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 400;
-  letter-spacing: 1px;
+  letter-spacing: 0px;
   font-family: "Cardo", sans-serif;
   font-style: italic;
 }
@@ -501,7 +501,7 @@ h6,
   color: #766a65;
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 400;
-  letter-spacing: 1px;
+  letter-spacing: 0px;
   color: #165788;
   margin-top: 32px;
   margin-bottom: 16px;
@@ -654,9 +654,9 @@ blockquote {
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   margin: 0 -20px 20px -20px;
   padding: 20px 0;
-  -webkit-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15), 0 -4px 0 -2px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15), 0 -4px 0 -2px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15), 0 -4px 0 -2px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05), 0 -6px 0 -4px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05), 0 -6px 0 -4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05), 0 -6px 0 -4px rgba(0, 0, 0, 0.05);
 }
 blockquote .media {
   padding: 0;
@@ -700,7 +700,7 @@ blockquote p {
   color: #766a65;
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 400;
-  letter-spacing: 1px;
+  letter-spacing: 0px;
   color: #165788;
 }
 blockquote p:last-child {
@@ -2111,9 +2111,9 @@ input[type="button"].btn-block {
   -webkit-transition: all 0.1s ease-out;
   -o-transition: all 0.1s ease-out;
   transition: all 0.1s ease-out;
-  -webkit-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05);
   display: inline-block;
   position: relative;
   max-width: 100%;
@@ -2147,9 +2147,9 @@ a.thumbnail:focus {
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   margin: 0 -20px 20px -20px;
   padding: 20px 0;
-  -webkit-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15), 0 -4px 0 -2px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15), 0 -4px 0 -2px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15), 0 -4px 0 -2px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05), 0 -6px 0 -4px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05), 0 -6px 0 -4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05), 0 -6px 0 -4px rgba(0, 0, 0, 0.05);
 }
 .media .media {
   padding: 0;
@@ -2188,9 +2188,9 @@ a.thumbnail:focus {
   -webkit-transition: all 0.1s ease-out;
   -o-transition: all 0.1s ease-out;
   transition: all 0.1s ease-out;
-  -webkit-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05);
   display: inline-block;
   position: relative;
   max-width: 100%;
@@ -2214,7 +2214,7 @@ iframe.media-object,
   color: #766a65;
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 400;
-  letter-spacing: 1px;
+  letter-spacing: 0px;
   color: #165788;
 }
 .media-body {
@@ -2287,9 +2287,9 @@ iframe.media-object,
   margin-bottom: 32px;
   background-color: #fdfaff;
   border-radius: 0;
-  -webkit-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05);
 }
 .panel-body {
   padding: 20px;
@@ -2467,9 +2467,9 @@ iframe.media-object,
   -webkit-transition: all 0.1s ease-out;
   -o-transition: all 0.1s ease-out;
   transition: all 0.1s ease-out;
-  -webkit-box-shadow: -2px 2px 0 rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: -2px 2px 0 rgba(0, 0, 0, 0.15);
-  box-shadow: -2px 2px 0 rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: -2px 2px 0 rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: -2px 2px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: -2px 2px 0 rgba(0, 0, 0, 0.05);
 }
 .slide .caption > .header > .profilephoto:after {
   background: #000000;
@@ -2507,9 +2507,9 @@ iframe.media-object,
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-left: 0;
   border-right: 0;
-  -webkit-box-shadow: 0 -4px 0 -2px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 -4px 0 -2px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 -4px 0 -2px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 -4px 0 -2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 -4px 0 -2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 -4px 0 -2px rgba(0, 0, 0, 0.05);
 }
 .slide .noslide:before,
 .slide .noslide:after {
@@ -2587,9 +2587,9 @@ iframe.media-object,
   min-height: 100%;
   z-index: 2;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-  -webkit-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.05);
 }
 .slide#top .video,
 .slide.centered .video {
@@ -2663,9 +2663,9 @@ iframe.media-object,
   -webkit-transition: all 0.1s ease-out;
   -o-transition: all 0.1s ease-out;
   transition: all 0.1s ease-out;
-  -webkit-box-shadow: -2px 2px 0 rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: -2px 2px 0 rgba(0, 0, 0, 0.15);
-  box-shadow: -2px 2px 0 rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: -2px 2px 0 rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: -2px 2px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: -2px 2px 0 rgba(0, 0, 0, 0.05);
 }
 .slide#top .video > .header > .profilephoto:after,
 .slide.centered .video > .header > .profilephoto:after {
@@ -2814,9 +2814,9 @@ iframe.media-object,
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-left: 0;
   border-right: 0;
-  -webkit-box-shadow: 0 -4px 0 -2px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 -4px 0 -2px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 -4px 0 -2px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 -4px 0 -2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 -4px 0 -2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 -4px 0 -2px rgba(0, 0, 0, 0.05);
 }
 .slide#top .noslide:before,
 .slide.centered .noslide:before,
@@ -2943,9 +2943,9 @@ iframe.media-object,
     min-height: 100%;
     z-index: 2;
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-    -webkit-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
-    box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.05);
   }
   .slide#top .caption #video {
     margin-left: 0;
@@ -3038,9 +3038,9 @@ fieldset[disabled] .drawerbutton {
   width: 45%;
   height: 100%;
   background-color: rgba(253, 250, 255, 0.9);
-  -webkit-box-shadow: 2px 0 0 0 rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 2px 0 0 0 rgba(0, 0, 0, 0.15);
-  box-shadow: 2px 0 0 0 rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 2px 0 0 0 rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 2px 0 0 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 2px 0 0 0 rgba(0, 0, 0, 0.05);
   padding: 10px 40px;
 }
 .navigation.left.active {
@@ -3084,9 +3084,9 @@ fieldset[disabled] .drawerbutton {
   -webkit-transition: all 0.1s ease-out;
   -o-transition: all 0.1s ease-out;
   transition: all 0.1s ease-out;
-  -webkit-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05);
   display: inline-block;
   position: relative;
   max-width: 100%;
@@ -3265,9 +3265,9 @@ fieldset[disabled] .navigation.left .drawerbuttonwrapper .icon {
   -webkit-transition: all 0.1s ease-out;
   -o-transition: all 0.1s ease-out;
   transition: all 0.1s ease-out;
-  -webkit-box-shadow: -2px 2px 0 rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: -2px 2px 0 rgba(0, 0, 0, 0.15);
-  box-shadow: -2px 2px 0 rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: -2px 2px 0 rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: -2px 2px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: -2px 2px 0 rgba(0, 0, 0, 0.05);
 }
 .navigation.bottom > li > .map-marker > img {
   -webkit-transform: rotate(45deg);
@@ -3281,9 +3281,9 @@ fieldset[disabled] .navigation.left .drawerbuttonwrapper .icon {
 }
 .navigation.bottom > li > .map-marker:hover,
 .navigation.bottom > li > .map-marker:focus {
-  -webkit-box-shadow: -10px 10px 0 rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: -10px 10px 0 rgba(0, 0, 0, 0.15);
-  box-shadow: -10px 10px 0 rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: -10px 10px 0 rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: -10px 10px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: -10px 10px 0 rgba(0, 0, 0, 0.05);
   margin: -10px auto 10px;
   cursor: pointer;
   background-color: #165788;
@@ -3294,9 +3294,9 @@ fieldset[disabled] .navigation.left .drawerbuttonwrapper .icon {
 .navigation.bottom > li.currentslide > .map-marker:hover,
 .navigation.bottom > li.currentslide > .map-marker:focus {
   margin-top: 0;
-  -webkit-box-shadow: -2px 2px 0 rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: -2px 2px 0 rgba(0, 0, 0, 0.15);
-  box-shadow: -2px 2px 0 rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: -2px 2px 0 rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: -2px 2px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: -2px 2px 0 rgba(0, 0, 0, 0.05);
   cursor: auto;
   background-color: #165788;
 }
@@ -3311,9 +3311,9 @@ fieldset[disabled] .navigation.left .drawerbuttonwrapper .icon {
   opacity: 0;
   filter: alpha(opacity=0);
   border: 1px solid rgba(0, 0, 0, 0.15);
-  -webkit-box-shadow: 0 -4px 0 -2px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 -4px 0 -2px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 -4px 0 -2px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 -4px 0 -2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 -4px 0 -2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 -4px 0 -2px rgba(0, 0, 0, 0.05);
   background-color: rgba(253, 250, 255, 0.8);
   -webkit-transition: opacity 0.1s ease-out;
   -o-transition: opacity 0.1s ease-out;
@@ -3404,7 +3404,7 @@ fieldset[disabled] .navigation.left .drawerbuttonwrapper .icon {
   color: #766a65;
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 400;
-  letter-spacing: 1px;
+  letter-spacing: 0px;
   color: #165788;
   margin-top: 32px;
   margin-bottom: 16px;
@@ -3420,7 +3420,7 @@ fieldset[disabled] .navigation.left .drawerbuttonwrapper .icon {
   color: #766a65;
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 400;
-  letter-spacing: 1px;
+  letter-spacing: 0px;
   font-family: "Cardo", sans-serif;
   font-style: italic;
 }
@@ -3482,17 +3482,17 @@ fieldset[disabled] .navigation.left .drawerbuttonwrapper .icon {
 }
 .tabs.nav-justified > li > a:hover,
 .tabs.nav-justified > li > a:focus {
-  -webkit-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05);
 }
 .tabs.nav-justified > .active > a,
 .tabs.nav-justified > .active > a:hover,
 .tabs.nav-justified > .active > a:focus {
   border: 1px solid rgba(0, 0, 0, 0.15);
-  -webkit-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05);
 }
 @media (min-width: 768px) {
   .tabs.nav-justified > li > a {
@@ -3568,17 +3568,17 @@ fieldset[disabled] .navigation.left .drawerbuttonwrapper .icon {
 }
 .nav-tabs-justified > li > a:hover,
 .nav-tabs-justified > li > a:focus {
-  -webkit-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05);
 }
 .nav-tabs-justified > .active > a,
 .nav-tabs-justified > .active > a:hover,
 .nav-tabs-justified > .active > a:focus {
   border: 1px solid rgba(0, 0, 0, 0.15);
-  -webkit-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05);
 }
 @media (min-width: 768px) {
   .nav-tabs-justified > li > a {
@@ -3603,9 +3603,9 @@ fieldset[disabled] .navigation.left .drawerbuttonwrapper .icon {
 .tab-content {
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-top: 0px;
-  -webkit-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05);
 }
 .tab-content > .tab-pane {
   display: none;
@@ -3655,9 +3655,9 @@ fieldset[disabled] .navigation.left .drawerbuttonwrapper .icon {
   -webkit-transition: all 0.1s ease-out;
   -o-transition: all 0.1s ease-out;
   transition: all 0.1s ease-out;
-  -webkit-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 0 -4px rgba(0, 0, 0, 0.05);
   display: inline-block;
   position: relative;
   max-width: 100%;
