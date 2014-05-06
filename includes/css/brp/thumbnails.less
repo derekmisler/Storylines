@@ -10,8 +10,8 @@
     .media;
     .text-center;
     display: block;
-    margin: floor(@line-height-computed / 4) 0;
-    padding: floor(@default-padding / 2) 0 @default-padding;
+    margin: floor(@line-height-computed / 4) -(@default-padding * 2) @default-padding @default-padding;
+    padding: floor(@default-padding / 2) 0 floor(@line-height-computed / 2);
     a{
         &:hover img,
         &:focus img{
