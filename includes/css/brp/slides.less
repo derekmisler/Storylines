@@ -9,10 +9,6 @@
         min-height: 100%;
         overflow:hidden;
         > .cinemagraph{
-            .make-row();
-            min-width: 100%;
-            max-width: none !important;
-            min-height: 100%;
             width: 100%;
             position: relative;
         }
@@ -22,11 +18,10 @@
             left:0;
             right:0;
             .text-center;
-        	padding: 0;
-        	padding-top:(@default-padding * 4);
+        	padding: (@default-padding * 4) 0 (@default-padding * 2);
         	#gradient > .vertical(@start-color: fadeout(@body-bg, 100%); @end-color: fadeout(@body-bg, 20%););
         	> h1 {
-        	   
+        	   margin:0;
         	}
         	> .profilephoto {
                 display: inline-block;

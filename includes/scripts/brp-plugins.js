@@ -569,6 +569,8 @@ $(document).ready(function(){
 	var htmlbody = $('html,body');
 	var bottomNavigation = $('.bottom.navigation');
 	var leftNavigation = $('.left.navigation');
+	var leftNavToggle = $('.left .drawerbutton');
+	var bottomNavToggle = $('.bottom .drawerbutton');
 	var bothNavigations = $('.navigation');
 	var links = bottomNavigation.find('li');
 	var mapmarker = $('.map-marker');
@@ -579,10 +581,9 @@ $(document).ready(function(){
 	var topVideoControls = $('#top .drawerbutton');
 	var topStory = $('#top .noslide');
 	var caption = $('.caption').find('aside');
-	var leftNavToggle = $('.left .drawerbutton');
-	var bottomNavToggle = $('.bottom .drawerbutton');
 	var cinemagraphs = $('article');
 	var slide = $('.slide');
+	var noslide = $('.noslide');
 	var lastScroll = 0;
 	var lazyLoad = $("img.lazy");
 	var notMobileScreen = Modernizr.mq('only screen and (min-width: 768px)');
@@ -619,26 +620,17 @@ $(document).ready(function(){
 	$('.youtube').fitVids();
 	lazyLoad.lazyload({
 		placeholder : "http://www.exploreasheville.com/includes/images/assets/1pixel.gif",
-		event : "sporty",
 		effect : "fadeIn",
-		skip_invisible: false,
-		failurelimit : 100
+		skip_invisible : false,
+		failure_limit : 1000,
+		event : "sporty"
 	});
-	var timeout = setTimeout(function() { lazyLoad.trigger("sporty") });
-	if (notMobileScreen) {
-		$(mywindow).stellar({
-			responsive: true,
-			hideDistantElements: false,
-			positionProperty: 'transform',
-			horizontalScrolling: false,
-			parallaxBackgrounds: false,
-		});
-	}
+	var timeout = setTimeout(function() {
+		lazyLoad.trigger("sporty")
+	}, 1000);
 	$('.bxslider').bxSlider({
 		captions: true,
-		pager: false,
-		adaptiveHeight: true,
-		adaptiveHeightSpeed: 0
+		pager: false
 	});
 	
 	//video stuff
@@ -653,7 +645,7 @@ $(document).ready(function(){
 	}, 1500);
 	topVideo2.bind('play', function () {
 		deactivate(topVideoControls);
-		topSlide.animate({"opacity":.25}, 500);
+		topSlide.animate({"opacity":.1}, 500);
 	});
 	topVideo2.bind('pause', function () {
 		activate(topVideoControls);
@@ -680,29 +672,13 @@ $(document).ready(function(){
 			deactivate(topVideoControls);
 			topVideo.get(0).pause();
 			topVideo.animate({"opacity":.5}, 1000);
-			topSlide.animate({"opacity":.25}, 500);
+			topSlide.animate({"opacity":.1}, 500);
 			topVideo2.animate({"opacity":1}, 1000);
 			activate(topVideo2);
 			topVideo2.get(0).play();
 		}
 	});
 	
-	cinemagraphs.waypoint(function(direction) {
-		if (direction == 'down') {
-			$(this).find(".cinemagraph").get(0).play();
-		} else {
-			$(this).find(".cinemagraph").get(0).pause();
-		}
-	}, {offset: '50%'});
-
-	cinemagraphs.waypoint(function(direction) {
-		if (direction == 'down') {
-			$(this).get(0).pause();
-		} else {
-			$(this).get(0).play();
-		}
-	}, {offset: function() { return -$(this).height(); }});
-
 
 	//Setup navs
 	//Setup navs
@@ -710,15 +686,6 @@ $(document).ready(function(){
 	//Setup navs
 	//Setup navs
 	//Setup navs
-	topStory.waypoint(function(direction) {
-		if (direction == 'down') { openBottomNav(); }
-	}, {offset: '75%'});
-	topStory.waypoint(function(direction) {
-		if (direction == 'down') { closeBottomNav(); }
-	}, {
-		offset: function() { return -$(this).height(); }
-	});
-	
 	//When the user clicks on the navigation links, get the data-story attribute value of the link and pass that variable to the goToByScroll function
 	function goToByScroll(dataslide) {
 		htmlbody.animate({ scrollTop: $('aside[data-story="' + dataslide + '"]').offset().top + 0 }, 1000);
@@ -754,25 +721,57 @@ $(document).ready(function(){
 			openLeftNav();
 		}
 	});
+	slide.waypoint(function(direction) {
+		currentCinemgraph = $(this).find("video").get(0);
+		if (direction == 'down') {
+			currentCinemgraph.play();
+		} else {
+			currentCinemgraph.pause();
+		}
+	}, {offset: '50%'});
+
+	noslide.waypoint(function(direction) {
+		prevCinemgraph = $(this).prev().find("video").get(0);
+		if (direction == 'down') {
+			prevCinemgraph.pause();
+		} else {
+			prevCinemgraph.play();
+		}
+	});
+
+	topStory.waypoint(function(direction) {
+		if (direction == 'down') { openBottomNav(); }
+	}, {
+		offset: '75%'
+	}).waypoint(function(direction) {
+		if (direction == 'down') { closeBottomNav(); }
+	}, {
+		offset: function() { return -$(this).height(); }
+	});
+	
 	caption.waypoint(function(direction) {
 		//cache the variable of the data-story attribute associated with each slide
 		var dataslide = $(this).attr('data-story');
 		if (direction == 'down') {
 			//If the user scrolls down, remove the 'currentslide' class from the previous nav highlight the current slide in the navigation
 			$('.bottom.navigation li[data-story="' + dataslide + '"]').addClass('currentslide').prev().removeClass('currentslide');
-		}
-	}, {offset: '50%'});
-	
-	caption.waypoint(function(direction) {
-		//cache the variable of the data-story attribute associated with each slide
-		var dataslide = $(this).attr('data-story');
-		if (direction == 'up') {
-			//Or, if the user scrolls up, remove the 'currentslide' class from the next nav and highlight the current slide in the navigation
+		} else {
 			$('.bottom.navigation li[data-story="' + dataslide + '"]').addClass('currentslide').next().removeClass('currentslide');
 		}
-	}, {offset: '-175%'});
+	}, {
+		offset: '50%'
+	});
 	
-	
+
+	if (notMobileScreen) {
+		$.stellar({
+			responsive: true,
+			hideDistantElements: false,
+			positionProperty: 'position',
+			horizontalScrolling: false,
+			parallaxBackgrounds: false,
+		});
+	}
 });
 //Heavy stuff down here
 //Heavy stuff down here

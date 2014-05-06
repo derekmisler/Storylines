@@ -2444,33 +2444,8 @@ h2.media-heading small {
   overflow: hidden;
 }
 .slide .caption > .cinemagraph {
-  margin-left: 0;
-  margin-right: 0;
-  min-width: 100%;
-  max-width: none !important;
-  min-height: 100%;
   width: 100%;
   position: relative;
-}
-.slide .caption > .cinemagraph:before,
-.slide .caption > .cinemagraph:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
-}
-.slide .caption > .cinemagraph:after {
-  clear: both;
-}
-.slide .caption > .cinemagraph:before,
-.slide .caption > .cinemagraph:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
-}
-.slide .caption > .cinemagraph:after {
-  clear: both;
 }
 .slide .caption > .header {
   position: absolute;
@@ -2478,14 +2453,16 @@ h2.media-heading small {
   left: 0;
   right: 0;
   text-align: center;
-  padding: 0;
-  padding-top: 80px;
+  padding: 80px 0 40px;
   background-image: -webkit-gradient(linear, left 0%, left 100%, from(rgba(253, 250, 255, 0)), to(rgba(253, 250, 255, 0.8)));
   background-image: -webkit-linear-gradient(top, rgba(253, 250, 255, 0), 0%, rgba(253, 250, 255, 0.8), 100%);
   background-image: -moz-linear-gradient(top, rgba(253, 250, 255, 0) 0%, rgba(253, 250, 255, 0.8) 100%);
   background-image: linear-gradient(to bottom, rgba(253, 250, 255, 0) 0%, rgba(253, 250, 255, 0.8) 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00fdfaff', endColorstr='#ccfdfaff', GradientType=0);
+}
+.slide .caption > .header > h1 {
+  margin: 0;
 }
 .slide .caption > .header > .profilephoto {
   display: inline-block;
@@ -2841,6 +2818,9 @@ h2.media-heading small {
 #top #video2.full-width {
   margin: 20px auto;
 }
+#top #video2.active {
+  cursor: pointer;
+}
 @media (max-width: 768px) {
   #top {
     min-height: 100%;
@@ -3140,8 +3120,8 @@ fieldset[disabled] .navigation.left .drawerbuttonwrapper .icon {
 }
 .navigation.bottom .drawerbuttonwrapper > .drawerbutton {
   display: inline-block;
-  opacity: 0.25;
-  filter: alpha(opacity=25);
+  opacity: 1;
+  filter: alpha(opacity=100);
 }
 .navigation.bottom .drawerbuttonwrapper:hover {
   cursor: pointer;
@@ -3508,6 +3488,7 @@ fieldset[disabled] .navigation.left .drawerbuttonwrapper .icon {
 .tab-content {
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-top: 0px;
+  height: 615px;
   -webkit-box-shadow: 0 20px 0 -18px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 20px 0 -18px rgba(0, 0, 0, 0.1);
   box-shadow: 0 20px 0 -18px rgba(0, 0, 0, 0.1);
