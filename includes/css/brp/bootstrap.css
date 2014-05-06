@@ -292,6 +292,7 @@ html {
 }
 ::-webkit-scrollbar-thumb {
   background-color: #165788;
+  border-radius: 10px;
 }
 ::-webkit-scrollbar-track {
   background-color: #fdfaff;
@@ -2215,6 +2216,7 @@ h2.media-heading small {
   display: block;
   margin: 8px -40px 20px 20px;
   padding: 10px 0 16px;
+  clear: right;
 }
 @media (min-width: 768px) {
   .thumbnail {
@@ -4090,12 +4092,19 @@ blockquote:after,
 .oversized-image {
   width: auto !important;
   max-width: none !important;
-  cursor: e-resize;
   position: relative;
+  left: 0;
+  -webkit-transition: left 10s linear;
+  -moz-transition: left 10s linear;
+  -o-transition: left 10s linear;
+  transition: left 10s linear;
 }
-.draggable {
-  opacity: 0.5;
-  filter: alpha(opacity=50);
+.oversized-image:hover {
+  left: -6915px;
+  -webkit-transition: left 40s linear;
+  -moz-transition: left 40s linear;
+  -o-transition: left 40s linear;
+  transition: left 40s linear;
 }
 @-ms-viewport {
   width: device-width;

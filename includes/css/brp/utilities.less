@@ -129,9 +129,11 @@
 .oversized-image{
     width: auto !important;
     max-width: none !important;
-    cursor: e-resize;
     position: relative;
-}
-&.draggable {
-    .opacity(.5);
+    left: 0;
+    .transition(left 10s linear);
+    &:hover{
+        left: -6915px;
+        .transition(left 40s linear);
+    }
 }
