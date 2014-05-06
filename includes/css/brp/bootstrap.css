@@ -2818,9 +2818,6 @@ h2.media-heading small {
 #top #video2.full-width {
   margin: 20px auto;
 }
-#top #video2.active {
-  cursor: pointer;
-}
 @media (max-width: 768px) {
   #top {
     min-height: 100%;

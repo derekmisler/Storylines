@@ -693,7 +693,7 @@ $(document).ready(function(){
 	links.click(function(e) {
 		e.preventDefault();
 		deactivate(namecards);
-		dataslide = $(this).attr('data-story');
+		var dataslide = $(this).attr('data-story');
 		goToByScroll(dataslide);
 	});
 	
@@ -722,7 +722,7 @@ $(document).ready(function(){
 		}
 	});
 	slide.waypoint(function(direction) {
-		currentCinemgraph = $(this).find("video").get(0);
+		var currentCinemgraph = $(this).find("video").get(0);
 		if (direction == 'down') {
 			currentCinemgraph.play();
 		} else {
@@ -731,7 +731,7 @@ $(document).ready(function(){
 	}, {offset: '50%'});
 
 	noslide.waypoint(function(direction) {
-		prevCinemgraph = $(this).prev().find("video").get(0);
+		var prevCinemgraph = $(this).prev().find("video").get(0);
 		if (direction == 'down') {
 			prevCinemgraph.pause();
 		} else {
