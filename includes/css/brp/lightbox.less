@@ -21,6 +21,10 @@
 }
 
 .featherlight .featherlight-content {
+    .make-xs-column(12);
+    .make-sm-column(10);
+    .make-md-column(8);
+    float: none !important;
 	position: relative;
 	.text-left;
 	vertical-align: middle;
@@ -38,6 +42,14 @@
     border-top:@media-border;
     border-bottom:@media-border;
     .box-shadow(@top-box-shadow);
+    .pull-left{
+        margin-right: @default-padding;
+        margin-top: floor(@line-height-computed / 4);
+    }
+    .pull-right{
+        margin-left: @default-padding;
+        margin-top: floor(@line-height-computed / 4);
+    }
 }
 .featherlight .featherlight-inner {
 	display: block;

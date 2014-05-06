@@ -4,7 +4,7 @@
     .box-shadow(@default-box-shadow);
     > .titlecard{
         .opacity(0);
-        .transition(opacity @slow-transition-timing);
+        //.transition(opacity @slow-transition-timing);
         position: absolute;
         top: 0;
         left: 0;
@@ -12,9 +12,21 @@
         z-index: 2;
         .text-center;
         #gradient > .vertical(@start-color: fadeout(@body-bg, 0%); @end-color: fadeout(@body-bg, 100%););
-        padding: (@default-padding * 2);
+        padding: 0 0 (@default-padding * 4) 0;
+        margin: 0;
+        &:extend(.clearfix all);
         &.active{
             .opacity(1);
+        }
+        h1{
+            //width: 90%;
+            margin: 0 auto @default-padding;
+            padding: @default-padding 0;
+            //border-top:@button-border;
+            //border-bottom:@button-border;
+            //.box-shadow(0 20px 0 -18px @default-box-shadow-color 0 -20px 0 -18px @default-box-shadow-color);
+            //#gradient > .horizontal-three-colors(@start-color: fadeout(@body-bg, 100%); @mid-color: fadeout(@body-bg, 50%); @color-stop: 50%; @end-color: fadeout(@body-bg, 100%));
+            &:extend(.clearfix all);
         }
         .drawerbutton {
             width: floor(@font-size-large * 2);

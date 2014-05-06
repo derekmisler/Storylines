@@ -598,22 +598,24 @@ $(document).ready(function(){
 	//video stuff
 	//video stuff
 	//video stuff
-	topVideo.one('play', function () {
-		setTimeout(function(){
-			activate(topSlide);
-		}, 500);
-	});
 
+	setTimeout(function(){
+		topSlide.animate({"opacity":1}, 1500).addClass('active');
+	}, 1500);
 	topVideo2.bind('play', function () {
 		deactivate(topVideoControls);
+		topSlide.animate({"opacity":.25}, 500);
 	});
 	topVideo2.bind('pause', function () {
 		activate(topVideoControls);
+		topSlide.animate({"opacity":1}, 500);
 	});
 	topVideo2.bind('ended', function () {
 		activate(topVideoControls);
 		deactivate(topVideo2);
 		topVideo2.animate({"opacity":0}, 1000);
+		topVideo.animate({"opacity":1}, 1000);
+		topSlide.animate({"opacity":1}, 500);
 		topVideo.get(0).play();
 	});
 	topVideo2.click(function(e) {
@@ -628,6 +630,8 @@ $(document).ready(function(){
 		if (topVideoControls.hasClass('active')) {
 			deactivate(topVideoControls);
 			topVideo.get(0).pause();
+			topVideo.animate({"opacity":.5}, 1000);
+			topSlide.animate({"opacity":.25}, 500);
 			topVideo2.animate({"opacity":1}, 1000);
 			activate(topVideo2);
 			topVideo2.get(0).play();

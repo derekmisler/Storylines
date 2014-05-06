@@ -11,14 +11,15 @@
     .text-center;
     display: block;
     margin: floor(@line-height-computed / 4) 0;
+    padding: floor(@default-padding / 2) 0 @default-padding;
     a{
         &:hover img,
         &:focus img{
             border-color: @link-color;
         }
         > img {
-            width: @default-padding * 5;
-            height: @default-padding * 5;
+            width: @navbar-height;
+            height: @navbar-height;
         }
     }
     .media-heading {

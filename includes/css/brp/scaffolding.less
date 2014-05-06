@@ -16,7 +16,7 @@
 
 html {
   font-size: 62.5%;
-  -webkit-tap-highlight-color: @avl-blue;
+  -webkit-tap-highlight-color: fadeout(@link-color, 50%);
 }
 ::selection{
     background-color: fadeout(@avl-blue, 50%);
@@ -68,18 +68,14 @@ section, footer, hr {
 // Links
 
 a {
-  color: @link-color;
-  text-decoration: none;
-
-  &:hover,
-  &:focus {
-    color: @link-hover-color;
+    color: @link-color;
     text-decoration: none;
-  }
-
-  &:focus {
-    .tab-focus();
-  }
+    &:hover,
+    &:focus {
+        color: @link-hover-color;
+        text-decoration: none;
+        outline: none;
+    }
 }
 
 

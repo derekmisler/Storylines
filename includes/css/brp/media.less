@@ -33,9 +33,15 @@
     }
 }
 // Reset margins on headings for tighter default spacing
-.media-heading {
+h4.media-heading {
     margin: @default-padding 0 floor(@default-padding / 2) 0;
     .subhead;
+    color: @avl-gray;
+    -webkit-text-stroke: 0px;
+}
+h2.media-heading {
+    .h2;
+    margin: @default-padding 0 floor(@default-padding / 2) 0;
     color: @avl-gray;
     -webkit-text-stroke: 0px;
 }
