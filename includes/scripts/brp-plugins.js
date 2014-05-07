@@ -562,6 +562,14 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
 
 $(document).ready(function(){
 
+	$.stellar({
+		responsive: true,
+		hideDistantElements: false,
+		positionProperty: 'position',
+		horizontalScrolling: false,
+		parallaxBackgrounds: false,
+	});
+	
 	//Cache some variables
 	var mywindow = $(window);
 	var windowHeight = parseInt(mywindow.height());
@@ -580,6 +588,7 @@ $(document).ready(function(){
 	var topVideo2 = $('#video2');
 	var topVideoControls = $('#top .drawerbutton');
 	var topStory = $('#top .noslide');
+	var topSlideScroll = $('#top .scroll');
 	var caption = $('.caption').find('aside');
 	var cinemagraphs = $('article');
 	var youtube = $('.youtube');
@@ -656,6 +665,7 @@ $(document).ready(function(){
 	});
 	topVideo2.bind('ended', function () {
 		activate(topVideoControls);
+		//activate(topSlideScroll);
 		deactivate(topVideo2);
 		topVideo2.animate({"opacity":0}, 1000);
 		topVideo.animate({"opacity":1}, 1000);
@@ -774,15 +784,6 @@ $(document).ready(function(){
 	
 
 
-	if (notMobileScreen) {
-		$.stellar({
-			responsive: true,
-			hideDistantElements: false,
-			positionProperty: 'position',
-			horizontalScrolling: false,
-			parallaxBackgrounds: false,
-		});
-	}
 });
 //Heavy stuff down here
 //Heavy stuff down here

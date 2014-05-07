@@ -157,6 +157,11 @@ dd:last-of-type {
 .dl-horizontal {
     dt {
         font-size: @font-size-base * 2;
+       > a > img {
+           max-width: none !important;
+           width: @navbar-height;
+           height: @navbar-height;
+        }
     }
     dd {
         &:extend(.clearfix all); // Clear the floated `dt` if an empty `dd` is present
