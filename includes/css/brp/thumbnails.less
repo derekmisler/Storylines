@@ -11,7 +11,7 @@
     .text-center;
     display: block;
     margin: floor(@line-height-computed / 4) -(@default-padding * 2) @default-padding @default-padding;
-    padding: floor(@default-padding / 2) 0 floor(@line-height-computed / 2);
+    padding: 0 0 floor(@line-height-computed / 2);
     clear: right;
     a{
         &:hover img,
@@ -24,7 +24,7 @@
         }
     }
     .media-heading {
-        color: @avl-blue;
+        color: @avl-red;
     }
 }
 @media (max-width: @screen-tablet) {
@@ -39,13 +39,9 @@
             &:focus img{
                 border-color: @link-color;
             }
-            > img {
-                .img-responsive();
-                width: @default-padding * 5;
-            }
         }
         .media-heading {
-            color: @avl-blue;
+            
         }
     }
 }

@@ -17,6 +17,7 @@
       padding: @nav-link-padding floor(@nav-link-padding * 2);
       .transition(all @transition-timing);
       .h6;
+      color: @avl-red;
       margin: 0;
       margin-right: 2px;
       line-height: @line-height-base;
@@ -184,7 +185,7 @@
 .tab-content {
     border: 1px solid @default-border-color;
     border-top: 0px;
-    height: 615px;
+    height: 440px;
     .box-shadow(@default-box-shadow);
     > .tab-pane {
         display: none;
@@ -192,6 +193,11 @@
     }
     > .active {
         display: block;
+        height: 100%;
+    }
+    audio{
+        width: 100%;
+        margin: @default-padding 0;
     }
 }
 @media (max-width: @screen-tablet) {

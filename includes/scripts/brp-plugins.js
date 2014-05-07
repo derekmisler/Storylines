@@ -582,10 +582,13 @@ $(document).ready(function(){
 	var topStory = $('#top .noslide');
 	var caption = $('.caption').find('aside');
 	var cinemagraphs = $('article');
+	var youtube = $('.youtube');
 	var slide = $('.slide');
 	var noslide = $('.noslide');
 	var lastScroll = 0;
 	var lazyLoad = $("img.lazy");
+	var brpOverlayWrapper = $('.brp-overlay');
+	var brpOverlay = brpOverlayWrapper.find('img').last();
 	var notMobileScreen = Modernizr.mq('only screen and (min-width: 768px)');
 
 	//Cache some functions
@@ -617,7 +620,7 @@ $(document).ready(function(){
 		leftNavToggle.removeClass('icon-map2').addClass('icon-close');
 	}
 	//Go!
-	$('.youtube').fitVids();
+	youtube.fitVids();
 	lazyLoad.lazyload({
 		placeholder : "http://www.exploreasheville.com/includes/images/assets/1pixel.gif",
 		effect : "fadeIn",
@@ -678,8 +681,6 @@ $(document).ready(function(){
 			topVideo2.get(0).play();
 		}
 	});
-	
-
 	//Setup navs
 	//Setup navs
 	//Setup navs
@@ -702,6 +703,15 @@ $(document).ready(function(){
 		$(this).parent().not('.currentslide').find(namecards).addClass('active');
 	}, function() {
 		$(this).parent().not('.currentslide').find(namecards).removeClass('active');
+	});
+
+	//map overlay hover effect
+	brpOverlayWrapper.click(function() {
+		if (brpOverlay.hasClass('active')) {
+			deactivate(brpOverlay);
+		} else {
+			activate(brpOverlay);
+		}
 	});
 
 	//hide and show the navigation by clicking the arrow
@@ -763,6 +773,7 @@ $(document).ready(function(){
 	});
 	
 
+
 	if (notMobileScreen) {
 		$.stellar({
 			responsive: true,
@@ -780,6 +791,7 @@ $(document).ready(function(){
 //Heavy stuff down here
 //Heavy stuff down here
 $(window).load(function(){
+
 	var myOptions = {
 		scrollwheel: false,
 		zoom: 11,
