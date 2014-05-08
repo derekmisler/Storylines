@@ -1,24 +1,10 @@
 // Media objects
-// Source: http://stubbornella.org/content/?p=497
-// --------------------------------------------------
 
-
-// Common styles
-// -------------------------
-
-// Clear the floats
-.media,
-.media-body {
+.media {
     overflow: hidden;
     zoom: 1;
-  &:extend(.clearfix all);
-}
-
-// Proper spacing between instances of .media
-.media {
-    //border-top:@media-border;
-    border-bottom:@media-border;
-    margin: 0;
+    &:extend(.clearfix all);    border-bottom:@media-border;
+    margin: @default-padding -(@default-padding * 2);
     padding: 0 (@default-padding * 2) (@default-padding * 2);
     .box-shadow(@default-box-shadow);
 }
@@ -27,7 +13,6 @@
         margin: 0 -(@default-padding * 2) @default-padding -(@default-padding * 2);
     }
 }
-// Reset margins on headings for tighter default spacing
 h4.media-heading {
     margin: 0 0 floor(@default-padding / 2) 0;
     .subhead;
@@ -40,14 +25,12 @@ h2.media-heading {
     color: @avl-gray;
     -webkit-text-stroke: 0px;
 }
-// For images and videos, set to block
 .media-object {
     .img-thumbnail();
     display: block;
     margin-left:auto;
     margin-right:auto;
     &.circle{
-        //.square(100%);
         border-radius: 50%;
     }
     &.full-width {

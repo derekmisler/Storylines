@@ -16,13 +16,13 @@
         display: table-cell;
         width: 1%;
         > a {
+            .h6;
             text-align: center;
             position: relative;
             display: block;
             padding: floor(@default-padding / 4) 0;
             margin: 0 floor(@default-padding / 5) floor(@default-padding / 4) 0;
             .transition(all @transition-timing);
-            .h6;
             line-height: @line-height-base;
             border: 1px solid transparent;
             &:hover,
@@ -43,6 +43,9 @@
                     .box-shadow(none);
                 }
             }
+        }
+        &:last-of-type a{
+            margin-right: 0;
         }
     }
 }

@@ -8,8 +8,9 @@
         padding-bottom:0;
         min-height: 100%;
         overflow:hidden;
+        margin-bottom: -@default-padding;
         > .cinemagraph{
-            width: 100%;
+            min-width: 100%;
             position: relative;
         }
         > .header {
@@ -69,31 +70,14 @@
         border-left: 0;
         border-right: 0;
         .box-shadow(@top-box-shadow);
-        .assets{
-            .make-xs-column(12);
-            .make-sm-column(12);
-            .make-md-column(5);
-            padding:(@default-padding * 4) @default-padding;
-        	.pull-left;
-        	p{
-        	    .media-caption;
-        	}
-        }
         .story{
             .make-xs-column(12);
-            .make-sm-column(12);
-            .make-md-column(7);
+            .make-sm-column(8);
+            .make-sm-column-offset(2);
+            .make-md-column(6);
+            .make-md-column-offset(3);
+            float: none !important;
         	padding:(@default-padding * 4) @default-padding;
-        	.pull-right;
-        	&.centered{
-                .make-xs-column(12);
-                .make-sm-column(8);
-                .make-sm-column-offset(2);
-                .make-md-column(6);
-                .make-md-column-offset(3);
-                float: none !important;
-            	padding:(@default-padding * 4) @default-padding;
-        	}
         }
     }
 }
@@ -137,10 +121,7 @@
             }
         }
         .noslide{
-            padding:@default-padding;
-            .assets{
-            	padding: @default-padding 0 0 0;
-            }
+            padding: @default-padding;
             .story{
             	padding: 0;
             }

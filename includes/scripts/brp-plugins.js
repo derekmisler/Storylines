@@ -562,13 +562,16 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
 
 $(document).ready(function(){
 
-	$.stellar({
-		responsive: true,
-		hideDistantElements: false,
-		positionProperty: 'position',
-		horizontalScrolling: false,
-		parallaxBackgrounds: false,
-	});
+	var notMobileScreen = Modernizr.mq('only screen and (min-width: 768px)');
+	if(notMobileScreen){
+		$.stellar({
+			responsive: true,
+			hideDistantElements: false,
+			positionProperty: 'position',
+			horizontalScrolling: false,
+			parallaxBackgrounds: false,
+		});
+	}
 	
 	//Cache some variables
 	var mywindow = $(window);
@@ -600,7 +603,6 @@ $(document).ready(function(){
 	var brpOverlay = brpOverlayWrapper.find('img').last();
 	var linncoveFlyover = $("#video-flyover .brp-overlay");
 	var linncoveFlyoverButton = $("#video-flyover .brp-overlay").find(".drawerbutton");
-	var notMobileScreen = Modernizr.mq('only screen and (min-width: 768px)');
 
 	//Cache some functions
 	function activate(element) {

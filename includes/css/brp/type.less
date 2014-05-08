@@ -126,49 +126,44 @@ ol {
 }
 // Description Lists
 dl {
-  margin-top: 0; // Remove browser default
-  margin-bottom: @line-height-computed;
-}
-dt,
-dd {
-  line-height: @line-height-base;
-  padding-top: 0;
-}
-dt {
-  font-weight: bold;
-  .text-center;
-  padding: 0;
-  font-size: @font-size-base * 2;
-  color: @avl-red;
-}
-dd {
-    .media-caption;
-    margin-left: 0; // Undo browser default
-    border-bottom: @default-border;
-    h6{
-        margin:0;
+    margin: 0;
+    dt,
+    dd {
+        line-height: @line-height-base;
+        padding: 0;
     }
-}
-dd:last-of-type {
-  border-bottom: 0;
-  padding-bottom: 0;
-}
-// Horizontal description lists on desktops
-.dl-horizontal {
     dt {
+        font-weight: bold;
+        .text-center;
+        padding: 0;
         font-size: @font-size-base * 2;
-       > a > img {
-           max-width: none !important;
-           width: @navbar-height;
-           height: @navbar-height;
+        color: @avl-red;
+        > a > img {
+            max-width: none !important;
+            width: @navbar-height;
+            height: @navbar-height;
         }
     }
     dd {
-        &:extend(.clearfix all); // Clear the floated `dt` if an empty `dd` is present
+        .media-caption;
+        margin-left: 0;
+        font-size: @font-size-base;
+        border-bottom: @default-border;
+        &:extend(.clearfix all);
+        h6{
+            margin: 0;
+        }
+        p{
+            margin: 0;
+        }
+    }
+    dd:last-of-type {
+        border-bottom: 0;
+        padding-bottom: 0;
     }
 }
 @media (min-width: @screen-tablet) {
-    .dl-horizontal {
+    dl {
         dt {
             float: left;
             font-size: @font-size-base * 2;
@@ -178,15 +173,19 @@ dd:last-of-type {
             margin: 0;
         }
         dd {
-            padding-top: (@line-height-computed / 2);
+            padding: (@line-height-computed / 2) 0;
             margin-left: (@component-offset-horizontal + 12);
-            &:extend(.clearfix all); // Clear the floated `dt` if an empty `dd` is present
+            &:extend(.clearfix all);
         }
+    }
+    .lightbox dl{
+        margin: 0 floor(@default-padding * 2);
     }
 }
 @media (min-width: @screen-lg-desktop) {
-    .dl-horizontal {
+    dl {
         dt {
+            font-size: @font-size-base * 3;
             width: (@component-offset-horizontal + 0);
         }
         dd {

@@ -6,11 +6,11 @@
     	margin: 0 0 @default-padding 0;
 		> li {
     		width: @blockgridwidth;
-    		padding: 0 0 @default-padding;
+    		padding: 0;
     		&.last{
     		    clear: both;
     		    width: @blockgridwidth !important;
-    		    padding: 0 (@default-padding * 2) 0 0;
+    		    padding: 0;
     		}
     	}
     }
@@ -21,6 +21,10 @@
     		height: auto;
     		float: left;
     		margin: 0;
+    		padding: 0 0 @default-padding;
+    		&.last{
+    		    padding: 0 (@default-padding * 2) 0 0;
+    		}
     	}
     	&.one-up {
     		> li {
