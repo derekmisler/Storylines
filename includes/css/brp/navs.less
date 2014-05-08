@@ -14,7 +14,10 @@
     &:hover{
         cursor: pointer;
     }
- }
+    &.attention{
+        background-color: fadeout(@avl-red, 15%);
+    }
+}
 .navigation.left{
     left: -45%;
     top: 0;
@@ -44,6 +47,10 @@
         left: 0;
         bottom: 0;
         width: floor(@font-size-base * 2);
+        > li{
+            margin: 0;
+            padding: 0;
+        }
         .icon{
             padding:0;
             .text-center;
@@ -114,12 +121,12 @@
 .navigation.bottom {
     left: 0;
     right: 0;
-    bottom: -(@navbar-height + (@default-padding * 2));
+    bottom: -(@navbar-height + @default-padding);
     height: @navbar-height;
     background: url(http://www.exploreasheville.com/includes/images/storylines/blue-ridge-parkway/mountain-range.png) left 220% repeat-x;
     .text-center;
     &.active {
-        bottom: -(@default-padding * 2);
+        bottom: 0;
     }
     .drawerbuttonwrapper {
         position:absolute;

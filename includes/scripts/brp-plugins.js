@@ -322,7 +322,7 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
 			background:   null,                   /* Custom DOM for the background, wrapper and the closebutton */
 			openTrigger:  'click',                /* Event that triggers the lightbox */
 			closeTrigger: 'click',                /* Event that triggers the closing of the lightbox */
-			openSpeed:    250,                    /* Duration of opening animation */
+			openSpeed:    500,                    /* Duration of opening animation */
 			closeSpeed:   250,                    /* Duration of closing animation */
 			closeOnClick: 'background',           /* Close lightbox on click ('background', 'anywhere' or false) */
 			closeOnEsc:   true,                   /* Close lightbox when pressing esc */
@@ -596,8 +596,10 @@ $(document).ready(function(){
 	var noslide = $('.noslide');
 	var lastScroll = 0;
 	var lazyLoad = $("img.lazy");
-	var brpOverlayWrapper = $('.brp-overlay');
+	var brpOverlayWrapper = $('#design-plans .brp-overlay');
 	var brpOverlay = brpOverlayWrapper.find('img').last();
+	var linncoveFlyover = $("#video-flyover .brp-overlay");
+	var linncoveFlyoverButton = $("#video-flyover .brp-overlay").find(".drawerbutton");
 	var notMobileScreen = Modernizr.mq('only screen and (min-width: 768px)');
 
 	//Cache some functions
@@ -657,7 +659,7 @@ $(document).ready(function(){
 	}, 1500);
 	topVideo2.bind('play', function () {
 		deactivate(topVideoControls);
-		topSlide.animate({"opacity":.1}, 500);
+		topSlide.animate({"opacity":0}, 500);
 	});
 	topVideo2.bind('pause', function () {
 		activate(topVideoControls);
@@ -685,7 +687,7 @@ $(document).ready(function(){
 			deactivate(topVideoControls);
 			topVideo.get(0).pause();
 			topVideo.animate({"opacity":.5}, 1000);
-			topSlide.animate({"opacity":.1}, 500);
+			topSlide.animate({"opacity":0}, 500);
 			topVideo2.animate({"opacity":1}, 1000);
 			activate(topVideo2);
 			topVideo2.get(0).play();
@@ -721,6 +723,17 @@ $(document).ready(function(){
 			deactivate(brpOverlay);
 		} else {
 			activate(brpOverlay);
+		}
+	});
+
+	//map overlay hover effect
+	linncoveFlyover.click(function() {
+		if (linncoveFlyoverButton.hasClass('active')) {
+			deactivate(linncoveFlyoverButton);
+			linncoveFlyover.find("video").get(0).play();
+		} else {
+			activate(linncoveFlyoverButton);
+			linncoveFlyover.find("video").get(0).pause();
 		}
 	});
 

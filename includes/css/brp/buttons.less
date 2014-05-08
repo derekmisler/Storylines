@@ -21,27 +21,24 @@
     border: @button-border;
     .transition(all @transition-timing);
     display: inline-block;
-  &:focus {
-    .tab-focus();
-  }
-  &:hover,
-  &:focus,
-  &:active {
-    color: @white;
-    background-color: @avl-red;
-    border-color: @avl-red;
-  }
-
-
-  &.disabled,
-  &[disabled],
-  fieldset[disabled] & {
-    cursor: not-allowed;
-    pointer-events: none; // Future-proof disabling of clicks
-    .opacity(.65);
-    .box-shadow(none);
-  }
-
+    &:focus {
+        .tab-focus();
+    }
+    &:hover,
+    &:focus,
+    &:active {
+        color: @white;
+        background-color: @avl-red;
+        border-color: @avl-red;
+    }
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        cursor: not-allowed;
+        pointer-events: none; // Future-proof disabling of clicks
+        .opacity(.65);
+        .box-shadow(none);
+    }
 }
 
 

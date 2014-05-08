@@ -51,16 +51,24 @@ h2.media-heading {
         border-radius: 50%;
     }
     &.full-width {
-        margin: @font-size-base auto;
+        width: 100%;
+        margin: 0 auto @font-size-base;
     }
 }
 .media-caption {
     color: @avl-blue;
     margin: 0;
+    font-size: @font-size-small;
 }
 .media-list {
-    padding-left: 0;
-    list-style: none;
+    .block-grid;
+    li{
+        .text-center;
+        > a > img {
+            width: @navbar-height;
+            height: @navbar-height;
+        }
+    }
 }
 // Media alignment
 // -------------------------

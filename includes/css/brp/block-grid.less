@@ -1,38 +1,131 @@
-.block-grid { display: block; overflow: hidden; padding: 0; }
-.block-grid > li { display: block; height: auto; float: left; }
-.block-grid.one-up { margin: 0; }
-.block-grid.one-up > li { width: 100%; padding: 0 0 .5em; }
-.block-grid.two-up { margin: 0; }
-.block-grid.two-up > li { width: 50%; padding: 0 .5em .5em 0; }
-.block-grid.two-up > li:nth-child(2n+1) { clear: both; }
-.block-grid.three-up { margin: 0; }
-.block-grid.three-up > li { width: 33.33333%; padding: 0 .5em .5em 0; }
-.block-grid.three-up > li:nth-child(3n+1) { clear: both; }
-.block-grid.four-up { margin: 0; }
-.block-grid.four-up > li { width: 25%; padding: 0 .5em .5em 0; }
-.block-grid.four-up > li:nth-child(4n+1) { clear: both; }
-.block-grid.five-up { margin: 0; }
-.block-grid.five-up > li { width: 20%; padding: 0 .5em .5em 0; }
-.block-grid.five-up > li:nth-child(5n+1) { clear: both; }
-.block-grid.six-up { margin: 0; }
-.block-grid.six-up > li { width: 16.66667%; padding: 0 .5em .5em 0; }
-.block-grid.six-up > li:nth-child(6n+1) { clear: both; }
-.block-grid.seven-up { margin: 0; }
-.block-grid.seven-up > li { width: 14.28571%; padding: 0 .5em .5em 0; }
-.block-grid.seven-up > li:nth-child(7n+1) { clear: both; }
-.block-grid.eight-up { margin: 0; }
-.block-grid.eight-up > li { width: 12.5%; padding: 0 .5em .5em 0; }
-.block-grid.eight-up > li:nth-child(8n+1) { clear: both; }
-.block-grid.nine-up { margin: 0; }
-.block-grid.nine-up > li { width: 11.11111%; padding: 0 .5em .5em 0; }
-.block-grid.nine-up > li:nth-child(9n+1) { clear: both; }
-.block-grid.ten-up { margin: 0; }
-.block-grid.ten-up > li { width: 10%; padding: 0 .5em .5em 0; }
-.block-grid.ten-up > li:nth-child(10n+1) { clear: both; }
-.block-grid.eleven-up { margin: 0; }
-.block-grid.eleven-up > li { width: 9.09091%; padding: 0 .5em .5em 0; }
-.block-grid.eleven-up > li:nth-child(11n+1) { clear: both; }
-.block-grid.twelve-up { margin: 0; }
-.block-grid.twelve-up > li { width: 8.33333%; padding: 0 .5em .5em 0; }
-.block-grid.twelve-up > li:nth-child(12n+1) { clear: both; }
-.block-grid { margin-bottom:1em !important; }
+@blockgridwidth: 100%;
+    .block-grid {
+    	display: block;
+    	overflow: hidden;
+    	padding: 0;
+    	margin: 0 0 @default-padding 0;
+		> li {
+    		width: @blockgridwidth;
+    		padding: 0 0 @default-padding;
+    		&.last{
+    		    clear: both;
+    		    width: @blockgridwidth !important;
+    		    padding: 0 (@default-padding * 2) 0 0;
+    		}
+    	}
+    }
+@media (min-width: @screen-xs-max) {
+    .block-grid, .media-list {
+    	> li {
+    		display: block;
+    		height: auto;
+    		float: left;
+    		margin: 0;
+    	}
+    	&.one-up {
+    		> li {
+    			width: @blockgridwidth;
+    			padding: 0 0 @default-padding;
+    		}
+    	}
+    	&.two-up {
+    		> li {
+    			width: @blockgridwidth / 2;
+    			padding: 0 @default-padding @default-padding 0;
+    			&:nth-child(2n+1) {
+    				clear: both;
+    			}
+    		}
+    	}
+    	&.three-up {
+    	    > li {
+    	        width: @blockgridwidth / 3;
+    	        padding: 0 @default-padding @default-padding 0;
+    	        &:nth-child(3n+1) {
+    	            clear: both;
+                }
+            }
+    	}
+    	&.four-up {
+    		> li {
+    			width: @blockgridwidth / 4;
+    			padding: 0 @default-padding @default-padding 0;
+    			&:nth-child(4n+1) {
+    				clear: both;
+    			}
+    		}
+    	}
+    	&.five-up {
+    		> li {
+    			width: @blockgridwidth / 5;
+    			padding: 0 @default-padding @default-padding 0;
+    			&:nth-child(5n+1) {
+    				clear: both;
+    			}
+    		}
+    	}
+    	&.six-up {
+    		> li {
+    			width: @blockgridwidth / 6;
+    			padding: 0 @default-padding @default-padding 0;
+    			&:nth-child(6n+1) {
+    				clear: both;
+    			}
+    		}
+    	}
+    	&.seven-up {
+    		> li {
+    			width: @blockgridwidth / 7;
+    			padding: 0 @default-padding @default-padding 0;
+    			&:nth-child(7n+1) {
+    				clear: both;
+    			}
+    		}
+    	}
+    	&.eight-up {
+    		> li {
+    			width: @blockgridwidth / 8;
+    			padding: 0 @default-padding @default-padding 0;
+    			&:nth-child(8n+1) {
+    				clear: both;
+    			}
+    		}
+    	}
+    	&.nine-up {
+    		> li {
+    			width: @blockgridwidth / 9;
+    			padding: 0 @default-padding @default-padding 0;
+    			&:nth-child(9n+1) {
+    				clear: both;
+    			}
+    		}
+    	}
+    	&.ten-up {
+    		> li {
+    			width: @blockgridwidth / 10;
+    			padding: 0 @default-padding @default-padding 0;
+    			&:nth-child(10n+1) {
+    				clear: both;
+    			}
+    		}
+    	}
+    	&.eleven-up {
+    		> li {
+    			width: @blockgridwidth / 11;
+    			padding: 0 @default-padding @default-padding 0;
+    			&:nth-child(11n+1) {
+    				clear: both;
+    			}
+    		}
+    	}
+    	&.twelve-up {
+    		> li {
+    			width: @blockgridwidth / 12;
+    			padding: 0 @default-padding @default-padding 0;
+    			&:nth-child(12n+1) {
+    				clear: both;
+    			}
+    		}
+    	}
+    }
+}
