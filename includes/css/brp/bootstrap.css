@@ -2466,6 +2466,7 @@ h2.media-heading small {
 }
 .slide .caption > .cinemagraph {
   min-width: 100%;
+  min-height: 100%;
   position: relative;
 }
 .slide .caption > .header {
@@ -3957,17 +3958,6 @@ blockquote:after,
   max-width: none !important;
   position: relative;
   left: 0;
-  -webkit-transition: left 10s ease-out;
-  -moz-transition: left 10s ease-out;
-  -o-transition: left 10s ease-out;
-  transition: left 10s ease-out;
-}
-.oversized-image:hover {
-  left: -6915px;
-  -webkit-transition: left 40s ease-out;
-  -moz-transition: left 40s ease-out;
-  -o-transition: left 40s ease-out;
-  transition: left 40s ease-out;
 }
 @-ms-viewport {
   width: device-width;

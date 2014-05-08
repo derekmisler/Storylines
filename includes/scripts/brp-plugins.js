@@ -592,7 +592,7 @@ $(document).ready(function(){
 	var topVideoControls = $('#top .drawerbutton');
 	var topStory = $('#top .noslide');
 	var topSlideScroll = $('#top .scroll');
-	var caption = $('.caption').find('aside');
+	var caption = $('.header');
 	var cinemagraphs = $('article');
 	var youtube = $('.youtube');
 	var slide = $('.slide');
@@ -757,7 +757,7 @@ $(document).ready(function(){
 		}
 	});
 	slide.waypoint(function(direction) {
-		var currentCinemgraph = $(this).find("video").get(0);
+		var currentCinemgraph = $(this).find(".cinemagraph").get(0);
 		if (direction == 'down') {
 			currentCinemgraph.play();
 		} else {
@@ -766,7 +766,7 @@ $(document).ready(function(){
 	}, {offset: '50%'});
 
 	noslide.waypoint(function(direction) {
-		var prevCinemgraph = $(this).prev().find("video").get(0);
+		var prevCinemgraph = $(this).prev().find(".cinemagraph").get(0);
 		if (direction == 'down') {
 			prevCinemgraph.pause();
 		} else {
