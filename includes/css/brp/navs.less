@@ -19,8 +19,9 @@
     }
 }
 .navigation.left{
-    left: -300px;
-    top: 0;
+    .block-grid;
+    left: -300px + floor(@font-size-base * 2);
+    top: 25%;
     width: 300px;
     background-color: fadeout(@body-bg, 10%);
     padding: (@default-padding / 2) (@default-padding * 2);
@@ -31,40 +32,11 @@
         left: 0;
     }
     .logo{
-        .make-row();
         padding:0;
-        .text-center();
-        display:block;
-    }
-    .drawerbuttonwrapper {
-        .block-grid;
-        position: absolute;
-        display: block;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        width: floor(@font-size-base * 2);
-        margin-right: -(floor(@font-size-base * 2));
-        > li{
-            margin: 0;
-            padding: 0;
-            .icon{
-                padding:0;
-                .text-center;
-                .btn;
-                .opacity(0);
-            }
-        }
-        &:hover,
-        &.active {
-            .icon{
-                .opacity(1);
-            }
-        }
     }
 }
 .navigation.social{
-    position: fixed;
+    position: absolute;
     display: block;
     height: 100%;
     width: floor(@font-size-base * 2);
@@ -79,7 +51,7 @@
             padding:0;
             .text-center;
             .btn;
-            .opacity(.25);
+            .opacity(1);
         }
         .icon-facebook{
             &:hover,
