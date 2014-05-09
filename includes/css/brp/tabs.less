@@ -7,7 +7,7 @@
     margin: 0 0 -1px 0;
     width: 100%;
     padding-top: @default-padding;
-    border-bottom: 0;
+    max-width: 800px;
     //border-bottom: 1px solid @nav-tabs-border-color;
     &:extend(.clearfix all);
     > li {
@@ -52,8 +52,10 @@
 
 .tab-content {
     border: @default-border;
-    height: 440px;
+    height: 530px;
+    max-width: 800px;
     .box-shadow(@default-box-shadow);
+    &:extend(.clearfix all);
     > .tab-pane {
         display: none;
         padding: @default-padding;

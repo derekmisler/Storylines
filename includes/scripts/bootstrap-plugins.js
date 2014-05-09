@@ -254,10 +254,10 @@ $(window).load(function(){
 	}, { offset: '90%' });
 
 	// back-to-top
-//	$(backtotop).find('a').bind( "click", function () {
-//		$(window).transition({scrollTop: 0}, 500);
-//		return false;
-//	});
+	$(backtotop).find('a').bind( "click", function () {
+		$(window).animate({scrollTop: 0}, 500);
+		return false;
+	});
 
 	// map
 	hotspotcontainer.hover(function() {

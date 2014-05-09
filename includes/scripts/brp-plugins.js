@@ -562,7 +562,7 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
 
 $(document).ready(function(){
 
-	var notMobileScreen = Modernizr.mq('only screen and (min-width: 768px)');
+	/*var notMobileScreen = Modernizr.mq('only screen and (min-width: 768px)');
 	if(notMobileScreen){
 		$.stellar({
 			responsive: true,
@@ -571,7 +571,7 @@ $(document).ready(function(){
 			horizontalScrolling: false,
 			parallaxBackgrounds: false,
 		});
-	}
+	}*/
 	
 	//Cache some variables
 	var mywindow = $(window);
@@ -580,10 +580,10 @@ $(document).ready(function(){
 	var htmlbody = $('html,body');
 	var bottomNavigation = $('.bottom.navigation');
 	var leftNavigation = $('.left.navigation');
-	var leftNavToggle = $('.left .drawerbutton');
+	var leftNavToggle = $('.left .drawerbuttonwrapper');
 	var bottomNavToggle = $('.bottom .drawerbutton');
 	var bothNavigations = $('.navigation');
-	var links = bottomNavigation.find('li');
+	var links = $('.navigation').not('.social').find('li');
 	var mapmarker = $('.map-marker');
 	var namecards = $('.namecard');
 	var topSlide = $('.titlecard');
@@ -616,21 +616,17 @@ $(document).ready(function(){
 	}
 	function closeLeftNav() {
 		deactivate(leftNavigation);
-		leftNavToggle.removeClass('icon-close').addClass('icon-map2');
 	}
 	function closeBottomNav() {
 		deactivate(bottomNavigation);
 		bottomNavToggle.removeClass('icon-close').addClass('icon-arrow-down');
 	}
 	function openBottomNav() {
-		closeLeftNav();
 		activate(bottomNavigation);
 		bottomNavToggle.removeClass('icon-arrow-down').addClass('icon-close');
 	}
 	function openLeftNav() {
-		closeBottomNav();
 		activate(leftNavigation);
-		leftNavToggle.removeClass('icon-map2').addClass('icon-close');
 	}
 	//Go!
 	youtube.fitVids();
@@ -756,6 +752,13 @@ $(document).ready(function(){
 			openLeftNav();
 		}
 	});
+	leftNavigation.hover(function() {
+		openLeftNav();
+		deactivate(leftNavToggle);
+	}, function() {
+		closeLeftNav();
+		activate(leftNavToggle);
+	});
 	slide.waypoint(function(direction) {
 		var currentCinemgraph = $(this).find(".cinemagraph").get(0);
 		if (direction == 'down') {
@@ -799,67 +802,4 @@ $(document).ready(function(){
 	
 
 
-});
-//Heavy stuff down here
-//Heavy stuff down here
-//Heavy stuff down here
-//Heavy stuff down here
-//Heavy stuff down here
-//Heavy stuff down here
-$(window).load(function(){
-
-	var myOptions = {
-		scrollwheel: false,
-		zoom: 11,
-		center: new google.maps.LatLng(35.5800, -82.5558),
-		mapTypeId: google.maps.MapTypeId.ROADMAP,
-		disableDefaultUI: false,
-		styles: [{
-				"featureType": "water",
-				"elementType": "geometry",
-				"stylers": [{"color": "#eae7db"},{"lightness": 10}]
-			}, {
-				"featureType": "landscape",
-				"elementType": "geometry",
-				"stylers": [{"color": "#eae7db"}, {"lightness": 20}]
-			}, {
-				"featureType": "road.highway",
-				"elementType": "geometry.fill",
-				"stylers": [{"color": "#aeaea6"}, {"lightness": 20}]
-			}, {
-				"featureType": "road.arterial",
-				"elementType": "geometry",
-				"stylers": [{"color": "#aeaea6"}, {"lightness": 30}]
-			}, {
-				"featureType": "road.local",
-				"elementType": "geometry",
-				"stylers": [{"color": "#aeaea6"}, {"lightness": 50}]
-			}, {
-				"featureType": "poi",
-				"elementType": "geometry",
-				"stylers": [{"color": "#aeaea6"}, {"lightness": 50}]
-			}, {
-				"elementType": "labels.text",
-				"stylers": [{"color": "#165788"}, {"lightness": 0}]
-			}, {
-				"elementType": "labels.text.stroke",
-				"stylers": [{"visibility": "off"}]
-			}, {
-				"elementType": "labels.icon",
-				"stylers": [{"visibility": "off"}]
-			}, {
-				"featureType": "transit",
-				"elementType": "geometry",
-				"stylers": [{"visibility": "off"}]
-			}, {
-				"featureType": "administrative",
-				"elementType": "geometry.fill",
-				"stylers": [{"visibility": "off"}]
-			}, {
-				"featureType": "administrative",
-				"elementType": "geometry.stroke",
-				"stylers": [{"visibility": "off"}]
-		}]
-	};
-	var map = new google.maps.Map(document.getElementById('brp_map_canvas'), myOptions);
 });

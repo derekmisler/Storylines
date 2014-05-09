@@ -19,13 +19,14 @@
     }
 }
 .navigation.left{
-    left: -45%;
+    left: -300px;
     top: 0;
-    width: 45%;
-    height: 100%;
+    width: 300px;
     background-color: fadeout(@body-bg, 10%);
-    .box-shadow(2px 0 0 0 @default-box-shadow-color);
     padding: (@default-padding / 2) (@default-padding * 2);
+    .transition(all @slow-transition-timing);
+    .box-shadow(@default-box-shadow);
+    .text-center;
     &.active{
         left: 0;
     }
@@ -35,88 +36,112 @@
         .text-center();
         display:block;
     }
-    #brp_map_canvas{
-        .make-row();
-        .media-object;
-        margin-top: (@default-padding / 2);
-    }
     .drawerbuttonwrapper {
-        position: fixed;
+        .block-grid;
+        position: absolute;
         display: block;
         top: 0;
-        left: 0;
         bottom: 0;
+        right: 0;
         width: floor(@font-size-base * 2);
+        margin-right: -(floor(@font-size-base * 2));
         > li{
             margin: 0;
             padding: 0;
+            .icon{
+                padding:0;
+                .text-center;
+                .btn;
+                .opacity(0);
+            }
         }
+        &:hover,
+        &.active {
+            .icon{
+                .opacity(1);
+            }
+        }
+    }
+}
+.navigation.social{
+    position: fixed;
+    display: block;
+    height: 100%;
+    width: floor(@font-size-base * 2);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    .block-grid;
+    > li{
+        margin: 0;
+        padding: 0;
         .icon{
             padding:0;
             .text-center;
             .btn;
             .opacity(.25);
         }
-        &:hover{
-            .icon{
-                .opacity(1);
+        .icon-facebook{
+            &:hover,
+            &:focus,
+            &:active,
+            &.active {
+                background-color: @facebook;
+                border-color: @facebook;
             }
         }
-        .icon-facebook{
-          &:hover,
-          &:focus,
-          &:active,
-          &.active {
-            background-color: @facebook;
-            border-color: @facebook;
-          }
-        }
         .icon-twitter{
-          &:hover,
-          &:focus,
-          &:active,
-          &.active {
-            background-color: @twitter;
-            border-color: @twitter;
-          }
+            &:hover,
+            &:focus,
+            &:active,
+            &.active {
+                background-color: @twitter;
+                border-color: @twitter;
+            }
         }
         .icon-googleplus{
-          &:hover,
-          &:focus,
-          &:active,
-          &.active {
-            background-color: @googleplus;
-            border-color: @googleplus;
-          }
+            &:hover,
+            &:focus,
+            &:active,
+            &.active {
+                background-color: @googleplus;
+                border-color: @googleplus;
+            }
         }
         .icon-pinterest{
-          &:hover,
-          &:focus,
-          &:active,
-          &.active {
-            background-color: @pinterest;
-            border-color: @pinterest;
-          }
+            &:hover,
+            &:focus,
+            &:active,
+            &.active {
+                background-color: @pinterest;
+                border-color: @pinterest;
+            }
         }
         .icon-instagram{
-          &:hover,
-          &:focus,
-          &:active,
-          &.active {
-            background-color: @instagram;
-            border-color: @instagram;
-          }
+            &:hover,
+            &:focus,
+            &:active,
+            &.active {
+                background-color: @instagram;
+                border-color: @instagram;
+            }
         }
         .icon-youtube{
-          &:hover,
-          &:focus,
-          &:active,
-          &.active {
-            background-color: @youtube;
-            border-color: @youtube;
-          }
+            &:hover,
+            &:focus,
+            &:active,
+            &.active {
+                background-color: @youtube;
+                border-color: @youtube;
+            }
         }
-  }
+    }
+    &:hover,
+    &.active {
+        .icon{
+            .opacity(1);
+        }
+    }
 }
 .navigation.bottom {
     left: 0;

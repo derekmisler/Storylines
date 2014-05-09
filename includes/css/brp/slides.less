@@ -9,11 +9,6 @@
         min-height: 100%;
         overflow:hidden;
         margin-bottom: -@default-padding;
-        > .cinemagraph{
-            min-width: 100%;
-            min-height: 100%;
-            position: relative;
-        }
         > .header {
             position:absolute;
             bottom:0;
@@ -21,7 +16,8 @@
             right:0;
             .text-center;
         	padding: (@default-padding * 4) 0 (@default-padding * 2);
-        	#gradient > .vertical(@start-color: fadeout(@body-bg, 100%); @end-color: fadeout(@body-bg, 20%););
+        	#gradient > .vertical(@start-color: fadeout(@body-bg, 100%); @end-color: fadeout(@body-bg, 15%););
+        	z-index: 1;
         	> h1 {
         	   margin:0;
         	}
@@ -62,6 +58,14 @@
                 	background-color: @gray-light;
                 }
         	}
+        }
+        > .cinemagraph{
+            display: block;
+            min-width: 100%;
+            min-height: 100%;
+            max-width: none;
+            max-height: none;
+            position: relative;
         }
     }
     .noslide{
