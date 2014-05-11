@@ -580,7 +580,7 @@ $(document).ready(function(){
 	var htmlbody = $('html,body');
 	var bottomNavigation = $('.bottom.navigation');
 	var leftNavigation = $('.left.navigation');
-	var leftNavToggle = $('.left .drawerbuttonwrapper');
+	var leftNavToggle = $('.left .drawerbutton');
 	var bottomNavToggle = $('.bottom .drawerbutton');
 	var bothNavigations = $('.navigation');
 	var links = $('.navigation').not('.social').find('li');
@@ -744,20 +744,12 @@ $(document).ready(function(){
 			openBottomNav();
 		}
 	});
-	leftNavToggle.click(function(e) {
-		e.preventDefault();
-		if (leftNavigation.hasClass('active')) {
-			closeLeftNav();
-		} else {
-			openLeftNav();
-		}
-	});
 	leftNavigation.hover(function() {
 		openLeftNav();
-		deactivate(leftNavToggle);
+		activate(leftNavToggle);
 	}, function() {
 		closeLeftNav();
-		activate(leftNavToggle);
+		deactivate(leftNavToggle);
 	});
 	slide.waypoint(function(direction) {
 		var currentCinemgraph = $(this).find(".cinemagraph").get(0);
