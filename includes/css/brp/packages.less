@@ -3,32 +3,41 @@
         .hide;
     }
     .lbox {
-        .coupon-item {
-            .media;
-            .list-thumb {
-                .media-object;
-                float: right;
-                .pull-right;
-            }
-            .coupon-title{
-                .pull-left;
-                a{
-                    .media-heading;
+        .lbox-inner{
+            .coupon-item {
+                .media;
+                .list-thumb {
+                    float: right;
+                    .pull-right;
+                    .thumbHolder{
+                        .media-object;
+                        height: 102px;
+                        margin-top: (@line-height-computed / 2);
+                    }
                 }
-                .coupon-itin-link{
-                    .hide;
+                .coupon-title{
+                    margin: 0;
+                    .pull-left;
+                    a{
+                        .h4;
+                        .media-heading;
+                    }
+                    .coupon-itin-link{
+                        .hide;
+                    }
                 }
-            }
-            .coupon-company{
-                .pull-left;
-            }
-            .coupon-redeemable{
-                .media-caption;
-                .pull-left;                
-            }
-            .desc{
-                .media-caption;
-                &:extend(.clearfix all);
+                .coupon-company{
+                    .pull-left;
+                }
+                .coupon-redeemable{
+                    .media-caption;
+                    .pull-left;                
+                }
+                .desc{
+                    .media-caption;
+                    float: left;
+                    &:extend(.clearfix all);
+                }
             }
         }
     }

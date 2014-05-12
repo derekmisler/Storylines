@@ -336,9 +336,6 @@ a:focus {
   text-decoration: none;
   outline: none;
 }
-img {
-  vertical-align: middle;
-}
 .img-responsive {
   display: block;
   position: relative;
@@ -2893,11 +2890,11 @@ fieldset[disabled] .drawerbutton {
   top: 25%;
   width: 240px;
   padding: 20px 0 0 0;
-  -webkit-transition: all 0.1s;
-  -moz-transition: all 0.1s;
-  -o-transition: all 0.1s;
-  transition: all 0.1s;
-  background-color: rgba(253, 250, 255, 0.9);
+  -webkit-transition: all 1.5s;
+  -moz-transition: all 1.5s;
+  -o-transition: all 1.5s;
+  transition: all 1.5s;
+  background-color: rgba(253, 250, 255, 0);
   -webkit-box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -2905,6 +2902,7 @@ fieldset[disabled] .drawerbutton {
 }
 .navigation.left.active {
   left: 0;
+  background-color: rgba(253, 250, 255, 0.9);
 }
 .navigation.left ul > li {
   padding: 0;
@@ -2922,16 +2920,26 @@ fieldset[disabled] .drawerbutton {
   top: 20px;
   right: -40px;
   width: 40px;
+  -webkit-transition: all 1.5s;
+  -moz-transition: all 1.5s;
+  -o-transition: all 1.5s;
+  transition: all 1.5s;
   opacity: 1;
   filter: alpha(opacity=100);
 }
 .navigation.left .drawerbuttonwrapper > li {
+  padding: 0;
+  margin: 0;
   height: 50px;
   line-height: 50px;
+}
+.navigation.left .drawerbuttonwrapper > li a {
+  padding: 0;
 }
 .navigation.left .drawerbuttonwrapper.active {
   opacity: 0;
   filter: alpha(opacity=0);
+  right: 0;
 }
 .navigation.social {
   position: absolute;
@@ -2957,6 +2965,7 @@ fieldset[disabled] .drawerbutton {
 .navigation.social > li {
   margin: 0;
   padding: 0;
+  height: 50px;
 }
 .navigation.social > li .icon {
   padding: 0;
@@ -3768,7 +3777,7 @@ fieldset[disabled] .bx-wrapper .bx-controls-direction a {
 .coupon-container .coupon-section-header {
   display: none !important;
 }
-.coupon-container .lbox .coupon-item {
+.coupon-container .lbox .lbox-inner .coupon-item {
   overflow: hidden;
   zoom: 1;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
@@ -3778,15 +3787,20 @@ fieldset[disabled] .bx-wrapper .bx-controls-direction a {
   -moz-box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1);
   box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1);
 }
-.coupon-container .lbox .coupon-item .pull-left {
+.coupon-container .lbox .lbox-inner .coupon-item .pull-left {
   margin-right: 10.66666667px;
   margin-top: 0;
 }
-.coupon-container .lbox .coupon-item .pull-right {
+.coupon-container .lbox .lbox-inner .coupon-item .pull-right {
   margin-left: 10.66666667px;
   margin-top: 0;
 }
-.coupon-container .lbox .coupon-item .list-thumb {
+.coupon-container .lbox .lbox-inner .coupon-item .list-thumb {
+  float: right;
+  margin-left: 10.66666667px;
+  margin-top: 0;
+}
+.coupon-container .lbox .lbox-inner .coupon-item .list-thumb .thumbHolder {
   padding: 0;
   line-height: 1.6;
   background-color: #fdfaff;
@@ -3805,18 +3819,27 @@ fieldset[disabled] .bx-wrapper .bx-controls-direction a {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  float: right;
-  margin-left: 10.66666667px;
-  margin-top: 0;
+  height: 102px;
+  margin-top: 16px;
 }
-.coupon-container .lbox .coupon-item .list-thumb.circle {
+.coupon-container .lbox .lbox-inner .coupon-item .list-thumb .thumbHolder.circle {
   border-radius: 50%;
 }
-.coupon-container .lbox .coupon-item .coupon-title {
+.coupon-container .lbox .lbox-inner .coupon-item .coupon-title {
+  margin: 0;
   margin-right: 10.66666667px;
   margin-top: 0;
 }
-.coupon-container .lbox .coupon-item .coupon-title a {
+.coupon-container .lbox .lbox-inner .coupon-item .coupon-title a {
+  font-family: "Cardo", sans-serif;
+  line-height: 1.1;
+  margin-top: 0;
+  -webkit-text-stroke: 1px;
+  -webkit-text-stroke-color: rgba(22, 87, 136, 0.1);
+  margin-top: 32px;
+  margin-bottom: 16px;
+  line-height: 1.6;
+  font-size: 30px;
   margin: 0 0 16px 0;
   line-height: 1;
   color: #766a65;
@@ -3826,14 +3849,23 @@ fieldset[disabled] .bx-wrapper .bx-controls-direction a {
   color: #165788;
   -webkit-text-stroke: 0px;
 }
-.coupon-container .lbox .coupon-item .coupon-title .coupon-itin-link {
+.coupon-container .lbox .lbox-inner .coupon-item .coupon-title a small {
+  line-height: 1;
+  color: #766a65;
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0px;
+  font-family: "Cardo", sans-serif;
+  font-style: italic;
+}
+.coupon-container .lbox .lbox-inner .coupon-item .coupon-title .coupon-itin-link {
   display: none !important;
 }
-.coupon-container .lbox .coupon-item .coupon-company {
+.coupon-container .lbox .lbox-inner .coupon-item .coupon-company {
   margin-right: 10.66666667px;
   margin-top: 0;
 }
-.coupon-container .lbox .coupon-item .coupon-redeemable {
+.coupon-container .lbox .lbox-inner .coupon-item .coupon-redeemable {
   color: #165788;
   margin: 16px auto 0;
   font-size: 15px;
@@ -3841,11 +3873,12 @@ fieldset[disabled] .bx-wrapper .bx-controls-direction a {
   margin-right: 10.66666667px;
   margin-top: 0;
 }
-.coupon-container .lbox .coupon-item .desc {
+.coupon-container .lbox .lbox-inner .coupon-item .desc {
   color: #165788;
   margin: 16px auto 0;
   font-size: 15px;
   font-style: italic;
+  float: left;
 }
 .clearfix:before,
 .clearfix:after,
@@ -3865,10 +3898,10 @@ blockquote:after,
 .tabs:after,
 .tab-content:before,
 .tab-content:after,
-.coupon-container .lbox .coupon-item:before,
-.coupon-container .lbox .coupon-item:after,
-.coupon-container .lbox .coupon-item .desc:before,
-.coupon-container .lbox .coupon-item .desc:after {
+.coupon-container .lbox .lbox-inner .coupon-item:before,
+.coupon-container .lbox .lbox-inner .coupon-item:after,
+.coupon-container .lbox .lbox-inner .coupon-item .desc:before,
+.coupon-container .lbox .lbox-inner .coupon-item .desc:after {
   content: " ";
   /* 1 */
   display: table;
@@ -3883,8 +3916,8 @@ blockquote:after,
 #top > .titlecard h1:after,
 .tabs:after,
 .tab-content:after,
-.coupon-container .lbox .coupon-item:after,
-.coupon-container .lbox .coupon-item .desc:after {
+.coupon-container .lbox .lbox-inner .coupon-item:after,
+.coupon-container .lbox .lbox-inner .coupon-item .desc:after {
   clear: both;
 }
 .pull-right {

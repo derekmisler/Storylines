@@ -23,12 +23,14 @@
     top: 25%;
     width: 200px + (@default-padding * 2);
     padding: @default-padding 0 0 0;
-    .transition(all @transition-timing);
-    background-color: fadeout(@body-bg, 10%);
+    .transition(all @slow-transition-timing);
+    background-color: fadeout(@body-bg, 100%);
     .box-shadow(@all-box-shadow);
     .text-center;
     &.active{
         left: 0;
+        background-color: fadeout(@body-bg, 10%);
+        
     }
     ul{
         > li{
@@ -52,13 +54,20 @@
         top:@default-padding;
         right: -(@default-padding * 2);
         width: (@default-padding * 2);
+        .transition(all @slow-transition-timing);
         .opacity(1);
         > li {
+            padding: 0;
+            margin: 0;
             height: 50px;
             line-height: 50px;
+            a{
+                padding: 0;
+            }
         }
         &.active{
             .opacity(0);
+            right: 0;
         }
     }
 }
@@ -74,6 +83,7 @@
     > li{
         margin: 0;
         padding: 0;
+        height: 50px;
         .icon{
             padding:0;
             .text-center;
