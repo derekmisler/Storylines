@@ -2889,40 +2889,47 @@ fieldset[disabled] .drawerbutton {
   background-color: rgba(183, 18, 52, 0.85);
 }
 .navigation.left {
-  left: -300px;
+  left: -240px;
   top: 25%;
-  width: 300px;
-  background-color: rgba(253, 250, 255, 0.9);
-  padding: 20px 0;
+  width: 240px;
+  padding: 20px 0 0 0;
   -webkit-transition: all 0.1s;
   -moz-transition: all 0.1s;
   -o-transition: all 0.1s;
   transition: all 0.1s;
+  background-color: rgba(253, 250, 255, 0.9);
   -webkit-box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.1);
-  text-align: right;
+  text-align: center;
 }
 .navigation.left.active {
   left: 0;
 }
-.navigation.left > li {
+.navigation.left ul > li {
   padding: 0;
   margin: 0;
 }
-.navigation.left > li > a {
+.navigation.left ul > li > a {
   display: block;
   width: 100%;
   height: 50px;
-  line-height: 32px;
-  padding: 0 0 0 40px;
-  margin-right: -40px;
+  line-height: 50px;
+  padding: 0 20px;
 }
-.navigation.left > li > a .drawerbutton {
+.navigation.left .drawerbuttonwrapper {
+  position: absolute;
+  top: 20px;
+  right: -40px;
+  width: 40px;
   opacity: 1;
   filter: alpha(opacity=100);
 }
-.navigation.left > li > a .drawerbutton.active {
+.navigation.left .drawerbuttonwrapper > li {
+  height: 50px;
+  line-height: 50px;
+}
+.navigation.left .drawerbuttonwrapper.active {
   opacity: 0;
   filter: alpha(opacity=0);
 }
@@ -3481,8 +3488,8 @@ fieldset[disabled] .navigation.social > li .icon {
   transition: all 0.1s;
   display: inline-block;
   cursor: pointer;
-  top: 20px;
-  right: 20px;
+  top: 0;
+  right: 0;
 }
 .featherlight .featherlight-close-icon:before {
   content: "\e36b";

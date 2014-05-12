@@ -591,7 +591,7 @@ $(document).ready(function(){
 	var htmlbody = $('html,body');
 	var bottomNavigation = $('.bottom.navigation');
 	var leftNavigation = $('.left.navigation');
-	var leftNavToggle = $('.left .drawerbutton');
+	var leftNavToggle = $('.left .drawerbuttonwrapper');
 	var bottomNavToggle = $('.bottom .drawerbutton');
 	var bothNavigations = $('.navigation');
 	var links = $('.navigation').not('.social').find('li');
