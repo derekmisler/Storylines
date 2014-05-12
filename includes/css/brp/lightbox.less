@@ -25,21 +25,24 @@
         float: none !important;
     	position: relative;
     	.text-left;
+    	font-style: normal;
     	vertical-align: middle;
     	display: inline-block;
     	overflow: auto;
     	padding: (@default-padding * 2);
-    	padding-top: @default-padding;
     	min-width:  30%;
     	margin-left: auto;
     	margin-right: auto;
-    	max-height: 95%;
+    	max-height: 100%;
     	background: @body-bg;
     	cursor: auto;
     	white-space: normal;
         border-top:@media-border;
         border-bottom:@media-border;
         .box-shadow(@top-box-shadow);
+        p{
+            font-style: normal;
+        }
         .pull-left{
             margin-right: @default-padding;
             margin-top: floor(@line-height-computed / 4);

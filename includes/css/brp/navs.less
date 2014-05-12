@@ -19,7 +19,7 @@
     }
 }
 .navigation.left{
-    left: -300px + floor(@font-size-base * 2);
+    left: -300px;
     top: 25%;
     width: 300px;
     background-color: fadeout(@body-bg, 10%);
@@ -40,6 +40,7 @@
             line-height: @line-height-computed;
             padding: 0 0 0 (@default-padding * 2);
             //margin: (@default-padding / 2) 0;
+            margin-right: -(floor(@font-size-base * 2));
             &.logo{
                 //padding:0;
             }
