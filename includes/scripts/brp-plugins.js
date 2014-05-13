@@ -559,7 +559,7 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
 
 $(document).ready(function(){
 
-	$("h2, h3, h4, h5, p").each(function() {
+	$("h2, h3, h4, h5, h6").each(function() {
 		var wordArray = $(this).text().split(" ");
 		var finalTitle = "";
 		for (i=0;i<=wordArray.length-1;i++) {
