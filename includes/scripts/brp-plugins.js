@@ -559,11 +559,9 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
 
 $(document).ready(function(){
 
-	function($) {
-        $('h1,h2,h3,li,p').each(function() {
-            $(this).html($(this).html().replace(/\s([^\s<]+)\s*$/,'&nbsp;$1'));
-        });
-    }
+    $('h1,h2,h3,li,p').each(function() {
+        $(this).html($(this).html().replace(/\s([^\s<]+)\s*$/,'&nbsp;$1'));
+    });
 
 	var notMobileScreen = Modernizr.mq('only screen and (min-width: 768px)');
 	if(notMobileScreen){
@@ -581,8 +579,8 @@ $(document).ready(function(){
 	var windowHeight = parseInt(mywindow.height());
 	var windowHeightX2 = windowHeight*2;
 	var htmlbody = $('html,body');
-	var bottomNavigation = $('.bottom.navigation');
-	var leftNavigation = $('.left.navigation');
+	var bottomNavigation = $('.bottom');
+	var leftNavigation = $('.left');
 	var leftNavToggle = $('.left .drawerbuttonwrapper');
 	var bottomNavToggle = $('.bottom .drawerbutton');
 	var bothNavigations = $('.navigation');
@@ -593,7 +591,7 @@ $(document).ready(function(){
 	var topVideo = $('#video');
 	var topVideo2 = $('#video2');
 	var topVideoControls = $('#top .drawerbutton');
-	var topStory = $('#top > .noslide');
+	var topStory = $('.page-header');
 	var topSlideScroll = $('#top .scroll');
 	var caption = $('.header');
 	var cinemagraphs = $('article');
@@ -779,7 +777,7 @@ $(document).ready(function(){
 	}).waypoint(function(direction) {
 		if (direction == 'down') { closeBottomNav(); }
 	}, {
-		offset: function() { return -$(this).height(); }
+		offset: '0'
 	});
 	
 	caption.waypoint(function(direction) {
