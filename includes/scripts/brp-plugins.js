@@ -559,19 +559,11 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
 
 $(document).ready(function(){
 
-	$("h2, h3, h4, h5, h6").each(function() {
-		var wordArray = $(this).text().split(" ");
-		var finalTitle = "";
-		for (i=0;i<=wordArray.length-1;i++) {
-			finalTitle += wordArray[i];
-			if (i == (wordArray.length-2)) {
-				finalTitle += "&nbsp;";
-			} else {
-				finalTitle += " ";
-			}
-		}
-		$(this).html(finalTitle);
-	});
+	function($) {
+        $('h1,h2,h3,li,p').each(function() {
+            $(this).html($(this).html().replace(/\s([^\s<]+)\s*$/,'&nbsp;$1'));
+        });
+    }
 
 	var notMobileScreen = Modernizr.mq('only screen and (min-width: 768px)');
 	if(notMobileScreen){
