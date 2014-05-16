@@ -18,56 +18,49 @@
         background-color: fadeout(@avl-red, 15%);
     }
 }
+@leftnavwidth: 200px + (@default-padding * 4);
 .navigation.left{
-    left: -(200px + (@default-padding * 2));
+    left: -(@leftnavwidth);
     top: 25%;
-    width: 200px + (@default-padding * 2);
+    width: @leftnavwidth;
     padding: @default-padding 0 0 0;
     .transition(all @slow-transition-timing);
-    background-color: fadeout(@body-bg, 100%);
-    .box-shadow(@all-box-shadow);
-    .text-center;
+    .text-left;
     &.active{
         left: 0;
-        background-color: fadeout(@body-bg, 10%);
-        
     }
-    ul{
-        > li{
-            padding: 0;
-            margin: 0;
-            > a{
-                display: block;
-                width: 100%;
-                height: 50px;
-                line-height: 50px;
-                padding: 0 @default-padding;
-                //margin: (@default-padding / 2) 0;
-                &.logo{
-                    //padding:0;
-                }  
-            }
+    > ul > li{
+        padding: 0;
+        margin: 0;
+        .box-shadow(@default-box-shadow);
+        display: block;
+        background-color: fadeout(@body-bg, 10%);
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        padding: 0 (@default-padding * 1) 0 (@default-padding * 3);
+        margin: 2px 0;
+        cursor: pointer;
+        &.logo{
+            padding: @default-padding (@default-padding * 2);
+            height: 90px;
         }
     }
-    .drawerbuttonwrapper{
+    > .drawerbuttonwrapper{
         position: absolute;
-        top:@default-padding;
-        right: -(@default-padding * 2);
+        bottom: 0;
+        right: -(@default-padding * 2) - (@default-padding / 2);
         width: (@default-padding * 2);
         .transition(all @slow-transition-timing);
         .opacity(1);
         > li {
+            .box-shadow(none);
+            background-color: fadeout(@body-bg, 100%);
             padding: 0;
-            margin: 0;
-            height: 50px;
-            line-height: 50px;
-            a{
-                padding: 0;
-            }
         }
         &.active{
-            .opacity(0);
-            right: 0;
+            //.opacity(0);
+            right: @leftnavwidth - @default-padding * 2.5;
         }
     }
 }
@@ -76,8 +69,8 @@
     display: block;
     height: 100%;
     width: floor(@font-size-base * 2);
-    top: 0;
-    right: 0;
+    top: @default-padding / 2;
+    right: @default-padding / 2;
     bottom: 0;
     .block-grid;
     > li{

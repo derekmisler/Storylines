@@ -89,7 +89,7 @@ $(document).ready(function () {
 	//video stuff
 
 	setTimeout(function () {
-        $("img.lazy").trigger("sporty");
+		$("img.lazy").trigger("sporty");
 		topSlide.animate({"opacity": 1}, 1500).addClass('active');
 	}, 1500);
 	topVideo2.bind('play', function () {
@@ -216,18 +216,18 @@ $(document).ready(function () {
 		offset: '0'
 	});
 	
-	caption.waypoint(function (direction) {
-		//cache the variable of the data-story attribute associated with each slide
-		var dataslide = $(this).attr('data-story');
-		if (direction === 'down') {
-			//If the user scrolls down, remove the 'currentslide' class from the previous nav highlight the current slide in the navigation
-			$('.bottom.navigation li[data-story="' + dataslide + '"]').addClass('currentslide').prev().removeClass('currentslide');
-		} else {
-			$('.bottom.navigation li[data-story="' + dataslide + '"]').addClass('currentslide').next().removeClass('currentslide');
-		}
-	}, {
-		offset: '50%'
-	});
+//	caption.waypoint(function (direction) {
+//		//cache the variable of the data-story attribute associated with each slide
+//		var dataslide = $(this).attr('data-story');
+//		if (direction === 'down') {
+//			//If the user scrolls down, remove the 'currentslide' class from the previous nav highlight the current slide in the navigation
+//			$('.bottom.navigation li[data-story="' + dataslide + '"]').addClass('currentslide').prev().removeClass('currentslide');
+//		} else {
+//			$('.bottom.navigation li[data-story="' + dataslide + '"]').addClass('currentslide').next().removeClass('currentslide');
+//		}
+//	}, {
+//		offset: '50%'
+//	});
 	
 
 
