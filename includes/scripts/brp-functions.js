@@ -143,7 +143,7 @@ $(document).ready(function () {
 		htmlbody.animate({ scrollTop: $('aside[data-story="' + dataslide + '"]').offset().top }, 1000);
 	}
 	links.click(function (e) {
-		e.preventDefault();
+		//e.preventDefault();
 		deactivate(namecards);
 		var dataslide = $(this).attr('data-story');
 		goToByScroll(dataslide);
@@ -212,13 +212,9 @@ $(document).ready(function () {
 
 	topStory.waypoint(function (direction) {
 		if (direction === 'down') { openBottomNav(); }
-	}, {
-		offset: '75%'
-	}).waypoint(function (direction) {
+	}, { offset: '75%' }).waypoint(function (direction) {
 		if (direction === 'down') { closeBottomNav(); }
-	}, {
-		offset: '0'
-	});
+	}, { offset: '0' });
 	
 //	caption.waypoint(function (direction) {
 //		//cache the variable of the data-story attribute associated with each slide

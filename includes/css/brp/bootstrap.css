@@ -1911,6 +1911,30 @@ input[type="button"].btn-block {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-tunnel:before {
+  content: "\e60e";
+}
+.icon-mountain:before {
+  content: "\e60f";
+}
+.icon-bridge:before {
+  content: "\e610";
+}
+.icon-turtle:before {
+  content: "\e611";
+}
+.icon-frog:before {
+  content: "\e612";
+}
+.icon-fish:before {
+  content: "\e613";
+}
+.icon-dog:before {
+  content: "\e614";
+}
+.icon-bird:before {
+  content: "\e615";
+}
 .icon-waterfall:before {
   content: "\e600";
 }
@@ -1932,7 +1956,7 @@ input[type="button"].btn-block {
 .icon-instagram:before {
   content: "\e60d";
 }
-.icon-mountain:before {
+.icon-mountain2:before {
   content: "\e602";
 }
 .icon-film:before {
@@ -1952,6 +1976,9 @@ input[type="button"].btn-block {
 }
 .icon-cake:before {
   content: "\e608";
+}
+.icon-home:before {
+  content: "\e00a";
 }
 .icon-images:before {
   content: "\e032";
@@ -1976,6 +2003,9 @@ input[type="button"].btn-block {
 }
 .icon-spinner:before {
   content: "\e1b0";
+}
+.icon-binoculars:before {
+  content: "\e1b4";
 }
 .icon-expand:before {
   content: "\e1bf";
@@ -2024,6 +2054,9 @@ input[type="button"].btn-block {
 }
 .icon-bike:before {
   content: "\e261";
+}
+.icon-road:before {
+  content: "\e262";
 }
 .icon-sunglasses:before {
   content: "\e275";
@@ -2275,6 +2308,10 @@ h2.media-heading small {
 }
 .thumbnail .media-heading {
   color: #b71234;
+}
+.thumbnail .icon {
+  color: #165788;
+  font-size: 40px;
 }
 @media (max-width: 768px) {
   .thumbnail {
