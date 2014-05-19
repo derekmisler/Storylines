@@ -1,32 +1,33 @@
+/* global jquery, $, document, window, Modernizr, setTimeout */
 $(document).ready(function () {
     'use strict';
 
 	//Cache some variables
 	var mywindow = $(window),
-        htmlbody = $('html,body'),
-        bottomNavigation = $('.bottom'),
-        leftNavigation = $('.left'),
-        leftNavToggle = $('.left .drawerbuttonwrapper'),
-        bottomNavToggle = $('.bottom .drawerbutton'),
-        bothNavigations = $('.navigation'),
-        links = $('.navigation').not('.social').find('li'),
-        mapmarker = $('.map-marker'),
-        namecards = $('.namecard'),
-        topSlide = $('.titlecard'),
-        topVideo = $('#video'),
-        topVideo2 = $('#video2'),
-        topVideoControls = $('#top .drawerbutton'),
-        topStory = $('.page-header'),
-        topSlideScroll = $('#top .scroll'),
-        caption = $('.header'),
-        cinemagraphs = $('article'),
-        slide = $('.slide'),
-        noslide = $('.noslide'),
-        brpOverlayWrapper = $('#design-plans .brp-overlay'),
-        brpOverlay = brpOverlayWrapper.find('img').last(),
-        linncoveFlyover = $("#video-flyover .brp-overlay"),
-        linncoveFlyoverButton = $("#video-flyover .brp-overlay").find(".drawerbutton"),
-        notMobileScreen = Modernizr.mq('only screen and (min-width: 768px)');
+		htmlbody = $('html,body'),
+		bottomNavigation = $('.bottom'),
+		leftNavigation = $('.left'),
+		leftNavToggle = $('.left .drawerbuttonwrapper'),
+		bottomNavToggle = $('.bottom .drawerbutton'),
+		bothNavigations = $('.navigation'),
+		links = $('.navigation').not('.social').find('li'),
+		mapmarker = $('.map-marker'),
+		namecards = $('.namecard'),
+		topSlide = $('.titlecard'),
+		topVideo = $('#video'),
+		topVideo2 = $('#video2'),
+		topVideoControls = $('#top .drawerbutton'),
+		topStory = $('.page-header'),
+		topSlideScroll = $('#top .scroll'),
+		caption = $('.header'),
+		cinemagraphs = $('article'),
+		slide = $('.slide'),
+		noslide = $('.noslide'),
+		brpOverlayWrapper = $('#design-plans .brp-overlay'),
+		brpOverlay = brpOverlayWrapper.find('img').last(),
+		linncoveFlyover = $("#video-flyover .brp-overlay"),
+		linncoveFlyoverButton = $("#video-flyover .brp-overlay").find(".drawerbutton"),
+		notMobileScreen = Modernizr.mq('only screen and (min-width: 768px)');
 
 	//Cache some functions
 	function activate(element) {
@@ -52,6 +53,11 @@ $(document).ready(function () {
 	function openLeftNav() {
 		activate(leftNavigation);
 	}
+	function showVideo() {
+		$("img.lazy").trigger("sporty");
+		topSlide.animate({"opacity": 1}, 1500).addClass('active');
+	}
+
 	//Go!
     $('h1,h2,h3,li,p').each(function () {
         $(this).html($(this).html().replace(/\s([^\s<]+)\s*$/, '&nbsp;$1'));
@@ -88,12 +94,10 @@ $(document).ready(function () {
 	//video stuff
 	//video stuff
 
-	setTimeout(function () {
-		$("img.lazy").trigger("sporty");
-		topSlide.animate({"opacity": 1}, 1500).addClass('active');
-	}, 1500);
+	var t = setTimeout(showVideo, 1500);
 	topVideo2.bind('play', function () {
 		deactivate(topVideoControls);
+		closeBottomNav();
 		topSlide.animate({"opacity": 0}, 500);
 	});
 	topVideo2.bind('pause', function () {

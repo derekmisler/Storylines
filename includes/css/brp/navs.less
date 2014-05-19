@@ -30,37 +30,54 @@
         left: 0;
     }
     > ul > li{
+        .h5;
         padding: 0;
         margin: 0;
         .box-shadow(@default-box-shadow);
         display: block;
-        background-color: fadeout(@body-bg, 10%);
+        background-color: fadeout(@body-bg, 20%);
         width: 100%;
         height: 50px;
         line-height: 50px;
-        padding: 0 (@default-padding * 1) 0 (@default-padding * 3);
+        padding: 0 (@default-padding * 3) 0 (@default-padding * 1);
         margin: 2px 0;
         cursor: pointer;
+        &:hover,
+        &:focus{
+            background-color: fadeout(@avl-red, 10%);
+            color: @body-bg;
+        }
         &.logo{
             padding: @default-padding (@default-padding * 2);
             height: 90px;
+            &:hover,
+            &:focus{
+                background-color: fadeout(@body-bg, 0%);
+                //color: @body-bg;
+            }
         }
     }
     > .drawerbuttonwrapper{
         position: absolute;
         bottom: 0;
         right: -(@default-padding * 2) - (@default-padding / 2);
-        width: (@default-padding * 2);
+        padding-left:(@default-padding / 2);
+        width: (@default-padding * 2) + (@default-padding / 2);
         .transition(all @slow-transition-timing);
         .opacity(1);
         > li {
             .box-shadow(none);
             background-color: fadeout(@body-bg, 100%);
             padding: 0;
+            &:hover,
+            &:focus{
+                background-color: fadeout(@body-bg, 100%);
+                //color: @body-bg;
+            }
         }
         &.active{
             //.opacity(0);
-            right: @leftnavwidth - @default-padding * 2.5;
+            right: @default-padding / 2;
         }
     }
 }
