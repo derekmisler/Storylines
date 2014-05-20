@@ -1911,6 +1911,9 @@ input[type="button"].btn-block {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-bear:before {
+  content: "\e617";
+}
 .icon-tunnel:before {
   content: "\e60e";
 }
@@ -2056,7 +2059,7 @@ input[type="button"].btn-block {
   content: "\e261";
 }
 .icon-road:before {
-  content: "\e262";
+  content: "\e616";
 }
 .icon-sunglasses:before {
   content: "\e275";
@@ -3221,7 +3224,7 @@ fieldset[disabled] .navigation.social > li .icon {
   bottom: -400px;
   left: 0;
   z-index: -1;
-  text-align: center;
+  text-align: left;
   width: 100%;
   opacity: 0;
   filter: alpha(opacity=0);
@@ -3235,8 +3238,24 @@ fieldset[disabled] .navigation.social > li .icon {
   -o-transition: opacity 0.1s;
   transition: opacity 0.1s;
 }
+.navigation.bottom > li .namecard > li {
+  padding-left: 40px;
+}
+.navigation.bottom > li .namecard > li > h5 {
+  margin-top: 0;
+}
+.navigation.bottom > li .namecard > li:first-of-type {
+  text-align: right;
+  padding-right: 40px;
+  border-right: 1px solid rgba(0, 0, 0, 0.15);
+}
+.navigation.bottom > li .namecard > li > ul {
+  list-style-position: inside;
+  padding: 0;
+  color: #165788;
+}
 .navigation.bottom > li .namecard.active {
-  bottom: 0;
+  bottom: -20px;
   opacity: 1;
   filter: alpha(opacity=100);
 }

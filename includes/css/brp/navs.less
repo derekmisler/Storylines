@@ -230,19 +230,35 @@
         }
         .namecard{
             position: absolute;
-            padding: @default-padding 0 floor((@map-markers * 2) + @default-padding) 0;
+            padding: @default-padding 0 180px 0;
             bottom: -400px;
             left: 0;
             z-index: -1;
-            text-align: center;
+            text-align: left;
             width: 100%;
             .opacity(0);
             border: 1px solid @default-border-color;
             .box-shadow(0 -4px 0 -2px @default-box-shadow-color);
             background-color: fadeout(@body-bg, 20%);
             .transition(opacity @transition-timing);
+            > li{
+                padding-left: @default-padding * 2;
+                > h5{
+                    margin-top: 0;
+                }
+                &:first-of-type{
+                    text-align: right;
+                    padding-right: 40px;
+                    border-right: 1px solid @default-border-color;
+                }
+                > ul{
+                    list-style-position: inside;
+                    padding: 0;
+                    color: @avl-blue;
+                }
+            }
             &.active{
-                bottom: 0;
+                bottom: -@default-padding;
                 .opacity(1);
             }
         }

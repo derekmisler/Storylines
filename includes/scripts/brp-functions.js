@@ -1,4 +1,4 @@
-/* global jquery, $, document, window, Modernizr, setTimeout */
+/* global alert, jquery, $, document, window, Modernizr, setTimeout */
 $(document).ready(function () {
     'use strict';
 
@@ -17,7 +17,7 @@ $(document).ready(function () {
 		topVideo = $('#video'),
 		topVideo2 = $('#video2'),
 		topVideoControls = $('#top .drawerbutton'),
-		topStory = $('.page-header'),
+		topStory = $('#top').find('.noslide'),
 		topSlideScroll = $('#top .scroll'),
 		caption = $('.header'),
 		cinemagraphs = $('article'),
@@ -106,7 +106,6 @@ $(document).ready(function () {
 	});
 	topVideo2.bind('ended', function () {
 		activate(topVideoControls);
-		//activate(topSlideScroll);
 		deactivate(topVideo2);
 		topVideo2.animate({"opacity": 0}, 1000);
 		topVideo.animate({"opacity": 1}, 1000);
@@ -120,16 +119,17 @@ $(document).ready(function () {
 			topVideo2.get(0).pause();
 		}
 	});
-	topVideoControls.click(function (e) {
+	topSlide.click(function (e) {
 		e.preventDefault();
 		if (topVideoControls.hasClass('active')) {
 			deactivate(topVideoControls);
 			topVideo.get(0).pause();
 			topVideo.animate({"opacity": 0.5}, 1000);
-			topSlide.animate({"opacity": 0}, 500);
 			topVideo2.animate({"opacity": 1}, 1000);
 			activate(topVideo2);
 			topVideo2.get(0).play();
+		} else {
+			topVideo2.get(0).pause();
 		}
 	});
 	//Setup navs
@@ -149,13 +149,6 @@ $(document).ready(function () {
 		goToByScroll(dataslide);
 	});
 	
-	//namecards hover effect
-	mapmarker.hover(function () {
-		$(this).prev(namecards).addClass('active');
-	}, function () {
-		$(this).prev(namecards).removeClass('active');
-	});
-
 	//map overlay hover effect
 	brpOverlayWrapper.click(function () {
 		if (brpOverlay.hasClass('active')) {
@@ -179,12 +172,18 @@ $(document).ready(function () {
 	//hide and show the navigation by clicking the arrow
 	bottomNavToggle.click(function (e) {
 		e.preventDefault();
-		if (bottomNavigation.hasClass('active')) {
-			closeBottomNav();
-		} else {
-			openBottomNav();
-		}
+		bottomNavigation.toggleClass('active');
 	});
+	
+	//namecards hover effect
+	$('.map-marker').hover(function () {
+		$(this).prev().addClass('active');
+		//alert('over');
+	}, function () {
+		$(this).prev().removeClass('active');
+		//alert('out');
+	});
+
 	leftNavigation.hover(function () {
 		openLeftNav();
 		activate(leftNavToggle);
@@ -192,6 +191,7 @@ $(document).ready(function () {
 		closeLeftNav();
 		deactivate(leftNavToggle);
 	});
+
 	slide.waypoint(function (direction) {
 		var currentCinemgraph = $(this).find(".cinemagraph").get(0);
 		if (direction === 'down') {
@@ -210,24 +210,24 @@ $(document).ready(function () {
 		}
 	});
 
-	topStory.waypoint(function (direction) {
+	$('#top').find('.noslide').waypoint(function (direction) {
 		if (direction === 'down') { openBottomNav(); }
 	}, { offset: '75%' }).waypoint(function (direction) {
 		if (direction === 'down') { closeBottomNav(); }
 	}, { offset: '0' });
 	
-//	caption.waypoint(function (direction) {
-//		//cache the variable of the data-story attribute associated with each slide
-//		var dataslide = $(this).attr('data-story');
-//		if (direction === 'down') {
-//			//If the user scrolls down, remove the 'currentslide' class from the previous nav highlight the current slide in the navigation
-//			$('.bottom.navigation li[data-story="' + dataslide + '"]').addClass('currentslide').prev().removeClass('currentslide');
-//		} else {
-//			$('.bottom.navigation li[data-story="' + dataslide + '"]').addClass('currentslide').next().removeClass('currentslide');
-//		}
-//	}, {
-//		offset: '50%'
-//	});
+/*	caption.waypoint(function (direction) {
+		//cache the variable of the data-story attribute associated with each slide
+		var dataslide = $(this).attr('data-story');
+		if (direction === 'down') {
+			//If the user scrolls down, remove the 'currentslide' class from the previous nav highlight the current slide in the navigation
+			$('.bottom.navigation li[data-story="' + dataslide + '"]').addClass('currentslide').prev().removeClass('currentslide');
+		} else {
+			$('.bottom.navigation li[data-story="' + dataslide + '"]').addClass('currentslide').next().removeClass('currentslide');
+		}
+	}, {
+		offset: '50%'
+	});*/
 	
 
 
