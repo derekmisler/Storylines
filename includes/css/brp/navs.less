@@ -230,21 +230,26 @@
         }
         .namecard{
             position: absolute;
-            padding: @default-padding 0 180px 0;
-            bottom: -400px;
+            padding: @default-padding 0;
+            bottom: -100px;
+            .scale(.75);
             left: 0;
             z-index: -1;
             text-align: left;
-            width: 100%;
+            width: 60%;
+            margin: 0 20%;
             .opacity(0);
-            border: 1px solid @default-border-color;
-            .box-shadow(0 -4px 0 -2px @default-box-shadow-color);
+            border: @media-border;
+            .box-shadow(@top-box-shadow);
             background-color: fadeout(@body-bg, 20%);
-            .transition(opacity @transition-timing);
+            .transition(all @transition-timing);
             > li{
                 padding-left: @default-padding * 2;
                 > h5{
                     margin-top: 0;
+                }
+                > h3{
+                    font-style: italic;
                 }
                 &:first-of-type{
                     text-align: right;
@@ -258,7 +263,8 @@
                 }
             }
             &.active{
-                bottom: -@default-padding;
+                .scale(1);
+                bottom: 200px;
                 .opacity(1);
             }
         }

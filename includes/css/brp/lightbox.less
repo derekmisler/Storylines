@@ -37,11 +37,19 @@
     	background: @body-bg;
     	cursor: auto;
     	white-space: normal;
-        border-top:@media-border;
-        border-bottom:@media-border;
+        border:@media-border;
         .box-shadow(@top-box-shadow);
-        p{
+        p, li{
             font-style: normal;
+        }
+        h5{
+            .media-heading;
+        }
+        .block-grid{
+            margin: @default-padding 0 0 0;
+            li{
+                padding-bottom: 0;
+            }
         }
         .pull-left{
             margin-right: @default-padding;

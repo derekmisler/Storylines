@@ -25,7 +25,7 @@ cite    { font-style: normal; }
     line-height: 1;
     color: @headings-small-color;
     font-family: @subheadings-font-family;
-    font-weight: @subheadings-font-weight;
+    //font-weight: @subheadings-font-weight;
     letter-spacing: @subheadings-letter-spacing;
 }
 .page-header {
@@ -81,16 +81,16 @@ h1, .h1 { font-size: floor(@font-size-base * 3); text-shadow: 0 1px 0 @dark-text
 h2, .h2 { font-size: floor(@font-size-base * 2.6); }
 h3, .h3 { font-size: ceil(@font-size-base * 2); }
 h4, .h4 { font-size: ceil(@font-size-base * 1.5); }
-h5, .h5 { font-size: ceil(@font-size-base * 1.25); }
+h5, .h5 { font-size: ceil(@font-size-base * 1.15); }
 h6, .h6 { font-size: @font-size-base; }
 
 @media (max-width: @screen-tablet) {
-    h1, .h1 { font-size: floor(@font-size-base * 1.6) }
-    h2, .h2 { font-size: floor(@font-size-base * 1.4); }
-    h3, .h3 { font-size: ceil(@font-size-base * 1.25); }
-    h4, .h4 { font-size: ceil(@font-size-base * 1); }
-    h5, .h5 { font-size: ceil(@font-size-base * .85); }
-    h6, .h6 { font-size: ceil(@font-size-base * .75); }
+    h1, .h1 { font-size: floor(@font-size-base * 1.6); font-weight: 700; }
+    h2, .h2 { font-size: floor(@font-size-base * 1.4); font-weight: 700; }
+    h3, .h3 { font-size: ceil(@font-size-base * 1.25); font-weight: 700; }
+    h4, .h4 { font-size: ceil(@font-size-base * 1); font-weight: 700; }
+    h5, .h5 { font-size: ceil(@font-size-base * .85); font-weight: 700; }
+    h6, .h6 { font-size: ceil(@font-size-base * .75); font-weight: 700; }
     p { font-size: ceil(@font-size-base * .75); }
 }
 

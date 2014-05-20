@@ -59,9 +59,9 @@ $(document).ready(function () {
 	}
 
 	//Go!
-    $('h1,h2,h3,li,p').each(function () {
-        $(this).html($(this).html().replace(/\s([^\s<]+)\s*$/, '&nbsp;$1'));
-    });
+	$('h1,h2,h3,li,p,.media-caption').each(function () {
+		$(this).html($(this).html().replace(/\s([^\s<]+)\s*$/, '&nbsp;$1'));
+	});
 
 	if (notMobileScreen) {
 		$.stellar({
@@ -140,7 +140,7 @@ $(document).ready(function () {
 	//Setup navs
 	//When the user clicks on the navigation links, get the data-story attribute value of the link and pass that variable to the goToByScroll function
 	function goToByScroll(dataslide) {
-		htmlbody.animate({ scrollTop: $('aside[data-story="' + dataslide + '"]').offset().top }, 1000);
+		htmlbody.animate({ scrollTop: $('[data-story="' + dataslide + '"]').offset().top }, 1000);
 	}
 	links.click(function (e) {
 		//e.preventDefault();

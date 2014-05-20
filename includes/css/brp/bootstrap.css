@@ -425,7 +425,6 @@ cite {
   line-height: 1;
   color: #766a65;
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 400;
   letter-spacing: 0px;
 }
 .page-header {
@@ -471,7 +470,6 @@ h6 small,
   line-height: 1;
   color: #766a65;
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 400;
   letter-spacing: 0px;
   font-family: "Cardo", sans-serif;
   font-style: italic;
@@ -496,7 +494,6 @@ h6,
   line-height: 1;
   color: #766a65;
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 400;
   letter-spacing: 0px;
   color: #165788;
   margin-top: 32px;
@@ -522,7 +519,7 @@ h4,
 }
 h5,
 .h5 {
-  font-size: 25px;
+  font-size: 23px;
 }
 h6,
 .h6 {
@@ -532,26 +529,32 @@ h6,
   h1,
   .h1 {
     font-size: 32px;
+    font-weight: 700;
   }
   h2,
   .h2 {
     font-size: 28px;
+    font-weight: 700;
   }
   h3,
   .h3 {
     font-size: 25px;
+    font-weight: 700;
   }
   h4,
   .h4 {
     font-size: 20px;
+    font-weight: 700;
   }
   h5,
   .h5 {
     font-size: 17px;
+    font-weight: 700;
   }
   h6,
   .h6 {
     font-size: 15px;
+    font-weight: 700;
   }
   p {
     font-size: 15px;
@@ -1422,6 +1425,9 @@ address {
   width: 100% !important;
   padding: 0;
 }
+.block-grid.media-body {
+  margin: 0;
+}
 @media (min-width: 767px) {
   .block-grid > li,
   .media-list > li {
@@ -2128,7 +2134,6 @@ h4.media-heading,
   line-height: 1;
   color: #766a65;
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 400;
   letter-spacing: 0px;
   color: #165788;
   -webkit-text-stroke: 0px;
@@ -2151,7 +2156,6 @@ h2.media-heading small {
   line-height: 1;
   color: #766a65;
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 400;
   letter-spacing: 0px;
   font-family: "Cardo", sans-serif;
   font-style: italic;
@@ -2188,6 +2192,10 @@ h2.media-heading small {
   font-size: 15px;
   font-style: italic;
 }
+ul.media-caption {
+  margin: 0;
+  padding-left: 20px;
+}
 .media-list {
   display: block;
   overflow: hidden;
@@ -2202,6 +2210,9 @@ h2.media-heading small {
   clear: both;
   width: 100% !important;
   padding: 0;
+}
+.media-list.media-body {
+  margin: 0;
 }
 .media-list li {
   text-align: center;
@@ -2941,6 +2952,7 @@ fieldset[disabled] .drawerbutton {
 }
 .navigation.left > ul > li {
   font-family: "Cardo", sans-serif;
+  font-weight: 400;
   line-height: 1.1;
   margin-top: 0;
   -webkit-text-stroke: 1px;
@@ -2948,13 +2960,12 @@ fieldset[disabled] .drawerbutton {
   line-height: 1;
   color: #766a65;
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 400;
   letter-spacing: 0px;
   color: #165788;
   margin-top: 32px;
   margin-bottom: 16px;
   line-height: 1.6;
-  font-size: 25px;
+  font-size: 23px;
   padding: 0;
   margin: 0;
   -webkit-box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1);
@@ -2973,7 +2984,6 @@ fieldset[disabled] .drawerbutton {
   line-height: 1;
   color: #766a65;
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 400;
   letter-spacing: 0px;
   font-family: "Cardo", sans-serif;
   font-style: italic;
@@ -3038,6 +3048,9 @@ fieldset[disabled] .drawerbutton {
   clear: both;
   width: 100% !important;
   padding: 0;
+}
+.navigation.social.media-body {
+  margin: 0;
 }
 .navigation.social > li {
   margin: 0;
@@ -3220,29 +3233,36 @@ fieldset[disabled] .navigation.social > li .icon {
 }
 .navigation.bottom > li .namecard {
   position: absolute;
-  padding: 20px 0 180px 0;
-  bottom: -400px;
+  padding: 20px 0;
+  bottom: -100px;
+  -webkit-transform: scale(0.75);
+  -ms-transform: scale(0.75);
+  transform: scale(0.75);
   left: 0;
   z-index: -1;
   text-align: left;
-  width: 100%;
+  width: 60%;
+  margin: 0 20%;
   opacity: 0;
   filter: alpha(opacity=0);
   border: 1px solid rgba(0, 0, 0, 0.15);
-  -webkit-box-shadow: 0 -4px 0 -2px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0 -4px 0 -2px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 -4px 0 -2px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1), 0 -6px 1px -4px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1), 0 -6px 1px -4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1), 0 -6px 1px -4px rgba(0, 0, 0, 0.1);
   background-color: rgba(253, 250, 255, 0.8);
-  -webkit-transition: opacity 0.1s;
-  -moz-transition: opacity 0.1s;
-  -o-transition: opacity 0.1s;
-  transition: opacity 0.1s;
+  -webkit-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  -o-transition: all 0.1s;
+  transition: all 0.1s;
 }
 .navigation.bottom > li .namecard > li {
   padding-left: 40px;
 }
 .navigation.bottom > li .namecard > li > h5 {
   margin-top: 0;
+}
+.navigation.bottom > li .namecard > li > h3 {
+  font-style: italic;
 }
 .navigation.bottom > li .namecard > li:first-of-type {
   text-align: right;
@@ -3255,7 +3275,10 @@ fieldset[disabled] .navigation.social > li .icon {
   color: #165788;
 }
 .navigation.bottom > li .namecard.active {
-  bottom: -20px;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  bottom: 200px;
   opacity: 1;
   filter: alpha(opacity=100);
 }
@@ -3328,6 +3351,7 @@ fieldset[disabled] .navigation.social > li .icon {
 }
 .tabs > li > a {
   font-family: "Cardo", sans-serif;
+  font-weight: 400;
   line-height: 1.1;
   margin-top: 0;
   -webkit-text-stroke: 1px;
@@ -3335,7 +3359,6 @@ fieldset[disabled] .navigation.social > li .icon {
   line-height: 1;
   color: #766a65;
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 400;
   letter-spacing: 0px;
   color: #165788;
   margin-top: 32px;
@@ -3357,7 +3380,6 @@ fieldset[disabled] .navigation.social > li .icon {
   line-height: 1;
   color: #766a65;
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 400;
   letter-spacing: 0px;
   font-family: "Cardo", sans-serif;
   font-style: italic;
@@ -3527,8 +3549,7 @@ fieldset[disabled] .navigation.social > li .icon {
   background: #fdfaff;
   cursor: auto;
   white-space: normal;
-  border-top: 1px solid rgba(0, 0, 0, 0.15);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   -webkit-box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1), 0 -6px 1px -4px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1), 0 -6px 1px -4px rgba(0, 0, 0, 0.1);
   box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1), 0 -6px 1px -4px rgba(0, 0, 0, 0.1);
@@ -3545,8 +3566,24 @@ fieldset[disabled] .navigation.social > li .icon {
     width: 66.66666667%;
   }
 }
-.featherlight .featherlight-content p {
+.featherlight .featherlight-content p,
+.featherlight .featherlight-content li {
   font-style: normal;
+}
+.featherlight .featherlight-content h5 {
+  margin: 0 0 16px 0;
+  line-height: 1;
+  color: #766a65;
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  letter-spacing: 0px;
+  color: #165788;
+  -webkit-text-stroke: 0px;
+}
+.featherlight .featherlight-content .block-grid {
+  margin: 20px 0 0 0;
+}
+.featherlight .featherlight-content .block-grid li {
+  padding-bottom: 0;
 }
 .featherlight .featherlight-content .pull-left {
   margin-right: 20px;
@@ -3867,6 +3904,9 @@ fieldset[disabled] .bx-wrapper .bx-controls-direction a {
   display: block;
   padding: 10px;
 }
+.bx-wrapper .bx-caption span a {
+  color: #eeaf30;
+}
 .coupon-container .coupon-section-header {
   display: none !important;
 }
@@ -3882,6 +3922,8 @@ fieldset[disabled] .bx-wrapper .bx-controls-direction a {
   -webkit-box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1);
   box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  padding: 20px 40px;
 }
 .coupon-container .lbox .lbox-inner .coupon-item .pull-left {
   margin-right: 10.66666667px;
@@ -3928,6 +3970,7 @@ fieldset[disabled] .bx-wrapper .bx-controls-direction a {
 }
 .coupon-container .lbox .lbox-inner .coupon-item .coupon-title a {
   font-family: "Cardo", sans-serif;
+  font-weight: 400;
   line-height: 1.1;
   margin-top: 0;
   -webkit-text-stroke: 1px;
@@ -3940,7 +3983,6 @@ fieldset[disabled] .bx-wrapper .bx-controls-direction a {
   line-height: 1;
   color: #766a65;
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 400;
   letter-spacing: 0px;
   color: #165788;
   -webkit-text-stroke: 0px;
@@ -3949,7 +3991,6 @@ fieldset[disabled] .bx-wrapper .bx-controls-direction a {
   line-height: 1;
   color: #766a65;
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 400;
   letter-spacing: 0px;
   font-family: "Cardo", sans-serif;
   font-style: italic;
