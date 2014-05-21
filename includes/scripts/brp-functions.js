@@ -54,6 +54,7 @@ $(document).ready(function () {
 	}
 	function showVideo() {
 		topSlide.animate({"opacity": 1}, 1500).addClass('active');
+		$("#wind").get(0).play();
 	}
 	function showImages() {
 		$("img.lazy").trigger("sporty");
@@ -95,7 +96,7 @@ $(document).ready(function () {
 	//video stuff
 	//video stuff
 
-	var topVideoFadeIn = setTimeout(showVideo, 1500);
+	var topVideoFadeIn = setTimeout(showVideo, 3000);
 	var fadeInImages = setTimeout(showImages, 0);
 	topVideo2.bind('play', function () {
 		deactivate(topVideoControls);
