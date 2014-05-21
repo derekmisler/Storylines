@@ -20,7 +20,6 @@ $(document).ready(function () {
 		topStory = $('#top').find('.noslide'),
 		topSlideScroll = $('#top .scroll'),
 		caption = $('.header'),
-		cinemagraphs = $('article'),
 		slide = $('.slide'),
 		noslide = $('.noslide'),
 		brpOverlayWrapper = $('#design-plans .brp-overlay'),
@@ -54,12 +53,14 @@ $(document).ready(function () {
 		activate(leftNavigation);
 	}
 	function showVideo() {
-		$("img.lazy").trigger("sporty");
 		topSlide.animate({"opacity": 1}, 1500).addClass('active');
+	}
+	function showImages() {
+		$("img.lazy").trigger("sporty");
 	}
 
 	//Go!
-	$('h1,h2,h3,li,p,.media-caption').each(function () {
+	$('h4, h5, h6, p, .media-caption').each(function () {
 		$(this).html($(this).html().replace(/\s([^\s<]+)\s*$/, '&nbsp;$1'));
 	});
 
@@ -94,7 +95,8 @@ $(document).ready(function () {
 	//video stuff
 	//video stuff
 
-	var t = setTimeout(showVideo, 1500);
+	var topVideoFadeIn = setTimeout(showVideo, 1500);
+	var fadeInImages = setTimeout(showImages, 0);
 	topVideo2.bind('play', function () {
 		deactivate(topVideoControls);
 		closeBottomNav();
@@ -102,6 +104,7 @@ $(document).ready(function () {
 	});
 	topVideo2.bind('pause', function () {
 		activate(topVideoControls);
+		openBottomNav();
 		topSlide.animate({"opacity": 1}, 500);
 	});
 	topVideo2.bind('ended', function () {

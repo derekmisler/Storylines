@@ -42,10 +42,20 @@
         padding: 0 (@default-padding * 3) 0 (@default-padding * 1);
         margin: 2px 0;
         cursor: pointer;
+        > a{
+            color: @avl-blue;
+            &:hover,
+            &:focus{
+                color: @body-bg;
+            }
+        }
         &:hover,
         &:focus{
             background-color: fadeout(@avl-red, 10%);
             color: @body-bg;
+            a{
+                color: @body-bg;
+            }
         }
         &.logo{
             padding: @default-padding (@default-padding * 2);
@@ -232,7 +242,7 @@
             position: absolute;
             padding: @default-padding 0;
             bottom: -100px;
-            .scale(.75);
+            //.scale(.75);
             left: 0;
             z-index: -1;
             text-align: left;
@@ -242,7 +252,7 @@
             border: @media-border;
             .box-shadow(@top-box-shadow);
             background-color: fadeout(@body-bg, 20%);
-            .transition(all @transition-timing);
+            .transition(opacity @transition-timing);
             > li{
                 padding-left: @default-padding * 2;
                 > h5{
@@ -263,7 +273,7 @@
                 }
             }
             &.active{
-                .scale(1);
+                //.scale(1);
                 bottom: 200px;
                 .opacity(1);
             }
@@ -277,10 +287,13 @@
 @media (max-width: @screen-tablet) {
     .navigation.left{
         left: -100%;
-        top: 0;
+        top: 25%;
         width: 100%;
         &.active{
             left: 0;
+        }
+        > .drawerbuttonwrapper{
+            padding-left:0;
         }
     }
     .navigation.bottom {
