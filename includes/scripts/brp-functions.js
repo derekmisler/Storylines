@@ -1,6 +1,6 @@
 /* global alert, jquery, $, document, window, Modernizr, setTimeout */
 $(document).ready(function () {
-    'use strict';
+	'use strict';
 
 	//Cache some variables
 	var mywindow = $(window),
@@ -65,7 +65,7 @@ $(document).ready(function () {
 	}
 
 	//Go!
-	$('h4, h5, h6, p, .media-caption').each(function () {
+	$('p, .media-caption').each(function () {
 		$(this).html($(this).html().replace(/\s([^\s<]+)\s*$/, '&nbsp;$1'));
 	});
 
