@@ -13,12 +13,15 @@
     left: 0;
     right: 0;
     z-index: 999999;
+    .transition(all @transition-timing);
+    overflow:hidden;
     > ul{
         .clearfix();
         list-style-type: none;
         margin: 0;
         padding: 0;
-        display: none;
+        .opacity(0);
+        .transition(all @transition-timing);
         li{
             display: block;
             float: none;
@@ -27,7 +30,7 @@
                 color: @white;
                 display: block;
                 line-height: @default-padding * 2;
-                border-bottom: @default-border;
+                border-top: @default-border;
                 .text-center;
             }
         }
@@ -38,5 +41,11 @@
         width: 100%;
         color: @white;
         .text-center;
+    }
+    &.active{
+        height: auto;
+        > ul{
+            .opacity(1);
+        }
     }
 }

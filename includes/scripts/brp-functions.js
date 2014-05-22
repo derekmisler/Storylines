@@ -29,9 +29,13 @@ $(document).ready(function () {
 		viewOverlay = brpOverlayWrapper.find('img').last(),
 		linncoveFlyover = $("#video-flyover .brp-overlay"),
 		linncoveFlyoverButton = $("#video-flyover .brp-overlay").find(".drawerbutton"),
+		menu 		= $('#mobile-nav'),
+		menuHeight	= menu.height(),
+		pull 		= menu.find('#pull'),
 		notMobileScreen = Modernizr.mq('only screen and (min-width: 1024px)');
 
 	//Cache some functions
+
 	function activate(element) {
 		element.addClass('active');
 	}
@@ -65,10 +69,10 @@ $(document).ready(function () {
 	}
 
 	//Go!
-	$('p, .media-caption').each(function () {
+	$('h1, p, .media-caption').each(function () {
 		$(this).html($(this).html().replace(/\s([^\s<]+)\s*$/, '&nbsp;$1'));
 	});
-
+	
 	var fadeInImages = setTimeout(showImages, 0);
 	
 	$('.youtube').fitVids();
@@ -156,6 +160,21 @@ $(document).ready(function () {
 		goToByScroll(dataslide);
 	});
 	
+	pull.click(function(e) {
+		e.preventDefault();
+		if (menu.hasClass('active')){
+			deactivate(menu);
+			pull.find('span').removeClass('icon-arrow-up').addClass('icon-arrow-down');
+		} else {
+			activate(menu);
+			pull.find('span').removeClass('icon-arrow-down').addClass('icon-arrow-up');
+		}
+	});
+	menu.find('ul li a').click(function(){
+		deactivate(menu);
+		pull.find('span').removeClass('icon-arrow-up').addClass('icon-arrow-down');
+	});
+
 	//map overlay hover effect
 	brpOverlayWrapper.click(function () {
 		if (brpOverlay.hasClass('active')) {
@@ -238,13 +257,4 @@ $(document).ready(function () {
 		offset: '50%'
 	});*/
 	
-		var pull 		= $('#pull'),
-			menu 		= $('#mobile-nav ul'),
-			menuHeight	= menu.height();
-
-		$(pull).on('click', function(e) {
-			e.preventDefault();
-			menu.slideToggle();
-		});
-
 });
