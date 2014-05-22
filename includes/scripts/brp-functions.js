@@ -16,6 +16,7 @@ $(document).ready(function () {
 		topSlide = $('.titlecard'),
 		topVideo = $('#video'),
 		topVideo2 = $('#video2'),
+		wind = $("#wind").get(0),
 		topVideoControls = $('#top .drawerbutton'),
 		topStory = $('#top').find('.noslide'),
 		topSlideScroll = $('#top .scroll'),
@@ -24,6 +25,8 @@ $(document).ready(function () {
 		noslide = $('.noslide'),
 		brpOverlayWrapper = $('#design-plans .brp-overlay'),
 		brpOverlay = brpOverlayWrapper.find('img').last(),
+		viewOverlayWrapper = $('#anatomy .brp-overlay'),
+		viewOverlay = brpOverlayWrapper.find('img').last(),
 		linncoveFlyover = $("#video-flyover .brp-overlay"),
 		linncoveFlyoverButton = $("#video-flyover .brp-overlay").find(".drawerbutton"),
 		notMobileScreen = Modernizr.mq('only screen and (min-width: 768px)');
@@ -54,7 +57,8 @@ $(document).ready(function () {
 	}
 	function showVideo() {
 		topSlide.animate({"opacity": 1}, 1500).addClass('active');
-		$("#wind").get(0).play();
+		wind.volume = 0.2;
+		wind.play();
 	}
 	function showImages() {
 		$("img.lazy").trigger("sporty");
@@ -162,6 +166,7 @@ $(document).ready(function () {
 		}
 	});
 
+
 	//map overlay hover effect
 	linncoveFlyover.click(function () {
 		if (linncoveFlyoverButton.hasClass('active')) {
@@ -209,6 +214,7 @@ $(document).ready(function () {
 		var prevCinemgraph = $(this).prev().find(".cinemagraph").get(0);
 		if (direction === 'down') {
 			prevCinemgraph.pause();
+			//alert(prevCinemgraph + " paused");
 		} else {
 			prevCinemgraph.play();
 		}

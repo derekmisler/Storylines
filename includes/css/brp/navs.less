@@ -251,8 +251,8 @@
             .opacity(0);
             border: @media-border;
             .box-shadow(@top-box-shadow);
-            background-color: fadeout(@body-bg, 20%);
-            .transition(opacity @transition-timing);
+            background-color: fadeout(@body-bg, 10%);
+            .transition(all @slow-transition-timing);
             > li{
                 padding-left: @default-padding * 2;
                 > h5{
