@@ -238,6 +238,13 @@ $(document).ready(function () {
 		offset: '50%'
 	});*/
 	
+		var pull 		= $('#pull'),
+			menu 		= $('#mobile-nav ul'),
+			menuHeight	= menu.height();
 
+		$(pull).on('click', function(e) {
+			e.preventDefault();
+			menu.slideToggle();
+		});
 
 });

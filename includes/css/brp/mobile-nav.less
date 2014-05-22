@@ -1,0 +1,42 @@
+#mobile-nav{
+    .clearfix();
+    display: block;
+    width: 100%;
+    height:@default-padding * 2;
+    line-height: @default-padding * 2;
+    padding: 0;
+    margin: 0 auto;
+    color: @white;
+    background-color: @avl-gray;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999999;
+    > ul{
+        .clearfix();
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: none;
+        li{
+            display: block;
+            float: none;
+            width: 100%;
+            a{
+                color: @white;
+                display: block;
+                line-height: @default-padding * 2;
+                border-bottom: @default-border;
+                .text-center;
+            }
+        }
+    }
+    #pull{
+        display: block;
+        position: relative;
+        width: 100%;
+        color: @white;
+        .text-center;
+    }
+}

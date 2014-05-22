@@ -42,9 +42,6 @@
         p, li{
             font-style: normal;
         }
-        h5{
-            .media-heading;
-        }
         .block-grid{
             //margin: @default-padding 0 0 0;
             li{
@@ -81,11 +78,16 @@
 }
 
 @media only screen and (max-width: @screen-tablet) {
-	.featherlight .featherlight-content {
-		/* dimensions: maximize lightbox with for small screens */
-		margin-left: floor(@default-padding / 2);
-		margin-right: floor(@default-padding / 2);
-		max-height: 98%;
-		padding: floor(@default-padding / 2) @default-padding @default-padding;
+	.featherlight {
+	    background: none;
+    	.featherlight-content {
+    		margin: 0;
+    		height: 100%;
+    		width: 100%;
+    		padding: floor(@default-padding / 2) @default-padding @default-padding;
+    		.media-heading{
+    		    margin: 0 0 @default-padding 0;
+    		}
+    	}
 	}
 }
