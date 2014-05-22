@@ -99,7 +99,7 @@ ul.media-caption{
     .media {
         //border-top:@media-border;
         border-bottom:@media-border;
-        margin: 0 -(@default-padding * 2) @default-padding;
+        margin: 0 -(@default-padding * 1) @default-padding;
         padding: 0;
         .box-shadow(@default-box-shadow);
         .media, &:first-child {
@@ -110,7 +110,7 @@ ul.media-caption{
     }
     .centered{
         .media{
-            margin: 0 -(@default-padding * 2) @default-padding;
+            margin: 0 -(@default-padding * 1) @default-padding;
         }
     }
     .media-object {
@@ -123,7 +123,10 @@ ul.media-caption{
             margin: @font-size-base auto;
         }
     }
+    .media-caption{
+        padding: 0 @default-padding @default-padding;
+    }
     h4.media-heading, .media-heading{
-        margin: 0 (@default-padding * 2);
+        margin: 0 (@default-padding * 1);
     }
 }

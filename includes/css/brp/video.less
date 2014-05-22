@@ -76,6 +76,19 @@
         min-height: 100%;
         border-bottom: @default-border;
         .box-shadow(@top-box-shadow);
+        .titlecard {
+            .opacity(1);
+            position:relative;
+            overflow:hidden;
+            #video-gif{
+                position:absolute;
+                z-index: -1;
+                .opacity(.2);
+            }
+        }
+        .drawerbutton {
+            display:none;
+        }
         #video {
             .make-row();
             min-width: 100%;

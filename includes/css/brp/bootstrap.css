@@ -286,18 +286,6 @@ html {
 ::selection {
   background-color: rgba(22, 87, 136, 0.5);
 }
-::-webkit-scrollbar {
-  background-color: #fdfaff;
-  width: 10px;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #165788;
-  border-radius: 10px;
-}
-::-webkit-scrollbar-track {
-  background-color: #fdfaff;
-  border: none;
-}
 body {
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 20px;
@@ -2258,7 +2246,7 @@ ul.media-caption {
 @media (max-width: 768px) {
   .media {
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-    margin: 0 -40px 20px;
+    margin: 0 -20px 20px;
     padding: 0;
     -webkit-box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1);
@@ -2271,7 +2259,7 @@ ul.media-caption {
     border: 0;
   }
   .centered .media {
-    margin: 0 -40px 20px;
+    margin: 0 -20px 20px;
   }
   .media-object {
     margin-top: 20px;
@@ -2282,9 +2270,12 @@ ul.media-caption {
   .media-object.full-width {
     margin: 20px auto;
   }
+  .media-caption {
+    padding: 0 20px 20px;
+  }
   h4.media-heading,
   .media-heading {
-    margin: 0 40px;
+    margin: 0 20px;
   }
 }
 .thumbnail {
@@ -2362,6 +2353,7 @@ ul.media-caption {
     float: none !important;
     margin: 0 -40px 20px -40px;
     width: auto;
+    padding-bottom: 0;
   }
   .thumbnail [data-featherlight] {
     cursor: pointer;
@@ -2724,7 +2716,7 @@ ul.media-caption {
     margin: 10px;
   }
   .slide .noslide {
-    padding: 40px;
+    padding: 20px;
   }
   .slide .noslide .story {
     padding: 0;
@@ -2880,6 +2872,21 @@ ul.media-caption {
     -webkit-box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1), 0 -6px 1px -4px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1), 0 -6px 1px -4px rgba(0, 0, 0, 0.1);
     box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1), 0 -6px 1px -4px rgba(0, 0, 0, 0.1);
+  }
+  #top .titlecard {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    position: relative;
+    overflow: hidden;
+  }
+  #top .titlecard #video-gif {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.2;
+    filter: alpha(opacity=20);
+  }
+  #top .drawerbutton {
+    display: none;
   }
   #top #video {
     margin-left: 0;
