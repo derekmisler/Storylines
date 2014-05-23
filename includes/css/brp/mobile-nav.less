@@ -6,15 +6,14 @@
     line-height: @default-padding * 2;
     padding: 0;
     margin: 0 auto;
-    color: @white;
-    background-color: @avl-gray;
+    color: @avl-blue;
     position: fixed;
-    top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
     z-index: 999999;
     .transition(all @transition-timing);
-    overflow:hidden;
+    //overflow:hidden;
     > ul{
         .clearfix();
         list-style-type: none;
@@ -26,8 +25,11 @@
             display: block;
             float: none;
             width: 100%;
+            //.box-shadow(@default-box-shadow);
+            background-color: fadeout(@body-bg, 20%);
+            //margin: 2px 0;
             a{
-                color: @white;
+                color: @avl-blue;
                 display: block;
                 line-height: @default-padding * 2;
                 border-top: @default-border;
@@ -39,8 +41,11 @@
         display: block;
         position: relative;
         width: 100%;
-        color: @white;
+        color: @avl-red;
         .text-center;
+        background-color: fadeout(@body-bg, 0%);
+        border-top: @default-border;
+        .box-shadow(@top-box-shadow);
     }
     &.active{
         height: auto;

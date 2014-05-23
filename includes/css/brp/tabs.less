@@ -52,7 +52,7 @@
 
 .tab-content {
     border: @default-border;
-    height: 530px;
+    //height: 530px;
     max-width: 800px;
     .box-shadow(@default-box-shadow);
     &:extend(.clearfix all);
@@ -94,10 +94,12 @@
     height: 100%;
     cursor: pointer;
     img{
-        position: absolute;
+        position: relative;
         z-index: 0;
         &:last-of-type{
+            position: absolute;
             z-index: 1;
+            margin-top: -54%;
             .opacity(0);
             .transition(opacity 2s ease-out);
             &.active{

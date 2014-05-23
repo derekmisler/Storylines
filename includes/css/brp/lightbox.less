@@ -61,16 +61,32 @@
     	display: block;
     	overflow-x: auto;
     	overflow-y: hidden;
+    	.brp-overlay{
+    	    background: url(http://www.exploreasheville.com/includes/images/storylines/blue-ridge-parkway/anatomy-of-a-view-2.jpg) no-repeat center center;
+    	    .background-size(cover);
+            img{
+                position: relative;
+                z-index: 0;
+                margin:0;
+                .opacity(1);
+                &.active{
+                    .opacity(0);
+                }
+            }
+    	}
+    	h5.media-heading{
+    	    margin-top: @default-padding;
+    	}
     }
     .featherlight-close-icon {
-    	position: absolute;
-    	z-index: 9999;
-       .icon;
+        position: fixed;
+        z-index: 9999;
+        .icon;
         .icon-close;
-    	.drawerbutton;
-    	cursor: pointer;
-    	top: 0;
-    	right: 0;
+        .drawerbutton;
+        cursor: pointer;
+        top: 0;
+        right: 0;
     }
     .featherlight-image {
     	width: 100%;
@@ -84,8 +100,8 @@
     		margin: 0;
     		//height: 100%;
     		width: 100%;
-    		padding: floor(@default-padding / 2) @default-padding @default-padding;
-    		margin-top: @default-padding * 2;
+    		padding: @default-padding @default-padding (@default-padding * 2);
+    		margin-bottom: @default-padding * 0;
     		.media-heading{
     		    margin: 0 0 @default-padding 0;
     		}

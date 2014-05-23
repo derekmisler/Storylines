@@ -25,8 +25,8 @@ $(document).ready(function () {
 		noslide = $('.noslide'),
 		brpOverlayWrapper = $('#design-plans .brp-overlay'),
 		brpOverlay = brpOverlayWrapper.find('img').last(),
-		viewOverlayWrapper = $('#anatomy .brp-overlay'),
-		viewOverlay = brpOverlayWrapper.find('img').last(),
+		viewOverlayWrapper = $('#anatomy:hidden .brp-overlay'),
+		viewOverlay = viewOverlayWrapper.find('img'),
 		linncoveFlyover = $("#video-flyover .brp-overlay"),
 		linncoveFlyoverButton = $("#video-flyover .brp-overlay").find(".drawerbutton"),
 		menu 		= $('#mobile-nav'),
@@ -164,15 +164,15 @@ $(document).ready(function () {
 		e.preventDefault();
 		if (menu.hasClass('active')){
 			deactivate(menu);
-			pull.find('span').removeClass('icon-arrow-up').addClass('icon-arrow-down');
+			pull.find('span').removeClass('icon-close').addClass('icon-arrow-up');
 		} else {
 			activate(menu);
-			pull.find('span').removeClass('icon-arrow-down').addClass('icon-arrow-up');
+			pull.find('span').removeClass('icon-arrow-up').addClass('icon-close');
 		}
 	});
 	menu.find('ul li a').click(function(){
 		deactivate(menu);
-		pull.find('span').removeClass('icon-arrow-up').addClass('icon-arrow-down');
+		pull.find('span').removeClass('icon-close').addClass('icon-arrow-up');
 	});
 
 	//map overlay hover effect
@@ -184,6 +184,14 @@ $(document).ready(function () {
 		}
 	});
 
+	//anatomy of a view overlay hover effect
+	viewOverlayWrapper.click(function () {
+		if (viewOverlay.hasClass('active')) {
+			deactivate(viewOverlay);
+		} else {
+			activate(viewOverlay);
+		}
+	});
 
 	//map overlay hover effect
 	linncoveFlyover.click(function () {
