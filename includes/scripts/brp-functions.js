@@ -25,8 +25,6 @@ $(document).ready(function () {
 		noslide = $('.noslide'),
 		brpOverlayWrapper = $('#design-plans .brp-overlay'),
 		brpOverlay = brpOverlayWrapper.find('img').last(),
-		viewOverlayWrapper = $('#anatomy:hidden .brp-overlay'),
-		viewOverlay = viewOverlayWrapper.find('img'),
 		linncoveFlyover = $("#video-flyover .brp-overlay"),
 		linncoveFlyoverButton = $("#video-flyover .brp-overlay").find(".drawerbutton"),
 		menu 		= $('#mobile-nav'),
@@ -67,8 +65,18 @@ $(document).ready(function () {
 	function showImages() {
 		$("img.lazy").trigger("sporty");
 	}
-
 	//Go!
+	//Go!
+	//Go!
+	//Go!
+
+	//anatomy of a view overlay hover effect
+	/*$('#anatomy .brp-overlay').toggle(function () {
+		$(this).find('img').animate({'opacity': 0}, 1000);
+	}, function () {
+		$(this).find('img').animate({'opacity': 1}, 1000);
+	});*/
+
 	$('h1, p, .media-caption').each(function () {
 		$(this).html($(this).html().replace(/\s([^\s<]+)\s*$/, '&nbsp;$1'));
 	});
@@ -181,15 +189,6 @@ $(document).ready(function () {
 			deactivate(brpOverlay);
 		} else {
 			activate(brpOverlay);
-		}
-	});
-
-	//anatomy of a view overlay hover effect
-	viewOverlayWrapper.click(function () {
-		if (viewOverlay.hasClass('active')) {
-			deactivate(viewOverlay);
-		} else {
-			activate(viewOverlay);
 		}
 	});
 

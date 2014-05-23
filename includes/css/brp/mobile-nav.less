@@ -26,7 +26,7 @@
             float: none;
             width: 100%;
             //.box-shadow(@default-box-shadow);
-            background-color: fadeout(@body-bg, 20%);
+            background-color: fadeout(@body-bg, 10%);
             //margin: 2px 0;
             a{
                 color: @avl-blue;
@@ -48,9 +48,12 @@
         .box-shadow(@top-box-shadow);
     }
     &.active{
-        height: auto;
+        height: 100%;
         > ul{
             .opacity(1);
+            overflow-y: auto;
+            height: 100%;
+            padding-bottom: @default-padding * 2;
         }
     }
 }

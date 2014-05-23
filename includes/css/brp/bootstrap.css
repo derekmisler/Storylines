@@ -2267,6 +2267,9 @@ ul.media-caption {
   .media-object.full-width {
     margin: 20px auto;
   }
+  .youtube .media-object {
+    margin: 0;
+  }
   .media-caption {
     padding: 0 20px 20px;
   }
@@ -2333,6 +2336,9 @@ ul.media-caption {
 .thumbnail .media-heading {
   color: #b71234;
 }
+.thumbnail p {
+  color: #165788;
+}
 .thumbnail .icon {
   color: #165788;
   font-size: 40px;
@@ -2341,16 +2347,17 @@ ul.media-caption {
   .thumbnail {
     overflow: hidden;
     zoom: 1;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
     margin: 20px -40px;
     padding: 0 40px 40px;
+    float: none !important;
     -webkit-box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1);
     box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1);
-    float: none !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
     margin: 0 -20px 20px;
+    padding: 0;
     width: auto;
-    padding-bottom: 20px;
+    padding-top: 20px;
   }
   .thumbnail [data-featherlight] {
     cursor: pointer;
@@ -2386,6 +2393,11 @@ ul.media-caption {
   .thumbnail a:hover img,
   .thumbnail a:focus img {
     border-color: #b71234;
+  }
+  .thumbnail p {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 0 20px 0;
   }
 }
 .panel {
@@ -2717,6 +2729,7 @@ ul.media-caption {
   }
   .slide .noslide {
     padding: 20px;
+    padding-top: 0;
   }
   .slide .noslide .story {
     padding: 0;
@@ -2868,7 +2881,6 @@ ul.media-caption {
 @media (max-width: 768px) {
   #top {
     min-height: 100%;
-    margin-top: 40px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
     -webkit-box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1), 0 -6px 1px -4px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1), 0 -6px 1px -4px rgba(0, 0, 0, 0.1);
@@ -2882,7 +2894,7 @@ ul.media-caption {
     padding: 0;
   }
   #top .titlecard h1 {
-    padding: 20px 0 0 0;
+    padding-top: 0;
     margin: 0;
   }
   #top .titlecard #video-gif {
@@ -2924,6 +2936,9 @@ ul.media-caption {
   }
   #top #video-gif {
     left: 0;
+  }
+  #top .noslide {
+    padding-top: 20px;
   }
 }
 .navigation {
@@ -2985,9 +3000,9 @@ fieldset[disabled] .drawerbutton {
   background-color: rgba(183, 18, 52, 0.85);
 }
 .navigation.left {
-  left: -280px;
+  left: -380px;
   top: 25%;
-  width: 280px;
+  width: 380px;
   padding: 20px 0 0 0;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -3464,7 +3479,7 @@ fieldset[disabled] .navigation.social > li .icon {
   display: block;
   float: none;
   width: 100%;
-  background-color: rgba(253, 250, 255, 0.8);
+  background-color: rgba(253, 250, 255, 0.9);
 }
 #mobile-nav > ul li a {
   color: #165788;
@@ -3486,11 +3501,14 @@ fieldset[disabled] .navigation.social > li .icon {
   box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1), 0 -6px 1px -4px rgba(0, 0, 0, 0.1);
 }
 #mobile-nav.active {
-  height: auto;
+  height: 100%;
 }
 #mobile-nav.active > ul {
   opacity: 1;
   filter: alpha(opacity=100);
+  overflow-y: auto;
+  height: 100%;
+  padding-bottom: 40px;
 }
 .tabs {
   display: block;
@@ -3847,6 +3865,16 @@ fieldset[disabled] .featherlight .featherlight-close-icon {
   }
   .featherlight .featherlight-content .media-heading {
     margin: 0 0 20px 0;
+  }
+  .featherlight .featherlight-content .media-caption {
+    padding: 0;
+  }
+  .featherlight .featherlight-content .pull-left,
+  .featherlight .featherlight-content .pull-right,
+  .featherlight .featherlight-content .pull-left img,
+  .featherlight .featherlight-content .pull-right img {
+    margin: 0;
+    width: 100%;
   }
 }
 .bx-wrapper {

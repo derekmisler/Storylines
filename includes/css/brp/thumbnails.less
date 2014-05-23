@@ -26,6 +26,9 @@
     .media-heading {
         color: @avl-red;
     }
+    p{
+        color: @avl-blue;
+    }
     .icon{
         color: @avl-blue;
         font-size: @font-size-base * 2;
@@ -35,10 +38,13 @@
      .thumbnail {
          .media;
         float:none !important;
+        .box-shadow(@default-box-shadow);
+        border-bottom: @default-border;
         margin: 0 -(@default-padding) @default-padding;
+        padding: 0;
         .clearfix;
         width: auto;
-        padding-bottom: @default-padding;
+        padding-top: @default-padding;
         a{
             &:hover img,
             &:focus img{
@@ -47,6 +53,11 @@
         }
         .media-heading {
             
+        }
+        p{
+            font-size: @font-size-base;
+            font-weight: bold;
+            padding: 0 0 @default-padding 0;
         }
     }
 }

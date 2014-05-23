@@ -74,7 +74,7 @@
 @media (max-width: @screen-tablet) {
     #top{
         min-height: 100%;
-        margin-top: @default-padding * 2;
+        //margin-top: @default-padding * 2;
         border-bottom: @default-border;
         .box-shadow(@top-box-shadow);
         .titlecard {
@@ -83,7 +83,7 @@
             overflow:hidden;
             padding: 0;
             h1{
-                padding: @default-padding 0 0 0;
+                padding-top: 0;
                 margin: 0;
             }
             #video-gif{
@@ -104,6 +104,9 @@
         }
         #video-gif{
             left: 0;
+        }
+        .noslide{
+            padding-top: @default-padding;
         }
     }
 }
