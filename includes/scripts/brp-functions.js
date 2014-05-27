@@ -20,6 +20,7 @@ $(document).ready(function () {
 		topVideoControls = $('#top .drawerbutton'),
 		topStory = $('#top').find('.noslide'),
 		topSlideScroll = $('#top .scroll'),
+		thisLink,
 		caption = $('.header'),
 		slide = $('.slide').not('#top'),
 		noslide = $('.noslide').not(":eq(0)"),
@@ -135,17 +136,16 @@ $(document).ready(function () {
 			topSlide.animate({"opacity": 1}, 500);
 			topVideo.get(0).play();
 		});
-		topVideo2.click(function (e) {
+		topVideo2.on("click", function (e) {
 			if (topVideo2.get(0).paused && topVideo2.hasClass('active')) {
 				topVideo2.get(0).play();
 			} else {
 				topVideo2.get(0).pause();
 			}
 		});
-		topSlide.click(function (e) {
+		topSlide.on("click", function (e) {
 			e.preventDefault();
 			if (topVideoControls.hasClass('active')) {
-				_gaq.push(['pageTracker._trackEvent', 'Explorers of the Blue Ridge Parkway', 'Video', 'User Played Trailer']);
 				deactivate(topVideoControls);
 				topVideo.get(0).pause();
 				topVideo.animate({"opacity": 0.5}, 1000);
@@ -167,7 +167,7 @@ $(document).ready(function () {
 	function goToByScroll(dataslide) {
 		htmlbody.animate({ scrollTop: $('[data-story="' + dataslide + '"]').offset().top }, 1000);
 	}
-	links.click(function (e) {
+	links.on("click", function (e) {
 		//e.preventDefault();
 		deactivate(namecards);
 		var dataslide = $(this).attr('data-story'),
@@ -176,7 +176,7 @@ $(document).ready(function () {
 		goToByScroll(dataslide);
 	});
 	
-	pull.click(function(e) {
+	pull.on("click", function(e) {
 		e.preventDefault();
 		if (menu.hasClass('active')){
 			deactivate(menu);
@@ -186,22 +186,27 @@ $(document).ready(function () {
 			pull.find('span').removeClass('icon-arrow-up').addClass('icon-close');
 		}
 	});
-	menu.find('ul li a').click(function(){
+	menu.find('ul li a').on("click", function(){
 		deactivate(menu);
 		pull.find('span').removeClass('icon-close').addClass('icon-arrow-up');
 	});
 	
-	$('[rel="external"]').click( function () {
-		var thisLink = $(this).attr('href');
-		_gaq.push(['pageTracker._trackEvent', 'Explorers of the Blue Ridge Parkway', 'External Link Clicked', thisLink]);
+	$('a[href]').on("click", function () {
+		thisLink = $(this).attr('href');
+		if ($(this).attr('rel')) {
+			_gaq.push(['pageTracker._trackEvent', 'Explorers of the Blue Ridge Parkway', 'External Link Clicked', thisLink]);
+		} else if ($(this).attr('href') !== '#') {
+			_gaq.push(['pageTracker._trackEvent', 'Explorers of the Blue Ridge Parkway', 'Internal Link Clicked', thisLink]);
+		}
 	});
-	thumbnail.click(function(){
+	
+	thumbnail.on("click", function(){
 		var thumbnailTitle = $(this).find('.media-heading').first().text();
 		_gaq.push(['pageTracker._trackEvent', 'Explorers of the Blue Ridge Parkway', 'Thumbnail Clicked', thumbnailTitle]);
 	});
 
 	//map overlay hover effect
-	brpOverlayWrapper.click(function () {
+	brpOverlayWrapper.on("click", function () {
 		if (brpOverlay.hasClass('active')) {
 			deactivate(brpOverlay);
 		} else {
@@ -210,7 +215,7 @@ $(document).ready(function () {
 	});
 
 	//map overlay hover effect
-	/*linncoveFlyover.click(function () {
+	/*linncoveFlyover.on("click", function () {
 		if (linncoveFlyoverButton.hasClass('active')) {
 			deactivate(linncoveFlyoverButton);
 			linncoveFlyover.find("video").get(0).play();
@@ -221,7 +226,7 @@ $(document).ready(function () {
 	});*/
 
 	//hide and show the navigation by clicking the arrow
-	bottomNavToggle.click(function () {
+	bottomNavToggle.on("click", function () {
 		if (bottomNavigation.hasClass('active')) {
 			closeBottomNav();
 		} else {
