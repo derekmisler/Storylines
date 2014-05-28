@@ -61,7 +61,7 @@ $(document).ready(function () {
 	}
 	function showVideo() {
 		topSlide.animate({"opacity": 1}, 1500).addClass('active');
-		wind.volume = 0.2;
+		wind.volume = 0.1;
 		wind.play();
 		openBottomNav();
 	}
@@ -191,9 +191,9 @@ $(document).ready(function () {
 		pull.find('span').removeClass('icon-close').addClass('icon-arrow-up');
 	});
 	
-	$('a[href]').on("click", function () {
+	$(".story").on("click", "a[href]", function () {
 		thisLink = $(this).attr('href');
-		if ($(this).attr('rel').indexOf('external')) {
+		if ($(this).attr('rel')) {
 			_gaq.push(['pageTracker._trackEvent', 'Explorers of the Blue Ridge Parkway', 'External Link Clicked', thisLink]);
 		} else if ($(this).attr('href') !== '#' && $(this).not('a[class="icon"]')) {
 			_gaq.push(['pageTracker._trackEvent', 'Explorers of the Blue Ridge Parkway', 'Internal Link Clicked', thisLink]);
