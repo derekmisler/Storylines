@@ -61,7 +61,7 @@ $(document).ready(function () {
 	}
 	function showVideo() {
 		topSlide.animate({"opacity": 1}, 1500).addClass('active');
-		wind.volume = 0.1;
+		wind.volume = 0.15;
 		wind.play();
 		openBottomNav();
 	}
