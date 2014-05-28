@@ -4017,6 +4017,7 @@ fieldset[disabled] .featherlight .featherlight-close-icon {
   -o-transition: all 0.1s;
   transition: all 0.1s;
   display: inline-block;
+  cursor: pointer;
 }
 .bx-wrapper .bx-controls-direction a:focus {
   outline: thin dotted #890d27;

@@ -195,11 +195,18 @@ $(document).ready(function () {
 		thisLink = $(this).attr('href');
 		if ($(this).attr('rel')) {
 			_gaq.push(['pageTracker._trackEvent', 'Explorers of the Blue Ridge Parkway', 'External Link Clicked', thisLink]);
-		} else if ($(this).attr('href') !== '#') {
+		} else if ($(this).attr('href') !== '#' && $(this).not('a[class]')) {
 			_gaq.push(['pageTracker._trackEvent', 'Explorers of the Blue Ridge Parkway', 'Internal Link Clicked', thisLink]);
 		}
 	});
 	
+	$(".bx-controls-direction").on("click", "a", function(){
+		var arrow = $(this).attr('class'),
+			slideshow = $(this).parent().parent().parent().prev('.media-heading').text();
+		arrow = arrow.replace('bx-','');
+		_gaq.push(['pageTracker._trackEvent', 'Explorers of the Blue Ridge Parkway', 'Slideshow Arrow Clicked', slideshow + ': ' + arrow]);
+	});
+
 	thumbnail.on("click", function(){
 		var thumbnailTitle = $(this).find('.media-heading').first().text();
 		_gaq.push(['pageTracker._trackEvent', 'Explorers of the Blue Ridge Parkway', 'Thumbnail Clicked', thumbnailTitle]);
