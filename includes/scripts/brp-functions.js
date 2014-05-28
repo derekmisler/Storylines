@@ -193,9 +193,9 @@ $(document).ready(function () {
 	
 	$('a[href]').on("click", function () {
 		thisLink = $(this).attr('href');
-		if ($(this).attr('rel')) {
+		if ($(this).attr('rel').indexOf('external')) {
 			_gaq.push(['pageTracker._trackEvent', 'Explorers of the Blue Ridge Parkway', 'External Link Clicked', thisLink]);
-		} else if ($(this).attr('href') !== '#' && $(this).not('a[class]')) {
+		} else if ($(this).attr('href') !== '#' && $(this).not('a[class="icon"]')) {
 			_gaq.push(['pageTracker._trackEvent', 'Explorers of the Blue Ridge Parkway', 'Internal Link Clicked', thisLink]);
 		}
 	});
