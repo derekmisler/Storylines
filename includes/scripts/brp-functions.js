@@ -32,6 +32,7 @@ $(document).ready(function () {
 		menuHeight	= menu.height(),
 		pull 		= menu.find('#pull'),
 		thumbnail = $('.thumbnail'),
+		media = $('.media'),
 		notMobileScreen = Modernizr.mq('only screen and (min-width: 1024px)');
 
 	//Cache some functions
@@ -65,9 +66,9 @@ $(document).ready(function () {
 		wind.play();
 		openBottomNav();
 	}
-	//function showImages() {
-	//	$("img.lazy").trigger("sporty");
-	//}
+	function showImages() {
+		$("img.delayed").trigger("sporty");
+	}
 	//Go!
 	//Go!
 	//Go!
@@ -84,7 +85,7 @@ $(document).ready(function () {
 		$(this).html($(this).html().replace(/\s([^\s<]+)\s*$/, '&nbsp;$1'));
 	});
 	
-	//var fadeInImages = setTimeout(showImages, 0);
+	var fadeInImages = setTimeout(showImages, 0);
 	
 	$('.youtube').fitVids();
 	$("img.lazy").lazyload({
@@ -92,6 +93,13 @@ $(document).ready(function () {
 		effect : "fadeIn",
 		skip_invisible : false,
 		failure_limit : 1000
+	});
+	$("img.delayed").lazyload({
+		placeholder : "http://www.exploreasheville.com/includes/images/assets/1pixel.gif",
+		effect : "fadeIn",
+		skip_invisible : false,
+		failure_limit : 1000,
+		event: "sporty"
 	});
 
 	$('.bxslider').bxSlider({
@@ -211,6 +219,11 @@ $(document).ready(function () {
 		_gaq.push(['pageTracker._trackEvent', 'Explorers of the Blue Ridge Parkway', 'Thumbnail Clicked', thumbnailTitle]);
 	});
 
+	media.on("click", "a[href]", function(){
+		var mediaTitle = $(this).parent().find('.media-heading').first().text();
+		_gaq.push(['pageTracker._trackEvent', 'Explorers of the Blue Ridge Parkway', 'Thumbnail Clicked', mediaTitle]);
+	});
+
 	//map overlay hover effect
 	brpOverlayWrapper.on("click", function () {
 		if (brpOverlay.hasClass('active')) {
@@ -264,7 +277,7 @@ $(document).ready(function () {
 		} else {
 			currentCinemgraph.pause();
 		}
-	}, {offset: '50%'});
+	}, {offset: '75%'});
 
 	noslide.waypoint(function (direction) {
 		var prevCinemgraph = $(this).parent().find(".cinemagraph").get(0);
