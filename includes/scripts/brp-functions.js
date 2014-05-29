@@ -187,15 +187,15 @@ $(document).ready(function () {
 		e.preventDefault();
 		if (menu.hasClass('active')){
 			deactivate(menu);
-			pull.find('span').removeClass('icon-close').addClass('icon-arrow-up');
+			pull.find('span').removeClass('icon-close').addClass('icon-menu2');
 		} else {
 			activate(menu);
-			pull.find('span').removeClass('icon-arrow-up').addClass('icon-close');
+			pull.find('span').removeClass('icon-menu2').addClass('icon-close');
 		}
 	});
 	menu.find('ul li a').on("click", function(){
 		deactivate(menu);
-		pull.find('span').removeClass('icon-close').addClass('icon-arrow-up');
+		pull.find('span').removeClass('icon-close').addClass('icon-menu2');
 	});
 	
 	$(".story").on("click", "a[href]", function () {
@@ -219,7 +219,7 @@ $(document).ready(function () {
 		_gaq.push(['pageTracker._trackEvent', 'Explorers of the Blue Ridge Parkway', 'Thumbnail Clicked', thumbnailTitle]);
 	});
 
-	media.on("click", "a[href]", function(){
+	media.on("click", "a:not('.bx-next, .bx-prev')", function(){
 		var mediaTitle = $(this).parent().find('.media-heading').first().text();
 		_gaq.push(['pageTracker._trackEvent', 'Explorers of the Blue Ridge Parkway', 'Thumbnail Clicked', mediaTitle]);
 	});

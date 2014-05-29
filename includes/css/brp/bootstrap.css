@@ -1899,6 +1899,9 @@ input[type="button"].btn-block {
 .icon-bear:before {
   content: "\e617";
 }
+.icon-road:before {
+  content: "\e616";
+}
 .icon-tunnel:before {
   content: "\e60e";
 }
@@ -2007,6 +2010,9 @@ input[type="button"].btn-block {
 .icon-stairs:before {
   content: "\e20c";
 }
+.icon-rating:before {
+  content: "\e215";
+}
 .icon-leaf:before {
   content: "\e22c";
 }
@@ -2043,9 +2049,6 @@ input[type="button"].btn-block {
 .icon-bike:before {
   content: "\e261";
 }
-.icon-road:before {
-  content: "\e616";
-}
 .icon-sunglasses:before {
   content: "\e275";
 }
@@ -2055,6 +2058,12 @@ input[type="button"].btn-block {
 .icon-grid:before {
   content: "\e2a5";
 }
+.icon-menu:before {
+  content: "\e2ac";
+}
+.icon-menu2:before {
+  content: "\e2ae";
+}
 .icon-cloud:before {
   content: "\e2b5";
 }
@@ -2063,6 +2072,9 @@ input[type="button"].btn-block {
 }
 .icon-sun:before {
   content: "\e2f3";
+}
+.icon-star:before {
+  content: "\e301";
 }
 .icon-close:before {
   content: "\e36b";
