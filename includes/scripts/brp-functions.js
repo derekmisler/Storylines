@@ -65,9 +65,9 @@ $(document).ready(function () {
 		wind.play();
 		openBottomNav();
 	}
-	function showImages() {
-		$("img.lazy").trigger("sporty");
-	}
+	//function showImages() {
+	//	$("img.lazy").trigger("sporty");
+	//}
 	//Go!
 	//Go!
 	//Go!
@@ -84,15 +84,14 @@ $(document).ready(function () {
 		$(this).html($(this).html().replace(/\s([^\s<]+)\s*$/, '&nbsp;$1'));
 	});
 	
-	var fadeInImages = setTimeout(showImages, 0);
+	//var fadeInImages = setTimeout(showImages, 0);
 	
 	$('.youtube').fitVids();
 	$("img.lazy").lazyload({
 		placeholder : "http://www.exploreasheville.com/includes/images/assets/1pixel.gif",
 		effect : "fadeIn",
 		skip_invisible : false,
-		failure_limit : 1000,
-		event : "sporty"
+		failure_limit : 1000
 	});
 
 	$('.bxslider').bxSlider({
