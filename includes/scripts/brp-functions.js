@@ -33,6 +33,7 @@ $(document).ready(function () {
 		pull 		= menu.find('#pull'),
 		thumbnail = $('.thumbnail'),
 		media = $('.media'),
+		garyjohnsonaudio = $('#gary-johnson-audio'),
 		notMobileScreen = Modernizr.mq('only screen and (min-width: 1024px)');
 
 	//Cache some functions
@@ -164,6 +165,15 @@ $(document).ready(function () {
 			}
 		});
 	}
+	garyjohnsonaudio.bind('play', function () {
+		_gaq.push(['pageTracker._trackEvent', 'Explorers of the Blue Ridge Parkway', 'Audio', 'User Played Gary Johnson Audio']);
+	});
+	garyjohnsonaudio.bind('pause', function () {
+		_gaq.push(['pageTracker._trackEvent', 'Explorers of the Blue Ridge Parkway', 'Audio', 'User Paused Gary Johnson Audio']);
+	});
+	garyjohnsonaudio.bind('ended', function () {
+		_gaq.push(['pageTracker._trackEvent', 'Explorers of the Blue Ridge Parkway', 'Audio', 'User Finished Gary Johnson Audio']);
+	});
 	//Setup navs
 	//Setup navs
 	//Setup navs
@@ -198,13 +208,18 @@ $(document).ready(function () {
 		pull.find('span').removeClass('icon-close').addClass('icon-menu2');
 	});
 	
-	$(".story").on("click", "a[href]", function () {
+	$(".story").on("click", "a[href]:not('[href=#info], [href=#design-plans], [href=#video-flyover]')", function () {
 		thisLink = $(this).attr('href');
 		if ($(this).attr('rel')) {
 			_gaq.push(['pageTracker._trackEvent', 'Explorers of the Blue Ridge Parkway', 'External Link Clicked', thisLink]);
 		} else if ($(this).attr('href') !== '#' && $(this).not('a[class="icon"]')) {
 			_gaq.push(['pageTracker._trackEvent', 'Explorers of the Blue Ridge Parkway', 'Internal Link Clicked', thisLink]);
 		}
+	});
+	
+	$(".tabs").on("click", "a", function () {
+		thisLink = $(this).text();
+		_gaq.push(['pageTracker._trackEvent', 'Explorers of the Blue Ridge Parkway', 'Tab Clicked', thisLink]);
 	});
 	
 	$(".bx-controls-direction").on("click", "a", function(){
@@ -219,7 +234,7 @@ $(document).ready(function () {
 		_gaq.push(['pageTracker._trackEvent', 'Explorers of the Blue Ridge Parkway', 'Thumbnail Clicked', thumbnailTitle]);
 	});
 
-	media.on("click", "a:not('.bx-next, .bx-prev')", function(){
+	media.on("click", "a:not('.bx-next, .bx-prev, [href=#info], [href=#design-plans], [href=#video-flyover], .brp-overlay')", function(){
 		var mediaTitle = $(this).parent().find('.media-heading').first().text();
 		_gaq.push(['pageTracker._trackEvent', 'Explorers of the Blue Ridge Parkway', 'Thumbnail Clicked', mediaTitle]);
 	});
