@@ -2878,7 +2878,7 @@ ul.media-caption {
   width: 175px;
   height: 175px;
 }
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
   #top {
     min-height: 100%;
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
