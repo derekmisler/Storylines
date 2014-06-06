@@ -610,9 +610,7 @@ $(document).ready(function () {
 		wind.play();
 		openBottomNav();
 	}
-	function showImages() {
-		$("img.delayed").trigger("sporty");
-	}
+	
 	//Go!
 	//Go!
 	//Go!
@@ -628,9 +626,6 @@ $(document).ready(function () {
 	$('h1, p, .media-caption').each(function () {
 		$(this).html($(this).html().replace(/\s([^\s<]+)\s*$/, '&nbsp;$1'));
 	});
-	
-	var fadeInImages = setTimeout(showImages, 0);
-	
 	$('.youtube').fitVids();
 	$("img.lazy").lazyload({
 		placeholder : "http://www.exploreasheville.com/includes/images/assets/1pixel.gif",
@@ -642,9 +637,10 @@ $(document).ready(function () {
 		placeholder : "http://www.exploreasheville.com/includes/images/assets/1pixel.gif",
 		skip_invisible : false,
 		failure_limit : 1000,
+		effect: "fadeIn",
 		event: "sporty"
 	});
-
+	
 	$('.bxslider').bxSlider({
 		captions: true,
 		pager: false
@@ -657,14 +653,7 @@ $(document).ready(function () {
 	//video stuff
 	//video stuff
 	if (notMobileScreen) {
-//		$.stellar({
-//			responsive: true,
-//			hideDistantElements: false,
-//			positionProperty: 'position',
-//			horizontalScrolling: false,
-//			parallaxBackgrounds: false
-//		});
-		var topVideoFadeIn = setTimeout(showVideo, 3000);
+		var topVideoFadeIn = setTimeout(showVideo, 2000);
 		topVideo2.bind('play', function () {
 			deactivate(topVideoControls);
 			closeBottomNav();
@@ -850,4 +839,7 @@ $(document).ready(function () {
 		closeBottomNav();
 	});
 	
+});
+$(window).bind("load", function() {
+	var timeout = setTimeout(function() { $("img.delayed").trigger("sporty") }, 1);
 });
