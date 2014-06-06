@@ -2265,7 +2265,7 @@ ul.media-caption {
   .media-body.bxslider {
     margin: 0 auto;
   }
-  #itineraries .media-body {
+  #itineraries .media-object {
     margin: 0 20px;
   }
   .media-object {
@@ -2566,8 +2566,11 @@ ul.media-caption {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00fdfaff', endColorstr='#d9fdfaff', GradientType=0);
   z-index: 1;
 }
-.slide .caption > .header > h1 {
-  margin: 0;
+.slide .caption > .header > h5 {
+  margin-bottom: 0;
+}
+.slide .caption > .header > h2 {
+  margin-bottom: 0;
 }
 .slide .caption > .header > .profilephoto {
   display: inline-block;

@@ -1028,8 +1028,20 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <iframe class="lightbox media-object" id="brp-map" src="https://mapsengine.google.com/map/embed?mid=zqpF1kajN8LE.ka1Xj3e3VG4w" width="100%" height="600"></iframe>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="/includes/scripts/brp-plugins.js"></script>
-<script src="/includes/scripts/brp-functions.js"></script>
+<script type="text/javascript">
+function downloadJSAtOnload() {
+	var node = document.createElement('script');
+	node.type = 'text/javascript';
+	node.async = true;
+	node.src = '/includes/scripts/brp-functions.js';
+	document.body.appendChild(node);
+}
+if (window.addEventListener)
+	window.addEventListener("load", downloadJSAtOnload, false);
+else if (window.attachEvent)
+	window.attachEvent("onload", downloadJSAtOnload);
+else window.onload = downloadJSAtOnload;
+</script>
 <script type="text/javascript">
 setTimeout(function(){var a=document.createElement("script");
 var b=document.getElementsByTagName("script")[0];
@@ -1048,4 +1060,4 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 
 </body>
-</html> 
+</html>
