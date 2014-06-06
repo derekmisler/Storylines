@@ -23,15 +23,16 @@
         	}
         	> .profilephoto {
                 display: inline-block;
-                width: 220px;
-                height: 220px;
+                width: 170px;
+                height: 170px;
                 border-radius: 50% 50% 50% 0;
                 background: @avl-blue;
                 overflow: hidden;
                 .rotate(-45deg);
-                margin: 0 0 (@default-padding * 2) 0;
+                margin: 0;
                 .transition(all @transition-timing);
                 .box-shadow(-2px 2px 0 @default-box-shadow-color);
+                cursor: default;
                 &:after{
                     background: @black;
                     border-radius: 50%;
@@ -51,9 +52,9 @@
                 }
                 > img {
                     .rotate(45deg);
-                	height: 200px;
-                	width: 200px;
-                	margin: 10px;
+                	height: 160px;
+                	width: 160px;
+                	margin: 5px;
                 	border-radius: 50%;
                 	background-color: @gray-light;
                 }

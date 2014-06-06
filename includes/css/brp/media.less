@@ -39,8 +39,8 @@ h2.media-heading {
     }
     &.circle{
         border-radius: 50%;
-        width: 175px;
-        height: 175px;
+        width: 160px;
+        height: 160px;
     }
     &.youtube {
     }
@@ -113,8 +113,20 @@ ul.media-caption{
             margin: 0 -(@default-padding * 1) @default-padding;
         }
     }
+    .media-body{
+        margin:@default-padding auto;
+        &.youtube,
+        &.bxslider{
+            margin: 0 auto;
+        }
+    }
+    #itineraries{
+        .media-object{
+            margin: 0 @default-padding;
+        }
+    }
     .media-object {
-        margin-top:@default-padding;
+        margin:0 auto;
         &.circle{
             //.square(100%);
             border-radius: 50%;

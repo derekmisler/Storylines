@@ -91,13 +91,12 @@ $(document).ready(function () {
 	$('.youtube').fitVids();
 	$("img.lazy").lazyload({
 		placeholder : "http://www.exploreasheville.com/includes/images/assets/1pixel.gif",
-		effect : "fadeIn",
 		skip_invisible : false,
-		failure_limit : 1000
+		failure_limit : 1000,
+		threshold : 200
 	});
 	$("img.delayed").lazyload({
 		placeholder : "http://www.exploreasheville.com/includes/images/assets/1pixel.gif",
-		effect : "fadeIn",
 		skip_invisible : false,
 		failure_limit : 1000,
 		event: "sporty"

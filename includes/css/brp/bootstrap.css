@@ -278,7 +278,7 @@ body {
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 20px;
   line-height: 1.6;
-  color: #3d2b1f;
+  color: #4d4037;
   background-color: #fdfaff;
 }
 input,
@@ -486,7 +486,7 @@ h1,
 }
 h2,
 .h2 {
-  font-size: 52px;
+  font-size: 44px;
 }
 h3,
 .h3 {
@@ -494,11 +494,11 @@ h3,
 }
 h4,
 .h4 {
-  font-size: 30px;
+  font-size: 24px;
 }
 h5,
 .h5 {
-  font-size: 23px;
+  font-size: 22px;
 }
 h6,
 .h6 {
@@ -2141,7 +2141,7 @@ h2.media-heading {
   color: #165788;
   -webkit-text-stroke: 1px;
   -webkit-text-stroke-color: rgba(22, 87, 136, 0.1);
-  font-size: 52px;
+  font-size: 44px;
   margin: 20px 0 10px 0;
   color: #766a65;
   -webkit-text-stroke: 0px;
@@ -2183,8 +2183,8 @@ h2.media-heading small {
 }
 .media-object.circle {
   border-radius: 50%;
-  width: 175px;
-  height: 175px;
+  width: 160px;
+  height: 160px;
 }
 .media-body.block-grid li {
   padding-bottom: 0;
@@ -2258,8 +2258,18 @@ ul.media-caption {
   .centered .media {
     margin: 0 -20px 20px;
   }
+  .media-body {
+    margin: 20px auto;
+  }
+  .media-body.youtube,
+  .media-body.bxslider {
+    margin: 0 auto;
+  }
+  #itineraries .media-body {
+    margin: 0 20px;
+  }
   .media-object {
-    margin-top: 20px;
+    margin: 0 auto;
   }
   .media-object.circle {
     border-radius: 50%;
@@ -2355,9 +2365,8 @@ ul.media-caption {
     box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
     margin: 0 -20px 20px;
-    padding: 0;
+    padding: 20px;
     width: auto;
-    padding-top: 20px;
   }
   .thumbnail [data-featherlight] {
     cursor: pointer;
@@ -2394,10 +2403,14 @@ ul.media-caption {
   .thumbnail a:focus img {
     border-color: #b71234;
   }
+  .thumbnail .media-caption {
+    margin: 0;
+    padding: 0;
+  }
   .thumbnail p {
     font-size: 20px;
     font-weight: bold;
-    padding: 0 0 20px 0;
+    padding: 0;
   }
 }
 .panel {
@@ -2558,15 +2571,15 @@ ul.media-caption {
 }
 .slide .caption > .header > .profilephoto {
   display: inline-block;
-  width: 220px;
-  height: 220px;
+  width: 170px;
+  height: 170px;
   border-radius: 50% 50% 50% 0;
   background: #165788;
   overflow: hidden;
   -webkit-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  margin: 0 0 40px 0;
+  margin: 0;
   -webkit-transition: all 0.1s;
   -moz-transition: all 0.1s;
   -o-transition: all 0.1s;
@@ -2574,6 +2587,7 @@ ul.media-caption {
   -webkit-box-shadow: -2px 2px 0 rgba(0, 0, 0, 0.1);
   -moz-box-shadow: -2px 2px 0 rgba(0, 0, 0, 0.1);
   box-shadow: -2px 2px 0 rgba(0, 0, 0, 0.1);
+  cursor: default;
 }
 .slide .caption > .header > .profilephoto:after {
   background: #000000;
@@ -2598,9 +2612,9 @@ ul.media-caption {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-  height: 200px;
-  width: 200px;
-  margin: 10px;
+  height: 160px;
+  width: 160px;
+  margin: 5px;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.15);
 }
@@ -2875,8 +2889,8 @@ ul.media-caption {
 }
 #top #video2.circle {
   border-radius: 50%;
-  width: 175px;
-  height: 175px;
+  width: 160px;
+  height: 160px;
 }
 @media (max-width: 1023px) {
   #top {
@@ -3028,7 +3042,7 @@ fieldset[disabled] .drawerbutton {
   margin-top: 32px;
   margin-bottom: 16px;
   line-height: 1.6;
-  font-size: 23px;
+  font-size: 22px;
   padding: 0;
   margin: 0;
   -webkit-box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1);
@@ -3888,6 +3902,7 @@ fieldset[disabled] .featherlight .featherlight-close-icon {
 }
 .bx-wrapper img {
   max-width: 100%;
+  width: 100%;
   display: block;
 }
 .bx-wrapper .bx-viewport {
@@ -3916,8 +3931,8 @@ fieldset[disabled] .featherlight .featherlight-close-icon {
 }
 .bx-wrapper .bx-viewport.circle {
   border-radius: 50%;
-  width: 175px;
-  height: 175px;
+  width: 160px;
+  height: 160px;
 }
 .bx-wrapper .bx-pager,
 .bx-wrapper .bx-controls-auto {
@@ -4184,8 +4199,8 @@ fieldset[disabled] .bx-wrapper .bx-controls-direction a {
 }
 .coupon-container .lbox .lbox-inner .coupon-item .list-thumb .thumbHolder.circle {
   border-radius: 50%;
-  width: 175px;
-  height: 175px;
+  width: 160px;
+  height: 160px;
 }
 .coupon-container .lbox .lbox-inner .coupon-item .coupon-title {
   margin: 0;
