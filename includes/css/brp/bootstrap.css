@@ -639,8 +639,8 @@ blockquote {
   overflow: hidden;
   zoom: 1;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-  margin: 20px -40px;
-  padding: 0 40px 40px;
+  margin: 20px 0;
+  padding: 0 0 40px;
   -webkit-box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1);
   box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1);
@@ -2110,8 +2110,8 @@ input[type="button"].btn-block {
   overflow: hidden;
   zoom: 1;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-  margin: 20px -40px;
-  padding: 0 40px 40px;
+  margin: 20px 0;
+  padding: 0 0 40px;
   -webkit-box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1);
   box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1);
@@ -2301,14 +2301,14 @@ ul.media-caption {
   overflow: hidden;
   zoom: 1;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-  margin: 20px -40px;
-  padding: 0 40px 40px;
+  margin: 20px 0;
+  padding: 0 0 40px;
   -webkit-box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1);
   box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1);
   text-align: center;
   display: block;
-  margin: 8px -40px 20px 20px;
+  margin: 8px 0 20px 20px;
   padding: 0 0 16px;
   clear: right;
 }
@@ -2357,8 +2357,8 @@ ul.media-caption {
   .thumbnail {
     overflow: hidden;
     zoom: 1;
-    margin: 20px -40px;
-    padding: 0 40px 40px;
+    margin: 20px 0;
+    padding: 0 0 40px;
     float: none !important;
     -webkit-box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1);
@@ -4150,8 +4150,8 @@ fieldset[disabled] .bx-wrapper .bx-controls-direction a {
   overflow: hidden;
   zoom: 1;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-  margin: 20px -40px;
-  padding: 0 40px 40px;
+  margin: 20px 0;
+  padding: 0 0 40px;
   -webkit-box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1);
   box-shadow: 0 6px 1px -4px rgba(0, 0, 0, 0.1);
