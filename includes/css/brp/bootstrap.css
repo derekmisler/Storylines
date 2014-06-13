@@ -3324,8 +3324,8 @@ fieldset[disabled] .navigation.social > li .icon {
 }
 .navigation.bottom > li .namecard {
   position: absolute;
-  padding: 20px 0;
-  bottom: -100px;
+  padding: 20px 0 180px 0;
+  bottom: -400px;
   left: 0;
   z-index: -1;
   text-align: left;
@@ -3344,26 +3344,28 @@ fieldset[disabled] .navigation.social > li .icon {
   transition: all 0.5s;
 }
 .navigation.bottom > li .namecard > li {
-  padding-left: 40px;
+  padding-left: 20px;
 }
-.navigation.bottom > li .namecard > li > h5 {
-  margin-top: 0;
+.navigation.bottom > li .namecard > li > .explorer {
+  margin: 0;
+  line-height: 34px;
 }
 .navigation.bottom > li .namecard > li > h3 {
   font-style: italic;
+  line-height: 52px;
 }
 .navigation.bottom > li .namecard > li:first-of-type {
   text-align: right;
-  padding-right: 40px;
-  border-right: 1px solid rgba(0, 0, 0, 0.15);
+  padding-right: 20px;
 }
 .navigation.bottom > li .namecard > li > ul {
-  list-style-position: inside;
+  list-style-position: outside;
   padding: 0;
   color: #165788;
+  line-height: 34px;
 }
 .navigation.bottom > li .namecard.active {
-  bottom: 200px;
+  bottom: 0;
   opacity: 1;
   filter: alpha(opacity=100);
 }

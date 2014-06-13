@@ -240,8 +240,8 @@
         }
         .namecard{
             position: absolute;
-            padding: @default-padding 0;
-            bottom: -100px;
+            padding: @default-padding 0 180px 0;
+            bottom: -400px;
             //.scale(.75);
             left: 0;
             z-index: -1;
@@ -254,27 +254,30 @@
             background-color: fadeout(@body-bg, 10%);
             .transition(all @slow-transition-timing);
             > li{
-                padding-left: @default-padding * 2;
-                > h5{
-                    margin-top: 0;
+                padding-left: @default-padding;
+                > .explorer{
+                    margin: 0;
+                    line-height: 34px;
                 }
                 > h3{
                     font-style: italic;
+                    line-height: 52px;
                 }
                 &:first-of-type{
                     text-align: right;
-                    padding-right: 40px;
-                    border-right: 1px solid @default-border-color;
+                    padding-right: @default-padding;
+                    //border-right: 1px solid @default-border-color;
                 }
                 > ul{
-                    list-style-position: inside;
+                    list-style-position: outside;
                     padding: 0;
                     color: @avl-blue;
+                    line-height: 34px;
                 }
             }
             &.active{
                 //.scale(1);
-                bottom: 200px;
+                bottom: 0;
                 .opacity(1);
             }
         }

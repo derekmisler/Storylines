@@ -623,7 +623,7 @@ $(document).ready(function () {
 		$(this).find('img').animate({'opacity': 1}, 1000);
 	});*/
 
-	$('h1, p, .media-caption').each(function () {
+	$('h1, h2, p, .media-caption, .namecard li ul li, .namecard li h3').each(function () {
 		$(this).html($(this).html().replace(/\s([^\s<]+)\s*$/, '&nbsp;$1'));
 	});
 	$('.youtube').fitVids();
