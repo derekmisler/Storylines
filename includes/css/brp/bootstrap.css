@@ -2703,31 +2703,32 @@ ul.media-caption {
     height: 100%;
     overflow: hidden;
   }
-  .slide .caption > img {
+  .slide .caption > img.cinemagraph {
     margin-left: 0;
     margin-right: 0;
     left: -75%;
     min-width: 100%;
+    height: 100%;
     position: relative;
   }
-  .slide .caption > img:before,
-  .slide .caption > img:after {
+  .slide .caption > img.cinemagraph:before,
+  .slide .caption > img.cinemagraph:after {
     content: " ";
     /* 1 */
     display: table;
     /* 2 */
   }
-  .slide .caption > img:after {
+  .slide .caption > img.cinemagraph:after {
     clear: both;
   }
-  .slide .caption > img:before,
-  .slide .caption > img:after {
+  .slide .caption > img.cinemagraph:before,
+  .slide .caption > img.cinemagraph:after {
     content: " ";
     /* 1 */
     display: table;
     /* 2 */
   }
-  .slide .caption > img:after {
+  .slide .caption > img.cinemagraph:after {
     clear: both;
   }
   .slide .caption > .header > a {
