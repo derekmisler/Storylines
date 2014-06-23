@@ -640,11 +640,14 @@ $(document).ready(function () {
 		effect: "fadeIn",
 		event: "sporty"
 	});
-	
-	$('.bxslider').bxSlider({
-		captions: true,
-		pager: false
-	});
+	var timeout = setTimeout(function() {
+		$("img.delayed").trigger("sporty")
+		$('.bxslider').bxSlider({
+			captions: true,
+			pager: false,
+			preloadImages: 'all'
+		});
+	}, 500);
 	
 	//video stuff
 	//video stuff
@@ -839,7 +842,4 @@ $(document).ready(function () {
 		closeBottomNav();
 	});
 	
-});
-$(window).bind("load", function() {
-	var timeout = setTimeout(function() { $("img.delayed").trigger("sporty") }, 1);
 });
