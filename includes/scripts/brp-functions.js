@@ -631,7 +631,8 @@ $(document).ready(function () {
 		placeholder : "http://www.exploreasheville.com/includes/images/assets/1pixel.gif",
 		skip_invisible : false,
 		failure_limit : 1000,
-		threshold : 200
+		threshold : 1000,
+		effect: "fadeIn",
 	});
 	$("img.delayed").lazyload({
 		placeholder : "http://www.exploreasheville.com/includes/images/assets/1pixel.gif",
@@ -640,14 +641,9 @@ $(document).ready(function () {
 		effect: "fadeIn",
 		event: "sporty"
 	});
-	var timeout = setTimeout(function() {
-		$("img.delayed").trigger("sporty")
-		$('.bxslider').bxSlider({
-			captions: true,
-			pager: false,
-			preloadImages: 'all'
-		});
-	}, 500);
+	var timeout = setTimeout(function () {
+		$("img.delayed").trigger("sporty");
+	}, 1);
 	
 	//video stuff
 	//video stuff
@@ -842,4 +838,11 @@ $(document).ready(function () {
 		closeBottomNav();
 	});
 	
+});
+$(window).load(function () {
+	$('.bxslider').bxSlider({
+		captions: true,
+		pager: false,
+		preloadImages: 'all'
+	});
 });
