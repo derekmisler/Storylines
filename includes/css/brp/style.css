@@ -3464,7 +3464,7 @@ fieldset[disabled] .navigation.social > li .icon {
 #mobile-nav:after {
   clear: both;
 }
-#mobile-nav > ul {
+#mobile-nav > .breadcrumb {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -3475,33 +3475,33 @@ fieldset[disabled] .navigation.social > li .icon {
   -o-transition: all 0.1s;
   transition: all 0.1s;
 }
-#mobile-nav > ul:before,
-#mobile-nav > ul:after {
+#mobile-nav > .breadcrumb:before,
+#mobile-nav > .breadcrumb:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */
 }
-#mobile-nav > ul:after {
+#mobile-nav > .breadcrumb:after {
   clear: both;
 }
-#mobile-nav > ul:before,
-#mobile-nav > ul:after {
+#mobile-nav > .breadcrumb:before,
+#mobile-nav > .breadcrumb:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */
 }
-#mobile-nav > ul:after {
+#mobile-nav > .breadcrumb:after {
   clear: both;
 }
-#mobile-nav > ul li {
+#mobile-nav > .breadcrumb .child {
   display: block;
   float: none;
   width: 100%;
   background-color: rgba(253, 250, 255, 0.9);
 }
-#mobile-nav > ul li a {
+#mobile-nav > .breadcrumb .child a {
   color: #165788;
   display: block;
   line-height: 40px;
