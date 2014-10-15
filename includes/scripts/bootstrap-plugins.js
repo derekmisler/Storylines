@@ -145,29 +145,30 @@ $(document).ready(function(){
 	// start the intro video
 	// videoheight = timelapse.height();
 	timelapse.transition({opacity: 1}, 1000);
-	if (videoheight > '0'){
+	introheading.transition({ opacity: 1 }, 2000);
+	//if (videoheight > '0'){
 		// fade in title
-		topfeaturette.css({'height': videoheight + 'px'}),
-		introheading.transition({ opacity: 1 }, 2000);
-	}
-	else{
+		//topfeaturette.css({'height': videoheight + 'px'}),
+		//introheading.transition({ opacity: 1 }, 2000);
+	//}
+	//else{
 		// fade in title
-		introheading.transition({ opacity: 1 }, 0),
-		topfeaturette.css({'position': 'relative'});
-	}
+		//introheading.transition({ opacity: 1 }, 0),
+		//topfeaturette.css({'position': 'relative'});
+	//}
 
 	// turn on scrollspy, parallax
 	$('body').scrollspy({ target: '.top-nav' });
-	$.stellar({
-		responsive: true,
-		horizontalScrolling: false
-	});
+	//$.stellar({
+	//	responsive: true,
+	//	horizontalScrolling: false
+	//});
 	$(".media").fitVids();
 	
 	
 });
 $(window).load(function(){
-	intro.transition({'marginTop': videoheight + 'px'}, 1000);
+	//intro.transition({'marginTop': videoheight + 'px'}, 1000);
 	$("img.lazy").lazyload({
 		threshold : 340,
 		effect : "fadeIn"
@@ -175,7 +176,7 @@ $(window).load(function(){
 
 	// get flyover ready
 	// flyoverheight = flyover.height();
-	flyovercontainer.css('height', flyoverheight + 'px');
+	//flyovercontainer.css('height', flyoverheight + 'px');
 	flyover.css({ opacity: 0 }, 0);
 
 	// W
@@ -214,15 +215,15 @@ $(window).load(function(){
 	}, { offset: '50%' });
 	
 	// make the flyover stick to the top and have the content cover it
-	flyovercontainer.waypoint(function (direction) {
-		if(direction == 'down')
-			flyovercontainer.addClass('affix'),
-			elementafterflyover.css('marginTop', flyoverheight + 'px');
-		else {
-			flyovercontainer.removeClass('affix'),
-			elementafterflyover.css('marginTop', '0px');
-		}
-	}, { offset: '-300px' });
+//	flyovercontainer.waypoint(function (direction) {
+//		if(direction == 'down')
+//			flyovercontainer.addClass('affix'),
+//			elementafterflyover.css('marginTop', flyoverheight + 'px');
+//		else {
+//			flyovercontainer.removeClass('affix'),
+//			elementafterflyover.css('marginTop', '0px');
+//		}
+//	}, { offset: '-300px' });
 	
 	// fade out and stop the flyover when the user scrolls past it
 	flyovercontainer.waypoint(function (direction) {
