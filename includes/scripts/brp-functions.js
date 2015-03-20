@@ -553,7 +553,7 @@ $(document).ready(function () {
 		leftNavToggle = $('.left .drawerbuttonwrapper'),
 		bottomNavToggle = $('.bottom .drawerbutton'),
 		bothNavigations = $('.navigation'),
-		links = $('.navigation').not('.social').find('li'),
+		links = $('.navigation').not('.social').find('li[data-story]'),
 		mapmarker = $('.map-marker'),
 		namecards = $('.namecard'),
 		topSlide = $('.titlecard'),
