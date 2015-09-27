@@ -6,16 +6,11 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
 */
 (function(){var t=[].indexOf||function(t){for(var e=0,n=this.length;e<n;e++){if(e in this&&this[e]===t)return e}return-1},e=[].slice;(function(t,e){if(typeof define==="function"&&define.amd){return define("waypoints",["jquery"],function(n){return e(n,t)})}else{return e(t.jQuery,t)}})(this,function(n,r){var i,o,l,s,f,u,a,c,h,d,p,y,v,w,g,m;i=n(r);c=t.call(r,"ontouchstart")>=0;s={horizontal:{},vertical:{}};f=1;a={};u="waypoints-context-id";p="resize.waypoints";y="scroll.waypoints";v=1;w="waypoints-waypoint-ids";g="waypoint";m="waypoints";o=function(){function t(t){var e=this;this.$element=t;this.element=t[0];this.didResize=false;this.didScroll=false;this.id="context"+f++;this.oldScroll={x:t.scrollLeft(),y:t.scrollTop()};this.waypoints={horizontal:{},vertical:{}};t.data(u,this.id);a[this.id]=this;t.bind(y,function(){var t;if(!(e.didScroll||c)){e.didScroll=true;t=function(){e.doScroll();return e.didScroll=false};return r.setTimeout(t,n[m].settings.scrollThrottle)}});t.bind(p,function(){var t;if(!e.didResize){e.didResize=true;t=function(){n[m]("refresh");return e.didResize=false};return r.setTimeout(t,n[m].settings.resizeThrottle)}})}t.prototype.doScroll=function(){var t,e=this;t={horizontal:{newScroll:this.$element.scrollLeft(),oldScroll:this.oldScroll.x,forward:"right",backward:"left"},vertical:{newScroll:this.$element.scrollTop(),oldScroll:this.oldScroll.y,forward:"down",backward:"up"}};if(c&&(!t.vertical.oldScroll||!t.vertical.newScroll)){n[m]("refresh")}n.each(t,function(t,r){var i,o,l;l=[];o=r.newScroll>r.oldScroll;i=o?r.forward:r.backward;n.each(e.waypoints[t],function(t,e){var n,i;if(r.oldScroll<(n=e.offset)&&n<=r.newScroll){return l.push(e)}else if(r.newScroll<(i=e.offset)&&i<=r.oldScroll){return l.push(e)}});l.sort(function(t,e){return t.offset-e.offset});if(!o){l.reverse()}return n.each(l,function(t,e){if(e.options.continuous||t===l.length-1){return e.trigger([i])}})});return this.oldScroll={x:t.horizontal.newScroll,y:t.vertical.newScroll}};t.prototype.refresh=function(){var t,e,r,i=this;r=n.isWindow(this.element);e=this.$element.offset();this.doScroll();t={horizontal:{contextOffset:r?0:e.left,contextScroll:r?0:this.oldScroll.x,contextDimension:this.$element.width(),oldScroll:this.oldScroll.x,forward:"right",backward:"left",offsetProp:"left"},vertical:{contextOffset:r?0:e.top,contextScroll:r?0:this.oldScroll.y,contextDimension:r?n[m]("viewportHeight"):this.$element.height(),oldScroll:this.oldScroll.y,forward:"down",backward:"up",offsetProp:"top"}};return n.each(t,function(t,e){return n.each(i.waypoints[t],function(t,r){var i,o,l,s,f;i=r.options.offset;l=r.offset;o=n.isWindow(r.element)?0:r.$element.offset()[e.offsetProp];if(n.isFunction(i)){i=i.apply(r.element)}else if(typeof i==="string"){i=parseFloat(i);if(r.options.offset.indexOf("%")>-1){i=Math.ceil(e.contextDimension*i/100)}}r.offset=o-e.contextOffset+e.contextScroll-i;if(r.options.onlyOnScroll&&l!=null||!r.enabled){return}if(l!==null&&l<(s=e.oldScroll)&&s<=r.offset){return r.trigger([e.backward])}else if(l!==null&&l>(f=e.oldScroll)&&f>=r.offset){return r.trigger([e.forward])}else if(l===null&&e.oldScroll>=r.offset){return r.trigger([e.forward])}})})};t.prototype.checkEmpty=function(){if(n.isEmptyObject(this.waypoints.horizontal)&&n.isEmptyObject(this.waypoints.vertical)){this.$element.unbind([p,y].join(" "));return delete a[this.id]}};return t}();l=function(){function t(t,e,r){var i,o;r=n.extend({},n.fn[g].defaults,r);if(r.offset==="bottom-in-view"){r.offset=function(){var t;t=n[m]("viewportHeight");if(!n.isWindow(e.element)){t=e.$element.height()}return t-n(this).outerHeight()}}this.$element=t;this.element=t[0];this.axis=r.horizontal?"horizontal":"vertical";this.callback=r.handler;this.context=e;this.enabled=r.enabled;this.id="waypoints"+v++;this.offset=null;this.options=r;e.waypoints[this.axis][this.id]=this;s[this.axis][this.id]=this;i=(o=t.data(w))!=null?o:[];i.push(this.id);t.data(w,i)}t.prototype.trigger=function(t){if(!this.enabled){return}if(this.callback!=null){this.callback.apply(this.element,t)}if(this.options.triggerOnce){return this.destroy()}};t.prototype.disable=function(){return this.enabled=false};t.prototype.enable=function(){this.context.refresh();return this.enabled=true};t.prototype.destroy=function(){delete s[this.axis][this.id];delete this.context.waypoints[this.axis][this.id];return this.context.checkEmpty()};t.getWaypointsByElement=function(t){var e,r;r=n(t).data(w);if(!r){return[]}e=n.extend({},s.horizontal,s.vertical);return n.map(r,function(t){return e[t]})};return t}();d={init:function(t,e){var r;if(e==null){e={}}if((r=e.handler)==null){e.handler=t}this.each(function(){var t,r,i,s;t=n(this);i=(s=e.context)!=null?s:n.fn[g].defaults.context;if(!n.isWindow(i)){i=t.closest(i)}i=n(i);r=a[i.data(u)];if(!r){r=new o(i)}return new l(t,r,e)});n[m]("refresh");return this},disable:function(){return d._invoke(this,"disable")},enable:function(){return d._invoke(this,"enable")},destroy:function(){return d._invoke(this,"destroy")},prev:function(t,e){return d._traverse.call(this,t,e,function(t,e,n){if(e>0){return t.push(n[e-1])}})},next:function(t,e){return d._traverse.call(this,t,e,function(t,e,n){if(e<n.length-1){return t.push(n[e+1])}})},_traverse:function(t,e,i){var o,l;if(t==null){t="vertical"}if(e==null){e=r}l=h.aggregate(e);o=[];this.each(function(){var e;e=n.inArray(this,l[t]);return i(o,e,l[t])});return this.pushStack(o)},_invoke:function(t,e){t.each(function(){var t;t=l.getWaypointsByElement(this);return n.each(t,function(t,n){n[e]();return true})});return this}};n.fn[g]=function(){var t,r;r=arguments[0],t=2<=arguments.length?e.call(arguments,1):[];if(d[r]){return d[r].apply(this,t)}else if(n.isFunction(r)){return d.init.apply(this,arguments)}else if(n.isPlainObject(r)){return d.init.apply(this,[null,r])}else if(!r){return n.error("jQuery Waypoints needs a callback function or handler option.")}else{return n.error("The "+r+" method does not exist in jQuery Waypoints.")}};n.fn[g].defaults={context:r,continuous:true,enabled:true,horizontal:false,offset:0,triggerOnce:false};h={refresh:function(){return n.each(a,function(t,e){return e.refresh()})},viewportHeight:function(){var t;return(t=r.innerHeight)!=null?t:i.height()},aggregate:function(t){var e,r,i;e=s;if(t){e=(i=a[n(t).data(u)])!=null?i.waypoints:void 0}if(!e){return[]}r={horizontal:[],vertical:[]};n.each(r,function(t,i){n.each(e[t],function(t,e){return i.push(e)});i.sort(function(t,e){return t.offset-e.offset});r[t]=n.map(i,function(t){return t.element});return r[t]=n.unique(r[t])});return r},above:function(t){if(t==null){t=r}return h._filter(t,"vertical",function(t,e){return e.offset<=t.oldScroll.y})},below:function(t){if(t==null){t=r}return h._filter(t,"vertical",function(t,e){return e.offset>t.oldScroll.y})},left:function(t){if(t==null){t=r}return h._filter(t,"horizontal",function(t,e){return e.offset<=t.oldScroll.x})},right:function(t){if(t==null){t=r}return h._filter(t,"horizontal",function(t,e){return e.offset>t.oldScroll.x})},enable:function(){return h._invoke("enable")},disable:function(){return h._invoke("disable")},destroy:function(){return h._invoke("destroy")},extendFn:function(t,e){return d[t]=e},_invoke:function(t){var e;e=n.extend({},s.vertical,s.horizontal);return n.each(e,function(e,n){n[t]();return true})},_filter:function(t,e,r){var i,o;i=a[n(t).data(u)];if(!i){return[]}o=[];n.each(i.waypoints[e],function(t,e){if(r(i,e)){return o.push(e)}});o.sort(function(t,e){return t.offset-e.offset});return n.map(o,function(t){return t.element})}};n[m]=function(){var t,n;n=arguments[0],t=2<=arguments.length?e.call(arguments,1):[];if(h[n]){return h[n].apply(null,t)}else{return h.aggregate.call(null,n)}};n[m].settings={resizeThrottle:100,scrollThrottle:30};return i.load(function(){return n[m]("refresh")})})}).call(this);
 
-/*global jQuery */
-/*jshint multistr:true browser:true */
-/*!
-* FitVids 1.0.3
-*
-* Copyright 2013, Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com
-* Credit to Thierry Koblentz - http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/
-* Released under the WTFPL license - http://sam.zoy.org/wtfpl/
-*
-* Date: Thu Sept 01 18:00:00 2011 -0500
+/*
+FitVids 1.0.3
+Copyright 2013, Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com
+Credit to Thierry Koblentz - http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/
+Released under the WTFPL license - http://sam.zoy.org/wtfpl/
 */
 
 (function( $ ){
@@ -134,48 +129,19 @@ var keepscrolling = $("#keep-scrolling");
 var footer = $('#copyright');
 
 $(document).ready(function(){
-
-	$('h2,h3,p').each(function() {
-		$(this).html($(this).html().replace(/\s([^\s<]{0,10})\s*$/,'&nbsp;$1'));
-	});
-
 	// start the intro video
-	// videoheight = timelapse.height();
 	timelapse.transition({opacity: 1}, 1000);
 	introheading.transition({ opacity: 1 }, 2000);
-	//if (videoheight > '0'){
-		// fade in title
-		//topfeaturette.css({'height': videoheight + 'px'}),
-		//introheading.transition({ opacity: 1 }, 2000);
-	//}
-	//else{
-		// fade in title
-		//introheading.transition({ opacity: 1 }, 0),
-		//topfeaturette.css({'position': 'relative'});
-	//}
-
-	// turn on scrollspy, parallax
 	$('body').scrollspy({ target: '.top-nav' });
-	//$.stellar({
-	//	responsive: true,
-	//	horizontalScrolling: false
-	//});
 	$(".media").fitVids();
 	$("img.lazy").lazyload({
 		event : "sporty"
 	});
-
-
-	
 });
 $(window).load(function(){
-	//intro.transition({'marginTop': videoheight + 'px'}, 1000);
 	var timeout = setTimeout(function() {
 			$("img.lazy").trigger("sporty")
 	}, 1000);
-	// get flyover ready
-	// flyoverheight = flyover.height();
-	//flyovercontainer.css('height', flyoverheight + 'px');
 	flyover.css({ opacity: 0 }, 0);
 
 	// W
@@ -212,18 +178,7 @@ $(window).load(function(){
 			flyover[0].pause();
 		}
 	}, { offset: '50%' });
-	
-	// make the flyover stick to the top and have the content cover it
-//	flyovercontainer.waypoint(function (direction) {
-//		if(direction == 'down')
-//			flyovercontainer.addClass('affix'),
-//			elementafterflyover.css('marginTop', flyoverheight + 'px');
-//		else {
-//			flyovercontainer.removeClass('affix'),
-//			elementafterflyover.css('marginTop', '0px');
-//		}
-//	}, { offset: '-300px' });
-	
+
 	// fade out and stop the flyover when the user scrolls past it
 	flyovercontainer.waypoint(function (direction) {
 		if(direction == 'down')
@@ -311,7 +266,7 @@ $(window).load(function(){
 	// load external iframes
 
 	$('#soundcloud').html('<iframe width="100%" height="117" scrolling="no" frameborder="no" src="//w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F110228449&show_user=false&color=981e32"></iframe>');
-	$('#leaves').html('<h3 class="media-heading">Trees of Southern Appalachia</h3><div id="myCarousel" class="carousel slide media-object"><ol class="carousel-indicators hidden-xs"><li data-target="#myCarousel" data-slide-to="0" class="active"></li><li data-target="#myCarousel" data-slide-to="1"></li><li data-target="#myCarousel" data-slide-to="2"></li><li data-target="#myCarousel" data-slide-to="3"></li><li data-target="#myCarousel" data-slide-to="4"></li><li data-target="#myCarousel" data-slide-to="5"></li><li data-target="#myCarousel" data-slide-to="6"></li><li data-target="#myCarousel" data-slide-to="7"></li><li data-target="#myCarousel" data-slide-to="8"></li></ol><div class="carousel-inner"><div class="item active"><img src="http://www.exploreasheville.com/includes/images/fall/white-ash-tree.jpg" alt="White Ash" /><div class="carousel-caption"><h1>White Ash</h1></div></div><div class="item"><img src="http://www.exploreasheville.com/includes/images/fall/red-maple-tree.jpg" alt="Red Maple" /><div class="carousel-caption"><h1>Red Maple</h1></div></div><div class="item"><img src="http://www.exploreasheville.com/includes/images/fall/sassafras-tree.jpg" alt="Sassafras" /><div class="carousel-caption"><h1>Sassafras</h1></div></div><div class="item"><img src="http://www.exploreasheville.com/includes/images/fall/chestnut-tree.jpg" alt="American Chestnut" /><div class="carousel-caption"><h1>American Chestnut</h1></div></div><div class="item"><img src="http://www.exploreasheville.com/includes/images/fall/dogwood-tree.jpg" alt="Dogwood" /><div class="carousel-caption"><h1>Dogwood</h1></div></div><div class="item"><img src="http://www.exploreasheville.com/includes/images/fall/sumac-tree.jpg" alt="Sumac" /><div class="carousel-caption"><h1>Sumac</h1></div></div><div class="item"><img src="http://www.exploreasheville.com/includes/images/fall/mountain-ash-tree.jpg" alt="Mountain Ash" /><div class="carousel-caption"><h1>Mountain Ash</h1></div></div><div class="item"><img src="http://www.exploreasheville.com/includes/images/fall/yellow-birch-tree.jpg" alt="Yellow Birch" /><div class="carousel-caption"><h1>Yellow Birch</h1></div></div><div class="item"><img src="http://www.exploreasheville.com/includes/images/fall/maple-tree.jpg" alt="Sugar Maple" /><div class="carousel-caption"><h1>Sugar Maple</h1></div></div></div><a class="left carousel-control" href="#myCarousel" data-slide="prev" onMouseDown="_gaq.push([&apos;pageTracker._trackEvent&apos;, &apos;Science of Fall Color&apos;, &apos;Leaf Slideshow&apos;, &apos;Previous&apos;]);"><span class="glyphicon glyphicon-chevron-left"></span></a><a class="right carousel-control" href="#myCarousel" data-slide="next" onMouseDown="_gaq.push([&apos;pageTracker._trackEvent&apos;, &apos;Science of Fall Color&apos;, &apos;Leaf Slideshow&apos;, &apos;Next&apos;]);"><span class="glyphicon glyphicon-chevron-right"></span></a></div><p class="media-caption">Photos courtesy of Grandfather Mountain, Chimney Rock State Park and Howard&nbsp;Neufeld.</p>');
+	$('#leaves').html('<h3 class="media-heading">Trees of Southern Appalachia</h3><div id="myCarousel" class="carousel slide media-object"><ol class="carousel-indicators hidden-xs"><li data-target="#myCarousel" data-slide-to="0" class="active"></li><li data-target="#myCarousel" data-slide-to="1"></li><li data-target="#myCarousel" data-slide-to="2"></li><li data-target="#myCarousel" data-slide-to="3"></li><li data-target="#myCarousel" data-slide-to="4"></li><li data-target="#myCarousel" data-slide-to="5"></li><li data-target="#myCarousel" data-slide-to="6"></li><li data-target="#myCarousel" data-slide-to="7"></li><li data-target="#myCarousel" data-slide-to="8"></li></ol><div class="carousel-inner"><div class="item active"><img src="http://www.exploreasheville.com/includes/images/fall/white-ash-tree.jpg" alt="White Ash" /><div class="carousel-caption"><h1>White Ash</h1></div></div><div class="item"><img src="http://www.exploreasheville.com/includes/images/fall/red-maple-tree.jpg" alt="Red Maple" /><div class="carousel-caption"><h1>Red Maple</h1></div></div><div class="item"><img src="http://www.exploreasheville.com/includes/images/fall/sassafras-tree.jpg" alt="Sassafras" /><div class="carousel-caption"><h1>Sassafras</h1></div></div><div class="item"><img src="http://www.exploreasheville.com/includes/images/fall/chestnut-tree.jpg" alt="American Chestnut" /><div class="carousel-caption"><h1>American Chestnut</h1></div></div><div class="item"><img src="http://www.exploreasheville.com/includes/images/fall/dogwood-tree.jpg" alt="Dogwood" /><div class="carousel-caption"><h1>Dogwood</h1></div></div><div class="item"><img src="http://www.exploreasheville.com/includes/images/fall/sumac-tree.jpg" alt="Sumac" /><div class="carousel-caption"><h1>Sumac</h1></div></div><div class="item"><img src="http://www.exploreasheville.com/includes/images/fall/mountain-ash-tree.jpg" alt="Mountain Ash" /><div class="carousel-caption"><h1>Mountain Ash</h1></div></div><div class="item"><img src="http://www.exploreasheville.com/includes/images/fall/yellow-birch-tree.jpg" alt="Yellow Birch" /><div class="carousel-caption"><h1>Yellow Birch</h1></div></div><div class="item"><img src="http://www.exploreasheville.com/includes/images/fall/maple-tree.jpg" alt="Sugar Maple" /><div class="carousel-caption"><h1>Sugar Maple</h1></div></div></div><a class="left carousel-control" href="#myCarousel" data-slide="prev" onMouseDown="_gaq.push([&apos;pageTracker._trackEvent&apos;, &apos;Science of Fall Color&apos;, &apos;Leaf Slideshow&apos;, &apos;Previous&apos;]);">&#8592;</a><a class="right carousel-control" href="#myCarousel" data-slide="next" onMouseDown="_gaq.push([&apos;pageTracker._trackEvent&apos;, &apos;Science of Fall Color&apos;, &apos;Leaf Slideshow&apos;, &apos;Next&apos;]);">&#8594;</a></div><p class="media-caption">Photos courtesy of Grandfather Mountain, Chimney Rock State Park and Howard&nbsp;Neufeld.</p>');
 
 });
 function initialize() {
@@ -357,8 +312,3 @@ var disqus_shortname = 'exploreashevillefall'; // required: replace example with
 		s.src = '//' + disqus_shortname + '.disqus.com/count.js';
 		(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
 }());
-	
-setTimeout(function(){var a=document.createElement("script");
-var b=document.getElementsByTagName("script")[0];
-a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0016/9635.js?"+Math.floor(new Date().getTime()/3600000);
-a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
