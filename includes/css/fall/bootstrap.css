@@ -355,7 +355,7 @@ img {
 hr {
   display: block;
   height: 50px;
-  background-image: url(http://www.exploreasheville.com/includes/images/fall/hr.png);
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB4AAAABkCAYAAABn0C3cAAAgAElEQVR4Xu3dC4xddZkA8DOvMkyn0+l0iqG00tQ1PNRqZAmJwBZRBBZEUYmvBJVl3XUXjfGxro9NiWt035voPgzGjTFZo83q4gMfVbEouiiVRXahVEOnZSi1TDudzouh89rz3Tv/2zM3Bbq0pdNzf9dsuHfuvd05v3PO9/++/zf/c5oyDwIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAohUBTKbbCRhAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIBApgHsICBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgEBJBDSAS7IjbQYBAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQ0gB0DBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQKImABnBJdqTNIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAgAawY4AAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIlEdAALsmOtBkECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBDQAHYMECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAoCQCGsAl2ZE2gwABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAhrAjgECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAiUREADuCQ70mYQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIEBAA9gxQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAgZIIaACXZEfaDAIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECGgAOwYIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBQEoFaA3jjxo0tJdkmm0GAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAIGGFKg1gLds2dLWkAI2mgABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAiURqDWA+/r62kuyTTaDAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECDSlQawA/9thjnVk2kCOsqEEMDAxkK1Yc+Wvf5+f4OfLzpf78cv44f5w/zp80ABt/5R/y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Rzit/o1/I30//vv+XbvfePe2bb/If7zjJCTzKxMgQIAAAQIECBAgQIBAgwloADfYDre5BAgQIECAAAECBAgQOJkFNm7c2DL0rVs3xyrg4qWf0zZtn56dXdvS1BRN3/RIzd/4fFw6Ot5bsailssq3eP/g+NnAwelKszjdK/ibnd1/87ffuPV7+b9l9e/JfOD43QkQIECAAAECBAgQINBAAhrADbSzbSoBAgQIECBAgAABAgTKIJBWARcbwKnhG83b+iZwsQEcq3zjEauD4xGrhlNTOD6XVgvHfx9ctTJd+nl7/tEdZbCzDQQIECBAgAABAgQIECBQfgEN4PLvY1tIgAABAgQIECBAgACB0gl8+pOf+Pvnf3/T+6LZGxuXVv3GKt77Jmcq21ts7B6uWby7qan2meLz1DCOf+P2JT2xAvhDpQO0QQQIECBAgAABAgQIECBQWgEN4NLuWhtGgAABAgQIECBAgACBcgr09/ef8Z2PfujLS3ftviiavNHc3Ts5Vbv0czRwU8M3VvwWX9c3hdOK4LRyuLettSk+E49oLn9hz2Nvcv/fch5HtooAAQIECBAgQIAAAQJlFdAALuuetV0ECBAgQIAAAQIECBAoqUDeAH7Rz95+/X3R9I1NTE3b4qWfU9P3qRrAcZnnuBR03Ac4NZHTvxf/9lzzd2/+M/f/LemxZLMIECBAgAABAgQIECBQRgEN4DLuVdtEgAABAgQIECBAgACBkgvEJaCf88Mfvi81gYuN22gIR+M3Luscj7RKuPi8fiVw/DupkRyXfd68besv85W/mr8lP45sHgECBAgQIECAAAECBMoooAFcxr1qmwgQIECAAAECBAgQINAAAh+85rV/vWZo3wfTpkYDN57XrwyO1b2pIVxsBhebvunf6F+96s53fvFLG/LX2/P/29EAjDaRAAECBAgQIECAAAECBEomoAFcsh1qcwgQIECAAAECBAgQINAoAlu2bGn7ysc/8Yn6JnDvWatG9257pLPYCC6apMZv+llaDfzgqpWav41y8NhOAgQIECBAgAABAgQIlFhAA7jEO9emESBAgAABAgQIECBAoBEE6lcCp22OFcGHu09wWimcPnfgjNPv/M3Q+M/mLvv8i/znOxrBzTYSIECAAAECBAgQIECAQDkFNIDLuV9tFQECBAgQIECAAAECBBpGIFYCv+utb732Dy84792TO/ovfLINP/uFa8YeGp2+N5q98Zlo+MZ/5+71G09d9rlhjhobSoAAAQIECBAgQIAAgfIKaACXd9/aMgIECBAgQIAAAQIECDSawJq5DV77NBsejd702NFoSLaXAAECBAgQIECAAAECBMotoAFc7v1r6wgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQaCABDeAG2tk2lQABAgQIECBAgAABAgQIECBAgAABAgQIECBAgACBcgtoAJd7/9o6AgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQaSEADuIF2tk0lQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQKDcAhrA5d6/to4AAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAgQYS0ABuoJ1tUwkQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQKLeABnC596+tI0CAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECggQQ0gBtoZ9tUAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgTKLaABXO79a+sIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIEGggAQ3gBtrZNpUAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAgXILaACXe//aOgIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIEGkhAA7iBdrZNJUCAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECg3AIawOXev7aOAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAIEGEtAAbqCdbVMJECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECi3gAZwufevrSNAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAoIEENIAbaGfbVAIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIEyi2gAVzu/WvrCBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBBoIAEN4Aba2TaVAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAIFyC2gAl3v/2joCBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBBpIQAO4gXa2TSVAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAoNwCGsDl3r+2jgABAgQIECBAgAABAgQIECBAgAABAgQIECBAgACBBhLQAG6gnW1TCRAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAot4AGcLn3r60jQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQKCBBDSAG2hn21QCBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBMotoAFc7uc6cdgAAADpSURBVP1r6wgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQaCABDeAG2tk2lQABAgQIECBAgAABAgQIECBAgAABAgQIECBAgACBcgtoAJd7/9o6AgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQaSEADuIF2tk0lQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQKDcAhrA5d6/to4AAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAgQYS0ABuoJ1tUwkQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQKLfA/wH7zAvv6FwPDwAAAABJRU5ErkJggg==);
   background-position: center center;
   background-repeat: no-repeat;
   clear: both;
@@ -3380,7 +3380,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   color: #766a65;
   width: 200px;
   height: 49px;
-  background: url(http://www.exploreasheville.com/includes/images/fall/logo.png) 0 0 no-repeat;
+  background: url(http://res.cloudinary.com/simpleview/image/upload/v1443392209/clients/asheville/logo_4be1d1ea-7c1f-48e2-822c-72b61c4d43be.png) 0 0 no-repeat;
   font: 0/0 a;
   color: transparent;
   text-shadow: none;
@@ -4837,156 +4837,6 @@ button.close {
     line-height: 45px;
   }
 }
-#sb-title-inner,
-#sb-info-inner,
-#sb-loading-inner,
-div.sb-message {
-  font-family: 'Open Sans', Verdana, "Lucida Grande", "Lucida Sans Unicode", "Bitstream Vera Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 200;
-  color: #fff;
-}
-#sb-container {
-  position: fixed;
-  margin: 0;
-  padding: 0;
-  top: 0;
-  left: 0;
-  z-index: 99999999999;
-  text-align: left;
-  visibility: hidden;
-  display: none;
-}
-#sb-overlay {
-  position: relative;
-  height: 100%;
-  width: 100%;
-}
-#sb-wrapper {
-  position: absolute;
-  visibility: hidden;
-  width: 100px;
-}
-#sb-wrapper-inner {
-  position: relative;
-  border: 1px solid #aeaea6;
-  overflow: hidden;
-  height: 100px;
-}
-#sb-body {
-  position: relative;
-  height: 100%;
-}
-#sb-body-inner {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-}
-#sb-player.html {
-  height: 100%;
-  overflow: auto;
-}
-#sb-body img {
-  border: none;
-}
-#sb-loading {
-  position: relative;
-  height: 100%;
-}
-#sb-loading-inner {
-  position: absolute;
-  font-size: 16px;
-  line-height: 1.85;
-  height: 1.85;
-  top: 50%;
-  margin-top: -0.925;
-  width: 100%;
-  text-align: center;
-}
-#sb-loading-inner span {
-  background: url(http://www.exploreasheville.com/includes/images/fall/loading.gif) no-repeat;
-  padding-left: 34px;
-  display: inline-block;
-}
-#sb-body,
-#sb-loading {
-  background-color: #000000;
-}
-#sb-title,
-#sb-info {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-#sb-title,
-#sb-title-inner {
-  height: 1.85;
-  line-height: 1.85;
-}
-#sb-title-inner {
-  font-size: 16px;
-}
-#sb-info,
-#sb-info-inner {
-  height: 1.85;
-  line-height: 1.85;
-}
-#sb-info-inner {
-  font-size: 14px;
-}
-#sb-nav {
-  float: right;
-  height: 16px;
-  padding: 2px 0;
-  width: 45%;
-}
-#sb-nav a {
-  display: block;
-  float: right;
-  height: 16px;
-  width: 16px;
-  margin-left: 3px;
-  cursor: pointer;
-  background-repeat: no-repeat;
-}
-#sb-nav-close {
-  background-image: url(http://www.exploreasheville.com/includes/images/fall/close.png);
-}
-#sb-nav-next {
-  background-image: url(http://www.exploreasheville.com/includes/images/fall/next.png);
-}
-#sb-nav-previous {
-  background-image: url(http://www.exploreasheville.com/includes/images/fall/previous.png);
-}
-#sb-nav-play {
-  background-image: url(http://www.exploreasheville.com/includes/images/fall/play.png);
-}
-#sb-nav-pause {
-  background-image: url(http://www.exploreasheville.com/includes/images/fall/pause.png);
-}
-#sb-counter {
-  float: left;
-  width: 45%;
-}
-#sb-counter a {
-  padding: 0 4px 0 0;
-  text-decoration: none;
-  cursor: pointer;
-  color: #ffffff;
-}
-#sb-counter a.sb-counter-current {
-  text-decoration: underline;
-}
-div.sb-message {
-  font-size: 14px;
-  padding: 10px;
-  text-align: center;
-}
-div.sb-message a:link,
-div.sb-message a:visited {
-  color: #ffffff;
-  text-decoration: underline;
-}
 .tooltip {
   position: absolute;
   z-index: 1030;
@@ -5393,11 +5243,6 @@ div.sb-message a:visited {
   .carousel-indicators {
     bottom: 20px;
   }
-}
-#canvas {
-  -webkit-box-shadow: inset 0px 0px 80px 0px rgba(0, 0, 0, 0.7);
-  -moz-box-shadow: inset 0px 0px 80px 0px rgba(0, 0, 0, 0.7);
-  box-shadow: inset 0px 0px 80px 0px rgba(0, 0, 0, 0.7);
 }
 .clearfix:before,
 .clearfix:after {
