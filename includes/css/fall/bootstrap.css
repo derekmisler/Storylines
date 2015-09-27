@@ -263,7 +263,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: 'Open Sans', Verdana, "Lucida Grande", "Lucida Sans Unicode", "Bitstream Vera Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Lato', Verdana, "Lucida Grande", "Lucida Sans Unicode", "Bitstream Vera Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.85;
   color: #000000;
@@ -289,6 +289,9 @@ hr {
   background-color: #f4f4f4;
   position: relative;
   z-index: 1;
+}
+.body-section.no-slideshow {
+  padding-top: 0 !important;
 }
 #intro {
   padding-top: 48px;
