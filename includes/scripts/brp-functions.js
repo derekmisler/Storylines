@@ -628,14 +628,14 @@ $(document).ready(function () {
 	});
 	$('.youtube').fitVids();
 	$("img.lazy").lazyload({
-		placeholder : "http://www.exploreasheville.com/includes/images/assets/1pixel.gif",
+		placeholder : "http://res.cloudinary.com/simpleview/image/upload/v1443390946/clients/asheville/1pixel_0aae1cd0-7472-46d1-b137-b66cddba4290.gif",
 		skip_invisible : false,
 		failure_limit : 1000,
 		threshold : 1000,
 		effect: "fadeIn",
 	});
 	$("img.delayed").lazyload({
-		placeholder : "http://www.exploreasheville.com/includes/images/assets/1pixel.gif",
+		placeholder : "http://res.cloudinary.com/simpleview/image/upload/v1443390946/clients/asheville/1pixel_0aae1cd0-7472-46d1-b137-b66cddba4290.gif",
 		skip_invisible : false,
 		failure_limit : 1000,
 		effect: "fadeIn",
