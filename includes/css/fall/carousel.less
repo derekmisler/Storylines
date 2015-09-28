@@ -18,7 +18,7 @@
   > .item {
     display: none;
     position: relative;
-    .transition(.6s ease-in-out left);
+    .transition(.2s ease-in left);
 
     // Account for jankitude on images
     > img,
@@ -131,56 +131,21 @@
   }
 }
 
-// Optional indicator pips
-//
-// Add an unordered list with the following class and add a list item for each
-// slide your carousel holds.
-
-.carousel-indicators {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  z-index: 15;
-  width: 60%;
-  margin-left: -30%;
-  padding-left: 0;
-  list-style: none;
-  text-align: center;
-
-  li {
-    display: inline-block;
-    width:  10px;
-    height: 10px;
-    margin: 1px;
-    text-indent: -999px;
-    border: 1px solid @carousel-indicator-border-color;
-    border-radius: 10px;
-    cursor: pointer;
-  }
-  .active {
-    margin: 0;
-    width:  12px;
-    height: 12px;
-    background-color: @carousel-indicator-active-bg;
-  }
-}
-
 // Optional captions
 // -----------------------------
 // Hidden by default for smaller viewports
 .carousel-caption {
   position: absolute;
-  left: 30%;
-  right: 30%;
-  bottom: 30px;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 10;
-  padding-top: 0px;
-  padding-bottom: 20px;
+  padding-top: ceil(@font-size-base / 2);
+  padding-bottom: ceil(@font-size-base / 2);
   color: @carousel-caption-color;
   text-align: center;
   text-shadow: @carousel-text-shadow;
   background-color:fadeout(@avl-dark-gray, 50%);
-  .img-rounded;
   & .btn {
     text-shadow: none; // No shadow for button elements in carousel-caption
   }
@@ -188,7 +153,7 @@
     color: @white;
     text-shadow: @carousel-text-shadow;
     margin:0;
-    font-size: ceil(@font-size-base * 1.7);
+    font-size: ceil(@font-size-base * 1.4);
   }
 }
 
@@ -204,20 +169,5 @@
     margin-top: -(@default-padding);
     margin-left: -(@default-padding);
     font-size: floor (@font-size-base * 2);
-  }
-
-  // Show and left align the captions
-  .carousel-caption {
-    left: 25%;
-    right: 25%;
-    padding-bottom: 30px;
-    h1{
-        font-size: floor(@font-size-base * 2.60);
-    }
-  }
-
-  // Move up the indicators
-  .carousel-indicators {
-    bottom: 20px;
   }
 }

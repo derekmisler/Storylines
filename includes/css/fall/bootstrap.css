@@ -5069,10 +5069,10 @@ button.close {
 .carousel-inner > .item {
   display: none;
   position: relative;
-  -webkit-transition: 0.6s ease-in-out left;
-  -moz-transition: 0.6s ease-in-out left;
-  -o-transition: 0.6s ease-in-out left;
-  transition: 0.6s ease-in-out left;
+  -webkit-transition: 0.2s ease-in left;
+  -moz-transition: 0.2s ease-in left;
+  -o-transition: 0.2s ease-in left;
+  transition: 0.2s ease-in left;
 }
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
@@ -5117,10 +5117,10 @@ button.close {
   top: 0;
   left: 0;
   bottom: 0;
-  width: 15%;
+  width: 10%;
   opacity: 0.7;
   filter: alpha(opacity=70);
-  font-size: 20px;
+  font-size: 18px;
   color: #ffffff;
   text-align: center;
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
@@ -5174,46 +5174,18 @@ button.close {
 .carousel-control .icon-next:before {
   content: '\203a';
 }
-.carousel-indicators {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  z-index: 15;
-  width: 60%;
-  margin-left: -30%;
-  padding-left: 0;
-  list-style: none;
-  text-align: center;
-}
-.carousel-indicators li {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  margin: 1px;
-  text-indent: -999px;
-  border: 1px solid #ffffff;
-  border-radius: 10px;
-  cursor: pointer;
-}
-.carousel-indicators .active {
-  margin: 0;
-  width: 12px;
-  height: 12px;
-  background-color: #ffffff;
-}
 .carousel-caption {
   position: absolute;
-  left: 30%;
-  right: 30%;
-  bottom: 30px;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 10;
-  padding-top: 0px;
-  padding-bottom: 20px;
+  padding-top: 9px;
+  padding-bottom: 9px;
   color: #ffffff;
   text-align: center;
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
   background-color: rgba(55, 66, 74, 0.5);
-  border-radius: 6px;
 }
 .carousel-caption .btn {
   text-shadow: none;
@@ -5222,7 +5194,7 @@ button.close {
   color: #ffffff;
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
   margin: 0;
-  font-size: 31px;
+  font-size: 26px;
 }
 @media screen and (min-width: 768px) {
   .carousel-control .icon-prev,
@@ -5232,17 +5204,6 @@ button.close {
     margin-top: -18px;
     margin-left: -18px;
     font-size: floor 36px;
-  }
-  .carousel-caption {
-    left: 25%;
-    right: 25%;
-    padding-bottom: 30px;
-  }
-  .carousel-caption h1 {
-    font-size: 46px;
-  }
-  .carousel-indicators {
-    bottom: 20px;
   }
 }
 .clearfix:before,
