@@ -537,22 +537,24 @@
 	</div>
 </footer>
 <script type="text/javascript">
-	function yourFunctionToRun(){
-		var bootstrap = document.createElement('script'); bootstrap.type = 'text/javascript';
+	function loadJS(){
+		var bootstrap = document.createElement('script');
+		bootstrap.type = 'text/javascript';
 		bootstrap.src = 'http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js';
-		document.getElementsByTagName('footer')[0].appendChild(bootstrap);
+		document.getElementsByTagName('body')[0].appendChild(bootstrap);
 
-		var plugins = document.createElement('script'); plugins.type = 'text/javascript';
+		var plugins = document.createElement('script');
+		plugins.type = 'text/javascript';
 		plugins.src = 'http://www.ashevillecvb.com/wp-content/uploads/bootstrap-plugins.js';
-		document.getElementsByTagName('footer')[0].appendChild(plugins);
+		document.getElementsByTagName('body')[0].appendChild(plugins);
 	}
-
-	function runYourFunctionWhenJQueryIsLoaded() {
+	function loadJSafterjQuery() {
 		if (window.$){
-			yourFunctionToRun();
+			loadJS();
 		} else {
-			setTimeout(runYourFunctionWhenJQueryIsLoaded, 50);
+			setTimeout(loadJSafterjQuery, 50);
 		}
 	}
-	runYourFunctionWhenJQueryIsLoaded();
+	
+	loadJSafterjQuery();
 </script>
