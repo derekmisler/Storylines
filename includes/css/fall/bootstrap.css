@@ -631,6 +631,8 @@ blockquote {
   margin: 0 0 58px;
   border-top: 3px solid rgba(153, 153, 153, 0.5);
   border-bottom: 3px solid rgba(153, 153, 153, 0.5);
+  border-left: 0px;
+  border-right: 0px;
 }
 blockquote p {
   font-size: 20px !important;
