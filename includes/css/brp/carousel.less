@@ -1,6 +1,11 @@
+.bxslider {
+    margin:0;
+    padding:0;
+    list-style-type:none;
+}
 .bx-wrapper {
 	position: relative;
-	margin: 0;
+	margin: 0 !important;
 	padding: 0;
 	*zoom: 1;
     img {
@@ -12,114 +17,31 @@
     	.media-object;
     	background-color: @body-bg;
     }
-    .bx-pager,
-    .bx-controls-auto {
-    	position: absolute;
-    	width: 100%;
-    }
-    .bx-loading {
-    	min-height: floor(@default-padding * 4);
-    	background-color: @white;
-    	height: 100%;
-    	width: 100%;
-    	position: absolute;
-    	top: 50%;
-    	left: 50%;
-    	z-index: 2000;
-    }
-    .bx-pager {
-    	text-align: center;
-    	color: @avl-blue;
-    	padding-top: @default-padding;
-        .bx-pager-item{
-        	display: inline-block;
-        	*zoom: 1;
-        	*display: inline;
-        }
-        &.bx-default-pager a {
-        	background: @avl-gray;
-        	.hide-text();
-        	display: block;
-        	width: floor(@default-padding / 2);
-        	height: floor(@default-padding / 2);
-        	margin: 0 floor(@default-padding / 3);
-        	outline: 0;
-        	border-radius: 50%;
-            &:hover,
-            &.active {
-            	background: @avl-dark-gray;
-            }
-        }
-    }
-    .bx-controls-auto .bx-controls-auto-item {
-    	display: inline-block;
-    	*zoom: 1;
-    	*display: inline;
-    }
-    .bx-prev {
-    	left: 0;
-    	.icon;
-    	.icon-arrow-left;
-    	.opacity(.5);
-    }
-    .bx-next {
-    	right: 0;
-    	.icon;
-    	.icon-arrow-right;
-    	.opacity(.5);
-    }
-    &:hover .bx-next,
-    &:focus .bx-next,
-    &:hover .bx-prev,
-    &:focus .bx-prev{
-    	.opacity(1);
-    }
     .bx-controls-direction a {
+        &.bx-prev {
+        	left: 0;
+        	.icon;
+        	.icon-arrow-left;
+        	.opacity(.5);
+        }
+        &.bx-next {
+        	right: 0;
+        	.icon;
+        	.icon-arrow-right;
+        	.opacity(.5);
+        }
     	position: absolute;
     	top: 0;
     	.btn;
     	cursor: pointer;
-        &.disabled {
-        	display: none;
-        }
     }    
-/* AUTO CONTROLS (START / STOP) */
-    .bx-controls-auto {
-    	text-align: center;
-        .bx-start,
-        .bx-stop{
-        	.icon;
-            display: inline-block;
-            float:left;
-        	outline: 0;
-        	margin: 0;
-        	color: @avl-gray;
-        }
-        .bx-start {
-        	.icon-play;
-        	&:hover,
-            &.active {
-        	    color: @avl-red;	
-            }
-        }
-        .bx-stop {
-        	.icon-stop;
-            &:hover,
-            &.active {
-        	    color: @avl-red;	
-            }
-        }
+    &:hover .bx-next,
+    &:focus .bx-next,
+    &:hover .bx-prev,
+    &:focus .bx-prev{
+    	.opacity(1) !important;
     }
-/* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
-    .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
-    	text-align: left;
-    	width: 80%;
-    }
-    .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
-    	right: 0;
-    	width: 20%;
-    }
-/* IMAGE CAPTIONS */
+    /* IMAGE CAPTIONS */
     .bx-caption {
     	position: absolute;
     	bottom: 0;

@@ -13,12 +13,13 @@
     > li {
         position: relative;
         float: none;
-        display: table-cell;
-        width: 1%;
+        width: 33%;
         > a {
             .h6;
             text-align: center;
             position: relative;
+            background-color: transparent !important;
+            color: @avl-blue !important;
             display: block;
             padding: floor(@default-padding / 4) 0;
             margin: 0 floor(@default-padding / 5) floor(@default-padding / 4) 0;
@@ -35,10 +36,13 @@
         }
         &.active{
             > a {
+                background-color: transparent !important;
+                color: @avl-blue !important;
                 border: @default-border;
                 &:hover,
                 &:focus {
                     color: @gray;
+                    background-color: transparent !important;
                     cursor: default;
                     .box-shadow(none);
                 }
@@ -50,15 +54,18 @@
     }
 }
 
-.tab-content {
+.tabs-content {
     border: @default-border;
     //height: 530px;
     max-width: 800px;
     .box-shadow(@default-box-shadow);
+    border-left: 0;
+    border-right: 0;
+    padding: 0;
     &:extend(.clearfix all);
-    > .tab-pane {
+    > .content {
         display: none;
-        padding: @default-padding;
+        padding: 0;
     }
     > .active {
         display: block;
@@ -129,10 +136,10 @@
             }
         }
     }
-    .tab-content {
+    .tabs-content {
         border: 0px;
         border-bottom: @default-border;
-        > .tab-pane {
+        > .content {
             display: none;
             padding: 0;
         }
