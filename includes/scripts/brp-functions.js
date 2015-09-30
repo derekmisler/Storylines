@@ -416,7 +416,7 @@ $(document).ready(function () {
 	//video stuff
 	//video stuff
 	if (notMobileScreen) {
-		var topVideoFadeIn = setTimeout(showVideo, 500);
+		var topVideoFadeIn = setTimeout(showVideo, 0);
 		topVideo2.bind('play', function () {
 			deactivate(topVideoControls);
 			closeBottomNav();
